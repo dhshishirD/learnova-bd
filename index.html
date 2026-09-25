@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Learnova BD | ১০ মিনিট স্কুল কোর্স ডিসকাউন্ট ও ভর্তি পোর্টাল</title>
+  <title>Learnova BD | ১০ মিনিট স্কুল কোর্স ডিসকাউন্ট ও টিম ট্র্যাকিং পোর্টাল</title>
   
   <!-- Google Fonts: Hind Siliguri & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -132,6 +132,20 @@
       gap: 8px;
     }
 
+    /* User Profile Pill */
+    .user-profile-pill {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      background: var(--primary-light);
+      border: 1px solid rgba(14,131,125,0.3);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
     /* Staff Navigation (Only visible after secret login) */
     .staff-nav-pills {
       display: none;
@@ -237,114 +251,119 @@
     main {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px 16px 80px;
-      flex: 1;
+      padding: 16px;
       width: 100%;
+      flex: 1;
     }
 
-    /* Teammate Welcome Banner */
+    /* Teammate Notification Banner */
     .team-banner {
       display: none;
-      background: linear-gradient(135deg, #0f766e, #0e837d);
-      color: white;
+      background: linear-gradient(135deg, #0e837d, #059669);
+      color: #fff;
       padding: 14px 18px;
       border-radius: var(--radius);
-      margin-bottom: 20px;
-      align-items: center;
+      margin-bottom: 16px;
       justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow-md);
+      flex-wrap: wrap;
       gap: 12px;
-      box-shadow: var(--shadow-sm);
     }
 
-    .team-banner-title {
-      font-weight: 700;
+    .team-banner h3 {
       font-size: 1.05rem;
+      font-weight: 700;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .team-banner-subtitle {
+    .team-banner p {
       font-size: 0.82rem;
       opacity: 0.9;
       margin-top: 2px;
     }
 
-    .team-stats {
+    .team-banner-actions {
       display: flex;
-      gap: 10px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    .stat-chip {
+    .banner-btn {
       background: rgba(255,255,255,0.2);
-      padding: 4px 12px;
-      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .banner-btn:hover {
+      background: #fff;
+      color: var(--primary);
     }
 
     /* Search & Filter Bar */
-    .search-filter-section {
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+    .filter-section {
+      margin-bottom: 16px;
     }
 
-    .search-input-wrapper {
+    .search-box {
       position: relative;
-      width: 100%;
+      margin-bottom: 12px;
     }
 
-    .search-input-wrapper i {
+    .search-box i.search-icon {
       position: absolute;
-      left: 16px;
+      left: 14px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-muted);
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
 
     .search-input {
       width: 100%;
-      padding: 14px 16px 14px 46px;
-      border-radius: var(--radius);
+      padding: 12px 14px 12px 42px;
+      font-size: 0.95rem;
       border: 1.5px solid var(--border);
-      background: var(--card-bg);
+      border-radius: var(--radius);
+      background-color: var(--card-bg);
       color: var(--text-main);
-      font-size: 1rem;
       outline: none;
-      box-shadow: var(--shadow-sm);
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: all 0.2s;
     }
 
     .search-input:focus {
       border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(14,131,125,0.15);
+      box-shadow: 0 0 0 3px rgba(14,131,125,0.15);
     }
 
-    .clear-search {
+    .search-clear {
       position: absolute;
       right: 14px;
       top: 50%;
       transform: translateY(-50%);
-      background: transparent;
-      border: none;
       color: var(--text-muted);
       cursor: pointer;
-      font-size: 1rem;
       display: none;
+      font-size: 0.9rem;
     }
 
-    /* Category Filter Chips */
+    /* Horizontal Scrolling Category Chips */
     .category-chips {
       display: flex;
       gap: 8px;
       overflow-x: auto;
       padding-bottom: 6px;
       scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
     }
 
     .category-chips::-webkit-scrollbar {
@@ -353,17 +372,16 @@
 
     .chip {
       white-space: nowrap;
-      padding: 8px 16px;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.88rem;
+      padding: 8px 14px;
+      font-size: 0.85rem;
       font-weight: 600;
       border-radius: 30px;
+      border: 1px solid var(--border);
+      background-color: var(--card-bg);
+      color: var(--text-muted);
       cursor: pointer;
       transition: all 0.2s;
-      flex-shrink: 0;
-      box-shadow: var(--shadow-sm);
+      user-select: none;
     }
 
     .chip:hover {
@@ -372,133 +390,107 @@
     }
 
     .chip.active {
-      background: var(--primary);
+      background-color: var(--primary);
+      color: #fff;
       border-color: var(--primary);
-      color: #ffffff;
-      box-shadow: 0 3px 8px rgba(14,131,125,0.3);
+      box-shadow: 0 2px 6px rgba(14,131,125,0.25);
     }
 
-    /* Teammate Link Status Filter Bar */
+    /* Link Filter Pills (Teammate only) */
     .link-filter-bar {
       display: none;
-      gap: 8px;
       align-items: center;
-      font-size: 0.82rem;
+      gap: 8px;
+      margin-bottom: 14px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
-    .link-filter-btn {
-      padding: 5px 12px;
+    .link-pill {
+      padding: 4px 10px;
       border-radius: 6px;
       border: 1px solid var(--border);
       background: var(--card-bg);
-      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
       cursor: pointer;
-      font-weight: 500;
-    }
-
-    .link-filter-btn.active {
-      background: var(--primary-light);
-      color: var(--primary);
-      border-color: var(--primary);
-      font-weight: 700;
-    }
-
-    /* Info Bar */
-    .info-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      font-size: 0.9rem;
       color: var(--text-muted);
     }
 
-    .badge-count {
+    .link-pill.active {
       background: var(--primary-light);
+      border-color: var(--primary);
       color: var(--primary);
-      font-weight: 700;
-      padding: 2px 10px;
-      border-radius: 12px;
     }
 
     /* Course Cards Grid */
     .courses-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 20px;
+      gap: 16px;
     }
 
-    @media (max-width: 640px) {
-      .courses-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-title {
-        font-size: 1.35rem;
-      }
-    }
-
-    /* Card Design */
     .course-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 18px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 14px;
+      gap: 12px;
+      transition: all 0.25s ease;
       box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+      position: relative;
     }
 
     .course-card:hover {
-      border-color: var(--primary);
       box-shadow: var(--shadow-md);
-      transform: translateY(-3px);
+      border-color: rgba(14,131,125,0.3);
+      transform: translateY(-2px);
     }
 
     .card-top {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
     }
 
     .card-header-row {
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 6px;
+      align-items: flex-start;
+      gap: 8px;
     }
 
     .card-category {
       font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
       color: var(--primary);
       background: var(--primary-light);
-      padding: 3px 10px;
+      padding: 3px 8px;
       border-radius: 6px;
       align-self: flex-start;
+      letter-spacing: 0.3px;
     }
 
     .card-title {
-      font-size: 1.08rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--text-main);
-      line-height: 1.4;
+      line-height: 1.35;
     }
 
-    /* Price Section (Dual Price) */
+    /* Dual Price Section */
     .card-price-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 0;
-      border-top: 1px dashed var(--border);
-      border-bottom: 1px dashed var(--border);
-      flex-wrap: wrap;
-      gap: 8px;
+      padding: 10px 12px;
+      background: var(--bg);
+      border-radius: 10px;
+      border: 1px solid var(--border);
     }
 
     .price-block {
@@ -508,169 +500,157 @@
     }
 
     .original-price-row {
-      font-size: 0.82rem;
-      color: var(--text-muted);
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
     }
 
     .original-strike {
       text-decoration: line-through;
       color: #94a3b8;
+      font-weight: 600;
     }
 
     .offer-price-row {
       display: flex;
       align-items: baseline;
-      gap: 6px;
+      gap: 4px;
     }
 
     .price-tag {
       font-size: 1.35rem;
       font-weight: 800;
-      color: var(--text-main);
+      color: var(--primary);
+      font-family: 'Inter', sans-serif;
     }
 
     .savings-badge {
-      background: #ecfdf5;
-      color: #059669;
-      border: 1px solid #a7f3d0;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 0.78rem;
+      background: linear-gradient(135deg, #ef4444, #f97316);
+      color: #fff;
+      font-size: 0.75rem;
       font-weight: 700;
-      display: inline-flex;
+      padding: 4px 8px;
+      border-radius: 6px;
+      display: flex;
       align-items: center;
       gap: 4px;
+      box-shadow: 0 2px 4px rgba(239,68,68,0.25);
     }
 
-    [data-theme="dark"] .savings-badge {
-      background: #064e3b;
-      color: #a7f3d0;
-      border-color: #059669;
-    }
-
-    /* Teammate Specific Badge */
-    .promo-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      background: #fef3c7;
-      color: #92400e;
-      border: 1px solid #fde68a;
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    [data-theme="dark"] .promo-badge {
-      background: #78350f;
-      color: #fef3c7;
-      border-color: #92400e;
-    }
-
-    /* Teammate Financial Metrics */
+    /* Teammate metrics info */
     .teammate-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      padding: 8px;
       background: var(--bg);
       border-radius: 8px;
-      padding: 10px;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 6px;
+      font-size: 0.75rem;
       text-align: center;
-      font-size: 0.8rem;
+      border: 1px solid var(--border);
     }
 
     .metric-label {
       color: var(--text-muted);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
     }
 
     .metric-val {
       font-weight: 700;
       color: var(--text-main);
+      margin-top: 1px;
     }
 
     .metric-profit {
       color: var(--success);
-      font-weight: 800;
     }
 
-    /* Card Action Buttons */
+    .promo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #eff6ff;
+      color: #2563eb;
+      border: 1px dashed #93c5fd;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      font-family: monospace;
+      cursor: pointer;
+    }
+
+    /* Action Buttons */
     .card-actions {
       display: flex;
+      align-items: center;
       gap: 8px;
       margin-top: 4px;
     }
 
     .btn {
-      flex: 1;
-      padding: 11px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      border: none;
-      cursor: pointer;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
       transition: all 0.2s;
       text-decoration: none;
+      flex: 1;
     }
 
     .btn-primary {
       background: var(--primary);
-      color: #ffffff;
+      color: #fff;
     }
 
     .btn-primary:hover {
       background: var(--primary-dark);
+      box-shadow: 0 2px 6px rgba(14,131,125,0.3);
     }
 
     .btn-outline {
       background: transparent;
-      border: 1.5px solid var(--primary);
-      color: var(--primary);
+      border: 1px solid var(--border);
+      color: var(--text-main);
     }
 
     .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
       background: var(--primary-light);
     }
 
-    .student-enroll-btn {
-      background: linear-gradient(135deg, #ff6b35, #ea580c);
-      color: #ffffff;
-      font-size: 0.95rem;
-      font-weight: 800;
-      padding: 12px;
-      box-shadow: 0 4px 12px rgba(255,107,53,0.3);
+    .btn-accent {
+      background: var(--accent);
+      color: #fff;
     }
 
-    .student-enroll-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(255,107,53,0.4);
-    }
-
-    .student-inbox-btn {
-      background: linear-gradient(135deg, #0284c7, #0369a1);
-      color: #ffffff;
-      font-size: 0.92rem;
-      font-weight: 700;
-      padding: 12px;
+    .btn-accent:hover {
+      background: var(--accent-hover);
     }
 
     .btn-sm-icon {
-      padding: 10px 12px;
-      flex: 0;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--text-main);
+      width: 38px;
+      height: 38px;
       border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      flex-shrink: 0;
     }
 
     .btn-sm-icon:hover {
@@ -678,134 +658,32 @@
       color: var(--primary);
     }
 
-    /* Toast Notification */
-    #toast {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%) translateY(100px);
-      background: #1e293b;
-      color: #ffffff;
-      padding: 12px 22px;
-      border-radius: 30px;
-      font-size: 0.92rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-      z-index: 100;
-      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      pointer-events: none;
-      white-space: nowrap;
-    }
-
-    #toast.show {
-      transform: translateX(-50%) translateY(0);
-    }
-
-    /* Modal Styling */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      backdrop-filter: blur(4px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 90;
-      padding: 16px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s;
-    }
-
-    .modal-backdrop.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .modal-box {
-      background: var(--card-bg);
-      border-radius: 16px;
-      width: 100%;
-      max-width: 480px;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 24px;
-      box-shadow: var(--shadow-lg);
-      transform: scale(0.95);
-      transition: transform 0.2s;
-      border: 1px solid var(--border);
-    }
-
-    .modal-backdrop.active .modal-box {
-      transform: scale(1);
-    }
-
-    .modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 18px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 12px;
-    }
-
-    .modal-title {
-      font-size: 1.2rem;
+    .student-enroll-btn {
+      background: linear-gradient(135deg, var(--accent), #f97316);
+      color: #fff;
       font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .form-group {
-      margin-bottom: 14px;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--text-main);
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 11px 13px;
-      border-radius: 8px;
-      border: 1.5px solid var(--border);
-      background: var(--bg);
-      color: var(--text-main);
       font-size: 0.95rem;
-      outline: none;
+      padding: 12px 16px;
+      box-shadow: 0 3px 8px rgba(255,107,53,0.3);
     }
 
-    .form-control:focus {
-      border-color: var(--primary);
+    .student-enroll-btn:hover {
+      background: linear-gradient(135deg, #ea580c, #c2410c);
     }
 
-    .form-grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+    .student-inbox-btn {
+      background: #0084ff;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.88rem;
     }
 
-    .modal-footer {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-      margin-top: 20px;
-      border-top: 1px solid var(--border);
-      padding-top: 16px;
-    }
-
-    /* Floating Manager Action Button */
-    .fab-add {
+    /* Floating Action Button (Manager Add Course) */
+    .fab {
       position: fixed;
       bottom: 24px;
       right: 24px;
-      background: var(--primary);
+      background: linear-gradient(135deg, var(--primary), #059669);
       color: #fff;
       width: 54px;
       height: 54px;
@@ -814,423 +692,800 @@
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
-      box-shadow: 0 4px 14px rgba(14,131,125,0.4);
+      box-shadow: var(--shadow-lg);
       cursor: pointer;
-      border: none;
       z-index: 40;
+      border: none;
       transition: transform 0.2s;
     }
 
-    .fab-add:hover {
+    .fab:hover {
       transform: scale(1.08);
+    }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15,23,42,0.65);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 16px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      width: 100%;
+      max-width: 650px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      animation: modalSlide 0.2s ease-out;
+    }
+
+    @keyframes modalSlide {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .modal-close {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .modal-footer {
+      padding: 14px 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      background: var(--bg);
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+
+    /* Form Styles */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .form-input, .form-select {
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text-main);
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .form-input:focus, .form-select:focus {
+      border-color: var(--primary);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Analytics & Leaderboard Components */
+    .analytics-tabs {
+      display: flex;
+      gap: 6px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+
+    .tab-btn {
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .tab-btn.active {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .leaderboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .leaderboard-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+    }
+
+    .rank-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .rank-1 { background: #fef08a; color: #854d0e; }
+    .rank-2 { background: #e2e8f0; color: #334155; }
+    .rank-3 { background: #fed7aa; color: #9a3412; }
+    .rank-other { background: var(--card-bg); color: var(--text-muted); }
+
+    .member-name {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      padding-right: 24px;
+    }
+
+    .member-stat-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .member-stat-val {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .logs-table-container {
+      max-height: 280px;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .logs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.78rem;
+    }
+
+    .logs-table th, .logs-table td {
+      padding: 8px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logs-table th {
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #1e293b;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
     }
 
     /* Footer */
     footer {
-      background: var(--card-bg);
-      border-top: 1px solid var(--border);
-      padding: 24px 16px;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-muted);
       margin-top: auto;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 8px;
-      font-size: 0.8rem;
-    }
-
-    .footer-link {
+      border-top: 1px solid var(--border);
+      background: var(--card-bg);
+      padding: 16px;
+      text-align: center;
+      font-size: 0.82rem;
       color: var(--text-muted);
-      text-decoration: none;
-      cursor: pointer;
     }
 
-    .footer-link:hover {
-      color: var(--primary);
+    @media (max-width: 640px) {
+      .courses-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 1.35rem;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Header Navigation -->
+  <!-- Header -->
   <header>
     <div class="header-container">
-      <!-- SECRET DOUBLE-CLICK / DOUBLE-TAP LOGO -->
-      <div class="brand" id="brandLogoTrigger" onclick="handleLogoClick()" title="Learnova BD">
-        <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+      <!-- Secret Double-Click Brand Logo -->
+      <div class="brand" id="brandLogo" ondblclick="openSecretLogin()" title="Learnova BD">
+        <div class="brand-logo">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
         <div>
           <div class="brand-title">Learnova BD</div>
           <div class="brand-subtitle" id="portalSubtitle">১০ মিনিট স্কুল কোর্স ডিসকাউন্ট পোর্টাল</div>
         </div>
       </div>
 
-      <!-- Staff Navigation (Hidden from regular students) -->
-      <div class="staff-nav-pills" id="staffNavPills">
-        <button class="staff-nav-btn" id="btnStudentView" onclick="switchView('student')">
-          <i class="fa-solid fa-user-graduate"></i> Student View
-        </button>
-        <button class="staff-nav-btn active" id="btnTeamView" onclick="switchView('team')">
-          <i class="fa-solid fa-users"></i> Teammates
-        </button>
-        <!-- Manage Button (Manager Protected) -->
-        <button class="staff-nav-btn" id="btnAdminView" onclick="handleManagerClick()">
-          <i class="fa-solid fa-shield-halved"></i> <span id="adminBtnLabel">Manager 🔒</span>
-        </button>
-      </div>
-
-      <!-- Right Header Actions -->
       <div class="header-actions">
-        <!-- Logout Button (Only visible after logging in) -->
-        <button class="logout-btn" id="logoutBtn" onclick="handleLogout()">
-          <i class="fa-solid fa-right-from-bracket"></i>
-          <span>লগআউট</span>
+        <!-- Active User Badge -->
+        <div class="user-profile-pill" id="userProfilePill">
+          <i class="fa-solid fa-user-check"></i>
+          <span id="activeUserName">Team Member</span>
+        </div>
+
+        <!-- Staff View Switcher (Visible only after login) -->
+        <div class="staff-nav-pills" id="staffNavPills">
+          <button class="staff-nav-btn active" id="btnStudentView" onclick="switchView('student')">
+            <i class="fa-solid fa-graduation-cap"></i> Student View
+          </button>
+          <button class="staff-nav-btn" id="btnTeamView" onclick="switchView('team')">
+            <i class="fa-solid fa-briefcase"></i> Workspace
+          </button>
+        </div>
+
+        <!-- Manager Analytics & Control Button -->
+        <button class="btn-icon" id="adminBtn" onclick="handleManagerClick()" title="ম্যানেজার কন্ট্রোল ও এনালিটিক্স" style="display: none;">
+          <i class="fa-solid fa-chart-line"></i>
         </button>
 
-        <button class="btn-icon" onclick="toggleTheme()" title="Toggle Theme">
+        <!-- Theme Toggle -->
+        <button class="btn-icon" onclick="toggleTheme()" title="ডার্ক / লাইট মোড">
           <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+
+        <!-- Logout Button -->
+        <button class="logout-btn" id="logoutBtn" onclick="logoutStaff()">
+          <i class="fa-solid fa-right-from-bracket"></i> প্রস্থান
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section for Students (Only shown in student mode) -->
+  <!-- Public Student Hero Banner -->
   <section class="hero-banner" id="heroBanner">
-    <h1 class="hero-title">
-      ১০ মিনিট স্কুলের সকল কোর্সে <span class="hero-highlight">এক্সক্লুসিভ ডিসকাউন্ট</span> ও অফার
-    </h1>
-    <p class="hero-desc">
-      অনলাইন ব্যাচ (Class 6-10), SSC 28, HSC 28, এডমিশন, স্পোকেন ইংলিশ ও ফ্রিল্যান্সিং কোর্সে সর্বোচ্চ ছাড় পেতে আপনার পছন্দের কোর্সটি বেছে নিন।
-    </p>
+    <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: var(--primary-light); color: var(--primary); border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px;">
+      <i class="fa-solid fa-bolt"></i> স্পেশাল পার্টনারশিপ অফার
+    </div>
+    <h1 class="hero-title">১০ মিনিট স্কুল কোর্সে <span class="hero-highlight">এক্সক্লুসিভ ডিসকাউন্ট</span></h1>
+    <p class="hero-desc">আমাদের ভেরিফাইড অফার লিংকের মাধ্যমে যেকোনো কোর্সে ভর্তি হয়ে উপভোগ করুন সর্বোচ্চ ছাড় ও ক্যাশব্যাক সুবিধা!</p>
   </section>
 
-  <!-- Main Content Area -->
+  <!-- Main Content -->
   <main>
-
-    <!-- Teammate Welcome & Audit Banner (Visible only to logged in team) -->
+    <!-- Teammate Workspace Alert Banner -->
     <div class="team-banner" id="teamBanner">
       <div>
-        <div class="team-banner-title">
-          <i class="fa-solid fa-briefcase"></i> লার্নোভা অ্যাফিলিয়েট টিম ওয়ার্কস্পেস
-        </div>
-        <div class="team-banner-subtitle">
-          কাস্টমার ইনবক্সে ৩ সেকেন্ডে কোর্স লিংক ও রেডিমেড মেসেজ পাঠাতে নিচের বাটন ব্যবহার করুন।
-        </div>
+        <h3><i class="fa-solid fa-shield-halved"></i> <span id="teamBannerTitle">টিমমেট ওয়ার্কস্পেস সক্রিয়</span></h3>
+        <p>সকল লিংক আপনার অ্যাকাউন্টে ট্র্যাক হচ্ছে। ১-ট্যাপে মেসেজ কপি করে শিক্ষার্থীদের ইনবক্সে পাঠান।</p>
       </div>
-      <div class="team-stats">
-        <div class="stat-chip"><i class="fa-solid fa-circle-check" style="color: #4ade80;"></i> <span id="readyLinkCount">0</span> টি লিংক রেডি</div>
-        <div class="stat-chip"><i class="fa-solid fa-triangle-exclamation" style="color: #fde047;"></i> <span id="missingLinkCount">0</span> টি লিংক বাকি</div>
+      <div class="team-banner-actions">
+        <button class="banner-btn" onclick="openLeaderboardModal()">
+          <i class="fa-solid fa-trophy"></i> লিডারবোর্ড
+        </button>
+        <button class="banner-btn" id="btnAdminBanner" onclick="openAdminModal()" style="display: none;">
+          <i class="fa-solid fa-gear"></i> ম্যানেজার প্যানেল
+        </button>
       </div>
     </div>
 
-    <!-- Search & Filter Area -->
-    <section class="search-filter-section">
-      <div class="search-input-wrapper">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input 
-          type="text" 
-          id="searchInput" 
-          class="search-input" 
-          placeholder="কোর্স খুঁজুন (যেমন: SSC 28, HSC 28, Spoken, Admission)..."
-          oninput="handleSearch()"
-        >
-        <button class="clear-search" id="clearSearchBtn" onclick="clearSearch()">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
+    <!-- Search & Filters -->
+    <section class="filter-section">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" class="search-input" placeholder="কোর্সের নাম, ক্যাটাগরি বা বিষয় লিখে খুঁজুন..." oninput="handleSearch()">
+        <i class="fa-solid fa-circle-xmark search-clear" id="clearSearchBtn" onclick="clearSearch()"></i>
       </div>
 
-      <!-- Link Filter for Teammates (Hidden from students) -->
-      <div class="link-filter-bar" id="linkFilterBar">
-        <span style="color: var(--text-muted); font-size: 0.78rem; font-weight: 600;">লিংক ফিল্টার:</span>
-        <button class="link-filter-btn active" id="filterAll" onclick="filterByLink('all')">সব কোর্স</button>
-        <button class="link-filter-btn" id="filterReady" onclick="filterByLink('ready')">✅ লিংক যুক্ত আছে</button>
-        <button class="link-filter-btn" id="filterMissing" onclick="filterByLink('missing')">⚠️ লিংক আপডেট বাকি</button>
-      </div>
-
-      <!-- Category Filter Chips -->
       <div class="category-chips" id="categoryChips">
-        <!-- Dynamically rendered -->
+        <!-- Injected via JS -->
       </div>
     </section>
 
-    <!-- Info & Count Bar -->
-    <div class="info-bar">
-      <div>
-        <span id="courseCount" class="badge-count">0</span> টি কোর্স পাওয়া গেছে
-      </div>
-      <div id="activeCategoryTitle" style="font-weight: 700; color: var(--text-main);">
-        সব কোর্স
-      </div>
+    <!-- Teammate Link Status Audit Bar -->
+    <div class="link-filter-bar" id="linkFilterBar">
+      <span>অ্যাফিলিয়েট লিংক ফিল্টার:</span>
+      <button class="link-pill active" id="filterAll" onclick="filterByLink('all')">সকল কোর্স</button>
+      <button class="link-pill" id="filterReady" onclick="filterByLink('ready')">✅ লিংক প্রস্তুত (<span id="readyLinkCount">0</span>)</button>
+      <button class="link-pill" id="filterMissing" onclick="filterByLink('missing')">⚠️ লিংক নেই (<span id="missingLinkCount">0</span>)</button>
     </div>
 
-    <!-- Courses Grid -->
+    <!-- Results Header -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+      <h3 style="font-size: 1.05rem; font-weight: 700;" id="activeCategoryTitle">কোর্স তালিকা</h3>
+      <span style="font-size: 0.85rem; color: var(--text-muted);"><span id="courseCount">0</span> টি কোর্স পাওয়া গেছে</span>
+    </div>
+
+    <!-- Course Grid -->
     <div class="courses-grid" id="coursesGrid">
-      <!-- Dynamically generated cards -->
+      <!-- Course Cards Injected via JS -->
     </div>
   </main>
 
-  <!-- Floating Add Course Button (for Manager Only) -->
-  <button class="fab-add" id="fabAdd" onclick="openAddCourseModal()" title="নতুন কোর্স যোগ করুন">
+  <!-- Floating Add Button (Manager Only) -->
+  <button class="fab" id="fabAdd" onclick="openAddCourseModal()" title="নতুন কোর্স যোগ করুন">
     <i class="fa-solid fa-plus"></i>
   </button>
 
-  <!-- Footer -->
-  <footer>
-    <div>© 2026 Learnova BD — Authorized 10 Minute School Affiliate Partner Hub</div>
-    <div class="footer-links">
-      <span class="footer-link" onclick="openSupportModal()"><i class="fa-brands fa-whatsapp"></i> কাস্টমার সাপোর্ট</span>
-      <span class="footer-link" onclick="openSecretLogin()"><i class="fa-solid fa-shield-halved"></i> পোর্টাল এক্সেস</span>
-    </div>
-  </footer>
-
-  <!-- Toast Message -->
-  <div id="toast">
-    <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
-    <span id="toastMsg">লিংক কপি হয়েছে!</span>
-  </div>
-
-  <!-- Secret Staff Login Modal (Unlocked by Double Click) -->
-  <div class="modal-backdrop" id="loginModal">
-    <div class="modal-box">
+  <!-- Staff Secret Login Modal -->
+  <div class="modal-overlay" id="secretLoginModal">
+    <div class="modal-card" style="max-width: 440px;">
       <div class="modal-header">
-        <h3 class="modal-title"><i class="fa-solid fa-lock" style="color: var(--primary);"></i> সিক্রেট পোর্টাল এক্সেস (Staff Login)</h3>
-        <button class="btn-icon" onclick="closeLoginModal()"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="modal-title"><i class="fa-solid fa-lock" style="color: var(--primary);"></i> স্টাফ অথেনটিকেশন</h3>
+        <button class="modal-close" onclick="closeSecretLogin()">&times;</button>
       </div>
       <form onsubmit="submitStaffLogin(event)">
-        <div class="form-group">
-          <label class="form-label">টিম অথবা ম্যানেজার পাসওয়ার্ড দিন *</label>
-          <input type="password" id="staffPasswordInput" class="form-control" placeholder="পাসওয়ার্ড লিখুন..." required autofocus>
-          <small style="color: var(--text-muted); font-size: 0.75rem; margin-top: 4px; display: block;">
-            টিম মেম্বারদের জন্য সেলস টুল এবং ম্যানেজারের জন্য পূর্ণ ড্যাশবোর্ড আনলক হবে।
-          </small>
+        <div class="modal-body">
+          <div style="text-align: center; margin-bottom: 6px;">
+            <p style="font-size: 0.9rem; color: var(--text-muted);">আপনার নাম অথবা পাসওয়ার্ড দিয়ে ওয়ার্কস্পেসে প্রবেশ করুন:</p>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">সদস্য নির্বাচন (ঐচ্ছিক):</label>
+            <select id="staffUserSelect" class="form-select" onchange="autoFillMemberHint()">
+              <option value="">-- মেম্বার সিলেক্ট করুন (বা সরাসরি পাসওয়ার্ড দিন) --</option>
+              <option value="tamzed">Tamzed Ahmmed</option>
+              <option value="mahathir">Mahathir Rubay</option>
+              <option value="jahid">Md. Jahid Hasan</option>
+              <option value="afrid">Afrid Ahmmed</option>
+              <option value="nasim">Nasim Reza</option>
+              <option value="manager">👑 Daloyar Hassan Shishir (Manager)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">গোপন পাসওয়ার্ড:</label>
+            <input type="password" id="staffPasswordInput" class="form-input" placeholder="পাসওয়ার্ড লিখুন..." required autofocus>
+            <small style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;" id="loginHintText">
+              টিমমেট বা ম্যানেজার পাসওয়ার্ড দিয়ে সরাসরি লগইন করুন।
+            </small>
+          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline" onclick="closeLoginModal()">বাতিল</button>
-          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket"></i> আনলক করুন</button>
+          <button type="button" class="btn btn-outline" onclick="closeSecretLogin()">বাতিল</button>
+          <button type="submit" class="btn btn-primary">লগইন করুন</button>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- Manager PIN Unlock Modal -->
-  <div class="modal-backdrop" id="managerAuthModal">
-    <div class="modal-box">
+  <!-- Manager Team Analytics & Leaderboard Modal -->
+  <div class="modal-overlay" id="analyticsModal">
+    <div class="modal-card" style="max-width: 720px;">
       <div class="modal-header">
-        <h3 class="modal-title"><i class="fa-solid fa-shield-halved" style="color: #e11d48;"></i> ম্যানেজার ভেরিফিকেশন (Manager Access)</h3>
-        <button class="btn-icon" onclick="closeManagerAuthModal()"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="modal-title"><i class="fa-solid fa-chart-pie" style="color: var(--primary);"></i> টিম পারফরম্যান্স ও ট্র্যাকিং ড্যাশবোর্ড</h3>
+        <button class="modal-close" onclick="closeAnalyticsModal()">&times;</button>
       </div>
-      <form onsubmit="submitManagerLogin(event)">
-        <div class="form-group">
-          <label class="form-label">ম্যানেজার সিক্রেট পাসওয়ার্ড বা পিন *</label>
-          <input type="password" id="managerPasswordInput" class="form-control" placeholder="ম্যানেজার পাসওয়ার্ড লিখুন..." required autofocus>
-          <small style="color: var(--text-muted); font-size: 0.75rem; margin-top: 4px; display: block;">
-            এই অংশটি শুধুমাত্র প্ল্যাটফর্ম ম্যানেজারের জন্য সংরক্ষিত।
-          </small>
+      <div class="modal-body">
+        <div class="analytics-tabs">
+          <button class="tab-btn active" id="tabBtnLeaderboard" onclick="switchAnalyticsTab('leaderboard')">🏆 টিম লিডারবোর্ড</button>
+          <button class="tab-btn" id="tabBtnLogs" onclick="switchAnalyticsTab('logs')">📋 লাইভ অডিট লগ (<span id="totalLogsBadge">0</span>)</button>
+          <button class="tab-btn" id="tabBtnTeamSettings" onclick="switchAnalyticsTab('settings')">🔑 মেম্বার পাসওয়ার্ড</button>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline" onclick="closeManagerAuthModal()">বাতিল</button>
-          <button type="submit" class="btn btn-primary" style="background: #e11d48;"><i class="fa-solid fa-key"></i> আনলক করুন</button>
+
+        <!-- Leaderboard Tab -->
+        <div id="analyticsTabLeaderboard">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">রিয়েল-টাইম পারফরম্যান্স র‍্যাঙ্কিং:</span>
+            <button class="btn-sm-icon" onclick="refreshAnalytics()" title="ডাটা রিফ্রেশ করুন" style="width: 28px; height: 28px; font-size: 0.75rem;">
+              <i class="fa-solid fa-rotate"></i>
+            </button>
+          </div>
+          <div class="leaderboard-grid" id="leaderboardGrid">
+            <!-- Injected via JS -->
+          </div>
         </div>
-      </form>
+
+        <!-- Audit Logs Feed Tab -->
+        <div id="analyticsTabLogs" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
+            <div style="display: flex; gap: 6px;">
+              <select id="logMemberFilter" class="form-select" style="padding: 4px 8px; font-size: 0.8rem;" onchange="renderAuditLogs()">
+                <option value="all">সকল সদস্য</option>
+                <option value="Tamzed Ahmmed">Tamzed Ahmmed</option>
+                <option value="Mahathir Rubay">Mahathir Rubay</option>
+                <option value="Md. Jahid Hasan">Md. Jahid Hasan</option>
+                <option value="Afrid Ahmmed">Afrid Ahmmed</option>
+                <option value="Nasim Reza">Nasim Reza</option>
+              </select>
+            </div>
+            <div style="display: flex; gap: 6px;">
+              <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.78rem; flex: none;" onclick="exportActivityLogsCSV()">
+                <i class="fa-solid fa-file-csv"></i> CSV এক্সপোর্ট
+              </button>
+              <button class="btn btn-outline" style="padding: 4px 10px; font-size: 0.78rem; color: var(--danger); border-color: var(--danger); flex: none;" onclick="clearAllLogs()">
+                <i class="fa-solid fa-trash"></i> লগ ক্লিয়ার
+              </button>
+            </div>
+          </div>
+          <div class="logs-table-container">
+            <table class="logs-table">
+              <thead>
+                <tr>
+                  <th>সময়</th>
+                  <th>সদস্য</th>
+                  <th>অ্যাকশন</th>
+                  <th>কোর্স</th>
+                  <th>অফার ফি</th>
+                </tr>
+              </thead>
+              <tbody id="auditLogsBody">
+                <!-- Logs injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Team Password Settings Tab -->
+        <div id="analyticsTabSettings" style="display: none;">
+          <div style="display: flex; flex-direction: column; gap: 12px;" id="teamPassManagerList">
+            <!-- Render Member Passwords -->
+          </div>
+          <hr style="border: 0; border-top: 1px solid var(--border); margin: 14px 0;">
+          <div class="form-group">
+            <label class="form-label"><i class="fa-brands fa-google-drive" style="color: var(--success);"></i> Google Sheets Webhook URL (ক্লাউড রিয়েলটাইম সিঙ্ক):</label>
+            <input type="url" id="cloudWebhookUrl" class="form-input" placeholder="https://script.google.com/macros/s/.../exec">
+            <small style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">
+              এখানে Google Apps Script Webhook বসালে সকল ডিভাইসের লগ স্বয়ংক্রিয়ভাবে আপনার গুগল শিটে সিঙ্ক হবে।
+            </small>
+            <button type="button" class="btn btn-primary" style="margin-top: 6px; padding: 6px 12px; font-size: 0.82rem;" onclick="saveCloudWebhookUrl()">
+              Webhook সেভ করুন
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="closeAnalyticsModal()">সম্পন্ন</button>
+      </div>
     </div>
   </div>
 
-  <!-- Course Edit / Add Modal (Manager Only) -->
-  <div class="modal-backdrop" id="courseModal">
-    <div class="modal-box">
+  <!-- Course Add / Edit Modal (Manager Only) -->
+  <div class="modal-overlay" id="courseModal">
+    <div class="modal-card">
       <div class="modal-header">
-        <h3 class="modal-title" id="modalTitle">কোর্স যোগ / এডিট (ম্যানেজার)</h3>
-        <button class="btn-icon" onclick="closeCourseModal()"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="modal-title" id="modalTitle">কোর্স সম্পাদনা</h3>
+        <button class="modal-close" onclick="closeCourseModal()">&times;</button>
       </div>
       <form id="courseForm" onsubmit="saveCourse(event)">
-        <input type="hidden" id="editCourseId">
-        
-        <div class="form-group">
-          <label class="form-label">ক্যাটেগরি *</label>
-          <select id="inputCategory" class="form-control" required>
-            <option value="Academic: SSC 27 & 28 Prep">Academic: SSC 27 & 28 Prep</option>
-            <option value="Academic: Online Batch (Class 6-10)">Academic: Online Batch (Class 6-10)</option>
-            <option value="Academic: HSC 28 Prep">Academic: HSC 28 Prep</option>
-            <option value="Academic: HSC 27 Prep">Academic: HSC 27 Prep</option>
-            <option value="Academic: HSC 26 Prep">Academic: HSC 26 Prep</option>
-            <option value="Academic: Admission Prep">Academic: Admission Prep</option>
-            <option value="English Language Courses">English Language Courses</option>
-            <option value="Skills & Freelancing">Skills & Freelancing</option>
-            <option value="Job Prep & Career">Job Prep & Career</option>
-            <option value="Islamic & Life Skills">Islamic & Life Skills</option>
-            <option value="Personal Development">Personal Development</option>
-          </select>
-        </div>
+        <div class="modal-body">
+          <input type="hidden" id="editCourseId">
 
-        <div class="form-group">
-          <label class="form-label">কোর্সের নাম *</label>
-          <input type="text" id="inputName" class="form-control" placeholder="যেমন: SSC 28 পূর্ণাঙ্গ প্রস্তুতি" required>
-        </div>
-
-        <div class="form-grid-2">
-          <div class="form-group">
-            <label class="form-label">মূল / নিয়মিত ফি (৳)</label>
-            <input type="number" id="inputOrigPrice" class="form-control" placeholder="13000">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">ক্যাটাগরি:</label>
+              <select id="inputCategory" class="form-select" required>
+                <option value="Academic: SSC 27 & 28 Prep">Academic: SSC 27 & 28 Prep</option>
+                <option value="Academic: HSC 27 & 28 Prep">Academic: HSC 27 & 28 Prep</option>
+                <option value="Admission Preparation">Admission Preparation</option>
+                <option value="English & Language">English & Language</option>
+                <option value="Skills & Professional">Skills & Professional</option>
+                <option value="Kids & Foundation">Kids & Foundation</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">প্রোমো কোড (স্টাফদের জন্য):</label>
+              <input type="text" id="inputPromo" class="form-input" placeholder="e.g. ssc28all">
+            </div>
           </div>
+
           <div class="form-group">
-            <label class="form-label">অফার ফি / মূল্য (৳) *</label>
-            <input type="number" id="inputPrice" class="form-control" placeholder="5350" oninput="calculateCommission()" required>
+            <label class="form-label">কোর্সের সম্পূর্ণ নাম:</label>
+            <input type="text" id="inputName" class="form-input" placeholder="কোর্সের শিরোনাম লিখুন" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">নিয়মিত / মূল ফি (Original Price ৳):</label>
+              <input type="number" id="inputOrigPrice" class="form-input" placeholder="e.g. 13000">
+            </div>
+            <div class="form-group">
+              <label class="form-label">অফার ফি (Offer Price ৳):</label>
+              <input type="number" id="inputPrice" class="form-input" placeholder="e.g. 5350" required oninput="calculateCommission()">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">কমিশন (15% ৳):</label>
+              <input type="number" id="inputCommission" class="form-input" readonly>
+            </div>
+            <div class="form-group">
+              <label class="form-label">ক্যাশব্যাক (৳):</label>
+              <input type="number" id="inputCashback" class="form-input" value="0">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">১০ মিনিট স্কুল অ্যাফিলিয়েট লিংক (10ms.io/...):</label>
+            <input type="url" id="inputLink" class="form-input" placeholder="https://10ms.io/...">
           </div>
         </div>
-
-        <div class="form-grid-2">
-          <div class="form-group">
-            <label class="form-label">প্রোমো কোড (টিম প্যানেলের জন্য)</label>
-            <input type="text" id="inputPromo" class="form-control" placeholder="যেমন: ssc27beismp">
-          </div>
-          <div class="form-group">
-            <label class="form-label">প্রস্তাবিত ক্যাশব্যাক (৳)</label>
-            <input type="number" id="inputCashback" class="form-control" placeholder="100" oninput="calculateCommission()">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">কমিশন (15%) ৳</label>
-          <input type="number" id="inputCommission" class="form-control" placeholder="802.5" readonly>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">আপনার নিজস্ব অ্যাফিলিয়েট লিংক (https://10ms.io/...) *</label>
-          <input type="url" id="inputLink" class="form-control" placeholder="https://10ms.io/XXXXX" required>
-        </div>
-
         <div class="modal-footer">
           <button type="button" class="btn btn-outline" onclick="closeCourseModal()">বাতিল</button>
-          <button type="submit" class="btn btn-primary">সেভ করুন</button>
+          <button type="submit" class="btn btn-primary">সংরক্ষণ করুন</button>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- Manager / Settings Modal (Manager Only) -->
-  <div class="modal-backdrop" id="adminModal">
-    <div class="modal-box">
+  <!-- Manager Settings & Sync Modal -->
+  <div class="modal-overlay" id="adminModal">
+    <div class="modal-card">
       <div class="modal-header">
-        <h3 class="modal-title"><i class="fa-solid fa-shield-halved" style="color: #e11d48;"></i> ম্যানেজার ড্যাশবোর্ড ও সেটিংস</h3>
-        <button class="btn-icon" onclick="closeAdminModal()"><i class="fa-solid fa-xmark"></i></button>
+        <h3 class="modal-title"><i class="fa-solid fa-crown" style="color: #f59e0b;"></i> ম্যানেজার কনসোল (Daloyar Hassan Shishir)</h3>
+        <button class="modal-close" onclick="closeAdminModal()">&times;</button>
       </div>
-      
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-        <!-- Password Controls -->
-        <div style="background: var(--bg); padding: 14px; border-radius: 10px; border: 1px solid var(--border);">
-          <div style="font-weight: 700; font-size: 0.92rem; margin-bottom: 8px;">
-            <i class="fa-solid fa-key" style="color: var(--warning);"></i> পাসওয়ার্ড নিয়ন্ত্রণ (Password Controls)
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 8px;">
-            <div>
-              <label style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">টিম পাসওয়ার্ড (Teammates Pass):</label>
-              <div style="display: flex; gap: 6px; margin-top: 2px;">
-                <input type="text" id="newTeamPasswordInput" class="form-control" placeholder="টিম পাসওয়ার্ড...">
-                <button class="btn btn-outline" onclick="changeTeamPassword()" style="flex: 0 0 auto; padding: 6px 12px; font-size: 0.8rem;">Update</button>
-              </div>
-            </div>
-            <div>
-              <label style="font-size: 0.78rem; font-weight: 600; color: var(--text-muted);">ম্যানেজার পাসওয়ার্ড (Manager Pass):</label>
-              <div style="display: flex; gap: 6px; margin-top: 2px;">
-                <input type="text" id="newManagerPasswordInput" class="form-control" placeholder="ম্যানেজার পাসওয়ার্ড...">
-                <button class="btn btn-primary" onclick="changeManagerPassword()" style="flex: 0 0 auto; padding: 6px 12px; font-size: 0.8rem;">Update</button>
-              </div>
-            </div>
-          </div>
+      <div class="modal-body">
+        <div style="background: var(--primary-light); padding: 12px; border-radius: 8px; border: 1px solid rgba(14,131,125,0.2);">
+          <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 4px;">👑 ম্যানেজার এক্সেস সক্রিয়</h4>
+          <p style="font-size: 0.82rem; color: var(--text-muted);">আপনি সম্পূর্ণ ডাটাবেজ নিয়ন্ত্রণ, টিম এনালিটিক্স ও গুগল শিট সিঙ্ক পরিচালনা করছেন।</p>
         </div>
 
-        <!-- Sync with Google Sheets -->
-        <div style="background: var(--bg); padding: 14px; border-radius: 10px; border: 1px solid var(--border);">
-          <div style="font-weight: 700; font-size: 0.92rem; margin-bottom: 4px;">
-            <i class="fa-brands fa-google-drive" style="color: #0f9d58;"></i> গুগল শিট অটো-সিঙ্ক (Google Sheets Live Sync)
-          </div>
-          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">
-            আপনার গুগল শিট 'Publish to Web' করে CSV লিংক এখানে পেস্ট করলে সবার কাছে তথ্য স্বয়ংক্রিয়ভাবে আপডেট হবে।
-          </div>
-          <div style="display: flex; gap: 8px;">
-            <input type="url" id="sheetSyncUrl" class="form-control" placeholder="https://docs.google.com/.../pub?output=csv">
-            <button class="btn btn-primary" onclick="syncFromGoogleSheet()" style="flex: 0 0 auto;">Sync</button>
-          </div>
-        </div>
-
-        <!-- Backup & Restore -->
-        <div style="background: var(--bg); padding: 14px; border-radius: 10px; border: 1px solid var(--border);">
-          <div style="font-weight: 700; font-size: 0.92rem; margin-bottom: 4px;">
-            <i class="fa-solid fa-download"></i> ব্যাকআপ ও এক্সপোর্ট (Backup & Export)
-          </div>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;">
-            <button class="btn btn-outline" onclick="exportData('csv')">
-              <i class="fa-solid fa-file-csv"></i> Download CSV
-            </button>
-            <button class="btn btn-outline" onclick="exportData('json')">
-              <i class="fa-solid fa-file-code"></i> Download JSON
-            </button>
-            <button class="btn btn-primary" onclick="openAddCourseModal(); closeAdminModal();">
-              <i class="fa-solid fa-plus"></i> নতুন কোর্স যোগ
-            </button>
-          </div>
-        </div>
-
-        <!-- Reset to Default (Protected) -->
-        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 8px;">
-          <button class="btn btn-outline" style="border-color: var(--danger); color: var(--danger);" onclick="resetToDefault()">
-            <i class="fa-solid fa-rotate-left"></i> রিসেট মাস্টার ডাটা
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+          <button class="btn btn-primary" onclick="closeAdminModal(); openAnalyticsModal();">
+            <i class="fa-solid fa-chart-line"></i> টিম এনালিটিক্স ও লিডারবোর্ড
           </button>
-          <button class="btn btn-primary" onclick="closeAdminModal()">সম্পন্ন</button>
+          <button class="btn btn-outline" onclick="exportData('csv')">
+            <i class="fa-solid fa-file-csv"></i> কোর্স ক্যাটালগ CSV ডাউনলোড
+          </button>
         </div>
+
+        <hr style="border: 0; border-top: 1px solid var(--border);">
+
+        <!-- Google Sheets Auto-Sync -->
+        <div class="form-group">
+          <label class="form-label">Google Sheets লাইভ সিঙ্ক (Published CSV URL):</label>
+          <input type="url" id="sheetSyncUrl" class="form-input" placeholder="https://docs.google.com/spreadsheets/d/.../pub?output=csv">
+          <div style="display: flex; gap: 8px; margin-top: 8px;">
+            <button class="btn btn-primary" onclick="syncFromGoogleSheet()">
+              <i class="fa-solid fa-arrows-rotate"></i> গুগল শিট থেকে সিঙ্ক করুন
+            </button>
+          </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid var(--border);">
+
+        <!-- Master Reset -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <div style="font-size: 0.9rem; font-weight: 700; color: var(--danger);">মাস্টার ডাটা রিসেট</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);">সকল কোর্স ডিফল্ট মাস্টার ক্যাটালগে ফিরিয়ে নিন</div>
+          </div>
+          <button class="btn btn-outline" style="color: var(--danger); border-color: var(--danger); flex: none;" onclick="resetToDefault()">
+            <i class="fa-solid fa-rotate-left"></i> রিসেট
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" onclick="closeAdminModal()">বন্ধ করুন</button>
       </div>
     </div>
   </div>
 
-  <script>
-    // Initial Master Dataset
-    const DEFAULT_COURSES = [{"id": 1, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 27 বিজ্ঞান বিভাগ + BEI + SMP (কমপ্লিট বান্ডেল)", "original_price": 13000.0, "price": 5350.0, "savings": 7650.0, "promo": "ssc27beismp", "commission": 802.5, "cashback": 200, "profit": 602.5, "link": "https://10ms.io/RKlRqu"}, {"id": 2, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 28 পূর্ণাঙ্গ প্রস্তুতি (Class 9-10 Complete Online Batch)", "original_price": 29000.0, "price": 19000.0, "savings": 10000.0, "promo": "SSC282YEAR", "commission": 2850.0, "cashback": 800, "profit": 2050.0, "link": "https://10ms.io/IKlR5j"}, {"id": 3, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি কোর্স [বিজ্ঞান বিভাগ]", "original_price": 3000.0, "price": 2250.0, "savings": 750.0, "promo": "ssc27smp", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/3KlR9t"}, {"id": 4, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি কোর্স [ব্যবসায় শিক্ষা বিভাগ]", "original_price": 3000.0, "price": 2250.0, "savings": 750.0, "promo": "ssc27smp", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/RKlRXg"}, {"id": 5, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি কোর্স [মানবিক বিভাগ]", "original_price": 3000.0, "price": 2250.0, "savings": 750.0, "promo": "ssc27smp", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/nKlRJn"}, {"id": 6, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি BEIM কোর্স [বাংলা, ইংরেজি, ICT, সা.গণিত]", "original_price": 2500.0, "price": 1800.0, "savings": 700.0, "promo": "27smpbei", "commission": 270.0, "cashback": 70, "profit": 200.0, "link": "https://10ms.io/BKlRnb"}, {"id": 7, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC টেস্ট পেপার সলভ কোর্স (Physics, Chemistry, Biology, Higher Math)", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFF10SSTPP", "commission": 128.25, "cashback": 35, "profit": 93.25, "link": "https://10ms.io/bKlR2u"}, {"id": 8, "category": "Academic: Online Batch (Class 6-10)", "name": "ষষ্ঠ - অষ্টম শ্রেণি অনলাইন ব্যাচ (১ মাস)", "original_price": 3500.0, "price": 2500.0, "savings": 1000.0, "promo": "", "commission": 375.0, "cashback": 100, "profit": 275.0, "link": "https://10ms.io/rKlRa6"}, {"id": 9, "category": "Academic: Online Batch (Class 6-10)", "name": "ষষ্ঠ - অষ্টম শ্রেণি অনলাইন ব্যাচ (সম্পূর্ণ বছর)", "original_price": 13000.0, "price": 6000.0, "savings": 7000.0, "promo": "", "commission": 900.0, "cashback": 250, "profit": 650.0, "link": "https://10ms.io/MKlR1x"}, {"id": 10, "category": "Academic: Online Batch (Class 6-10)", "name": "অষ্টম শ্রেণি - বার্ষিক ও বৃত্তি পরীক্ষা প্রস্তুতি ২০২৬", "original_price": 13000.0, "price": 5350.0, "savings": 7650.0, "promo": "oppbpp26", "commission": 802.5, "cashback": 200, "profit": 602.5, "link": "https://10ms.io/bKlRNw"}, {"id": 11, "category": "Academic: Online Batch (Class 6-10)", "name": "নবম শ্রেণি - অনলাইন ব্যাচ [বিজ্ঞান বিভাগ - সম্পূর্ণ বছর + BEI]", "original_price": 16000.0, "price": 8000.0, "savings": 8000.0, "promo": "", "commission": 1200.0, "cashback": 400, "profit": 800.0, "link": "https://10ms.io/AKlRCJ"}, {"id": 12, "category": "Academic: Online Batch (Class 6-10)", "name": "নবম শ্রেণি - অনলাইন ব্যাচ [বিজ্ঞান বিভাগ - সম্পূর্ণ বছর]", "original_price": 12000.0, "price": 6000.0, "savings": 6000.0, "promo": "", "commission": 900.0, "cashback": 250, "profit": 650.0, "link": "https://10ms.io/FKlR4A"}, {"id": 13, "category": "Academic: Online Batch (Class 6-10)", "name": "নবম শ্রেণি - অনলাইন ব্যাচ [ব্যবসায় শিক্ষা বিভাগ - সম্পূর্ণ বছর]", "original_price": 9000.0, "price": 4500.0, "savings": 4500.0, "promo": "", "commission": 675.0, "cashback": 200, "profit": 475.0, "link": "https://10ms.io/6KlRj1"}, {"id": 14, "category": "Academic: Online Batch (Class 6-10)", "name": "নবম শ্রেণি - বাংলা, ইংরেজি ও আইসিটি (BEI) অনলাইন ব্যাচ", "original_price": 6000.0, "price": 3500.0, "savings": 2500.0, "promo": "", "commission": 525.0, "cashback": 150, "profit": 375.0, "link": "https://10ms.io/sKlRF7"}, {"id": 15, "category": "Academic: Online Batch (Class 6-10)", "name": "দশম শ্রেণি - অনলাইন ব্যাচ [বিজ্ঞান বিভাগ + BEI]", "original_price": 12000.0, "price": 6000.0, "savings": 6000.0, "promo": "", "commission": 900.0, "cashback": 250, "profit": 650.0, "link": "https://10ms.io/DKlROn"}, {"id": 16, "category": "Academic: Online Batch (Class 6-10)", "name": "দশম শ্রেণি - অনলাইন ব্যাচ [বিজ্ঞান বিভাগ]", "original_price": 9000.0, "price": 4500.0, "savings": 4500.0, "promo": "", "commission": 675.0, "cashback": 200, "profit": 475.0, "link": "https://10ms.io/yKlRHv"}, {"id": 17, "category": "Academic: Online Batch (Class 6-10)", "name": "দশম শ্রেণি - বাংলা, ইংরেজি ও আইসিটি (BEI) অনলাইন ব্যাচ", "original_price": 6000.0, "price": 3500.0, "savings": 2500.0, "promo": "", "commission": 525.0, "cashback": 150, "profit": 375.0, "link": "https://10ms.io/4KlRzs"}, {"id": 18, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ (PCMB Cycle 1-4 + BEI Bundle)", "original_price": 26000.0, "price": 14000.0, "savings": 12000.0, "promo": "hsc28bundle", "commission": 2100.0, "cashback": 600, "profit": 1500.0, "link": "https://10ms.io/fKNwZj"}, {"id": 19, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ PCMB (Cycle 1-4)", "original_price": 20000.0, "price": 10000.0, "savings": 10000.0, "promo": "hsc28pcmb4", "commission": 1500.0, "cashback": 450, "profit": 1050.0, "link": "https://10ms.io/xKNwL3"}, {"id": 20, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ PCMB (Cycle 1-2)", "original_price": 10000.0, "price": 5400.0, "savings": 4600.0, "promo": "hsc28pcmb2", "commission": 810.0, "cashback": 250, "profit": 560.0, "link": "https://10ms.io/XKNwKc"}, {"id": 21, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ PCMB (Cycle 1)", "original_price": 5000.0, "price": 4000.0, "savings": 1000.0, "promo": "hsc28pcmb1", "commission": 600.0, "cashback": 200, "profit": 400.0, "link": "https://10ms.io/wKNwtN"}, {"id": 22, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ (বাংলা, ইংরেজি, তথ্য ও যোগাযোগ প্রযুক্তি - BEI)", "original_price": 6000.0, "price": 4500.0, "savings": 1500.0, "promo": "hsc28bei", "commission": 675.0, "cashback": 200, "profit": 475.0, "link": "https://10ms.io/QKB6EL"}, {"id": 23, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - ইংরেজি", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "hsc28eng", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/tKB6lJ"}, {"id": 24, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - বাংলা", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "hsc28ban", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/IKNeDq"}, {"id": 25, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - ICT", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "hsc28ict", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/bKNeEN"}, {"id": 26, "category": "Academic: HSC 28 Prep", "name": "HSC 28 ইংরেজি প্রথম পত্র: মাস্টার বুক", "original_price": 650.0, "price": 450.0, "savings": 200.0, "promo": "", "commission": 67.5, "cashback": 20, "profit": 47.5, "link": "https://10ms.io/vKB6sW"}, {"id": 27, "category": "Academic: HSC 28 Prep", "name": "HSC 28 ইংরেজি দ্বিতীয় পত্র: মাস্টার বুক", "original_price": 650.0, "price": 450.0, "savings": 200.0, "promo": "", "commission": 67.5, "cashback": 20, "profit": 47.5, "link": "https://10ms.io/PKB6b7"}, {"id": 28, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - বায়োলজি Cycle 1-4", "original_price": 10000.0, "price": 5000.0, "savings": 5000.0, "promo": "hsc28bio4", "commission": 750.0, "cashback": 250, "profit": 500.0, "link": "https://10ms.io/TKNerY"}, {"id": 29, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - বায়োলজি Cycle 1-2", "original_price": 5000.0, "price": 2750.0, "savings": 2250.0, "promo": "hsc28bio2", "commission": 412.5, "cashback": 120, "profit": 292.5, "link": "https://10ms.io/TKNewp"}, {"id": 30, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - বায়োলজি Cycle 1", "original_price": 2500.0, "price": 1500.0, "savings": 1000.0, "promo": "hsc28bio1", "commission": 225.0, "cashback": 70, "profit": 155.0, "link": "https://10ms.io/UKNeea"}, {"id": 31, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ (জিওগ্রাফি, ইকোনমিক্স, পৌরনীতি)", "original_price": 8000.0, "price": 4000.0, "savings": 4000.0, "promo": "hsc28arts", "commission": 600.0, "cashback": 200, "profit": 400.0, "link": "https://10ms.io/QKNeTX"}, {"id": 32, "category": "Academic: HSC 28 Prep", "name": "HSC 28 জিওগ্রাফি, ইকোনমিক্স, পৌরনীতি + BEI প্যাকেজ", "original_price": 14000.0, "price": 7500.0, "savings": 6500.0, "promo": "hsc28artsbei", "commission": 1125.0, "cashback": 350, "profit": 775.0, "link": "https://10ms.io/aKNeUp"}, {"id": 33, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - ইকোনমিক্স", "original_price": 4000.0, "price": 2250.0, "savings": 1750.0, "promo": "", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/7KNeAv"}, {"id": 34, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - পৌরনীতি", "original_price": 4000.0, "price": 2250.0, "savings": 1750.0, "promo": "", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/sKNeDL"}, {"id": 35, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - জিওগ্রাফি", "original_price": 4000.0, "price": 2250.0, "savings": 1750.0, "promo": "", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/JKNeXb"}, {"id": 36, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle", "original_price": 21000.0, "price": 11500.0, "savings": 9500.0, "promo": "hsc27bundle", "commission": 1725.0, "cashback": 500, "profit": 1225.0, "link": "https://10ms.io/5KNe80"}, {"id": 37, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB (Cycle 1-4) Online Batch", "original_price": 16000.0, "price": 8000.0, "savings": 8000.0, "promo": "hsc27pcmb4", "commission": 1200.0, "cashback": 400, "profit": 800.0, "link": "https://10ms.io/3KNe9a"}, {"id": 38, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB (Cycle 1-3) Online Batch", "original_price": 10000.0, "price": 5000.0, "savings": 5000.0, "promo": "hsc27cyc3", "commission": 750.0, "cashback": 250, "profit": 500.0, "link": "https://10ms.io/xKNe1t"}, {"id": 39, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB Cycle 1-4 (১ম + ২য় পত্র)", "original_price": 6000.0, "price": 3000.0, "savings": 3000.0, "promo": "hsc27cyc4", "commission": 450.0, "cashback": 150, "profit": 300.0, "link": "https://10ms.io/IKNeBf"}, {"id": 40, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB Cycle 1-2 (১ম ও ২য় পত্রের নির্দিষ্ট অধ্যায়)", "original_price": 4000.0, "price": 2100.0, "savings": 1900.0, "promo": "hsc27cyc2", "commission": 315.0, "cashback": 100, "profit": 215.0, "link": "https://10ms.io/TKNe7k"}, {"id": 41, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB Cycle 1 (শুধু ১ম পত্রের নির্বাচিত অধ্যায়)", "original_price": 2500.0, "price": 1500.0, "savings": 1000.0, "promo": "hsc27cyc1", "commission": 225.0, "cashback": 70, "profit": 155.0, "link": "https://10ms.io/wKNe4j"}, {"id": 42, "category": "Academic: HSC 27 Prep", "name": "HSC 27 BEI 2.0 (বাংলা, ইংরেজি, তথ্য ও যোগাযোগ প্রযুক্তি)", "original_price": 6000.0, "price": 4500.0, "savings": 1500.0, "promo": "hsc27bei2", "commission": 675.0, "cashback": 200, "profit": 475.0, "link": "https://10ms.io/JHPjXP"}, {"id": 43, "category": "Academic: HSC 27 Prep", "name": "HSC 27 BEI Individual Subjects 2.0 (সম্পূর্ণ সিলেবাস)", "original_price": 3000.0, "price": 2250.0, "savings": 750.0, "promo": "hSC27b2", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/eKNe7L"}, {"id": 44, "category": "Academic: HSC 27 Prep", "name": "HSC 27 বাংলা (ব্যাচ ১ - সম্পূর্ণ সিলেবাস)", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "HSC27B1", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/TKNe6R"}, {"id": 45, "category": "Academic: HSC 27 Prep", "name": "HSC 27 ইংরেজি (ব্যাচ ১ - সম্পূর্ণ সিলেবাস)", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "HSC27B1", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/TKNe6R"}, {"id": 46, "category": "Academic: HSC 27 Prep", "name": "HSC 27 ICT (ব্যাচ ১ - সম্পূর্ণ সিলেবাস)", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "HSC27B1", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/TKNe6R"}, {"id": 47, "category": "Academic: HSC 27 Prep", "name": "HSC 27 ফাইন্যান্স ও অ্যাকাউন্টিং কমপ্লিট প্যাকেজ", "original_price": 8000.0, "price": 3100.0, "savings": 4900.0, "promo": "HSC27BUSB", "commission": 465.0, "cashback": 150, "profit": 315.0, "link": "https://10ms.io/JKNeM4"}, {"id": 48, "category": "Academic: HSC 27 Prep", "name": "HSC 27 জিওগ্রাফি ও ইকোনমিক্স কমপ্লিট প্যাকেজ", "original_price": 8000.0, "price": 3100.0, "savings": 4900.0, "promo": "HSC27ARTSB", "commission": 465.0, "cashback": 150, "profit": 315.0, "link": "https://10ms.io/qKNePj"}, {"id": 49, "category": "Academic: HSC 27 Prep", "name": "HSC 27 ফাইন্যান্স ও অ্যাকাউন্টিং + BEI প্যাকেজ", "original_price": 14000.0, "price": 6300.0, "savings": 7700.0, "promo": "BUSHSC27BEI", "commission": 945.0, "cashback": 300, "profit": 645.0, "link": "https://10ms.io/JKNeM4"}, {"id": 50, "category": "Academic: HSC 27 Prep", "name": "HSC 27 জিওগ্রাফি ও ইকোনমিক্স + BEI প্যাকেজ", "original_price": 14000.0, "price": 6300.0, "savings": 7700.0, "promo": "ARTSHSC27BEI", "commission": 945.0, "cashback": 300, "profit": 645.0, "link": "https://10ms.io/cHPjFx"}, {"id": 51, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Finance, Accounting, Geography & Economics (Complete)", "original_price": 4000.0, "price": 1800.0, "savings": 2200.0, "promo": "HSC27FAGE", "commission": 270.0, "cashback": 70, "profit": 200.0, "link": "https://10ms.io/JKNeM4"}, {"id": 52, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Management 2.0 / Marketing 2.0 / Civics / Economics", "original_price": 4000.0, "price": 2250.0, "savings": 1750.0, "promo": "hsc27arts2", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/qKNePj"}, {"id": 53, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Management & Marketing Bundle", "original_price": 8000.0, "price": 4000.0, "savings": 4000.0, "promo": "hsc27bndl2", "commission": 600.0, "cashback": 200, "profit": 400.0, "link": "https://10ms.io/JKNeM4"}, {"id": 54, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Civics & Economics Bundle", "original_price": 8000.0, "price": 4000.0, "savings": 4000.0, "promo": "hsc27bndl2", "commission": 600.0, "cashback": 200, "profit": 400.0, "link": "https://10ms.io/qKNePj"}, {"id": 55, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Management & Marketing + BEI Bundle", "original_price": 14000.0, "price": 7500.0, "savings": 6500.0, "promo": "hsc27bndlbei2", "commission": 1125.0, "cashback": 350, "profit": 775.0, "link": "https://10ms.io/JKNeM4"}, {"id": 56, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Civics & Economics + BEI Bundle", "original_price": 14000.0, "price": 7500.0, "savings": 6500.0, "promo": "hsc27bndlbei2", "commission": 1125.0, "cashback": 350, "profit": 775.0, "link": "https://10ms.io/qKNePj"}, {"id": 57, "category": "Academic: HSC 26 Prep", "name": "HSC 26 PCMB (Cycle 1-4) + BEI 2.0 Bundle", "original_price": 12000.0, "price": 8000.0, "savings": 4000.0, "promo": "HSC26BUNDLE", "commission": 1200.0, "cashback": 400, "profit": 800.0, "link": "https://10ms.io/fKNwZj"}, {"id": 58, "category": "Academic: HSC 26 Prep", "name": "HSC 26 PCMB (Cycle 1-4) Online Batch", "original_price": 6000.0, "price": 4500.0, "savings": 1500.0, "promo": "HSC26PCMB4", "commission": 675.0, "cashback": 200, "profit": 475.0, "link": "https://10ms.io/xKNwL3"}, {"id": 59, "category": "Academic: HSC 26 Prep", "name": "HSC 26 PCMB (Cycle 1-2) + লেকচার শিট", "original_price": 8400.0, "price": 5500.0, "savings": 2900.0, "promo": "HSC26pcmb12", "commission": 825.0, "cashback": 250, "profit": 575.0, "link": "https://10ms.io/XKNwKc"}, {"id": 60, "category": "Academic: HSC 26 Prep", "name": "HSC 26 BEI 2.0 Complete Package", "original_price": 6000.0, "price": 4000.0, "savings": 2000.0, "promo": "HSC26BEI20", "commission": 600.0, "cashback": 200, "profit": 400.0, "link": "https://10ms.io/QKB6EL"}, {"id": 61, "category": "Academic: HSC 26 Prep", "name": "HSC 26 English: ব্যাচ ২ (সম্পূর্ণ সিলেবাস)", "original_price": 2000.0, "price": 1500.0, "savings": 500.0, "promo": "HSC26B", "commission": 225.0, "cashback": 75, "profit": 150.0, "link": "https://10ms.io/tKB6lJ"}, {"id": 62, "category": "Academic: HSC 26 Prep", "name": "HSC 26 Science Individual subjects (Cycle 1-4)", "original_price": 2500.0, "price": 1500.0, "savings": 1000.0, "promo": "-", "commission": 225.0, "cashback": 75, "profit": 150.0, "link": "https://10ms.io/UKNeea"}, {"id": 63, "category": "Academic: HSC 26 Prep", "name": "HSC 26 শেষ মুহূর্তের প্রস্তুতি - বিজ্ঞান বিভাগ Bundle", "original_price": 3900.0, "price": 2400.0, "savings": 1500.0, "promo": "SMP26SCI", "commission": 360.0, "cashback": 100, "profit": 260.0, "link": "https://10ms.io/cKXqKZ"}, {"id": 64, "category": "Academic: HSC 26 Prep", "name": "HSC 26 শেষ মুহূর্তের প্রস্তুতি - ব্যবসায় শিক্ষা Bundle", "original_price": 3300.0, "price": 2200.0, "savings": 1100.0, "promo": "SMP26BUS", "commission": 330.0, "cashback": 100, "profit": 230.0, "link": "https://10ms.io/pKXqSa"}, {"id": 65, "category": "Academic: HSC 26 Prep", "name": "HSC 26 শেষ মুহূর্তের প্রস্তুতি - মানবিক বিভাগ Bundle", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "SMP26ARTS", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/BKXqGX"}, {"id": 66, "category": "Academic: HSC 26 Prep", "name": "HSC 26 শেষ মুহূর্তের প্রস্তুতি - বাংলা, ইংরেজি, ICT", "original_price": 1500.0, "price": 900.0, "savings": 600.0, "promo": "SMP26BEI", "commission": 135.0, "cashback": 35, "profit": 100.0, "link": "https://10ms.io/QKB6EL"}, {"id": 67, "category": "Academic: Admission Prep", "name": "ভার্সিটি A Unit + গুচ্ছ এডমিশন কোর্স - ২০২৬", "original_price": 5000.0, "price": 3500.0, "savings": 1500.0, "promo": "adm2026", "commission": 525.0, "cashback": 150, "profit": 375.0, "link": "https://10ms.io/UKlRs1"}, {"id": 68, "category": "Academic: Admission Prep", "name": "ভার্সিটি B Unit + গুচ্ছ এডমিশন কোর্স - ২০২৬", "original_price": 5000.0, "price": 3500.0, "savings": 1500.0, "promo": "adm2026", "commission": 525.0, "cashback": 150, "profit": 375.0, "link": "https://10ms.io/VKlReR"}, {"id": 69, "category": "Academic: Admission Prep", "name": "ভার্সিটি C Unit + গুচ্ছ এডমিশন কোর্স - ২০২৬", "original_price": 5000.0, "price": 3500.0, "savings": 1500.0, "promo": "adm2026", "commission": 525.0, "cashback": 150, "profit": 375.0, "link": "https://10ms.io/zKlR4j"}, {"id": 70, "category": "Academic: Admission Prep", "name": "ভার্সিটি A Unit এডমিশন কোর্স - ২০২৫", "original_price": 5000.0, "price": 2500.0, "savings": 2500.0, "promo": "ADM2025", "commission": 375.0, "cashback": 100, "profit": 275.0, "link": "https://10ms.io/UKlRs1"}, {"id": 71, "category": "Academic: Admission Prep", "name": "ভার্সিটি B Unit এডমিশন কোর্স - ২০২৫", "original_price": 5000.0, "price": 2500.0, "savings": 2500.0, "promo": "ADM2025", "commission": 375.0, "cashback": 100, "profit": 275.0, "link": "https://10ms.io/VKlReR"}, {"id": 72, "category": "Academic: Admission Prep", "name": "ভার্সিটি C Unit এডমিশন কোর্স - ২০২৫", "original_price": 5000.0, "price": 2500.0, "savings": 2500.0, "promo": "ADM2025", "commission": 375.0, "cashback": 100, "profit": 275.0, "link": "https://10ms.io/zKlR4j"}, {"id": 73, "category": "Academic: Admission Prep", "name": "মেডিকেল এডমিশন কোর্স - ২০২৫", "original_price": 6500.0, "price": 5500.0, "savings": 1000.0, "promo": "ADM2025MED", "commission": 825.0, "cashback": 250, "profit": 575.0, "link": "https://10ms.io/AKlRy4"}, {"id": 74, "category": "Academic: Admission Prep", "name": "মেডিকেল এডমিশন কোর্স (With Private Teacher)", "original_price": 7500.0, "price": 6000.0, "savings": 1500.0, "promo": "medicaladm24wpt", "commission": 900.0, "cashback": 250, "profit": 650.0, "link": "https://10ms.io/AKlRy4"}, {"id": 75, "category": "Academic: Admission Prep", "name": "Medical Admission Question Solve Course", "original_price": 1250.0, "price": 850.0, "savings": 400.0, "promo": "medicaladqs", "commission": 127.5, "cashback": 35, "profit": 92.5, "link": "https://10ms.io/AKlRy4"}, {"id": 76, "category": "Academic: Admission Prep", "name": "ঢাবি-ক (DU A Unit) কোশ্চেন সলভ কোর্স", "original_price": 1250.0, "price": 850.0, "savings": 400.0, "promo": "dhabiqs", "commission": 127.5, "cashback": 35, "profit": 92.5, "link": "https://10ms.io/UKlRs1"}, {"id": 77, "category": "Academic: Admission Prep", "name": "গুচ্ছ (GST) A Unit এডমিশন কোর্স", "original_price": 2500.0, "price": 1800.0, "savings": 700.0, "promo": "adm24gst", "commission": 270.0, "cashback": 80, "profit": 190.0, "link": "https://10ms.io/UKlRs1"}, {"id": 78, "category": "Academic: Admission Prep", "name": "গুচ্ছ (GST) B Unit এডমিশন কোর্স", "original_price": 2500.0, "price": 1800.0, "savings": 700.0, "promo": "adm24gst", "commission": 270.0, "cashback": 80, "profit": 190.0, "link": "https://10ms.io/VKlReR"}, {"id": 79, "category": "Academic: Admission Prep", "name": "গুচ্ছ (GST) C Unit এডমিশন কোর্স", "original_price": 2500.0, "price": 1800.0, "savings": 700.0, "promo": "adm24gst", "commission": 270.0, "cashback": 80, "profit": 190.0, "link": "https://10ms.io/zKlR4j"}, {"id": 80, "category": "English Language Courses", "name": "ঘরে বসে Spoken English (Munzereen Shahid)", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "affgbse1690", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/6HUFWk"}, {"id": 81, "category": "English Language Courses", "name": "IELTS Course by Munzereen Shahid", "original_price": 5000.0, "price": 3000.0, "savings": 2000.0, "promo": "IELTS3600", "commission": 450.0, "cashback": 150, "profit": 300.0, "link": "https://10ms.io/xHUGfm"}, {"id": 82, "category": "English Language Courses", "name": "IELTS Live Batch", "original_price": 10000.0, "price": 7000.0, "savings": 3000.0, "promo": "ieltslive", "commission": 1050.0, "cashback": 300, "profit": 750.0, "link": "https://10ms.io/nHUGo1"}, {"id": 83, "category": "English Language Courses", "name": "Spoken English Junior LIVE Batch", "original_price": 10000.0, "price": 7000.0, "savings": 3000.0, "promo": "sejonlineaff", "commission": 1050.0, "cashback": 300, "profit": 750.0, "link": "https://10ms.io/DKZbW2"}, {"id": 84, "category": "English Language Courses", "name": "Spoken English for Kids", "original_price": 2500.0, "price": 1950.0, "savings": 550.0, "promo": "KIDS1950", "commission": 292.5, "cashback": 100, "profit": 192.5, "link": "https://10ms.io/7HUFOq"}, {"id": 85, "category": "English Language Courses", "name": "English Communication for Professionals", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "EFP200", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/LHUFRL"}, {"id": 86, "category": "English Language Courses", "name": "Complete English Grammar Course", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "englishgrammar", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/ZHUFb4"}, {"id": 87, "category": "English Language Courses", "name": "English Grammar Crash Course", "original_price": 1500.0, "price": 1050.0, "savings": 450.0, "promo": "EGCC1050", "commission": 157.5, "cashback": 50, "profit": 107.5, "link": "https://10ms.io/QHUFMB"}, {"id": 88, "category": "English Language Courses", "name": "English Writing for Students", "original_price": 1500.0, "price": 1125.0, "savings": 375.0, "promo": "AFFEWS10", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/THUF3O"}, {"id": 89, "category": "English Language Courses", "name": "Sobar Jonno Vocabulary / সবার জন্য Vocabulary", "original_price": 1500.0, "price": 1125.0, "savings": 375.0, "promo": "SJV10AFF", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/FHUGzD"}, {"id": 90, "category": "English Language Courses", "name": "IELTS Reading & Listening Mock Tests", "original_price": 1800.0, "price": 1275.0, "savings": 525.0, "promo": "MOCK1275", "commission": 191.25, "cashback": 50, "profit": 141.25, "link": "https://10ms.io/KKZbPw"}, {"id": 91, "category": "English Language Courses", "name": "Spoken + Grammar Bundle", "original_price": 4500.0, "price": 3000.0, "savings": 1500.0, "promo": "spokenbundle", "commission": 450.0, "cashback": 150, "profit": 300.0, "link": "https://10ms.io/OHUFcG"}, {"id": 92, "category": "English Language Courses", "name": "Beginner's English Bundle", "original_price": 4500.0, "price": 3000.0, "savings": 1500.0, "promo": "engbeg", "commission": 450.0, "cashback": 150, "profit": 300.0, "link": "https://10ms.io/KHUFzt"}, {"id": 93, "category": "English Language Courses", "name": "English Master Bundle", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "AFFEMB10", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/XHUFAK"}, {"id": 94, "category": "English Language Courses", "name": "Complete Professional Communication Bundle", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/VHUFLE"}, {"id": 95, "category": "Skills & Freelancing", "name": "Video Editing with Premiere Pro", "original_price": 1500.0, "price": 1050.0, "savings": 450.0, "promo": "videoediting1050", "commission": 157.5, "cashback": 50, "profit": 107.5, "link": "https://10ms.io/jKZnvf"}, {"id": 96, "category": "Skills & Freelancing", "name": "Adobe 4 in 1 Bundle (Photoshop, Illustrator, Premiere Pro, After Effects)", "original_price": 4000.0, "price": 2500.0, "savings": 1500.0, "promo": "SK2500", "commission": 375.0, "cashback": 100, "profit": 275.0, "link": "https://10ms.io/NKZnQS"}, {"id": 97, "category": "Skills & Freelancing", "name": "Graphic Designing with Photoshop", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFGDP10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/NKZnQS"}, {"id": 98, "category": "Skills & Freelancing", "name": "Graphic Design করে Freelancing", "original_price": 3000.0, "price": 1950.0, "savings": 1050.0, "promo": "graphicdesign10", "commission": 292.5, "cashback": 100, "profit": 192.5, "link": "https://10ms.io/TKZb6j"}, {"id": 99, "category": "Skills & Freelancing", "name": "Graphic Designing with PowerPoint", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFGDWP10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/sKZndG"}, {"id": 100, "category": "Skills & Freelancing", "name": "Cartoon Animation", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFCA10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/mKZnIQ"}, {"id": 101, "category": "Skills & Freelancing", "name": "Video Making & Content Creation", "original_price": 1600.0, "price": 1125.0, "savings": 475.0, "promo": "SK1125", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/mKZnIQ"}, {"id": 102, "category": "Skills & Freelancing", "name": "Content Creation Bundle", "original_price": 2500.0, "price": 1600.0, "savings": 900.0, "promo": "SK1600", "commission": 240.0, "cashback": 80, "profit": 160.0, "link": "https://10ms.io/eHUGRt"}, {"id": 103, "category": "Skills & Freelancing", "name": "SEO করে Freelancing (Complete SEO Course)", "original_price": 3500.0, "price": 2250.0, "savings": 1250.0, "promo": "completeseocourse", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/fKZnG1"}, {"id": 104, "category": "Skills & Freelancing", "name": "YouTube Marketing করে Freelancing", "original_price": 3000.0, "price": 1950.0, "savings": 1050.0, "promo": "youtubemktaff", "commission": 292.5, "cashback": 100, "profit": 192.5, "link": "https://10ms.io/fKZnG1"}, {"id": 105, "category": "Skills & Freelancing", "name": "WordPress দিয়ে Freelancing", "original_price": 3000.0, "price": 1950.0, "savings": 1050.0, "promo": "wordpressaff", "commission": 292.5, "cashback": 100, "profit": 192.5, "link": "https://10ms.io/CKZnzV"}, {"id": 106, "category": "Skills & Freelancing", "name": "Email Marketing করে Freelancing", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "emailmkt", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/fKZnG1"}, {"id": 107, "category": "Skills & Freelancing", "name": "Facebook Marketing Masterclass", "original_price": 1250.0, "price": 890.0, "savings": 360.0, "promo": "FB890", "commission": 133.5, "cashback": 40, "profit": 93.5, "link": "https://10ms.io/fKZnG1"}, {"id": 108, "category": "Skills & Freelancing", "name": "Data Entry দিয়ে Freelancing", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "DEDF855AFF", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/oKZnxb"}, {"id": 109, "category": "Skills & Freelancing", "name": "ঘরে বসে Freelancing", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "GBFAFF855", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/CKZnzV"}, {"id": 110, "category": "Skills & Freelancing", "name": "Microsoft Excel Masterclass", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFME10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/sKZndG"}, {"id": 111, "category": "Skills & Freelancing", "name": "Microsoft Word Masterclass", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFMW10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/sKZndG"}, {"id": 112, "category": "Skills & Freelancing", "name": "Microsoft PowerPoint Masterclass", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFGDWP10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/sKZndG"}, {"id": 113, "category": "Skills & Freelancing", "name": "Python দিয়ে Programming", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "SK1690", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/bKZKBz"}, {"id": 114, "category": "Job Prep & Career", "name": "BCS প্রিলি রেকর্ডেড কোর্স", "original_price": 3500.0, "price": 2300.0, "savings": 1200.0, "promo": "bcsrecorded", "commission": 345.0, "cashback": 100, "profit": 245.0, "link": "https://10ms.io/pHUGSE"}, {"id": 115, "category": "Job Prep & Career", "name": "English for Govt. Jobs", "original_price": 2000.0, "price": 1350.0, "savings": 650.0, "promo": "SK1125", "commission": 202.5, "cashback": 50, "profit": 152.5, "link": "https://10ms.io/gHUFFl"}, {"id": 116, "category": "Job Prep & Career", "name": "ব্যাংক জবস কোর্স (Bank Jobs Preparation)", "original_price": 2000.0, "price": 1350.0, "savings": 650.0, "promo": "SK1600", "commission": 202.5, "cashback": 50, "profit": 152.5, "link": "https://10ms.io/gKZnCl"}, {"id": 117, "category": "Job Prep & Career", "name": "সরকারি চাকরি প্রস্তুতি বেসিক কোর্স", "original_price": 2000.0, "price": 1350.0, "savings": 650.0, "promo": "SK1600", "commission": 202.5, "cashback": 50, "profit": 152.5, "link": "https://10ms.io/PHUGPB"}, {"id": 118, "category": "Job Prep & Career", "name": "Primary Assistant Teacher Recruitment Prep", "original_price": 1800.0, "price": 1250.0, "savings": 550.0, "promo": "SK1250", "commission": 187.5, "cashback": 50, "profit": 137.5, "link": "https://10ms.io/uKZnBQ"}, {"id": 119, "category": "Islamic & Life Skills", "name": "২৪ ঘণ্টায় কুরআন শিখি", "original_price": 1500.0, "price": 1050.0, "savings": 450.0, "promo": "QURAN1050", "commission": 157.5, "cashback": 50, "profit": 107.5, "link": "https://10ms.io/aKZnM5"}, {"id": 120, "category": "Islamic & Life Skills", "name": "অর্থ বুঝে কুরআন শিখি", "original_price": 1600.0, "price": 1125.0, "savings": 475.0, "promo": "QURAN1125", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/LHUGba"}, {"id": 121, "category": "Islamic & Life Skills", "name": "অর্থসহ নামাজ শিক্ষা", "original_price": 1250.0, "price": 750.0, "savings": 500.0, "promo": "NAMAZ750", "commission": 112.5, "cashback": 30, "profit": 82.5, "link": "https://10ms.io/CKZn9H"}, {"id": 122, "category": "Islamic & Life Skills", "name": "সহীহ কুরআন শিক্ষা ও তাজবীদ", "original_price": 1250.0, "price": 890.0, "savings": 360.0, "promo": "QURAN890", "commission": 133.5, "cashback": 40, "profit": 93.5, "link": "https://10ms.io/CKZn9H"}, {"id": 123, "category": "Islamic & Life Skills", "name": "Spoken Arabic Course", "original_price": 1250.0, "price": 890.0, "savings": 360.0, "promo": "ARABIC890", "commission": 133.5, "cashback": 40, "profit": 93.5, "link": "https://10ms.io/CKZn9H"}, {"id": 124, "category": "Islamic & Life Skills", "name": "ইসলামিক কোর্স বান্ডেল", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "afficb", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/bKZn52"}, {"id": 125, "category": "Personal Development", "name": "Communication Masterclass by Tahsan Khan", "original_price": 1500.0, "price": 1050.0, "savings": 450.0, "promo": "TAHSAN1050", "commission": 157.5, "cashback": 50, "profit": 107.5, "link": "https://10minuteschool.com/product/communication-masterclass-by-tahsan-khan/?aff=V2AYT000030c3"}, {"id": 126, "category": "Personal Development", "name": "Smart Leadership Bundle", "original_price": 2500.0, "price": 1600.0, "savings": 900.0, "promo": "SK1600", "commission": 240.0, "cashback": 80, "profit": 160.0, "link": "https://10ms.io/aKZO7A"}, {"id": 127, "category": "Personal Development", "name": "Leadership Excellence & Negotiation Skills", "original_price": 1600.0, "price": 1125.0, "savings": 475.0, "promo": "SK1125", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/SKZIZk"}, {"id": 128, "category": "Personal Development", "name": "Public Speaking Masterclass", "original_price": 1500.0, "price": 1050.0, "savings": 450.0, "promo": "SK1050", "commission": 157.5, "cashback": 50, "profit": 107.5, "link": "https://10ms.io/dKZYEa"}, {"id": 129, "category": "Personal Development", "name": "Mental Health for Students", "original_price": 1600.0, "price": 1125.0, "savings": 475.0, "promo": "AFFMHS10", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/EKZPqs"}, {"id": 130, "category": "Personal Development", "name": "AI Course for Super Students", "original_price": 1800.0, "price": 1250.0, "savings": 550.0, "promo": "SK1250", "commission": 187.5, "cashback": 50, "profit": 137.5, "link": "https://10ms.io/pKZPwv"}];
-    const DEFAULT_TEAM_PASS = 'learnova2026';
-    const DEFAULT_MANAGER_PASS = 'manager2026';
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-circle-check" style="color: #10b981;"></i>
+    <span id="toastMsg">বিজ্ঞপ্তি</span>
+  </div>
 
-    let currentView = 'student';
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 <strong>Learnova BD</strong>. ১০ মিনিট স্কুল অনুমোদিত স্টুডেন্ট ডিসকাউন্ট ও টিম পোর্টাল।</p>
+  </footer>
+
+  <script>
+    // Embedded Master Course Catalog
+    const DEFAULT_COURSES = [{"id": 1, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 27 বিজ্ঞান বিভাগ + BEI + SMP (কমপ্লিট বান্ডেল)", "original_price": 13000.0, "price": 5350.0, "savings": 7650.0, "promo": "ssc27beismp", "commission": 802.5, "cashback": 200, "profit": 602.5, "link": "https://10ms.io/RKlRqu"}, {"id": 2, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 28 পূর্ণাঙ্গ প্রস্তুতি (Class 9-10 Complete Online Batch)", "original_price": 29000.0, "price": 19000.0, "savings": 10000.0, "promo": "SSC282YEAR", "commission": 2850.0, "cashback": 800, "profit": 2050.0, "link": "https://10ms.io/IKlR5j"}, {"id": 3, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি কোর্স [বিজ্ঞান বিভাগ]", "original_price": 3000.0, "price": 2250.0, "savings": 750.0, "promo": "ssc27smp", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/3KlR9t"}, {"id": 4, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি কোর্স [ব্যবসায় শিক্ষা বিভাগ]", "original_price": 3000.0, "price": 2250.0, "savings": 750.0, "promo": "ssc27smp", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/RKlRXg"}, {"id": 5, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি কোর্স [মানবিক বিভাগ]", "original_price": 3000.0, "price": 2250.0, "savings": 750.0, "promo": "ssc27smp", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/nKlRJn"}, {"id": 6, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি BEIM কোর্স [বাংলা, ইংরেজি, ICT, সা.গণিত]", "original_price": 2500.0, "price": 1800.0, "savings": 700.0, "promo": "27smpbei", "commission": 270.0, "cashback": 70, "profit": 200.0, "link": "https://10ms.io/BKlRnb"}, {"id": 7, "category": "Academic: SSC 27 & 28 Prep", "name": "SSC টেস্ট পেপার সলভ কোর্স (Physics, Chemistry, Biology, Higher Math)", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFF10SSTPP", "commission": 128.25, "cashback": 35, "profit": 93.25, "link": "https://10ms.io/bKlR2u"}, {"id": 8, "category": "Academic: Online Batch (Class 6-10)", "name": "ষষ্ঠ - অষ্টম শ্রেণি অনলাইন ব্যাচ (১ মাস)", "original_price": 3500.0, "price": 2500.0, "savings": 1000.0, "promo": "", "commission": 375.0, "cashback": 100, "profit": 275.0, "link": "https://10ms.io/rKlRa6"}, {"id": 9, "category": "Academic: Online Batch (Class 6-10)", "name": "ষষ্ঠ - অষ্টম শ্রেণি অনলাইন ব্যাচ (সম্পূর্ণ বছর)", "original_price": 13000.0, "price": 6000.0, "savings": 7000.0, "promo": "", "commission": 900.0, "cashback": 250, "profit": 650.0, "link": "https://10ms.io/MKlR1x"}, {"id": 10, "category": "Academic: Online Batch (Class 6-10)", "name": "অষ্টম শ্রেণি - বার্ষিক ও বৃত্তি পরীক্ষা প্রস্তুতি ২০২৬", "original_price": 13000.0, "price": 5350.0, "savings": 7650.0, "promo": "oppbpp26", "commission": 802.5, "cashback": 200, "profit": 602.5, "link": "https://10ms.io/bKlRNw"}, {"id": 11, "category": "Academic: Online Batch (Class 6-10)", "name": "নবম শ্রেণি - অনলাইন ব্যাচ [বিজ্ঞান বিভাগ - সম্পূর্ণ বছর + BEI]", "original_price": 16000.0, "price": 8000.0, "savings": 8000.0, "promo": "", "commission": 1200.0, "cashback": 400, "profit": 800.0, "link": "https://10ms.io/AKlRCJ"}, {"id": 12, "category": "Academic: Online Batch (Class 6-10)", "name": "নবম শ্রেণি - অনলাইন ব্যাচ [বিজ্ঞান বিভাগ - সম্পূর্ণ বছর]", "original_price": 12000.0, "price": 6000.0, "savings": 6000.0, "promo": "", "commission": 900.0, "cashback": 250, "profit": 650.0, "link": "https://10ms.io/FKlR4A"}, {"id": 13, "category": "Academic: Online Batch (Class 6-10)", "name": "নবম শ্রেণি - অনলাইন ব্যাচ [ব্যবসায় শিক্ষা বিভাগ - সম্পূর্ণ বছর]", "original_price": 9000.0, "price": 4500.0, "savings": 4500.0, "promo": "", "commission": 675.0, "cashback": 200, "profit": 475.0, "link": "https://10ms.io/6KlRj1"}, {"id": 14, "category": "Academic: Online Batch (Class 6-10)", "name": "নবম শ্রেণি - বাংলা, ইংরেজি ও আইসিটি (BEI) অনলাইন ব্যাচ", "original_price": 6000.0, "price": 3500.0, "savings": 2500.0, "promo": "", "commission": 525.0, "cashback": 150, "profit": 375.0, "link": "https://10ms.io/sKlRF7"}, {"id": 15, "category": "Academic: Online Batch (Class 6-10)", "name": "দশম শ্রেণি - অনলাইন ব্যাচ [বিজ্ঞান বিভাগ + BEI]", "original_price": 12000.0, "price": 6000.0, "savings": 6000.0, "promo": "", "commission": 900.0, "cashback": 250, "profit": 650.0, "link": "https://10ms.io/DKlROn"}, {"id": 16, "category": "Academic: Online Batch (Class 6-10)", "name": "দশম শ্রেণি - অনলাইন ব্যাচ [বিজ্ঞান বিভাগ]", "original_price": 9000.0, "price": 4500.0, "savings": 4500.0, "promo": "", "commission": 675.0, "cashback": 200, "profit": 475.0, "link": "https://10ms.io/yKlRHv"}, {"id": 17, "category": "Academic: Online Batch (Class 6-10)", "name": "দশম শ্রেণি - বাংলা, ইংরেজি ও আইসিটি (BEI) অনলাইন ব্যাচ", "original_price": 6000.0, "price": 3500.0, "savings": 2500.0, "promo": "", "commission": 525.0, "cashback": 150, "profit": 375.0, "link": "https://10ms.io/4KlRzs"}, {"id": 18, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ (PCMB Cycle 1-4 + BEI Bundle)", "original_price": 26000.0, "price": 14000.0, "savings": 12000.0, "promo": "hsc28bundle", "commission": 2100.0, "cashback": 600, "profit": 1500.0, "link": "https://10ms.io/fKNwZj"}, {"id": 19, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ PCMB (Cycle 1-4)", "original_price": 20000.0, "price": 10000.0, "savings": 10000.0, "promo": "hsc28pcmb4", "commission": 1500.0, "cashback": 450, "profit": 1050.0, "link": "https://10ms.io/xKNwL3"}, {"id": 20, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ PCMB (Cycle 1-2)", "original_price": 10000.0, "price": 5400.0, "savings": 4600.0, "promo": "hsc28pcmb2", "commission": 810.0, "cashback": 250, "profit": 560.0, "link": "https://10ms.io/XKNwKc"}, {"id": 21, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ PCMB (Cycle 1)", "original_price": 5000.0, "price": 4000.0, "savings": 1000.0, "promo": "hsc28pcmb1", "commission": 600.0, "cashback": 200, "profit": 400.0, "link": "https://10ms.io/wKNwtN"}, {"id": 22, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ (বাংলা, ইংরেজি, তথ্য ও যোগাযোগ প্রযুক্তি - BEI)", "original_price": 6000.0, "price": 4500.0, "savings": 1500.0, "promo": "hsc28bei", "commission": 675.0, "cashback": 200, "profit": 475.0, "link": "https://10ms.io/QKB6EL"}, {"id": 23, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - ইংরেজি", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "hsc28eng", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/tKB6lJ"}, {"id": 24, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - বাংলা", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "hsc28ban", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/IKNeDq"}, {"id": 25, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - ICT", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "hsc28ict", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/bKNeEN"}, {"id": 26, "category": "Academic: HSC 28 Prep", "name": "HSC 28 ইংরেজি প্রথম পত্র: মাস্টার বুক", "original_price": 650.0, "price": 450.0, "savings": 200.0, "promo": "", "commission": 67.5, "cashback": 20, "profit": 47.5, "link": "https://10ms.io/vKB6sW"}, {"id": 27, "category": "Academic: HSC 28 Prep", "name": "HSC 28 ইংরেজি দ্বিতীয় পত্র: মাস্টার বুক", "original_price": 650.0, "price": 450.0, "savings": 200.0, "promo": "", "commission": 67.5, "cashback": 20, "profit": 47.5, "link": "https://10ms.io/PKB6b7"}, {"id": 28, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - বায়োলজি Cycle 1-4", "original_price": 10000.0, "price": 5000.0, "savings": 5000.0, "promo": "hsc28bio4", "commission": 750.0, "cashback": 250, "profit": 500.0, "link": "https://10ms.io/TKNerY"}, {"id": 29, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - বায়োলজি Cycle 1-2", "original_price": 5000.0, "price": 2750.0, "savings": 2250.0, "promo": "hsc28bio2", "commission": 412.5, "cashback": 120, "profit": 292.5, "link": "https://10ms.io/TKNewp"}, {"id": 30, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - বায়োলজি Cycle 1", "original_price": 2500.0, "price": 1500.0, "savings": 1000.0, "promo": "hsc28bio1", "commission": 225.0, "cashback": 70, "profit": 155.0, "link": "https://10ms.io/UKNeea"}, {"id": 31, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ (জিওগ্রাফি, ইকোনমিক্স, পৌরনীতি)", "original_price": 8000.0, "price": 4000.0, "savings": 4000.0, "promo": "hsc28arts", "commission": 600.0, "cashback": 200, "profit": 400.0, "link": "https://10ms.io/QKNeTX"}, {"id": 32, "category": "Academic: HSC 28 Prep", "name": "HSC 28 জিওগ্রাফি, ইকোনমিক্স, পৌরনীতি + BEI প্যাকেজ", "original_price": 14000.0, "price": 7500.0, "savings": 6500.0, "promo": "hsc28artsbei", "commission": 1125.0, "cashback": 350, "profit": 775.0, "link": "https://10ms.io/aKNeUp"}, {"id": 33, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - ইকোনমিক্স", "original_price": 4000.0, "price": 2250.0, "savings": 1750.0, "promo": "", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/7KNeAv"}, {"id": 34, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - পৌরনীতি", "original_price": 4000.0, "price": 2250.0, "savings": 1750.0, "promo": "", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/sKNeDL"}, {"id": 35, "category": "Academic: HSC 28 Prep", "name": "HSC 28 অনলাইন ব্যাচ - জিওগ্রাফি", "original_price": 4000.0, "price": 2250.0, "savings": 1750.0, "promo": "", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/JKNeXb"}, {"id": 36, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle", "original_price": 21000.0, "price": 11500.0, "savings": 9500.0, "promo": "hsc27bundle", "commission": 1725.0, "cashback": 500, "profit": 1225.0, "link": "https://10ms.io/5KNe80"}, {"id": 37, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB (Cycle 1-4) Online Batch", "original_price": 16000.0, "price": 8000.0, "savings": 8000.0, "promo": "hsc27pcmb4", "commission": 1200.0, "cashback": 400, "profit": 800.0, "link": "https://10ms.io/3KNe9a"}, {"id": 38, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB (Cycle 1-3) Online Batch", "original_price": 10000.0, "price": 5000.0, "savings": 5000.0, "promo": "hsc27cyc3", "commission": 750.0, "cashback": 250, "profit": 500.0, "link": "https://10ms.io/xKNe1t"}, {"id": 39, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB Cycle 1-4 (১ম + ২য় পত্র)", "original_price": 6000.0, "price": 3000.0, "savings": 3000.0, "promo": "hsc27cyc4", "commission": 450.0, "cashback": 150, "profit": 300.0, "link": "https://10ms.io/IKNeBf"}, {"id": 40, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB Cycle 1-2 (১ম ও ২য় পত্রের নির্দিষ্ট অধ্যায়)", "original_price": 4000.0, "price": 2100.0, "savings": 1900.0, "promo": "hsc27cyc2", "commission": 315.0, "cashback": 100, "profit": 215.0, "link": "https://10ms.io/TKNe7k"}, {"id": 41, "category": "Academic: HSC 27 Prep", "name": "HSC 27 PCMB Cycle 1 (শুধু ১ম পত্রের নির্বাচিত অধ্যায়)", "original_price": 2500.0, "price": 1500.0, "savings": 1000.0, "promo": "hsc27cyc1", "commission": 225.0, "cashback": 70, "profit": 155.0, "link": "https://10ms.io/wKNe4j"}, {"id": 42, "category": "Academic: HSC 27 Prep", "name": "HSC 27 BEI 2.0 (বাংলা, ইংরেজি, তথ্য ও যোগাযোগ প্রযুক্তি)", "original_price": 6000.0, "price": 4500.0, "savings": 1500.0, "promo": "hsc27bei2", "commission": 675.0, "cashback": 200, "profit": 475.0, "link": "https://10ms.io/JHPjXP"}, {"id": 43, "category": "Academic: HSC 27 Prep", "name": "HSC 27 BEI Individual Subjects 2.0 (সম্পূর্ণ সিলেবাস)", "original_price": 3000.0, "price": 2250.0, "savings": 750.0, "promo": "hSC27b2", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/eKNe7L"}, {"id": 44, "category": "Academic: HSC 27 Prep", "name": "HSC 27 বাংলা (ব্যাচ ১ - সম্পূর্ণ সিলেবাস)", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "HSC27B1", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/TKNe6R"}, {"id": 45, "category": "Academic: HSC 27 Prep", "name": "HSC 27 ইংরেজি (ব্যাচ ১ - সম্পূর্ণ সিলেবাস)", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "HSC27B1", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/TKNe6R"}, {"id": 46, "category": "Academic: HSC 27 Prep", "name": "HSC 27 ICT (ব্যাচ ১ - সম্পূর্ণ সিলেবাস)", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "HSC27B1", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/TKNe6R"}, {"id": 47, "category": "Academic: HSC 27 Prep", "name": "HSC 27 ফাইন্যান্স ও অ্যাকাউন্টিং কমপ্লিট প্যাকেজ", "original_price": 8000.0, "price": 3100.0, "savings": 4900.0, "promo": "HSC27BUSB", "commission": 465.0, "cashback": 150, "profit": 315.0, "link": "https://10ms.io/JKNeM4"}, {"id": 48, "category": "Academic: HSC 27 Prep", "name": "HSC 27 জিওগ্রাফি ও ইকোনমিক্স কমপ্লিট প্যাকেজ", "original_price": 8000.0, "price": 3100.0, "savings": 4900.0, "promo": "HSC27ARTSB", "commission": 465.0, "cashback": 150, "profit": 315.0, "link": "https://10ms.io/qKNePj"}, {"id": 49, "category": "Academic: HSC 27 Prep", "name": "HSC 27 ফাইন্যান্স ও অ্যাকাউন্টিং + BEI প্যাকেজ", "original_price": 14000.0, "price": 6300.0, "savings": 7700.0, "promo": "BUSHSC27BEI", "commission": 945.0, "cashback": 300, "profit": 645.0, "link": "https://10ms.io/JKNeM4"}, {"id": 50, "category": "Academic: HSC 27 Prep", "name": "HSC 27 জিওগ্রাফি ও ইকোনমিক্স + BEI প্যাকেজ", "original_price": 14000.0, "price": 6300.0, "savings": 7700.0, "promo": "ARTSHSC27BEI", "commission": 945.0, "cashback": 300, "profit": 645.0, "link": "https://10ms.io/cHPjFx"}, {"id": 51, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Finance, Accounting, Geography & Economics (Complete)", "original_price": 4000.0, "price": 1800.0, "savings": 2200.0, "promo": "HSC27FAGE", "commission": 270.0, "cashback": 70, "profit": 200.0, "link": "https://10ms.io/JKNeM4"}, {"id": 52, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Management 2.0 / Marketing 2.0 / Civics / Economics", "original_price": 4000.0, "price": 2250.0, "savings": 1750.0, "promo": "hsc27arts2", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/qKNePj"}, {"id": 53, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Management & Marketing Bundle", "original_price": 8000.0, "price": 4000.0, "savings": 4000.0, "promo": "hsc27bndl2", "commission": 600.0, "cashback": 200, "profit": 400.0, "link": "https://10ms.io/JKNeM4"}, {"id": 54, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Civics & Economics Bundle", "original_price": 8000.0, "price": 4000.0, "savings": 4000.0, "promo": "hsc27bndl2", "commission": 600.0, "cashback": 200, "profit": 400.0, "link": "https://10ms.io/qKNePj"}, {"id": 55, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Management & Marketing + BEI Bundle", "original_price": 14000.0, "price": 7500.0, "savings": 6500.0, "promo": "hsc27bndlbei2", "commission": 1125.0, "cashback": 350, "profit": 775.0, "link": "https://10ms.io/JKNeM4"}, {"id": 56, "category": "Academic: HSC 27 Prep", "name": "HSC 27 Civics & Economics + BEI Bundle", "original_price": 14000.0, "price": 7500.0, "savings": 6500.0, "promo": "hsc27bndlbei2", "commission": 1125.0, "cashback": 350, "profit": 775.0, "link": "https://10ms.io/qKNePj"}, {"id": 57, "category": "Academic: HSC 26 Prep", "name": "HSC 26 PCMB (Cycle 1-4) + BEI 2.0 Bundle", "original_price": 12000.0, "price": 8000.0, "savings": 4000.0, "promo": "HSC26BUNDLE", "commission": 1200.0, "cashback": 400, "profit": 800.0, "link": "https://10ms.io/fKNwZj"}, {"id": 58, "category": "Academic: HSC 26 Prep", "name": "HSC 26 PCMB (Cycle 1-4) Online Batch", "original_price": 6000.0, "price": 4500.0, "savings": 1500.0, "promo": "HSC26PCMB4", "commission": 675.0, "cashback": 200, "profit": 475.0, "link": "https://10ms.io/xKNwL3"}, {"id": 59, "category": "Academic: HSC 26 Prep", "name": "HSC 26 PCMB (Cycle 1-2) + লেকচার শিট", "original_price": 8400.0, "price": 5500.0, "savings": 2900.0, "promo": "HSC26pcmb12", "commission": 825.0, "cashback": 250, "profit": 575.0, "link": "https://10ms.io/XKNwKc"}, {"id": 60, "category": "Academic: HSC 26 Prep", "name": "HSC 26 BEI 2.0 Complete Package", "original_price": 6000.0, "price": 4000.0, "savings": 2000.0, "promo": "HSC26BEI20", "commission": 600.0, "cashback": 200, "profit": 400.0, "link": "https://10ms.io/QKB6EL"}, {"id": 61, "category": "Academic: HSC 26 Prep", "name": "HSC 26 English: ব্যাচ ২ (সম্পূর্ণ সিলেবাস)", "original_price": 2000.0, "price": 1500.0, "savings": 500.0, "promo": "HSC26B", "commission": 225.0, "cashback": 75, "profit": 150.0, "link": "https://10ms.io/tKB6lJ"}, {"id": 62, "category": "Academic: HSC 26 Prep", "name": "HSC 26 Science Individual subjects (Cycle 1-4)", "original_price": 2500.0, "price": 1500.0, "savings": 1000.0, "promo": "-", "commission": 225.0, "cashback": 75, "profit": 150.0, "link": "https://10ms.io/UKNeea"}, {"id": 63, "category": "Academic: HSC 26 Prep", "name": "HSC 26 শেষ মুহূর্তের প্রস্তুতি - বিজ্ঞান বিভাগ Bundle", "original_price": 3900.0, "price": 2400.0, "savings": 1500.0, "promo": "SMP26SCI", "commission": 360.0, "cashback": 100, "profit": 260.0, "link": "https://10ms.io/cKXqKZ"}, {"id": 64, "category": "Academic: HSC 26 Prep", "name": "HSC 26 শেষ মুহূর্তের প্রস্তুতি - ব্যবসায় শিক্ষা Bundle", "original_price": 3300.0, "price": 2200.0, "savings": 1100.0, "promo": "SMP26BUS", "commission": 330.0, "cashback": 100, "profit": 230.0, "link": "https://10ms.io/pKXqSa"}, {"id": 65, "category": "Academic: HSC 26 Prep", "name": "HSC 26 শেষ মুহূর্তের প্রস্তুতি - মানবিক বিভাগ Bundle", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "SMP26ARTS", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/BKXqGX"}, {"id": 66, "category": "Academic: HSC 26 Prep", "name": "HSC 26 শেষ মুহূর্তের প্রস্তুতি - বাংলা, ইংরেজি, ICT", "original_price": 1500.0, "price": 900.0, "savings": 600.0, "promo": "SMP26BEI", "commission": 135.0, "cashback": 35, "profit": 100.0, "link": "https://10ms.io/QKB6EL"}, {"id": 67, "category": "Academic: Admission Prep", "name": "ভার্সিটি A Unit + গুচ্ছ এডমিশন কোর্স - ২০২৬", "original_price": 5000.0, "price": 3500.0, "savings": 1500.0, "promo": "adm2026", "commission": 525.0, "cashback": 150, "profit": 375.0, "link": "https://10ms.io/UKlRs1"}, {"id": 68, "category": "Academic: Admission Prep", "name": "ভার্সিটি B Unit + গুচ্ছ এডমিশন কোর্স - ২০২৬", "original_price": 5000.0, "price": 3500.0, "savings": 1500.0, "promo": "adm2026", "commission": 525.0, "cashback": 150, "profit": 375.0, "link": "https://10ms.io/VKlReR"}, {"id": 69, "category": "Academic: Admission Prep", "name": "ভার্সিটি C Unit + গুচ্ছ এডমিশন কোর্স - ২০২৬", "original_price": 5000.0, "price": 3500.0, "savings": 1500.0, "promo": "adm2026", "commission": 525.0, "cashback": 150, "profit": 375.0, "link": "https://10ms.io/zKlR4j"}, {"id": 70, "category": "Academic: Admission Prep", "name": "ভার্সিটি A Unit এডমিশন কোর্স - ২০২৫", "original_price": 5000.0, "price": 2500.0, "savings": 2500.0, "promo": "ADM2025", "commission": 375.0, "cashback": 100, "profit": 275.0, "link": "https://10ms.io/UKlRs1"}, {"id": 71, "category": "Academic: Admission Prep", "name": "ভার্সিটি B Unit এডমিশন কোর্স - ২০২৫", "original_price": 5000.0, "price": 2500.0, "savings": 2500.0, "promo": "ADM2025", "commission": 375.0, "cashback": 100, "profit": 275.0, "link": "https://10ms.io/VKlReR"}, {"id": 72, "category": "Academic: Admission Prep", "name": "ভার্সিটি C Unit এডমিশন কোর্স - ২০২৫", "original_price": 5000.0, "price": 2500.0, "savings": 2500.0, "promo": "ADM2025", "commission": 375.0, "cashback": 100, "profit": 275.0, "link": "https://10ms.io/zKlR4j"}, {"id": 73, "category": "Academic: Admission Prep", "name": "মেডিকেল এডমিশন কোর্স - ২০২৫", "original_price": 6500.0, "price": 5500.0, "savings": 1000.0, "promo": "ADM2025MED", "commission": 825.0, "cashback": 250, "profit": 575.0, "link": "https://10ms.io/AKlRy4"}, {"id": 74, "category": "Academic: Admission Prep", "name": "মেডিকেল এডমিশন কোর্স (With Private Teacher)", "original_price": 7500.0, "price": 6000.0, "savings": 1500.0, "promo": "medicaladm24wpt", "commission": 900.0, "cashback": 250, "profit": 650.0, "link": "https://10ms.io/AKlRy4"}, {"id": 75, "category": "Academic: Admission Prep", "name": "Medical Admission Question Solve Course", "original_price": 1250.0, "price": 850.0, "savings": 400.0, "promo": "medicaladqs", "commission": 127.5, "cashback": 35, "profit": 92.5, "link": "https://10ms.io/AKlRy4"}, {"id": 76, "category": "Academic: Admission Prep", "name": "ঢাবি-ক (DU A Unit) কোশ্চেন সলভ কোর্স", "original_price": 1250.0, "price": 850.0, "savings": 400.0, "promo": "dhabiqs", "commission": 127.5, "cashback": 35, "profit": 92.5, "link": "https://10ms.io/UKlRs1"}, {"id": 77, "category": "Academic: Admission Prep", "name": "গুচ্ছ (GST) A Unit এডমিশন কোর্স", "original_price": 2500.0, "price": 1800.0, "savings": 700.0, "promo": "adm24gst", "commission": 270.0, "cashback": 80, "profit": 190.0, "link": "https://10ms.io/UKlRs1"}, {"id": 78, "category": "Academic: Admission Prep", "name": "গুচ্ছ (GST) B Unit এডমিশন কোর্স", "original_price": 2500.0, "price": 1800.0, "savings": 700.0, "promo": "adm24gst", "commission": 270.0, "cashback": 80, "profit": 190.0, "link": "https://10ms.io/VKlReR"}, {"id": 79, "category": "Academic: Admission Prep", "name": "গুচ্ছ (GST) C Unit এডমিশন কোর্স", "original_price": 2500.0, "price": 1800.0, "savings": 700.0, "promo": "adm24gst", "commission": 270.0, "cashback": 80, "profit": 190.0, "link": "https://10ms.io/zKlR4j"}, {"id": 80, "category": "English Language Courses", "name": "ঘরে বসে Spoken English (Munzereen Shahid)", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "affgbse1690", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/6HUFWk"}, {"id": 81, "category": "English Language Courses", "name": "IELTS Course by Munzereen Shahid", "original_price": 5000.0, "price": 3000.0, "savings": 2000.0, "promo": "IELTS3600", "commission": 450.0, "cashback": 150, "profit": 300.0, "link": "https://10ms.io/xHUGfm"}, {"id": 82, "category": "English Language Courses", "name": "IELTS Live Batch", "original_price": 10000.0, "price": 7000.0, "savings": 3000.0, "promo": "ieltslive", "commission": 1050.0, "cashback": 300, "profit": 750.0, "link": "https://10ms.io/nHUGo1"}, {"id": 83, "category": "English Language Courses", "name": "Spoken English Junior LIVE Batch", "original_price": 10000.0, "price": 7000.0, "savings": 3000.0, "promo": "sejonlineaff", "commission": 1050.0, "cashback": 300, "profit": 750.0, "link": "https://10ms.io/DKZbW2"}, {"id": 84, "category": "English Language Courses", "name": "Spoken English for Kids", "original_price": 2500.0, "price": 1950.0, "savings": 550.0, "promo": "KIDS1950", "commission": 292.5, "cashback": 100, "profit": 192.5, "link": "https://10ms.io/7HUFOq"}, {"id": 85, "category": "English Language Courses", "name": "English Communication for Professionals", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "EFP200", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/LHUFRL"}, {"id": 86, "category": "English Language Courses", "name": "Complete English Grammar Course", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "englishgrammar", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/ZHUFb4"}, {"id": 87, "category": "English Language Courses", "name": "English Grammar Crash Course", "original_price": 1500.0, "price": 1050.0, "savings": 450.0, "promo": "EGCC1050", "commission": 157.5, "cashback": 50, "profit": 107.5, "link": "https://10ms.io/QHUFMB"}, {"id": 88, "category": "English Language Courses", "name": "English Writing for Students", "original_price": 1500.0, "price": 1125.0, "savings": 375.0, "promo": "AFFEWS10", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/THUF3O"}, {"id": 89, "category": "English Language Courses", "name": "Sobar Jonno Vocabulary / সবার জন্য Vocabulary", "original_price": 1500.0, "price": 1125.0, "savings": 375.0, "promo": "SJV10AFF", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/FHUGzD"}, {"id": 90, "category": "English Language Courses", "name": "IELTS Reading & Listening Mock Tests", "original_price": 1800.0, "price": 1275.0, "savings": 525.0, "promo": "MOCK1275", "commission": 191.25, "cashback": 50, "profit": 141.25, "link": "https://10ms.io/KKZbPw"}, {"id": 91, "category": "English Language Courses", "name": "Spoken + Grammar Bundle", "original_price": 4500.0, "price": 3000.0, "savings": 1500.0, "promo": "spokenbundle", "commission": 450.0, "cashback": 150, "profit": 300.0, "link": "https://10ms.io/OHUFcG"}, {"id": 92, "category": "English Language Courses", "name": "Beginner's English Bundle", "original_price": 4500.0, "price": 3000.0, "savings": 1500.0, "promo": "engbeg", "commission": 450.0, "cashback": 150, "profit": 300.0, "link": "https://10ms.io/KHUFzt"}, {"id": 93, "category": "English Language Courses", "name": "English Master Bundle", "original_price": 3000.0, "price": 2000.0, "savings": 1000.0, "promo": "AFFEMB10", "commission": 300.0, "cashback": 100, "profit": 200.0, "link": "https://10ms.io/XHUFAK"}, {"id": 94, "category": "English Language Courses", "name": "Complete Professional Communication Bundle", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/VHUFLE"}, {"id": 95, "category": "Skills & Freelancing", "name": "Video Editing with Premiere Pro", "original_price": 1500.0, "price": 1050.0, "savings": 450.0, "promo": "videoediting1050", "commission": 157.5, "cashback": 50, "profit": 107.5, "link": "https://10ms.io/jKZnvf"}, {"id": 96, "category": "Skills & Freelancing", "name": "Adobe 4 in 1 Bundle (Photoshop, Illustrator, Premiere Pro, After Effects)", "original_price": 4000.0, "price": 2500.0, "savings": 1500.0, "promo": "SK2500", "commission": 375.0, "cashback": 100, "profit": 275.0, "link": "https://10ms.io/NKZnQS"}, {"id": 97, "category": "Skills & Freelancing", "name": "Graphic Designing with Photoshop", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFGDP10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/NKZnQS"}, {"id": 98, "category": "Skills & Freelancing", "name": "Graphic Design করে Freelancing", "original_price": 3000.0, "price": 1950.0, "savings": 1050.0, "promo": "graphicdesign10", "commission": 292.5, "cashback": 100, "profit": 192.5, "link": "https://10ms.io/TKZb6j"}, {"id": 99, "category": "Skills & Freelancing", "name": "Graphic Designing with PowerPoint", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFGDWP10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/sKZndG"}, {"id": 100, "category": "Skills & Freelancing", "name": "Cartoon Animation", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFCA10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/mKZnIQ"}, {"id": 101, "category": "Skills & Freelancing", "name": "Video Making & Content Creation", "original_price": 1600.0, "price": 1125.0, "savings": 475.0, "promo": "SK1125", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/mKZnIQ"}, {"id": 102, "category": "Skills & Freelancing", "name": "Content Creation Bundle", "original_price": 2500.0, "price": 1600.0, "savings": 900.0, "promo": "SK1600", "commission": 240.0, "cashback": 80, "profit": 160.0, "link": "https://10ms.io/eHUGRt"}, {"id": 103, "category": "Skills & Freelancing", "name": "SEO করে Freelancing (Complete SEO Course)", "original_price": 3500.0, "price": 2250.0, "savings": 1250.0, "promo": "completeseocourse", "commission": 337.5, "cashback": 100, "profit": 237.5, "link": "https://10ms.io/fKZnG1"}, {"id": 104, "category": "Skills & Freelancing", "name": "YouTube Marketing করে Freelancing", "original_price": 3000.0, "price": 1950.0, "savings": 1050.0, "promo": "youtubemktaff", "commission": 292.5, "cashback": 100, "profit": 192.5, "link": "https://10ms.io/fKZnG1"}, {"id": 105, "category": "Skills & Freelancing", "name": "WordPress দিয়ে Freelancing", "original_price": 3000.0, "price": 1950.0, "savings": 1050.0, "promo": "wordpressaff", "commission": 292.5, "cashback": 100, "profit": 192.5, "link": "https://10ms.io/CKZnzV"}, {"id": 106, "category": "Skills & Freelancing", "name": "Email Marketing করে Freelancing", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "emailmkt", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/fKZnG1"}, {"id": 107, "category": "Skills & Freelancing", "name": "Facebook Marketing Masterclass", "original_price": 1250.0, "price": 890.0, "savings": 360.0, "promo": "FB890", "commission": 133.5, "cashback": 40, "profit": 93.5, "link": "https://10ms.io/fKZnG1"}, {"id": 108, "category": "Skills & Freelancing", "name": "Data Entry দিয়ে Freelancing", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "DEDF855AFF", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/oKZnxb"}, {"id": 109, "category": "Skills & Freelancing", "name": "ঘরে বসে Freelancing", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "GBFAFF855", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/CKZnzV"}, {"id": 110, "category": "Skills & Freelancing", "name": "Microsoft Excel Masterclass", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFME10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/sKZndG"}, {"id": 111, "category": "Skills & Freelancing", "name": "Microsoft Word Masterclass", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFMW10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/sKZndG"}, {"id": 112, "category": "Skills & Freelancing", "name": "Microsoft PowerPoint Masterclass", "original_price": 1250.0, "price": 855.0, "savings": 395.0, "promo": "AFFGDWP10", "commission": 128.25, "cashback": 40, "profit": 88.25, "link": "https://10ms.io/sKZndG"}, {"id": 113, "category": "Skills & Freelancing", "name": "Python দিয়ে Programming", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "SK1690", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/bKZKBz"}, {"id": 114, "category": "Job Prep & Career", "name": "BCS প্রিলি রেকর্ডেড কোর্স", "original_price": 3500.0, "price": 2300.0, "savings": 1200.0, "promo": "bcsrecorded", "commission": 345.0, "cashback": 100, "profit": 245.0, "link": "https://10ms.io/pHUGSE"}, {"id": 115, "category": "Job Prep & Career", "name": "English for Govt. Jobs", "original_price": 2000.0, "price": 1350.0, "savings": 650.0, "promo": "SK1125", "commission": 202.5, "cashback": 50, "profit": 152.5, "link": "https://10ms.io/gHUFFl"}, {"id": 116, "category": "Job Prep & Career", "name": "ব্যাংক জবস কোর্স (Bank Jobs Preparation)", "original_price": 2000.0, "price": 1350.0, "savings": 650.0, "promo": "SK1600", "commission": 202.5, "cashback": 50, "profit": 152.5, "link": "https://10ms.io/gKZnCl"}, {"id": 117, "category": "Job Prep & Career", "name": "সরকারি চাকরি প্রস্তুতি বেসিক কোর্স", "original_price": 2000.0, "price": 1350.0, "savings": 650.0, "promo": "SK1600", "commission": 202.5, "cashback": 50, "profit": 152.5, "link": "https://10ms.io/PHUGPB"}, {"id": 118, "category": "Job Prep & Career", "name": "Primary Assistant Teacher Recruitment Prep", "original_price": 1800.0, "price": 1250.0, "savings": 550.0, "promo": "SK1250", "commission": 187.5, "cashback": 50, "profit": 137.5, "link": "https://10ms.io/uKZnBQ"}, {"id": 119, "category": "Islamic & Life Skills", "name": "২৪ ঘণ্টায় কুরআন শিখি", "original_price": 1500.0, "price": 1050.0, "savings": 450.0, "promo": "QURAN1050", "commission": 157.5, "cashback": 50, "profit": 107.5, "link": "https://10ms.io/aKZnM5"}, {"id": 120, "category": "Islamic & Life Skills", "name": "অর্থ বুঝে কুরআন শিখি", "original_price": 1600.0, "price": 1125.0, "savings": 475.0, "promo": "QURAN1125", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/LHUGba"}, {"id": 121, "category": "Islamic & Life Skills", "name": "অর্থসহ নামাজ শিক্ষা", "original_price": 1250.0, "price": 750.0, "savings": 500.0, "promo": "NAMAZ750", "commission": 112.5, "cashback": 30, "profit": 82.5, "link": "https://10ms.io/CKZn9H"}, {"id": 122, "category": "Islamic & Life Skills", "name": "সহীহ কুরআন শিক্ষা ও তাজবীদ", "original_price": 1250.0, "price": 890.0, "savings": 360.0, "promo": "QURAN890", "commission": 133.5, "cashback": 40, "profit": 93.5, "link": "https://10ms.io/CKZn9H"}, {"id": 123, "category": "Islamic & Life Skills", "name": "Spoken Arabic Course", "original_price": 1250.0, "price": 890.0, "savings": 360.0, "promo": "ARABIC890", "commission": 133.5, "cashback": 40, "profit": 93.5, "link": "https://10ms.io/CKZn9H"}, {"id": 124, "category": "Islamic & Life Skills", "name": "ইসলামিক কোর্স বান্ডেল", "original_price": 2500.0, "price": 1690.0, "savings": 810.0, "promo": "afficb", "commission": 253.5, "cashback": 100, "profit": 153.5, "link": "https://10ms.io/bKZn52"}, {"id": 125, "category": "Personal Development", "name": "Communication Masterclass by Tahsan Khan", "original_price": 1500.0, "price": 1050.0, "savings": 450.0, "promo": "TAHSAN1050", "commission": 157.5, "cashback": 50, "profit": 107.5, "link": "https://10minuteschool.com/product/communication-masterclass-by-tahsan-khan/?aff=V2AYT000030c3"}, {"id": 126, "category": "Personal Development", "name": "Smart Leadership Bundle", "original_price": 2500.0, "price": 1600.0, "savings": 900.0, "promo": "SK1600", "commission": 240.0, "cashback": 80, "profit": 160.0, "link": "https://10ms.io/aKZO7A"}, {"id": 127, "category": "Personal Development", "name": "Leadership Excellence & Negotiation Skills", "original_price": 1600.0, "price": 1125.0, "savings": 475.0, "promo": "SK1125", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/SKZIZk"}, {"id": 128, "category": "Personal Development", "name": "Public Speaking Masterclass", "original_price": 1500.0, "price": 1050.0, "savings": 450.0, "promo": "SK1050", "commission": 157.5, "cashback": 50, "profit": 107.5, "link": "https://10ms.io/dKZYEa"}, {"id": 129, "category": "Personal Development", "name": "Mental Health for Students", "original_price": 1600.0, "price": 1125.0, "savings": 475.0, "promo": "AFFMHS10", "commission": 168.75, "cashback": 50, "profit": 118.75, "link": "https://10ms.io/EKZPqs"}, {"id": 130, "category": "Personal Development", "name": "AI Course for Super Students", "original_price": 1800.0, "price": 1250.0, "savings": 550.0, "promo": "SK1250", "commission": 187.5, "cashback": 50, "profit": 137.5, "link": "https://10ms.io/pKZPwv"}];
+
+    // Teammates & Manager Configuration
+    const DEFAULT_TEAM_MEMBERS = [
+      { id: 'tamzed', name: 'Tamzed Ahmmed', pass: 'tamzed2026', role: 'Sales Specialist' },
+      { id: 'mahathir', name: 'Mahathir Rubay', pass: 'mahathir2026', role: 'Sales Specialist' },
+      { id: 'jahid', name: 'Md. Jahid Hasan', pass: 'jahid2026', role: 'Sales Specialist' },
+      { id: 'afrid', name: 'Afrid Ahmmed', pass: 'afrid2026', role: 'Sales Specialist' },
+      { id: 'nasim', name: 'Nasim Reza', pass: 'nasim2026', role: 'Sales Specialist' }
+    ];
+
+    const MANAGER_INFO = {
+      name: 'Daloyar Hassan Shishir',
+      role: 'Manager & Admin',
+      defaultPass: 'manager2026'
+    };
+
+    let courses = [];
+    let currentView = 'student'; // 'student' or 'team'
+    let selectedCategory = 'all';
+    let searchQuery = '';
+    let linkFilter = 'all';
+    
+    // Auth State
+    let currentUser = null; // { name, role, isManager }
     let isTeamLoggedIn = false;
     let isManagerLoggedIn = false;
-    let selectedCategory = 'all';
-    let linkFilter = 'all';
-    let searchQuery = '';
-    let courses = [];
 
-    // Logo Click Detection (Double Click/Tap Easter Egg)
-    let lastLogoClick = 0;
-    function handleLogoClick() {
-      const now = new Date().getTime();
-      const delta = now - lastLogoClick;
-      lastLogoClick = now;
+    // Categories
+    const CATEGORIES = [
+      { id: 'all', name: 'সকল কোর্স' },
+      { id: 'Academic: SSC 27 & 28 Prep', name: 'SSC 27 & 28' },
+      { id: 'Academic: HSC 27 & 28 Prep', name: 'HSC 27 & 28' },
+      { id: 'Admission Preparation', name: 'ভর্তি প্রস্তুতি' },
+      { id: 'English & Language', name: 'স্পোকেন ইংলিশ ও ভাষা' },
+      { id: 'Skills & Professional', name: 'প্রফেশনাল স্কিলস' },
+      { id: 'Kids & Foundation', name: 'কিডস ও ফাউন্ডেশন' }
+    ];
 
-      if (delta < 400 && delta > 0) {
-        if (isTeamLoggedIn || isManagerLoggedIn) {
-          switchView('team');
-        } else {
-          openSecretLogin();
-        }
+    function getTeamMembers() {
+      const saved = localStorage.getItem('learnova_team_members_v2');
+      if (saved) {
+        try { return JSON.parse(saved); } catch(e) {}
+      }
+      return DEFAULT_TEAM_MEMBERS;
+    }
+
+    function saveTeamMembers(members) {
+      localStorage.setItem('learnova_team_members_v2', JSON.stringify(members));
+    }
+
+    function getManagerPassword() {
+      return localStorage.getItem('learnova_manager_pass_v2') || MANAGER_INFO.defaultPass;
+    }
+
+    function getCloudWebhookUrl() {
+      return localStorage.getItem('learnova_cloud_webhook_url') || '';
+    }
+
+    function saveCloudWebhookUrl() {
+      const url = document.getElementById('cloudWebhookUrl').value.trim();
+      localStorage.setItem('learnova_cloud_webhook_url', url);
+      showToast('ক্লাউড Webhook URL সেভ হয়েছে! ☁️');
+    }
+
+    // Activity Logs Storage
+    function getActivityLogs() {
+      const saved = localStorage.getItem('learnova_team_activity_logs_v2');
+      if (saved) {
+        try { return JSON.parse(saved); } catch(e) {}
+      }
+      return [];
+    }
+
+    function recordActivity(actionType, actionLabel, course) {
+      if (!currentUser) return;
+
+      const newLog = {
+        id: 'log_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+        user: currentUser.name,
+        role: currentUser.role,
+        action: actionType,
+        actionLabel: actionLabel,
+        courseName: course.name,
+        courseCategory: course.category,
+        price: course.price,
+        originalPrice: course.original_price || course.price,
+        timestamp: new Date().toISOString(),
+        timeFormatted: new Intl.DateTimeFormat('en-GB', {
+          day: '2-digit', month: 'short', year: 'numeric',
+          hour: '2-digit', minute: '2-digit', hour12: true
+        }).format(new Date())
+      };
+
+      const logs = getActivityLogs();
+      logs.unshift(newLog);
+      if (logs.length > 500) logs.pop(); // Keep latest 500 logs
+      localStorage.setItem('learnova_team_activity_logs_v2', JSON.stringify(logs));
+
+      // Optional background dispatch to Google Sheets webhook if configured
+      const webhookUrl = getCloudWebhookUrl();
+      if (webhookUrl) {
+        try {
+          fetch(webhookUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newLog)
+          }).catch(() => {});
+        } catch(e) {}
       }
     }
 
-    function openSecretLogin() {
-      document.getElementById('staffPasswordInput').value = '';
-      document.getElementById('loginModal').classList.add('active');
+    // Initialize
+    function init() {
+      loadSavedCourses();
+      checkAuthSession();
+      renderCategoryChips();
+      renderCourses();
+      updateAuditCounts();
+
+      const savedWebhook = getCloudWebhookUrl();
+      if (document.getElementById('cloudWebhookUrl')) {
+        document.getElementById('cloudWebhookUrl').value = savedWebhook;
+      }
     }
 
-    function closeLoginModal() {
-      document.getElementById('loginModal').classList.remove('active');
-    }
-
-    // Load from LocalStorage or Default
-    function loadCourses() {
-      const saved = localStorage.getItem('10ms_affiliate_courses');
-      if (saved) {
+    function loadSavedCourses() {
+      const localData = localStorage.getItem('learnova_courses_v2');
+      if (localData) {
         try {
-          courses = JSON.parse(saved);
+          courses = JSON.parse(localData);
         } catch(e) {
           courses = DEFAULT_COURSES;
         }
@@ -1240,156 +1495,126 @@
     }
 
     function saveCoursesToStorage() {
-      localStorage.setItem('10ms_affiliate_courses', JSON.stringify(courses));
+      localStorage.setItem('learnova_courses_v2', JSON.stringify(courses));
     }
 
-    function getTeamPassword() {
-      return localStorage.getItem('learnova_team_pass') || DEFAULT_TEAM_PASS;
-    }
-
-    function getManagerPassword() {
-      return localStorage.getItem('learnova_manager_pass') || DEFAULT_MANAGER_PASS;
-    }
-
-    // Categories List
-    const CATEGORIES = [
-      { id: 'all', name: 'সব কোর্স (All)' },
-      { id: 'Academic: SSC 27 & 28 Prep', name: '🎯 SSC 27 & 28' },
-      { id: 'Academic: Online Batch (Class 6-10)', name: '🏫 Class 6-10 Batches' },
-      { id: 'Academic: HSC 28 Prep', name: '⚡ HSC 28' },
-      { id: 'Academic: HSC 27 Prep', name: '🚀 HSC 27' },
-      { id: 'Academic: HSC 26 Prep', name: '📚 HSC 26' },
-      { id: 'Academic: Admission Prep', name: '🏛️ Admission 25/26' },
-      { id: 'English Language Courses', name: '🗣️ Spoken English & IELTS' },
-      { id: 'Skills & Freelancing', name: '💻 Skills & Freelancing' },
-      { id: 'Job Prep & Career', name: '💼 Job Preparation' },
-      { id: 'Islamic & Life Skills', name: '📖 Islamic Studies' },
-      { id: 'Personal Development', name: '🌟 Personal Dev' }
-    ];
-
-    function init() {
-      loadCourses();
-      checkAuthSession();
-      updateAuditCounts();
-      renderCategoryChips();
-      renderCourses();
-      
-      const savedUrl = localStorage.getItem('10ms_sheet_url');
-      if (savedUrl) {
-        document.getElementById('sheetSyncUrl').value = savedUrl;
-      }
-    }
-
-    // Authentication Handlers
     function checkAuthSession() {
-      const teamSession = localStorage.getItem('learnova_team_auth');
-      const managerSession = localStorage.getItem('learnova_manager_auth');
-
-      isTeamLoggedIn = (teamSession === 'true');
-      isManagerLoggedIn = (managerSession === 'true');
-
-      if (isTeamLoggedIn || isManagerLoggedIn) {
-        currentView = 'team';
-      } else {
-        currentView = 'student';
+      const savedUser = localStorage.getItem('learnova_active_user');
+      if (savedUser) {
+        try {
+          currentUser = JSON.parse(savedUser);
+          if (currentUser.isManager) {
+            isManagerLoggedIn = true;
+            isTeamLoggedIn = true;
+          } else {
+            isTeamLoggedIn = true;
+            isManagerLoggedIn = false;
+          }
+          currentView = 'team';
+        } catch(e) {
+          currentUser = null;
+        }
       }
       applyViewUI();
     }
 
-    function handleLogout() {
-      if (confirm('আপনি কি টিম ওয়ার্কস্পেস থেকে লগআউট করতে চান?')) {
-        localStorage.removeItem('learnova_team_auth');
-        localStorage.removeItem('learnova_manager_auth');
-        isTeamLoggedIn = false;
-        isManagerLoggedIn = false;
-        currentView = 'student';
-        applyViewUI();
-        renderCourses();
-        showToast('সফলভাবে লগআউট হয়েছে');
+    // Secret Double Click Modal
+    function openSecretLogin() {
+      if (isTeamLoggedIn || isManagerLoggedIn) {
+        switchView(currentView === 'student' ? 'team' : 'student');
+        return;
+      }
+      document.getElementById('staffPasswordInput').value = '';
+      document.getElementById('secretLoginModal').classList.add('active');
+    }
+
+    function closeSecretLogin() {
+      document.getElementById('secretLoginModal').classList.remove('active');
+    }
+
+    function autoFillMemberHint() {
+      const sel = document.getElementById('staffUserSelect').value;
+      const hint = document.getElementById('loginHintText');
+      if (sel === 'manager') {
+        hint.innerText = 'ম্যানেজার পাসওয়ার্ড লিখুন (Daloyar Hassan Shishir)';
+      } else if (sel) {
+        hint.innerText = `${sel.toUpperCase()} এর নির্দিষ্ট টিমমেট পাসওয়ার্ড লিখুন`;
+      } else {
+        hint.innerText = 'টিমমেট বা ম্যানেজার পাসওয়ার্ড দিয়ে সরাসরি লগইন করুন।';
       }
     }
 
     function submitStaffLogin(e) {
       e.preventDefault();
       const inputPass = document.getElementById('staffPasswordInput').value.trim();
-      const actualTeamPass = getTeamPassword();
-      const actualManagerPass = getManagerPassword();
+      const selectedMember = document.getElementById('staffUserSelect').value;
+      const managerPass = getManagerPassword();
+      const members = getTeamMembers();
 
-      if (inputPass === actualManagerPass) {
+      // Check Manager
+      if (inputPass === managerPass || (selectedMember === 'manager' && inputPass === managerPass)) {
+        currentUser = {
+          id: 'manager',
+          name: MANAGER_INFO.name,
+          role: MANAGER_INFO.role,
+          isManager: true
+        };
         isManagerLoggedIn = true;
         isTeamLoggedIn = true;
-        localStorage.setItem('learnova_manager_auth', 'true');
-        localStorage.setItem('learnova_team_auth', 'true');
-        closeLoginModal();
+        localStorage.setItem('learnova_active_user', JSON.stringify(currentUser));
+        closeSecretLogin();
         currentView = 'team';
         applyViewUI();
         renderCourses();
-        showToast('ম্যানেজার হিসেবে স্বাগতম! সর্বময় নিয়ন্ত্রণ সক্রিয় 👑');
-      } else if (inputPass === actualTeamPass) {
+        showToast(`স্বাগতম ম্যানেজার ${MANAGER_INFO.name}! 👑`);
+        return;
+      }
+
+      // Check Teammates
+      let matchedMember = members.find(m => m.pass === inputPass || (selectedMember === m.id && m.pass === inputPass));
+      
+      // Fallback general team pass
+      if (!matchedMember && inputPass === 'learnova2026') {
+        matchedMember = { id: 'team_general', name: 'Learnova Teammate', role: 'Sales Specialist' };
+      }
+
+      if (matchedMember) {
+        currentUser = {
+          id: matchedMember.id,
+          name: matchedMember.name,
+          role: matchedMember.role || 'Sales Specialist',
+          isManager: false
+        };
         isTeamLoggedIn = true;
         isManagerLoggedIn = false;
-        localStorage.setItem('learnova_team_auth', 'true');
-        closeLoginModal();
+        localStorage.setItem('learnova_active_user', JSON.stringify(currentUser));
+        closeSecretLogin();
         currentView = 'team';
         applyViewUI();
         renderCourses();
-        showToast('স্বাগতম! টিম ওয়ার্কস্পেস সক্রিয় হয়েছে ✅');
+        showToast(`স্বাগতম ${matchedMember.name}! 💼`);
       } else {
-        alert('ভুল পাসওয়ার্ড! অনুগ্রহ করে সঠিক পাসওয়ার্ড দিন।');
+        alert('ভুল পাসওয়ার্ড! আপনার নির্দিষ্ট টিমমেট অথবা ম্যানেজার পাসওয়ার্ড লিখুন।');
       }
+    }
+
+    function logoutStaff() {
+      currentUser = null;
+      isTeamLoggedIn = false;
+      isManagerLoggedIn = false;
+      localStorage.removeItem('learnova_active_user');
+      currentView = 'student';
+      applyViewUI();
+      renderCourses();
+      showToast('লগআউট সম্পন্ন হয়েছে 👋');
     }
 
     function handleManagerClick() {
       if (isManagerLoggedIn) {
         openAdminModal();
       } else {
-        document.getElementById('managerPasswordInput').value = '';
-        document.getElementById('managerAuthModal').classList.add('active');
+        openSecretLogin();
       }
-    }
-
-    function closeManagerAuthModal() {
-      document.getElementById('managerAuthModal').classList.remove('active');
-    }
-
-    function submitManagerLogin(e) {
-      e.preventDefault();
-      const inputPass = document.getElementById('managerPasswordInput').value.trim();
-      const actualManagerPass = getManagerPassword();
-
-      if (inputPass === actualManagerPass) {
-        isManagerLoggedIn = true;
-        localStorage.setItem('learnova_manager_auth', 'true');
-        closeManagerAuthModal();
-        applyViewUI();
-        renderCourses();
-        openAdminModal();
-        showToast('ম্যানেজার অথেন্টিকেশন সফল! 👑');
-      } else {
-        alert('ভুল ম্যানেজার পাসওয়ার্ড! শুধুমাত্র অনুমোদিত ম্যানেজার প্রবেশ করতে পারবেন।');
-      }
-    }
-
-    function changeTeamPassword() {
-      const newP = document.getElementById('newTeamPasswordInput').value.trim();
-      if (!newP || newP.length < 4) {
-        alert('টিম পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে।');
-        return;
-      }
-      localStorage.setItem('learnova_team_pass', newP);
-      document.getElementById('newTeamPasswordInput').value = '';
-      showToast('টিম পাসওয়ার্ড সফলভাবে আপডেট হয়েছে! 🔑');
-    }
-
-    function changeManagerPassword() {
-      const newP = document.getElementById('newManagerPasswordInput').value.trim();
-      if (!newP || newP.length < 4) {
-        alert('ম্যানেজার পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে।');
-        return;
-      }
-      localStorage.setItem('learnova_manager_pass', newP);
-      document.getElementById('newManagerPasswordInput').value = '';
-      showToast('ম্যানেজার পাসওয়ার্ড সফলভাবে আপডেট হয়েছে! 👑');
     }
 
     function applyViewUI() {
@@ -1400,12 +1625,25 @@
       const linkBar = document.getElementById('linkFilterBar');
       const fab = document.getElementById('fabAdd');
       const subtitle = document.getElementById('portalSubtitle');
-      const adminBtnLabel = document.getElementById('adminBtnLabel');
+      const userPill = document.getElementById('userProfilePill');
+      const activeUserName = document.getElementById('activeUserName');
+      const adminBtn = document.getElementById('adminBtn');
+      const btnAdminBanner = document.getElementById('btnAdminBanner');
+      const teamBannerTitle = document.getElementById('teamBannerTitle');
+
+      if (currentUser) {
+        userPill.style.display = 'flex';
+        activeUserName.innerText = currentUser.name + (currentUser.isManager ? ' (Manager)' : '');
+      } else {
+        userPill.style.display = 'none';
+      }
 
       if (isManagerLoggedIn) {
-        adminBtnLabel.innerText = 'Manager 👑';
+        adminBtn.style.display = 'flex';
+        btnAdminBanner.style.display = 'flex';
       } else {
-        adminBtnLabel.innerText = 'Manager 🔒';
+        adminBtn.style.display = 'none';
+        btnAdminBanner.style.display = 'none';
       }
 
       if (isTeamLoggedIn || isManagerLoggedIn) {
@@ -1417,7 +1655,8 @@
           teamBanner.style.display = 'flex';
           linkBar.style.display = 'flex';
           fab.style.display = isManagerLoggedIn ? 'flex' : 'none';
-          subtitle.innerText = isManagerLoggedIn ? 'Manager & Teammate Workspace' : 'Teammate Quick-Share Portal';
+          subtitle.innerText = isManagerLoggedIn ? 'Manager Workspace & Analytics' : 'Teammate Quick-Share Portal';
+          teamBannerTitle.innerText = `${currentUser.name} - ওয়ার্কস্পেস সক্রিয়`;
           document.getElementById('btnTeamView').classList.add('active');
           document.getElementById('btnStudentView').classList.remove('active');
         } else {
@@ -1451,45 +1690,7 @@
       renderCourses();
     }
 
-    function updateAuditCounts() {
-      let ready = 0, missing = 0;
-      courses.forEach(c => {
-        if (c.link && c.link.includes('10ms.io/')) {
-          ready++;
-        } else {
-          missing++;
-        }
-      });
-      document.getElementById('readyLinkCount').innerText = ready;
-      document.getElementById('missingLinkCount').innerText = missing;
-    }
-
-    function filterByLink(type) {
-      linkFilter = type;
-      document.getElementById('filterAll').classList.toggle('active', type === 'all');
-      document.getElementById('filterReady').classList.toggle('active', type === 'ready');
-      document.getElementById('filterMissing').classList.toggle('active', type === 'missing');
-      renderCourses();
-    }
-
-    function renderCategoryChips() {
-      const container = document.getElementById('categoryChips');
-      container.innerHTML = CATEGORIES.map(c => `
-        <button class="chip ${c.id === selectedCategory ? 'active' : ''}" onclick="selectCategory('${c.id}')">
-          ${c.name}
-        </button>
-      `).join('');
-    }
-
-    function selectCategory(catId) {
-      selectedCategory = catId;
-      renderCategoryChips();
-      
-      const match = CATEGORIES.find(c => c.id === catId);
-      document.getElementById('activeCategoryTitle').innerText = match ? match.name : 'কোর্স তালিকা';
-      renderCourses();
-    }
-
+    // Render Courses
     function handleSearch() {
       searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
       document.getElementById('clearSearchBtn').style.display = searchQuery ? 'block' : 'none';
@@ -1594,7 +1795,7 @@
                   <i class="fa-brands fa-facebook-messenger"></i> ইনবক্সে লিংক ও ক্যাশব্যাক নিন
                 </button>
               `}
-              <button class="btn-sm-icon" onclick="copyCourseLink('${hasAffLink ? c.link : ''}', '${c.name}')" title="লিংক কপি করুন">
+              <button class="btn-sm-icon" onclick="copyCourseLink('${hasAffLink ? c.link : ''}', '${c.name}', ${c.id})" title="লিংক কপি করুন">
                 <i class="fa-solid fa-copy"></i>
               </button>
             </div>
@@ -1602,7 +1803,7 @@
         `;
       }
 
-      // TEAMMATE WORKSPACE VIEW (Shows Promo Code, Commission & Profit)
+      // TEAMMATE WORKSPACE VIEW (Shows Promo Code, Commission & Profit + Tracking)
       return `
         <div class="course-card">
           <div class="card-top">
@@ -1635,7 +1836,7 @@
               </div>
             </div>
             ${c.promo ? `
-              <div class="promo-badge" onclick="copyPromo('${c.promo}')">
+              <div class="promo-badge" onclick="copyPromo('${c.promo}', ${c.id})">
                 <i class="fa-solid fa-tag"></i> <span>${c.promo}</span>
               </div>
             ` : '<span style="font-size: 0.75rem; color: var(--text-muted);">No Code</span>'}
@@ -1657,15 +1858,15 @@
             </div>
           </div>
 
-          <!-- Teammate 1-Tap Share Actions -->
+          <!-- Teammate 1-Tap Share Actions with Live Tracking -->
           <div class="card-actions">
             <button class="btn btn-primary" onclick="copyPitchMessage(${c.id})">
               <i class="fa-solid fa-comment-dots"></i> কপি মেসেজ
             </button>
-            <button class="btn btn-outline" onclick="copyCourseLink('${hasAffLink ? c.link : ''}', '${c.name}')">
+            <button class="btn btn-outline" onclick="copyCourseLink('${hasAffLink ? c.link : ''}', '${c.name}', ${c.id})">
               <i class="fa-solid fa-link"></i> লিংক
             </button>
-            <a href="https://wa.me/?text=${encodeURIComponent(generatePitchText(c))}" target="_blank" class="btn-sm-icon" title="WhatsApp Share" style="color: #25D366;">
+            <a href="https://wa.me/?text=${encodeURIComponent(generatePitchText(c))}" target="_blank" onclick="trackWhatsappShare(${c.id})" class="btn-sm-icon" title="WhatsApp Share" style="color: #25D366;">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>
@@ -1691,34 +1892,42 @@
       if (!c) return;
       const text = generatePitchText(c);
       navigator.clipboard.writeText(text).then(() => {
+        recordActivity('copy_pitch', 'মেসেজ কপি', c);
         showToast('সেলস মেসেজ কপি হয়েছে! ইনবক্সে পেস্ট করুন 💬');
       });
     }
 
-    function copyCourseLink(link, name) {
+    function copyCourseLink(link, name, courseId) {
       if (!link) {
         showToast('⚠️ এই কোর্সের অ্যাফিলিয়েট লিংক এখনও যুক্ত করা হয়নি!');
         return;
       }
+      const c = courses.find(item => item.id === courseId) || { name: name, category: 'General', price: 0 };
       navigator.clipboard.writeText(link).then(() => {
+        recordActivity('copy_link', 'লিংক কপি', c);
         showToast('অ্যাফিলিয়েট লিংক কপি হয়েছে! ✅');
       });
     }
 
-    function copyPromo(code) {
+    function copyPromo(code, courseId) {
+      const c = courses.find(item => item.id === courseId) || { name: 'Course Promo', category: 'General', price: 0 };
       navigator.clipboard.writeText(code).then(() => {
+        recordActivity('copy_promo', 'প্রোমো কোড কপি', c);
         showToast(`প্রোমো কোড '${code}' কপি হয়েছে! 🏷️`);
       });
+    }
+
+    function trackWhatsappShare(courseId) {
+      const c = courses.find(item => item.id === courseId);
+      if (c) {
+        recordActivity('share_whatsapp', 'হোয়াটসঅ্যাপ শেয়ার', c);
+      }
     }
 
     function openInboxRequest(name, promo) {
       const msg = `আসসালামু আলাইকুম, আমি '${name}' কোর্সে স্পেশাল ডিসকাউন্ট সহ ভর্তি হতে চাই।`;
       showToast('হোয়াটসঅ্যাপ সাপোর্ট খোলা হচ্ছে...');
       window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
-    }
-
-    function openSupportModal() {
-      openInboxRequest('10MS Special Discount', '');
     }
 
     function showToast(msg) {
@@ -1738,12 +1947,238 @@
       localStorage.setItem('10ms_theme', isDark ? 'light' : 'dark');
     }
 
-    // Course Add / Edit Modal Controls (Manager Only)
-    function openAddCourseModal() {
-      if (!isManagerLoggedIn) {
-        handleManagerClick();
+    // Analytics & Leaderboard Modals
+    function openLeaderboardModal() {
+      openAnalyticsModal();
+      switchAnalyticsTab('leaderboard');
+    }
+
+    function openAnalyticsModal() {
+      document.getElementById('analyticsModal').classList.add('active');
+      renderLeaderboard();
+      renderAuditLogs();
+      renderTeamPasswordSettings();
+    }
+
+    function closeAnalyticsModal() {
+      document.getElementById('analyticsModal').classList.remove('active');
+    }
+
+    function switchAnalyticsTab(tab) {
+      document.getElementById('analyticsTabLeaderboard').style.display = tab === 'leaderboard' ? 'block' : 'none';
+      document.getElementById('analyticsTabLogs').style.display = tab === 'logs' ? 'block' : 'none';
+      document.getElementById('analyticsTabSettings').style.display = tab === 'settings' ? 'block' : 'none';
+
+      document.getElementById('tabBtnLeaderboard').classList.toggle('active', tab === 'leaderboard');
+      document.getElementById('tabBtnLogs').classList.toggle('active', tab === 'logs');
+      document.getElementById('tabBtnTeamSettings').classList.toggle('active', tab === 'settings');
+
+      if (tab === 'leaderboard') renderLeaderboard();
+      if (tab === 'logs') renderAuditLogs();
+      if (tab === 'settings') renderTeamPasswordSettings();
+    }
+
+    function refreshAnalytics() {
+      renderLeaderboard();
+      renderAuditLogs();
+      showToast('এনালিটিক্স রিফ্রেশ হয়েছে! 🔄');
+    }
+
+    function renderLeaderboard() {
+      const members = getTeamMembers();
+      const logs = getActivityLogs();
+
+      // Aggregate metrics per member
+      const memberStats = members.map(m => {
+        const userLogs = logs.filter(l => l.user === m.name);
+        const linkCopies = userLogs.filter(l => l.action === 'copy_link').length;
+        const pitchCopies = userLogs.filter(l => l.action === 'copy_pitch').length;
+        const totalActions = userLogs.length;
+        const pipelineValue = userLogs.reduce((sum, l) => sum + (Number(l.price) || 0), 0);
+        const lastActive = userLogs.length > 0 ? userLogs[0].timeFormatted : 'এখনও কোনো অ্যাক্টিভিটি নেই';
+
+        return {
+          ...m,
+          linkCopies,
+          pitchCopies,
+          totalActions,
+          pipelineValue,
+          lastActive
+        };
+      });
+
+      // Sort by total actions desc
+      memberStats.sort((a, b) => b.totalActions - a.totalActions);
+
+      const grid = document.getElementById('leaderboardGrid');
+      grid.innerHTML = memberStats.map((m, idx) => {
+        const rankClass = idx === 0 ? 'rank-1' : (idx === 1 ? 'rank-2' : (idx === 2 ? 'rank-3' : 'rank-other'));
+        const rankLabel = idx === 0 ? '🥇 #1' : (idx === 1 ? '🥈 #2' : (idx === 2 ? '🥉 #3' : `#${idx+1}`));
+
+        return `
+          <div class="leaderboard-card">
+            <span class="rank-badge ${rankClass}">${rankLabel}</span>
+            <div class="member-name">${m.name}</div>
+            <div class="member-stat-row" style="margin-top: 4px;">
+              <span>মোট অ্যাক্টিভিটি:</span>
+              <span class="member-stat-val" style="color: var(--primary); font-size: 0.85rem;">${m.totalActions} বার</span>
+            </div>
+            <div class="member-stat-row">
+              <span>লিংক কপি:</span>
+              <span class="member-stat-val">${m.linkCopies}</span>
+            </div>
+            <div class="member-stat-row">
+              <span>মেসেজ কপি:</span>
+              <span class="member-stat-val">${m.pitchCopies}</span>
+            </div>
+            <div class="member-stat-row">
+              <span>পাইপলাইন:</span>
+              <span class="member-stat-val" style="color: var(--success);">৳${m.pipelineValue.toLocaleString('en-IN')}</span>
+            </div>
+            <div style="font-size: 0.68rem; color: var(--text-muted); margin-top: 4px; border-top: 1px dashed var(--border); padding-top: 4px;">
+              <i class="fa-regular fa-clock"></i> ${m.lastActive}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderAuditLogs() {
+      const logs = getActivityLogs();
+      document.getElementById('totalLogsBadge').innerText = logs.length;
+      const filterUser = document.getElementById('logMemberFilter').value;
+      const tbody = document.getElementById('auditLogsBody');
+
+      const filtered = logs.filter(l => filterUser === 'all' || l.user === filterUser);
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="5" style="text-align: center; padding: 24px; color: var(--text-muted);">
+              কোনো অ্যাক্টিভিটি রেকর্ড পাওয়া যায়নি।
+            </td>
+          </tr>
+        `;
         return;
       }
+
+      tbody.innerHTML = filtered.slice(0, 100).map(l => `
+        <tr>
+          <td style="color: var(--text-muted); white-space: nowrap;">${l.timeFormatted}</td>
+          <td><strong>${l.user}</strong></td>
+          <td>
+            <span style="display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; background: ${l.action === 'copy_link' ? 'var(--primary-light)' : 'var(--success-bg)'}; color: ${l.action === 'copy_link' ? 'var(--primary)' : 'var(--success)'};">
+              ${l.actionLabel}
+            </span>
+          </td>
+          <td>${l.courseName}</td>
+          <td style="font-weight: 700; color: var(--primary);">৳${Number(l.price).toLocaleString('en-IN')}</td>
+        </tr>
+      `).join('');
+    }
+
+    function exportActivityLogsCSV() {
+      const logs = getActivityLogs();
+      if (logs.length === 0) {
+        alert('এক্সপোর্ট করার মতো কোনো লগ ডাটা নেই।');
+        return;
+      }
+
+      const headers = ['Timestamp', 'Member Name', 'Role', 'Action', 'Course Name', 'Category', 'Offer Price', 'Original Price'];
+      const rows = logs.map(l => [
+        `"${l.timeFormatted}"`,
+        `"${l.user}"`,
+        `"${l.role}"`,
+        `"${l.actionLabel}"`,
+        `"${l.courseName.replace(/"/g, '""')}"`,
+        `"${l.courseCategory}"`,
+        l.price,
+        l.originalPrice
+      ]);
+
+      const csvContent = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `Learnova_Team_Activity_${new Date().toISOString().slice(0,10)}.csv`;
+      link.click();
+      showToast('টিম অ্যাক্টিভিটি CSV ডাউনলোড শুরু হয়েছে 📥');
+    }
+
+    function clearAllLogs() {
+      if (confirm('আপনি কি নিশ্চিত যে সকল অ্যাক্টিভিটি লগ ক্লিয়ার করতে চান?')) {
+        localStorage.removeItem('learnova_team_activity_logs_v2');
+        renderLeaderboard();
+        renderAuditLogs();
+        showToast('সকল লগ ক্লিয়ার করা হয়েছে!');
+      }
+    }
+
+    function renderTeamPasswordSettings() {
+      const members = getTeamMembers();
+      const container = document.getElementById('teamPassManagerList');
+
+      container.innerHTML = `
+        <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted); margin-bottom: 4px;">
+          ৫ জন টিমমেট এবং ম্যানেজারের পাসওয়ার্ড কনফিগারেশন:
+        </div>
+      ` + members.map((m, idx) => `
+        <div style="display: flex; align-items: center; justify-content: space-between; background: var(--bg); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border); gap: 10px;">
+          <div>
+            <div style="font-weight: 700; font-size: 0.88rem;">${m.name}</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">আইডি: <code>${m.id}</code></div>
+          </div>
+          <div style="display: flex; gap: 6px; align-items: center;">
+            <input type="text" id="pass_input_${m.id}" class="form-input" value="${m.pass}" style="width: 140px; padding: 4px 8px; font-size: 0.82rem; font-family: monospace;">
+            <button class="btn btn-outline" style="padding: 4px 8px; font-size: 0.78rem; flex: none;" onclick="updateMemberPass('${m.id}')">
+              আপডেট
+            </button>
+          </div>
+        </div>
+      `).join('') + `
+        <div style="display: flex; align-items: center; justify-content: space-between; background: var(--primary-light); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(14,131,125,0.3); gap: 10px; margin-top: 6px;">
+          <div>
+            <div style="font-weight: 700; font-size: 0.88rem; color: var(--primary);">👑 ${MANAGER_INFO.name} (ম্যানেজার)</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted);">ম্যানেজার পাসওয়ার্ড</div>
+          </div>
+          <div style="display: flex; gap: 6px; align-items: center;">
+            <input type="text" id="manager_pass_input" class="form-input" value="${getManagerPassword()}" style="width: 140px; padding: 4px 8px; font-size: 0.82rem; font-family: monospace;">
+            <button class="btn btn-primary" style="padding: 4px 8px; font-size: 0.78rem; flex: none;" onclick="updateManagerPass()">
+              আপডেট
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function updateMemberPass(memberId) {
+      const newPass = document.getElementById(`pass_input_${memberId}`).value.trim();
+      if (!newPass || newPass.length < 4) {
+        alert('পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে।');
+        return;
+      }
+      const members = getTeamMembers();
+      const idx = members.findIndex(m => m.id === memberId);
+      if (idx !== -1) {
+        members[idx].pass = newPass;
+        saveTeamMembers(members);
+        showToast(`${members[idx].name} এর পাসওয়ার্ড আপডেট হয়েছে! 🔑`);
+      }
+    }
+
+    function updateManagerPass() {
+      const newPass = document.getElementById('manager_pass_input').value.trim();
+      if (!newPass || newPass.length < 4) {
+        alert('ম্যানেজার পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে।');
+        return;
+      }
+      localStorage.setItem('learnova_manager_pass_v2', newPass);
+      showToast('ম্যানেজার পাসওয়ার্ড আপডেট হয়েছে! 👑');
+    }
+
+    // Course Add / Edit Modal Controls (Manager Only)
+    function openAddCourseModal() {
+      if (!isManagerLoggedIn) return;
       document.getElementById('modalTitle').innerText = 'নতুন কোর্স যোগ করুন (ম্যানেজার)';
       document.getElementById('editCourseId').value = '';
       document.getElementById('courseForm').reset();
@@ -1752,10 +2187,7 @@
     }
 
     function openEditCourseModal(id) {
-      if (!isManagerLoggedIn) {
-        handleManagerClick();
-        return;
-      }
+      if (!isManagerLoggedIn) return;
       const c = courses.find(item => item.id === id);
       if (!c) return;
 
@@ -1833,10 +2265,7 @@
 
     // Admin & Sync Modals (Manager Protected)
     function openAdminModal() {
-      if (!isManagerLoggedIn) {
-        handleManagerClick();
-        return;
-      }
+      if (!isManagerLoggedIn) return;
       document.getElementById('adminModal').classList.add('active');
     }
 
@@ -1944,6 +2373,45 @@
       } catch(err) {
         alert('গুগল শিট সিঙ্ক করতে ব্যর্থ হয়েছে। URL টি ঠিক আছে কিনা চেক করুন।');
       }
+    }
+
+    function updateAuditCounts() {
+      let ready = 0, missing = 0;
+      courses.forEach(c => {
+        if (c.link && c.link.includes('10ms.io/')) {
+          ready++;
+        } else {
+          missing++;
+        }
+      });
+      document.getElementById('readyLinkCount').innerText = ready;
+      document.getElementById('missingLinkCount').innerText = missing;
+    }
+
+    function filterByLink(type) {
+      linkFilter = type;
+      document.getElementById('filterAll').classList.toggle('active', type === 'all');
+      document.getElementById('filterReady').classList.toggle('active', type === 'ready');
+      document.getElementById('filterMissing').classList.toggle('active', type === 'missing');
+      renderCourses();
+    }
+
+    function renderCategoryChips() {
+      const container = document.getElementById('categoryChips');
+      container.innerHTML = CATEGORIES.map(c => `
+        <button class="chip ${c.id === selectedCategory ? 'active' : ''}" onclick="selectCategory('${c.id}')">
+          ${c.name}
+        </button>
+      `).join('');
+    }
+
+    function selectCategory(catId) {
+      selectedCategory = catId;
+      renderCategoryChips();
+      
+      const match = CATEGORIES.find(c => c.id === catId);
+      document.getElementById('activeCategoryTitle').innerText = match ? match.name : 'কোর্স তালিকা';
+      renderCourses();
     }
 
     // Auto-init on page load
