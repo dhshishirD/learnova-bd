@@ -133,7 +133,7 @@
       gap: 8px;
     }
 
-    /* User Profile Pill */
+    /* User Profile Pill (Clickable to change password) */
     .user-profile-pill {
       display: none;
       align-items: center;
@@ -145,6 +145,13 @@
       font-size: 0.82rem;
       font-weight: 700;
       color: var(--primary);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .user-profile-pill:hover {
+      background: #d1fae5;
+      box-shadow: var(--shadow-sm);
     }
 
     /* Staff Navigation (Only visible after secret login) */
@@ -360,6 +367,7 @@
     .team-banner-actions {
       display: flex;
       gap: 8px;
+      flex-wrap: wrap;
     }
 
     .banner-btn {
@@ -1076,10 +1084,11 @@
       </div>
 
       <div class="header-actions">
-        <!-- Active User Badge (Simple, Clean) -->
-        <div class="user-profile-pill" id="userProfilePill">
+        <!-- Active User Badge (Clickable to change password) -->
+        <div class="user-profile-pill" id="userProfilePill" onclick="openChangePasswordModal()" title="পাসওয়ার্ড পরিবর্তন করতে ক্লিক করুন">
           <i class="fa-solid fa-user-check"></i>
           <span id="activeUserName">Team Member</span>
+          <i class="fa-solid fa-key" style="font-size: 0.72rem; opacity: 0.7; margin-left: 2px;"></i>
         </div>
 
         <!-- Staff View Switcher (Visible only after login) -->
@@ -1145,6 +1154,9 @@
       <div class="team-banner-actions">
         <button class="banner-btn" onclick="openLeaderboardModal()">
           <i class="fa-solid fa-trophy"></i> লিডারবোর্ড
+        </button>
+        <button class="banner-btn" onclick="openChangePasswordModal()">
+          <i class="fa-solid fa-key"></i> পাসওয়ার্ড পরিবর্তন
         </button>
         <button class="banner-btn" id="btnAdminBanner" onclick="openAdminModal()" style="display: none;">
           <i class="fa-solid fa-gear"></i> সেটিংস ও ডাটা
@@ -1224,6 +1236,37 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-outline" onclick="closeSecretLogin()">বাতিল</button>
           <button type="submit" class="btn btn-primary">লগইন করুন</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- User Personal Change Password Modal -->
+  <div class="modal-overlay" id="changePassModal">
+    <div class="modal-card" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-key" style="color: var(--primary);"></i> পাসওয়ার্ড পরিবর্তন</h3>
+        <button class="modal-close" onclick="closeChangePasswordModal()">&times;</button>
+      </div>
+      <form onsubmit="submitChangeMyPassword(event)">
+        <div class="modal-body">
+          <div style="background: var(--primary-light); padding: 10px 14px; border-radius: 8px; font-size: 0.85rem; color: var(--primary); font-weight: 700;">
+            <i class="fa-solid fa-user-shield"></i> অ্যাকাউন্ট: <span id="changePassUserName">User Name</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">নতুন পাসওয়ার্ড:</label>
+            <input type="password" id="myNewPasswordInput" class="form-input" placeholder="কমপক্ষে ৪ অক্ষরের নতুন পাসওয়ার্ড" required minlength="4">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">নতুন পাসওয়ার্ড নিশ্চিত করুন:</label>
+            <input type="password" id="myConfirmPasswordInput" class="form-input" placeholder="পুনরায় নতুন পাসওয়ার্ড লিখুন" required minlength="4">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeChangePasswordModal()">বাতিল</button>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-lock"></i> সেভ করুন</button>
         </div>
       </form>
     </div>
@@ -1731,7 +1774,6 @@
 
     // Initialize
     function init() {
-      // Random initial quote on start
       currentQuoteIndex = Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length);
       renderCurrentQuote();
       
@@ -1825,9 +1867,7 @@
         closeSecretLogin();
         currentView = 'team';
         
-        // Pick fresh quote on login
         rollNextQuote();
-
         applyViewUI();
         renderCourses();
         showToast(`স্বাগতম ${matchedMember.name}! 💼`);
@@ -1845,6 +1885,47 @@
       applyViewUI();
       renderCourses();
       showToast('লগআউট সম্পন্ন হয়েছে 👋');
+    }
+
+    // Change My Password Modal Functions
+    function openChangePasswordModal() {
+      if (!currentUser) {
+        openSecretLogin();
+        return;
+      }
+      document.getElementById('changePassUserName').innerText = currentUser.name;
+      document.getElementById('myNewPasswordInput').value = '';
+      document.getElementById('myConfirmPasswordInput').value = '';
+      document.getElementById('changePassModal').classList.add('active');
+    }
+
+    function closeChangePasswordModal() {
+      document.getElementById('changePassModal').classList.remove('active');
+    }
+
+    function submitChangeMyPassword(e) {
+      e.preventDefault();
+      if (!currentUser) return;
+      const p1 = document.getElementById('myNewPasswordInput').value.trim();
+      const p2 = document.getElementById('myConfirmPasswordInput').value.trim();
+
+      if (p1.length < 4) {
+        alert('পাসওয়ার্ড কমপক্ষে ৪ অক্ষরের হতে হবে।');
+        return;
+      }
+      if (p1 !== p2) {
+        alert('পাসওয়ার্ড দুটি মিলছে না! পুনরায় চেক করুন।');
+        return;
+      }
+
+      const members = getTeamMembers();
+      const idx = members.findIndex(m => m.id === currentUser.id);
+      if (idx !== -1) {
+        members[idx].pass = p1;
+        saveTeamMembers(members);
+        closeChangePasswordModal();
+        showToast('🎉 আপনার নতুন পাসওয়ার্ড সফলভাবে সেভ হয়েছে!');
+      }
     }
 
     function handleManagerClick() {
