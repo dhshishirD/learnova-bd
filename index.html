@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>10MS Course Directory & Affiliate Hub</title>
+  <title>Learnova BD | Course Directory & Affiliate Hub</title>
   
   <!-- Google Fonts: Hind Siliguri & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +28,7 @@
       --success: #10b981;
       --success-bg: #ecfdf5;
       --warning: #f59e0b;
+      --warning-bg: #fef3c7;
       --danger: #ef4444;
       --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
       --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
@@ -102,7 +103,7 @@
     }
 
     .brand-title {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 700;
       line-height: 1.2;
       color: var(--text-main);
@@ -177,9 +178,37 @@
       padding: 16px;
     }
 
+    /* Audit Alert Banner */
+    .audit-banner {
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      color: white;
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .audit-stats {
+      display: flex;
+      gap: 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      flex-wrap: wrap;
+    }
+
+    .stat-chip {
+      background: rgba(255,255,255,0.2);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
     /* Search & Filter Bar */
     .search-filter-section {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -270,6 +299,31 @@
       box-shadow: 0 2px 6px rgba(16,132,126,0.25);
     }
 
+    /* Filter by Link Status (Teammate view) */
+    .link-filter-bar {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 0.82rem;
+    }
+
+    .link-filter-btn {
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .link-filter-btn.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+
     /* Stats & Info Bar */
     .info-bar {
       display: flex;
@@ -328,8 +382,15 @@
       gap: 6px;
     }
 
+    .card-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+
     .card-category {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -338,6 +399,28 @@
       padding: 3px 8px;
       border-radius: 6px;
       align-self: flex-start;
+    }
+
+    .link-status-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .status-ready {
+      background: var(--success-bg);
+      color: var(--success);
+      border: 1px solid rgba(16,185,129,0.3);
+    }
+
+    .status-missing {
+      background: var(--warning-bg);
+      color: #b45309;
+      border: 1px solid rgba(245,158,11,0.3);
     }
 
     .card-title {
@@ -494,6 +577,14 @@
     .student-enroll-btn:hover {
       transform: scale(1.01);
       box-shadow: 0 6px 14px rgba(255,107,53,0.4);
+    }
+
+    .student-inbox-btn {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 12px;
     }
 
     /* Toast Notification */
@@ -666,7 +757,7 @@
       <div class="brand">
         <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
         <div>
-          <div class="brand-title">10MS Course Hub</div>
+          <div class="brand-title">Learnova BD</div>
           <div class="brand-subtitle" id="portalSubtitle">Teammate Quick-Share Portal</div>
         </div>
       </div>
@@ -695,6 +786,19 @@
 
   <!-- Main Content Area -->
   <main>
+
+    <!-- Teammate Link Audit Banner -->
+    <div class="audit-banner" id="auditBanner">
+      <div>
+        <div style="font-weight: 700; font-size: 1rem;"><i class="fa-solid fa-shield-halved"></i> অ্যাফিলিয়েট লিংক অডিট রিপোর্ট</div>
+        <div style="font-size: 0.8rem; opacity: 0.9;">আপনার নিজস্ব প্রোমো ও শর্টলিংক যুক্ত কোর্সসমূহ সরাসরি ট্র্যাক হচ্ছে।</div>
+      </div>
+      <div class="audit-stats">
+        <div class="stat-chip"><i class="fa-solid fa-circle-check" style="color: #4ade80;"></i> <span id="readyLinkCount">66</span> টি লিংক রেডি</div>
+        <div class="stat-chip"><i class="fa-solid fa-triangle-exclamation" style="color: #fde047;"></i> <span id="missingLinkCount">35</span> টি লিংক বাকি</div>
+      </div>
+    </div>
+
     <!-- Search & Filter Area -->
     <section class="search-filter-section">
       <div class="search-input-wrapper">
@@ -709,6 +813,14 @@
         <button class="clear-search" id="clearSearchBtn" onclick="clearSearch()">
           <i class="fa-solid fa-xmark"></i>
         </button>
+      </div>
+
+      <!-- Link Filter for Teammates -->
+      <div class="link-filter-bar" id="linkFilterBar">
+        <span style="color: var(--text-muted); font-size: 0.78rem;">লিংক ফিল্টার:</span>
+        <button class="link-filter-btn active" id="filterAll" onclick="filterByLink('all')">সব কোর্স</button>
+        <button class="link-filter-btn" id="filterReady" onclick="filterByLink('ready')">✅ লিংক যুক্ত আছে</button>
+        <button class="link-filter-btn" id="filterMissing" onclick="filterByLink('missing')">⚠️ লিংক আপডেট বাকি</button>
       </div>
 
       <!-- Category Filter Chips -->
@@ -799,8 +911,9 @@
         </div>
 
         <div class="form-group">
-          <label class="form-label">অ্যাফিলিয়েট লিংক (Promo Link) *</label>
-          <input type="url" id="inputLink" class="form-control" placeholder="https://10ms.io/..." required>
+          <label class="form-label">আপনার নিজস্ব অ্যাফিলিয়েট লিংক (https://10ms.io/...) *</label>
+          <input type="url" id="inputLink" class="form-control" placeholder="https://10ms.io/XXXXX" required>
+          <small style="color: var(--text-muted); font-size: 0.75rem;">১০ মিনিট স্কুল পোর্টাল থেকে বানানো আপনার পার্সোনাল শর্টলিংক দিন</small>
         </div>
 
         <div class="modal-footer">
@@ -872,6 +985,7 @@
 
     let currentView = 'team'; // 'team' | 'student' | 'admin'
     let selectedCategory = 'all';
+    let linkFilter = 'all'; // 'all' | 'ready' | 'missing'
     let searchQuery = '';
     let courses = [];
 
@@ -911,6 +1025,7 @@
 
     function init() {
       loadCourses();
+      updateAuditCounts();
       renderCategoryChips();
       renderCourses();
       
@@ -920,6 +1035,19 @@
       }
     }
 
+    function updateAuditCounts() {
+      let ready = 0, missing = 0;
+      courses.forEach(c => {
+        if (c.link && c.link.includes('10ms.io/')) {
+          ready++;
+        } else {
+          missing++;
+        }
+      });
+      document.getElementById('readyLinkCount').innerText = ready;
+      document.getElementById('missingLinkCount').innerText = missing;
+    }
+
     function switchView(view) {
       currentView = view;
       document.getElementById('btnTeamView').classList.toggle('active', view === 'team');
@@ -927,10 +1055,28 @@
       
       const fab = document.getElementById('fabAdd');
       fab.style.display = (view === 'team' || view === 'admin') ? 'flex' : 'none';
+
+      const banner = document.getElementById('auditBanner');
+      const linkBar = document.getElementById('linkFilterBar');
+      if (view === 'student') {
+        banner.style.display = 'none';
+        linkBar.style.display = 'none';
+      } else {
+        banner.style.display = 'flex';
+        linkBar.style.display = 'flex';
+      }
       
       const sub = document.getElementById('portalSubtitle');
       sub.innerText = view === 'team' ? 'Teammate Quick-Share Portal' : 'Student Discount & Course Showcase';
 
+      renderCourses();
+    }
+
+    function filterByLink(type) {
+      linkFilter = type;
+      document.getElementById('filterAll').classList.toggle('active', type === 'all');
+      document.getElementById('filterReady').classList.toggle('active', type === 'ready');
+      document.getElementById('filterMissing').classList.toggle('active', type === 'missing');
       renderCourses();
     }
 
@@ -974,7 +1120,13 @@
           c.name.toLowerCase().includes(searchQuery) ||
           c.category.toLowerCase().includes(searchQuery) ||
           (c.promo && c.promo.toLowerCase().includes(searchQuery));
-        return matchesCategory && matchesSearch;
+        
+        const hasAffLink = c.link && c.link.includes('10ms.io/');
+        const matchesLinkFilter = linkFilter === 'all' || 
+          (linkFilter === 'ready' && hasAffLink) || 
+          (linkFilter === 'missing' && !hasAffLink);
+
+        return matchesCategory && matchesSearch && matchesLinkFilter;
       });
 
       document.getElementById('courseCount').innerText = filtered.length;
@@ -994,15 +1146,14 @@
     }
 
     function renderCard(c) {
-      const hasLink = c.link && c.link.startsWith('http');
-      const safeLink = hasLink ? c.link : 'https://10minuteschool.com';
+      const hasAffLink = c.link && c.link.includes('10ms.io/');
       const formattedPrice = Number(c.price).toLocaleString('en-IN');
       const formattedComm = Number(c.commission || c.price * 0.15).toFixed(0);
       const formattedCashback = Number(c.cashback || 0).toFixed(0);
       const formattedProfit = Number(c.profit || (c.commission - c.cashback)).toFixed(0);
 
       if (currentView === 'student') {
-        // STUDENT VIEW
+        // STUDENT VIEW: Never send directly to 10MS without affiliate attribution!
         return `
           <div class="course-card">
             <div class="card-top">
@@ -1023,10 +1174,16 @@
             </div>
 
             <div class="card-actions">
-              <a href="${safeLink}" target="_blank" class="btn student-enroll-btn">
-                <i class="fa-solid fa-cart-shopping"></i> ভর্তি হোন (Enroll Now)
-              </a>
-              <button class="btn-sm-icon" onclick="copyCourseLink('${safeLink}', '${c.name}')" title="লিংক কপি করুন">
+              ${hasAffLink ? `
+                <a href="${c.link}" target="_blank" class="btn student-enroll-btn">
+                  <i class="fa-solid fa-cart-shopping"></i> ভর্তি হোন (Enroll Now)
+                </a>
+              ` : `
+                <button class="btn student-inbox-btn" onclick="openInboxRequest('${c.name}', '${c.promo}')">
+                  <i class="fa-brands fa-facebook-messenger"></i> ইনবক্সে লিংক ও ক্যাশব্যাক নিন
+                </button>
+              `}
+              <button class="btn-sm-icon" onclick="copyCourseLink('${hasAffLink ? c.link : ''}', '${c.name}')" title="লিংক কপি করুন">
                 <i class="fa-solid fa-copy"></i>
               </button>
             </div>
@@ -1038,11 +1195,17 @@
       return `
         <div class="course-card">
           <div class="card-top">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="card-header-row">
               <div class="card-category">${c.category}</div>
-              <button class="btn-sm-icon" style="padding: 3px 8px; font-size: 0.75rem;" onclick="openEditCourseModal(${c.id})" title="Edit">
-                <i class="fa-solid fa-pen"></i> Edit
-              </button>
+              <div style="display: flex; gap: 6px; align-items: center;">
+                <span class="link-status-badge ${hasAffLink ? 'status-ready' : 'status-missing'}">
+                  <i class="fa-solid ${hasAffLink ? 'fa-check' : 'fa-triangle-exclamation'}"></i>
+                  ${hasAffLink ? 'Affiliate Ready' : 'Add Link'}
+                </span>
+                <button class="btn-sm-icon" style="padding: 2px 6px; font-size: 0.72rem;" onclick="openEditCourseModal(${c.id})" title="Edit">
+                  <i class="fa-solid fa-pen"></i>
+                </button>
+              </div>
             </div>
             <h4 class="card-title">${c.name}</h4>
           </div>
@@ -1080,7 +1243,7 @@
             <button class="btn btn-primary" onclick="copyPitchMessage(${c.id})">
               <i class="fa-solid fa-comment-dots"></i> কপি মেসেজ
             </button>
-            <button class="btn btn-outline" onclick="copyCourseLink('${safeLink}', '${c.name}')">
+            <button class="btn btn-outline" onclick="copyCourseLink('${hasAffLink ? c.link : ''}', '${c.name}')">
               <i class="fa-solid fa-link"></i> লিংক
             </button>
             <a href="https://wa.me/?text=${encodeURIComponent(generatePitchText(c))}" target="_blank" class="btn-sm-icon" title="WhatsApp Share" style="color: #25D366;">
@@ -1093,11 +1256,11 @@
 
     // Text & Link Copy Helpers
     function generatePitchText(c) {
-      const hasLink = c.link && c.link.startsWith('http');
-      const safeLink = hasLink ? c.link : 'https://10minuteschool.com';
+      const hasAffLink = c.link && c.link.includes('10ms.io/');
       const promoPart = c.promo ? `\n🏷️ প্রোমো কোড: ${c.promo}` : '';
+      const linkPart = hasAffLink ? `\n🔗 সরাসরি ভর্তি হওয়ার লিংক:\n${c.link}` : `\n(লিংক ও ডিসকাউন্টের জন্য ইনবক্সে মেসেজ দিন)`;
       
-      return `আসসালামু আলাইকুম!\n\n🎯 কোর্স: ${c.name}\n💰 অফার ফি: ৳${Number(c.price).toLocaleString('en-IN')}${promoPart}\n\n🔗 সরাসরি ভর্তি হওয়ার লিংক:\n${safeLink}\n\nভর্তি হতে কোনো সমস্যা হলে আমাকে জানাতে পারেন। ধন্যবাদ!`;
+      return `আসসালামু আলাইকুম!\n\n🎯 কোর্স: ${c.name}\n💰 অফার ফি: ৳${Number(c.price).toLocaleString('en-IN')}${promoPart}${linkPart}\n\nভর্তি হতে কোনো সমস্যা হলে আমাকে জানাতে পারেন। ধন্যবাদ!`;
     }
 
     function copyPitchMessage(id) {
@@ -1110,8 +1273,12 @@
     }
 
     function copyCourseLink(link, name) {
+      if (!link) {
+        showToast('⚠️ এই কোর্সের অ্যাফিলিয়েট লিংক এখনও যুক্ত করা হয়নি!');
+        return;
+      }
       navigator.clipboard.writeText(link).then(() => {
-        showToast('কোর্স লিংক কপি হয়েছে! ✅');
+        showToast('অ্যাফিলিয়েট লিংক কপি হয়েছে! ✅');
       });
     }
 
@@ -1119,6 +1286,12 @@
       navigator.clipboard.writeText(code).then(() => {
         showToast(`প্রোমো কোড '${code}' কপি হয়েছে! 🏷️`);
       });
+    }
+
+    function openInboxRequest(name, promo) {
+      const msg = `আসসালামু আলাইকুম, আমি '${name}' কোর্সে ডিসকাউন্টসহ ভর্তি হতে চাই।`;
+      showToast('ফেসবুক পেজ / হোয়াটসঅ্যাপে মেসেজ অপশন খোলা হচ্ছে...');
+      window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
     }
 
     function showToast(msg) {
@@ -1151,7 +1324,7 @@
       const c = courses.find(item => item.id === id);
       if (!c) return;
 
-      document.getElementById('modalTitle').innerText = 'কোর্স তথ্য আপডেট';
+      document.getElementById('modalTitle').innerText = 'কোর্স তথ্য ও লিংক আপডেট';
       document.getElementById('editCourseId').value = c.id;
       document.getElementById('inputCategory').value = c.category;
       document.getElementById('inputName').value = c.name;
@@ -1187,13 +1360,11 @@
       const link = document.getElementById('inputLink').value.trim();
 
       if (editId) {
-        // Update existing
         const idx = courses.findIndex(c => c.id == editId);
         if (idx !== -1) {
           courses[idx] = { ...courses[idx], category, name, price, promo, commission: comm, cashback, profit, link };
         }
       } else {
-        // Add new
         const newId = courses.length > 0 ? Math.max(...courses.map(c => c.id)) + 1 : 1;
         courses.unshift({
           id: newId,
@@ -1210,6 +1381,7 @@
 
       saveCoursesToStorage();
       closeCourseModal();
+      updateAuditCounts();
       renderCourses();
       showToast('কোর্স সফলভাবে সেভ হয়েছে! ✅');
     }
@@ -1227,7 +1399,7 @@
       let dataStr = '', filename = '', mimeType = '';
       if (format === 'json') {
         dataStr = JSON.stringify(courses, null, 2);
-        filename = '10MS_Courses_Backup.json';
+        filename = 'Learnova_Courses_Backup.json';
         mimeType = 'application/json';
       } else {
         const headers = ['Category', 'Course Name', 'Price', 'Promo Code', 'Commission', 'Cashback', 'Profit', 'Link'];
@@ -1242,7 +1414,7 @@
           `"${c.link || ''}"`
         ]);
         dataStr = [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
-        filename = '10MS_Courses_Backup.csv';
+        filename = 'Learnova_Courses_Backup.csv';
         mimeType = 'text/csv;charset=utf-8;';
       }
 
@@ -1259,6 +1431,7 @@
         courses = DEFAULT_COURSES;
         saveCoursesToStorage();
         closeAdminModal();
+        updateAuditCounts();
         renderCourses();
         showToast('মাস্টার ডাটা রিসেট হয়েছে!');
       }
@@ -1304,6 +1477,7 @@
           saveCoursesToStorage();
           localStorage.setItem('10ms_sheet_url', url);
           closeAdminModal();
+          updateAuditCounts();
           renderCourses();
           showToast(`গুগল শিট থেকে ${newCourses.length}টি কোর্স সিঙ্ক হয়েছে! 🎉`);
         }
