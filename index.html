@@ -83,11 +83,14 @@
       gap: 12px;
     }
 
+    /* Secret double-click logo container */
     .brand {
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
+      cursor: pointer;
+      user-select: none;
     }
 
     .brand-logo {
@@ -102,6 +105,11 @@
       font-size: 1.25rem;
       font-weight: 800;
       box-shadow: 0 3px 6px rgba(14,131,125,0.3);
+      transition: transform 0.15s;
+    }
+
+    .brand:active .brand-logo {
+      transform: scale(0.92);
     }
 
     .brand-title {
@@ -124,8 +132,8 @@
       gap: 8px;
     }
 
-    /* Teammate Navigation (Only visible when logged in) */
-    .team-nav-pills {
+    /* Staff Navigation (Only visible after secret login) */
+    .staff-nav-pills {
       display: none;
       background: var(--bg);
       border: 1px solid var(--border);
@@ -134,7 +142,7 @@
       gap: 3px;
     }
 
-    .team-nav-btn {
+    .staff-nav-btn {
       padding: 6px 12px;
       font-size: 0.82rem;
       font-weight: 600;
@@ -149,7 +157,7 @@
       transition: all 0.2s;
     }
 
-    .team-nav-btn.active {
+    .staff-nav-btn.active {
       background: var(--card-bg);
       color: var(--primary);
       box-shadow: var(--shadow-sm);
@@ -175,7 +183,8 @@
       color: var(--primary);
     }
 
-    .team-login-btn {
+    .logout-btn {
+      display: none;
       background: var(--bg);
       border: 1px solid var(--border);
       color: var(--text-muted);
@@ -184,15 +193,14 @@
       font-size: 0.82rem;
       font-weight: 600;
       cursor: pointer;
-      display: flex;
       align-items: center;
       gap: 6px;
       transition: all 0.2s;
     }
 
-    .team-login-btn:hover {
-      color: var(--primary);
-      border-color: var(--primary);
+    .logout-btn:hover {
+      color: var(--danger);
+      border-color: var(--danger);
     }
 
     /* Hero Section for Students */
@@ -810,34 +818,34 @@
   <!-- Top Header Navigation -->
   <header>
     <div class="header-container">
-      <a href="#" class="brand" onclick="switchView('student')">
+      <!-- SECRET DOUBLE-CLICK / DOUBLE-TAP LOGO -->
+      <div class="brand" id="brandLogoTrigger" onclick="handleLogoClick()" title="Learnova BD">
         <div class="brand-logo"><i class="fa-solid fa-graduation-cap"></i></div>
         <div>
           <div class="brand-title">Learnova BD</div>
           <div class="brand-subtitle" id="portalSubtitle">১০ মিনিট স্কুল কোর্স ডিসকাউন্ট পোর্টাল</div>
         </div>
-      </a>
+      </div>
 
-      <!-- Teammate Workspace Navigation (Visible ONLY when logged in) -->
-      <div class="team-nav-pills" id="teamNavPills">
-        <button class="team-nav-btn" id="btnStudentView" onclick="switchView('student')">
+      <!-- Staff Navigation (Hidden from regular students) -->
+      <div class="staff-nav-pills" id="staffNavPills">
+        <button class="staff-nav-btn" id="btnStudentView" onclick="switchView('student')">
           <i class="fa-solid fa-user-graduate"></i> Student View
         </button>
-        <button class="team-nav-btn active" id="btnTeamView" onclick="switchView('team')">
+        <button class="staff-nav-btn active" id="btnTeamView" onclick="switchView('team')">
           <i class="fa-solid fa-users"></i> Teammates
         </button>
-        <!-- Manage Button (Manager Protected) -->
-        <button class="team-nav-btn" id="btnAdminView" onclick="handleManagerClick()">
+        <button class="staff-nav-btn" id="btnAdminView" onclick="handleManagerClick()">
           <i class="fa-solid fa-shield-halved"></i> <span id="adminBtnLabel">Manager 🔒</span>
         </button>
       </div>
 
       <!-- Right Header Actions -->
       <div class="header-actions">
-        <!-- Team Login / Logout Button -->
-        <button class="team-login-btn" id="authBtn" onclick="handleAuthClick()">
-          <i class="fa-solid fa-lock" id="authBtnIcon"></i>
-          <span id="authBtnText">টিম লগইন</span>
+        <!-- Logout Button (Only visible after logging in) -->
+        <button class="logout-btn" id="logoutBtn" onclick="handleLogout()">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>লগআউট</span>
         </button>
 
         <button class="btn-icon" onclick="toggleTheme()" title="Toggle Theme">
@@ -853,7 +861,7 @@
       ১০ মিনিট স্কুলের সকল কোর্সে <span class="hero-highlight">এক্সক্লুসিভ ডিসকাউন্ট</span> ও অফার
     </h1>
     <p class="hero-desc">
-      অনলাইন ব্যাচ (Class 6-10), SSC, HSC, এডমিশন, স্পোকেন ইংলিশ ও ফ্রিল্যান্সিং কোর্সে সর্বোচ্চ ছাড় পেতে আপনার পছন্দের কোর্সটি বেছে নিন।
+      অনলাইন ব্যাচ (Class 6-10), SSC 28, HSC 28, এডমিশন, স্পোকেন ইংলিশ ও ফ্রিল্যান্সিং কোর্সে সর্বোচ্চ ছাড় পেতে আপনার পছন্দের কোর্সটি বেছে নিন।
     </p>
   </section>
 
@@ -871,8 +879,8 @@
         </div>
       </div>
       <div class="team-stats">
-        <div class="stat-chip"><i class="fa-solid fa-circle-check" style="color: #4ade80;"></i> <span id="readyLinkCount">66</span> টি লিংক রেডি</div>
-        <div class="stat-chip"><i class="fa-solid fa-triangle-exclamation" style="color: #fde047;"></i> <span id="missingLinkCount">35</span> টি লিংক বাকি</div>
+        <div class="stat-chip"><i class="fa-solid fa-circle-check" style="color: #4ade80;"></i> <span id="readyLinkCount">0</span> টি লিংক রেডি</div>
+        <div class="stat-chip"><i class="fa-solid fa-triangle-exclamation" style="color: #fde047;"></i> <span id="missingLinkCount">0</span> টি লিংক বাকি</div>
       </div>
     </div>
 
@@ -884,7 +892,7 @@
           type="text" 
           id="searchInput" 
           class="search-input" 
-          placeholder="কোর্স খুঁজুন (যেমন: HSC 26, Spoken English, Admission, ইত্যাদি)..."
+          placeholder="কোর্স খুঁজুন (যেমন: SSC 28, HSC 28, Spoken, Admission)..."
           oninput="handleSearch()"
         >
         <button class="clear-search" id="clearSearchBtn" onclick="clearSearch()">
@@ -932,7 +940,7 @@
     <div>© 2026 Learnova BD — Authorized 10 Minute School Affiliate Partner Hub</div>
     <div class="footer-links">
       <span class="footer-link" onclick="openSupportModal()"><i class="fa-brands fa-whatsapp"></i> কাস্টমার সাপোর্ট</span>
-      <span class="footer-link" onclick="handleAuthClick()"><i class="fa-solid fa-lock"></i> মেম্বার লগইন</span>
+      <span class="footer-link" onclick="openSecretLogin()"><i class="fa-solid fa-shield-halved"></i> পোর্টাল সাপোর্ট</span>
     </div>
   </footer>
 
@@ -942,24 +950,24 @@
     <span id="toastMsg">লিংক কপি হয়েছে!</span>
   </div>
 
-  <!-- Teammate Login Modal -->
+  <!-- Secret Staff Login Modal (Unlocked by Double Click) -->
   <div class="modal-backdrop" id="loginModal">
     <div class="modal-box">
       <div class="modal-header">
-        <h3 class="modal-title"><i class="fa-solid fa-lock" style="color: var(--primary);"></i> টিম লগইন (Teammate Login)</h3>
+        <h3 class="modal-title"><i class="fa-solid fa-lock" style="color: var(--primary);"></i> সিক্রেট পোর্টাল এক্সেস (Staff Login)</h3>
         <button class="btn-icon" onclick="closeLoginModal()"><i class="fa-solid fa-xmark"></i></button>
       </div>
-      <form onsubmit="submitTeamLogin(event)">
+      <form onsubmit="submitStaffLogin(event)">
         <div class="form-group">
-          <label class="form-label">টিম পাসওয়ার্ড দিন *</label>
-          <input type="password" id="teamPasswordInput" class="form-control" placeholder="পাসওয়ার্ড লিখুন..." required autofocus>
+          <label class="form-label">টিম অথবা ম্যানেজার পাসওয়ার্ড দিন *</label>
+          <input type="password" id="staffPasswordInput" class="form-control" placeholder="পাসওয়ার্ড লিখুন..." required autofocus>
           <small style="color: var(--text-muted); font-size: 0.75rem; margin-top: 4px; display: block;">
-            টিম মেম্বার ছাড়া এই প্যানেল শিক্ষার্থীদের জন্য উন্মুক্ত নয়।
+            টিম মেম্বারদের জন্য সেলস টুল এবং ম্যানেজারের জন্য পূর্ণ ড্যাশবোর্ড আনলক হবে।
           </small>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline" onclick="closeLoginModal()">বাতিল</button>
-          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket"></i> প্রবেশ করুন</button>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket"></i> আনলক করুন</button>
         </div>
       </form>
     </div>
@@ -1001,11 +1009,11 @@
         <div class="form-group">
           <label class="form-label">ক্যাটেগরি *</label>
           <select id="inputCategory" class="form-control" required>
+            <option value="Academic: SSC 27 & 28 Prep">Academic: SSC 27 & 28 Prep</option>
             <option value="Academic: Online Batch (Class 6-10)">Academic: Online Batch (Class 6-10)</option>
-            <option value="Academic: SSC Prep">Academic: SSC Prep</option>
-            <option value="Academic: HSC 26 Prep">Academic: HSC 26 Prep</option>
+            <option value="Academic: HSC 28 Prep">Academic: HSC 28 Prep</option>
             <option value="Academic: HSC 27 Prep">Academic: HSC 27 Prep</option>
-            <option value="Academic: HSC Test Paper & Solves">Academic: HSC Test Paper & Solves</option>
+            <option value="Academic: HSC 26 Prep">Academic: HSC 26 Prep</option>
             <option value="Academic: Admission Prep">Academic: Admission Prep</option>
             <option value="English Language Courses">English Language Courses</option>
             <option value="Skills & Freelancing">Skills & Freelancing</option>
@@ -1017,7 +1025,7 @@
 
         <div class="form-group">
           <label class="form-label">কোর্সের নাম *</label>
-          <input type="text" id="inputName" class="form-control" placeholder="যেমন: ঘরে বসে Spoken English" required>
+          <input type="text" id="inputName" class="form-control" placeholder="যেমন: SSC 28 পূর্ণাঙ্গ প্রস্তুতি" required>
         </div>
 
         <div class="form-grid-2">
@@ -1027,7 +1035,7 @@
           </div>
           <div class="form-group">
             <label class="form-label">প্রোমো কোড</label>
-            <input type="text" id="inputPromo" class="form-control" placeholder="যেমন: affgbse1690">
+            <input type="text" id="inputPromo" class="form-control" placeholder="যেমন: ssc28smp">
           </div>
         </div>
 
@@ -1144,6 +1152,32 @@
     let searchQuery = '';
     let courses = [];
 
+    // Logo Click Detection (Double Click/Tap Easter Egg)
+    let lastLogoClick = 0;
+    function handleLogoClick() {
+      const now = new Date().getTime();
+      const delta = now - lastLogoClick;
+      lastLogoClick = now;
+
+      if (delta < 400 && delta > 0) {
+        // Double click detected!
+        if (isTeamLoggedIn || isManagerLoggedIn) {
+          switchView('team');
+        } else {
+          openSecretLogin();
+        }
+      }
+    }
+
+    function openSecretLogin() {
+      document.getElementById('staffPasswordInput').value = '';
+      document.getElementById('loginModal').classList.add('active');
+    }
+
+    function closeLoginModal() {
+      document.getElementById('loginModal').classList.remove('active');
+    }
+
     // Load from LocalStorage or Default
     function loadCourses() {
       const saved = localStorage.getItem('10ms_affiliate_courses');
@@ -1173,11 +1207,11 @@
     // Categories List
     const CATEGORIES = [
       { id: 'all', name: 'সব কোর্স (All)' },
+      { id: 'Academic: SSC 27 & 28 Prep', name: '🎯 SSC 27 & 28' },
       { id: 'Academic: Online Batch (Class 6-10)', name: '🏫 Class 6-10 Batches' },
-      { id: 'Academic: SSC Prep', name: '🎯 SSC Prep' },
-      { id: 'Academic: HSC 26 Prep', name: '📚 HSC 26' },
+      { id: 'Academic: HSC 28 Prep', name: '⚡ HSC 28' },
       { id: 'Academic: HSC 27 Prep', name: '🚀 HSC 27' },
-      { id: 'Academic: HSC Test Paper & Solves', name: '📝 HSC Test Paper' },
+      { id: 'Academic: HSC 26 Prep', name: '📚 HSC 26' },
       { id: 'Academic: Admission Prep', name: '🏛️ Admission 25/26' },
       { id: 'English Language Courses', name: '🗣️ Spoken English & IELTS' },
       { id: 'Skills & Freelancing', name: '💻 Skills & Freelancing' },
@@ -1215,36 +1249,26 @@
       applyViewUI();
     }
 
-    function handleAuthClick() {
-      if (isTeamLoggedIn || isManagerLoggedIn) {
-        if (confirm('আপনি কি টিম ওয়ার্কস্পেস থেকে লগআউট করতে চান?')) {
-          localStorage.removeItem('learnova_team_auth');
-          localStorage.removeItem('learnova_manager_auth');
-          isTeamLoggedIn = false;
-          isManagerLoggedIn = false;
-          currentView = 'student';
-          applyViewUI();
-          renderCourses();
-          showToast('সফলভাবে লগআউট হয়েছে');
-        }
-      } else {
-        document.getElementById('teamPasswordInput').value = '';
-        document.getElementById('loginModal').classList.add('active');
+    function handleLogout() {
+      if (confirm('আপনি কি টিম ওয়ার্কস্পেস থেকে লগআউট করতে চান?')) {
+        localStorage.removeItem('learnova_team_auth');
+        localStorage.removeItem('learnova_manager_auth');
+        isTeamLoggedIn = false;
+        isManagerLoggedIn = false;
+        currentView = 'student';
+        applyViewUI();
+        renderCourses();
+        showToast('সফলভাবে লগআউট হয়েছে');
       }
     }
 
-    function closeLoginModal() {
-      document.getElementById('loginModal').classList.remove('active');
-    }
-
-    function submitTeamLogin(e) {
+    function submitStaffLogin(e) {
       e.preventDefault();
-      const inputPass = document.getElementById('teamPasswordInput').value.trim();
+      const inputPass = document.getElementById('staffPasswordInput').value.trim();
       const actualTeamPass = getTeamPassword();
       const actualManagerPass = getManagerPassword();
 
       if (inputPass === actualManagerPass) {
-        // Logged in as Manager directly
         isManagerLoggedIn = true;
         isTeamLoggedIn = true;
         localStorage.setItem('learnova_manager_auth', 'true');
@@ -1255,7 +1279,6 @@
         renderCourses();
         showToast('ম্যানেজার হিসেবে স্বাগতম! সর্বময় নিয়ন্ত্রণ সক্রিয় 👑');
       } else if (inputPass === actualTeamPass) {
-        // Logged in as Teammate
         isTeamLoggedIn = true;
         isManagerLoggedIn = false;
         localStorage.setItem('learnova_team_auth', 'true');
@@ -1265,11 +1288,10 @@
         renderCourses();
         showToast('স্বাগতম! টিম ওয়ার্কস্পেস সক্রিয় হয়েছে ✅');
       } else {
-        alert('ভুল পাসওয়ার্ড! অনুগ্রহ করে সঠিক টিম পাসওয়ার্ড দিন।');
+        alert('ভুল পাসওয়ার্ড! অনুগ্রহ করে সঠিক পাসওয়ার্ড দিন।');
       }
     }
 
-    // Manager Protected Authentication
     function handleManagerClick() {
       if (isManagerLoggedIn) {
         openAdminModal();
@@ -1324,9 +1346,8 @@
     }
 
     function applyViewUI() {
-      const navPills = document.getElementById('teamNavPills');
-      const authBtnText = document.getElementById('authBtnText');
-      const authBtnIcon = document.getElementById('authBtnIcon');
+      const navPills = document.getElementById('staffNavPills');
+      const logoutBtn = document.getElementById('logoutBtn');
       const heroBanner = document.getElementById('heroBanner');
       const teamBanner = document.getElementById('teamBanner');
       const linkBar = document.getElementById('linkFilterBar');
@@ -1342,8 +1363,7 @@
 
       if (isTeamLoggedIn || isManagerLoggedIn) {
         navPills.style.display = 'flex';
-        authBtnText.innerText = 'লগআউট';
-        authBtnIcon.className = 'fa-solid fa-right-from-bracket';
+        logoutBtn.style.display = 'flex';
         
         if (currentView === 'team') {
           heroBanner.style.display = 'none';
@@ -1363,9 +1383,9 @@
           document.getElementById('btnTeamView').classList.remove('active');
         }
       } else {
+        // Public Student Mode: Completely clean with ZERO login UI!
         navPills.style.display = 'none';
-        authBtnText.innerText = 'টিম লগইন';
-        authBtnIcon.className = 'fa-solid fa-lock';
+        logoutBtn.style.display = 'none';
         heroBanner.style.display = 'block';
         teamBanner.style.display = 'none';
         linkBar.style.display = 'none';
@@ -1376,7 +1396,7 @@
 
     function switchView(view) {
       if (view === 'team' && !isTeamLoggedIn && !isManagerLoggedIn) {
-        handleAuthClick();
+        openSecretLogin();
         return;
       }
       currentView = view;
@@ -1478,7 +1498,7 @@
       const formattedProfit = Number(c.profit || (c.commission - c.cashback)).toFixed(0);
 
       if (currentView === 'student' || (!isTeamLoggedIn && !isManagerLoggedIn)) {
-        // STUDENT VIEW
+        // STUDENT VIEW: Clean and professional
         return `
           <div class="course-card">
             <div class="card-top">
@@ -1516,7 +1536,7 @@
         `;
       }
 
-      // TEAMMATE WORKSPACE VIEW (Edit button ONLY visible if Manager is unlocked)
+      // TEAMMATE WORKSPACE VIEW
       return `
         <div class="course-card">
           <div class="card-top">
