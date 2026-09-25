@@ -257,6 +257,77 @@
       flex: 1;
     }
 
+    /* Motivation & Barakah Banner Card */
+    .motivation-banner {
+      display: none;
+      background: linear-gradient(135deg, rgba(14,131,125,0.07) 0%, rgba(16,185,129,0.05) 100%);
+      border: 1px solid rgba(14,131,125,0.25);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .quote-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .quote-text {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.45;
+    }
+
+    .quote-subtext {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+      line-height: 1.35;
+    }
+
+    .quote-ref {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-top: 5px;
+      display: inline-block;
+    }
+
+    .quote-refresh-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      font-size: 0.85rem;
+    }
+
+    .quote-refresh-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: rotate(180deg);
+    }
+
     /* Teammate Notification Banner */
     .team-banner {
       display: none;
@@ -1005,7 +1076,7 @@
       </div>
 
       <div class="header-actions">
-        <!-- Active User Badge (Simple, Clean, No crowns) -->
+        <!-- Active User Badge (Simple, Clean) -->
         <div class="user-profile-pill" id="userProfilePill">
           <i class="fa-solid fa-user-check"></i>
           <span id="activeUserName">Team Member</span>
@@ -1021,7 +1092,7 @@
           </button>
         </div>
 
-        <!-- Manager Analytics & Control Button (Only visible for Manager) -->
+        <!-- Manager Controls Button -->
         <button class="btn-icon" id="adminBtn" onclick="handleManagerClick()" title="কন্ট্রোল প্যানেল" style="display: none;">
           <i class="fa-solid fa-sliders"></i>
         </button>
@@ -1050,6 +1121,21 @@
 
   <!-- Main Content -->
   <main>
+    <!-- Dynamic Motivation & Barakah Banner (Visible in Workspace) -->
+    <div class="motivation-banner" id="motivationBanner">
+      <div style="flex: 1;">
+        <div class="quote-badge">
+          <i class="fa-solid fa-sparkles" id="quoteIconTag"></i> <span id="quoteCategoryTag">দৈনিক অনুপ্রেরণা ও বরকত</span>
+        </div>
+        <div class="quote-text" id="quoteMainText">"মানুষ তাই পায়, যার জন্য সে চেষ্টা করে।"</div>
+        <div class="quote-subtext" id="quoteSubText">And that there is not for man except that [good] for which he strives.</div>
+        <div class="quote-ref" id="quoteRefText">— সূরা আন-নাজম: ৩৯</div>
+      </div>
+      <button class="quote-refresh-btn" onclick="rollNextQuote()" title="নতুন অনুপ্রেরণা পরিবর্তন করুন">
+        <i class="fa-solid fa-rotate"></i>
+      </button>
+    </div>
+
     <!-- Teammate Workspace Alert Banner -->
     <div class="team-banner" id="teamBanner">
       <div>
@@ -1182,12 +1268,24 @@
 
   <!-- Team Analytics & Leaderboard Modal -->
   <div class="modal-overlay" id="analyticsModal">
-    <div class="modal-card" style="max-width: 740px;">
+    <div class="modal-card" style="max-width: 760px;">
       <div class="modal-header">
         <h3 class="modal-title"><i class="fa-solid fa-trophy" style="color: var(--primary);"></i> টিম পারফরম্যান্স ও লিডারবোর্ড</h3>
         <button class="modal-close" onclick="closeAnalyticsModal()">&times;</button>
       </div>
       <div class="modal-body">
+        <!-- Modal In-board Motivation Banner -->
+        <div class="motivation-banner" style="display: flex; margin-bottom: 12px; padding: 10px 14px;">
+          <div style="flex: 1;">
+            <div class="quote-badge"><i class="fa-solid fa-sparkles"></i> <span id="modalQuoteTag">কাজের প্রেরণা</span></div>
+            <div class="quote-text" id="modalQuoteText" style="font-size: 0.88rem;">"নিজের হাতের উপার্জনের চেয়ে উত্তম খাবার কেউ কখনো খায়নি।"</div>
+            <div class="quote-ref" id="modalQuoteRef" style="font-size: 0.72rem;">— সহিহ বুখারি: ২০৭২</div>
+          </div>
+          <button class="quote-refresh-btn" onclick="rollModalQuote()" title="নতুন বাণী" style="width: 28px; height: 28px; font-size: 0.75rem;">
+            <i class="fa-solid fa-rotate"></i>
+          </button>
+        </div>
+
         <div class="analytics-tabs">
           <button class="tab-btn active" id="tabBtnLeaderboard" onclick="switchAnalyticsTab('leaderboard')">🏆 টিম লিডারবোর্ড</button>
           <button class="tab-btn" id="tabBtnLogs" onclick="switchAnalyticsTab('logs')">📋 লাইভ অডিট লগ (<span id="totalLogsBadge">0</span>)</button>
@@ -1431,6 +1529,84 @@
       { id: 'nasim', name: 'Nasim Reza', pass: 'nasim2026', role: 'Sales Specialist', isManager: false }
     ];
 
+    // Rich Collection of Quranic Ayahs, Sahih Hadiths, and Business/Work Ethics Quotes
+    const MOTIVATIONAL_QUOTES = [
+      {
+        tag: 'আল-কুরআনের বাণী',
+        text: '“মানুষ তাই পায়, যার জন্য সে চেষ্টা করে।”',
+        sub: 'And that there is not for man except that [good] for which he strives.',
+        ref: '— সূরা আন-নাজম: ৩৯'
+      },
+      {
+        tag: 'সহিহ হাদিস',
+        text: '“নিজের হাতের উপার্জনের চেয়ে উত্তম খাবার কেউ কখনো খায়নি।”',
+        sub: 'No one has ever eaten better food than what he has earned by the labor of his own hands.',
+        ref: '— সহিহ বুখারি: ২০৭২'
+      },
+      {
+        tag: 'আল-কুরআনের বাণী',
+        text: '“নিশ্চয় কষ্টের সাথেই স্বস্তি রয়েছে।”',
+        sub: 'Indeed, with hardship comes ease.',
+        ref: '— সূরা আল-ইনশিরাহ: ৫-৬'
+      },
+      {
+        tag: 'সহিহ হাদিস',
+        text: '“সৎ ও আমানতদার ব্যবসায়ী পরকালে নবী, সত্যবাদী ও শহীদদের সাথে থাকবেন।”',
+        sub: 'The honest and trustworthy merchant will be with the prophets, the truthful, and the martyrs.',
+        ref: '— জামে তিরমিজি: ১২০৯'
+      },
+      {
+        tag: 'আল-কুরআনের বাণী',
+        text: '“যে ব্যক্তি আল্লাহর উপর ভরসা করে, তার জন্য তিনিই যথেষ্ট।”',
+        sub: 'And whoever relies upon Allah - then He is sufficient for him.',
+        ref: '— সূরা আত-তালাক: ৩'
+      },
+      {
+        tag: 'সহিহ হাদিস',
+        text: '“নিশ্চয় আল্লাহ ভালোবাসেন যখন তোমাদের কেউ কোনো কাজ করে, সে যেন তা নিখুঁত ও নিষ্ঠার সাথে করে।”',
+        sub: 'Allah loves that whenever any of you does a job, he should do it with perfection and excellence.',
+        ref: '— শুআবুল ঈমান (বাইহাকী): ৪৯৩১'
+      },
+      {
+        tag: 'বিজনেস ও কর্মপ্রেরণা',
+        text: '“Disciplined effort consistent over time produces extraordinary results.”',
+        sub: 'ধারাবাহিক ও সুশৃঙ্খল পরিশ্রমই দিনশেষে অসাধারণ সাফল্য এনে দেয়।',
+        ref: '— Jim Rohn'
+      },
+      {
+        tag: 'আল-কুরআনের বাণী',
+        text: '“অতঃপর যখন তুমি দৃঢ় সংকল্প করবে, তখন আল্লাহর উপর ভরসা কর। নিশ্চয় আল্লাহ ভরসাকারীদের ভালোবাসেন।”',
+        sub: 'And when you have decided, then rely upon Allah. Indeed, Allah loves those who rely [upon Him].',
+        ref: '— সূরা আলে ইমরান: ১৫৯'
+      },
+      {
+        tag: 'সহিহ হাদিস',
+        text: '“যে ব্যক্তি মানুষের কল্যাণে কাজ করে, আল্লাহ তার সাহায্যে থাকেন।”',
+        sub: 'Allah will aid His servant as long as the servant aids his brother.',
+        ref: '— সহিহ মুসলিম: ২৬৯৯'
+      },
+      {
+        tag: 'বিজনেস ও কর্মপ্রেরণা',
+        text: '“You don’t have to be great to start, but you have to start to be great.”',
+        sub: 'শুরু করার জন্য পারফেক্ট হওয়ার দরকার নেই, তবে সফল হতে হলে শুরু করতেই হবে।',
+        ref: '— Zig Ziglar'
+      },
+      {
+        tag: 'আল-কুরআনের বাণী',
+        text: '“অতঃপর নামাজ সমাপ্ত হলে জমিনে ছড়িয়ে পড় এবং আল্লাহর অনুগ্রহ (রিজিক) সন্ধান কর।”',
+        sub: 'And when the prayer has been concluded, disperse within the land and seek from the bounty of Allah.',
+        ref: '— সূরা আল-জুমুআহ: ১০'
+      },
+      {
+        tag: 'বিজনেস ও কর্মপ্রেরণা',
+        text: '“The only way to do great work is to love what you do.”',
+        sub: 'অসাধারণ কিছু তৈরি করার একমাত্র পথ হলো আপনি যা করছেন তা মন দিয়ে ভালোবাসা।',
+        ref: '— Steve Jobs'
+      }
+    ];
+
+    let currentQuoteIndex = 0;
+
     let courses = [];
     let currentView = 'student'; // 'student' or 'team'
     let selectedCategory = 'all';
@@ -1457,6 +1633,27 @@
       if (!link) return false;
       const l = link.toLowerCase();
       return l.includes('10ms.io/') || l.includes('aff=') || l.includes('10minuteschool.com');
+    }
+
+    function rollNextQuote() {
+      currentQuoteIndex = (currentQuoteIndex + 1) % MOTIVATIONAL_QUOTES.length;
+      renderCurrentQuote();
+    }
+
+    function rollModalQuote() {
+      const randIdx = Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length);
+      const q = MOTIVATIONAL_QUOTES[randIdx];
+      document.getElementById('modalQuoteTag').innerText = q.tag;
+      document.getElementById('modalQuoteText').innerText = q.text;
+      document.getElementById('modalQuoteRef').innerText = q.ref;
+    }
+
+    function renderCurrentQuote() {
+      const q = MOTIVATIONAL_QUOTES[currentQuoteIndex];
+      document.getElementById('quoteCategoryTag').innerText = q.tag;
+      document.getElementById('quoteMainText').innerText = q.text;
+      document.getElementById('quoteSubText').innerText = q.sub;
+      document.getElementById('quoteRefText').innerText = q.ref;
     }
 
     function getTeamMembers() {
@@ -1534,6 +1731,10 @@
 
     // Initialize
     function init() {
+      // Random initial quote on start
+      currentQuoteIndex = Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length);
+      renderCurrentQuote();
+      
       loadSavedCourses();
       checkAuthSession();
       renderCategoryChips();
@@ -1623,6 +1824,10 @@
         localStorage.setItem('learnova_active_user', JSON.stringify(currentUser));
         closeSecretLogin();
         currentView = 'team';
+        
+        // Pick fresh quote on login
+        rollNextQuote();
+
         applyViewUI();
         renderCourses();
         showToast(`স্বাগতম ${matchedMember.name}! 💼`);
@@ -1655,6 +1860,7 @@
       const logoutBtn = document.getElementById('logoutBtn');
       const heroBanner = document.getElementById('heroBanner');
       const teamBanner = document.getElementById('teamBanner');
+      const motivationBanner = document.getElementById('motivationBanner');
       const linkBar = document.getElementById('linkFilterBar');
       const fab = document.getElementById('fabAdd');
       const subtitle = document.getElementById('portalSubtitle');
@@ -1691,6 +1897,7 @@
         
         if (currentView === 'team') {
           heroBanner.style.display = 'none';
+          motivationBanner.style.display = 'flex';
           teamBanner.style.display = 'flex';
           linkBar.style.display = 'flex';
           fab.style.display = isManagerLoggedIn ? 'flex' : 'none';
@@ -1700,6 +1907,7 @@
           document.getElementById('btnStudentView').classList.remove('active');
         } else {
           heroBanner.style.display = 'block';
+          motivationBanner.style.display = 'none';
           teamBanner.style.display = 'none';
           linkBar.style.display = 'none';
           fab.style.display = 'none';
@@ -1712,6 +1920,7 @@
         navPills.style.display = 'none';
         logoutBtn.style.display = 'none';
         heroBanner.style.display = 'block';
+        motivationBanner.style.display = 'none';
         teamBanner.style.display = 'none';
         linkBar.style.display = 'none';
         fab.style.display = 'none';
@@ -2051,6 +2260,7 @@
 
     function openAnalyticsModal() {
       document.getElementById('analyticsModal').classList.add('active');
+      rollModalQuote();
       renderLeaderboard();
       renderAuditLogs();
       renderTeamPasswordSettings();
@@ -2075,6 +2285,7 @@
     }
 
     function refreshAnalytics() {
+      rollModalQuote();
       renderLeaderboard();
       renderAuditLogs();
       showToast('এনালিটিক্স রিফ্রেশ হয়েছে! 🔄');
