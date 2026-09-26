@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Learnova BD | ১০ মিনিট স্কুল কোর্স ডিসকাউন্ট, লাইভ কুইজ ও স্টাডি হাব</title>
+  <title>Learnova BD | ১০ মিনিট স্কুল কোর্স ডিসকাউন্ট ও টিম পোর্টাল</title>
   
   <!-- Google Fonts: Hind Siliguri & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,7 +64,7 @@
       flex-direction: column;
     }
 
-    /* Live Announcement Scrolling Ticker */
+    /* Live Top Announcement Ticker */
     .top-ticker {
       background: linear-gradient(90deg, #095955, #0e837d, #059669);
       color: #ffffff;
@@ -81,7 +81,7 @@
     .ticker-content {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       white-space: nowrap;
       overflow: hidden;
     }
@@ -183,6 +183,8 @@
       transition: all 0.2s;
     }
 
+    .user-profile-pill:hover { background: #d1fae5; }
+
     .staff-nav-pills {
       display: none;
       background: var(--bg);
@@ -245,16 +247,18 @@
       transition: all 0.2s;
     }
 
+    .logout-btn:hover { color: var(--danger); border-color: var(--danger); }
+
     /* Hero Banner */
     .hero-banner {
-      background: linear-gradient(135deg, rgba(14,131,125,0.09) 0%, rgba(5,150,105,0.05) 100%);
+      background: linear-gradient(135deg, rgba(14,131,125,0.08) 0%, rgba(5,150,105,0.04) 100%);
       border-bottom: 1px solid var(--border);
-      padding: 26px 16px;
+      padding: 24px 16px;
       text-align: center;
     }
 
     .hero-title {
-      font-size: 1.6rem;
+      font-size: 1.55rem;
       font-weight: 800;
       color: var(--text-main);
       margin-bottom: 6px;
@@ -266,219 +270,103 @@
     main {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px 16px 40px;
-      flex: 1;
+      padding: 16px;
       width: 100%;
+      flex: 1;
     }
 
-    /* Section Heading */
-    .section-title-wrap {
-      display: flex;
-      align-items: center;
+    /* Teammate Motivation Banner */
+    .motivation-banner {
+      display: none;
+      background: linear-gradient(135deg, rgba(14,131,125,0.07) 0%, rgba(16,185,129,0.05) 100%);
+      border: 1px solid rgba(14,131,125,0.25);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      margin-bottom: 16px;
+      align-items: flex-start;
       justify-content: space-between;
-      margin-bottom: 14px;
-    }
-
-    .section-heading {
-      font-size: 1.15rem;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--text-main);
-    }
-
-    /* Telegram Communities Hub */
-    .tg-community-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .tg-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 10px;
-      transition: all 0.25s ease;
-      text-decoration: none;
-      color: inherit;
       box-shadow: var(--shadow-sm);
     }
 
-    .tg-card:hover {
-      border-color: var(--primary);
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .tg-card-header {
-      display: flex;
+    .quote-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
-    }
-
-    .tg-card-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      flex-shrink: 0;
-    }
-
-    .tg-sci-icon { background: linear-gradient(135deg, #0ea5e9, #059669); color: #fff; }
-    .tg-hum-icon { background: linear-gradient(135deg, #a855f7, #d97706); color: #fff; }
-    .tg-bus-icon { background: linear-gradient(135deg, #2563eb, #10b981); color: #fff; }
-    .tg-disc-icon { background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; }
-    .tg-main-icon { background: linear-gradient(135deg, #dc2626, #991b1b); color: #fff; }
-
-    .tg-card-title { font-size: 0.92rem; font-weight: 700; line-height: 1.25; color: var(--text-main); }
-    .tg-card-badge { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); margin-top: 2px; }
-    .tg-card-cta {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 8px;
-      border-top: 1px solid var(--border);
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #0284c7;
-    }
-
-    /* Daily Quiz Arena & Toppers Grid */
-    .quiz-topper-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    @media (max-width: 860px) {
-      .quiz-topper-grid { grid-template-columns: 1fr; }
-    }
-
-    .interactive-quiz-box {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .quiz-subject-pills {
-      display: flex;
       gap: 6px;
-      overflow-x: auto;
-      margin-bottom: 12px;
-      padding-bottom: 4px;
-      scrollbar-width: none;
-    }
-
-    .quiz-subj-pill {
-      padding: 4px 10px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s;
-    }
-
-    .quiz-subj-pill.active {
-      background: var(--primary-light);
-      border-color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
       color: var(--primary);
+      background: var(--primary-light);
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 6px;
     }
 
-    .quiz-question-card {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 12px;
-    }
-
-    .quiz-question-text {
+    .quote-text {
       font-size: 0.98rem;
       font-weight: 700;
       color: var(--text-main);
       line-height: 1.4;
-      margin-bottom: 12px;
+      margin-bottom: 4px;
     }
 
-    .quiz-options-list { display: flex; flex-direction: column; gap: 8px; }
-
-    .quiz-opt-btn {
-      text-align: left;
-      padding: 9px 12px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
+    .quote-subtext { font-size: 0.82rem; color: var(--text-muted); font-style: italic; }
+    .quote-ref { font-size: 0.75rem; color: var(--primary); font-weight: 600; margin-top: 4px; }
+    .quote-refresh-btn {
       background: var(--card-bg);
-      color: var(--text-main);
-      font-size: 0.88rem;
-      font-weight: 600;
-      cursor: pointer;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
       transition: all 0.2s;
     }
 
-    .quiz-opt-btn:hover { border-color: var(--primary); }
-    .quiz-opt-btn.correct { background: var(--success-bg) !important; border-color: var(--success) !important; color: #065f46 !important; font-weight: 700; }
-    .quiz-opt-btn.wrong { background: #fef2f2 !important; border-color: #ef4444 !important; color: #991b1b !important; }
+    .quote-refresh-btn:hover { color: var(--primary); border-color: var(--primary); }
 
-    .quiz-feedback-box {
+    /* Teammate Workspace Alert Banner */
+    .team-banner {
       display: none;
-      margin-top: 12px;
-      padding: 10px 12px;
-      border-radius: 8px;
-      background: var(--primary-light);
+      background: linear-gradient(135deg, rgba(14,131,125,0.12), rgba(5,150,105,0.08));
       border: 1px solid rgba(14,131,125,0.3);
-      font-size: 0.84rem;
-      line-height: 1.45;
-    }
-
-    .toppers-corner-box {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 18px;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .toppers-list { display: flex; flex-direction: column; gap: 10px; margin: 12px 0; }
-    .topper-item {
-      display: flex;
+      padding: 14px 18px;
+      margin-bottom: 16px;
       align-items: center;
       justify-content: space-between;
-      padding: 8px 12px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--bg);
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
-    .topper-left { display: flex; align-items: center; gap: 10px; }
-    .topper-rank-icon { font-size: 1.3rem; }
-    .topper-info-name { font-size: 0.88rem; font-weight: 700; color: var(--text-main); }
-    .topper-info-college { font-size: 0.74rem; color: var(--text-muted); }
-    .topper-score { font-size: 0.82rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; background: var(--primary-light); color: var(--primary); }
+    .team-banner h3 { font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); }
+    .team-banner p { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+    .team-banner-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
-    /* Teammate Pitch Hub Section */
+    .banner-btn {
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(14,131,125,0.3);
+      background: var(--card-bg);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .banner-btn:hover { background: var(--primary-light); }
+
+    /* 1-Click Category Pitch Hub */
     .pitch-hub-section {
       display: none;
       background: var(--card-bg);
@@ -533,6 +421,196 @@
       color: var(--primary);
     }
 
+    /* Telegram Communities Hub */
+    .section-title-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .section-heading {
+      font-size: 1.12rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-main);
+    }
+
+    .tg-community-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .tg-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tg-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tg-card-header { display: flex; align-items: center; gap: 10px; }
+    .tg-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tg-sci-icon { background: linear-gradient(135deg, #0ea5e9, #059669); color: #fff; }
+    .tg-hum-icon { background: linear-gradient(135deg, #a855f7, #d97706); color: #fff; }
+    .tg-bus-icon { background: linear-gradient(135deg, #2563eb, #10b981); color: #fff; }
+    .tg-disc-icon { background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; }
+    .tg-main-icon { background: linear-gradient(135deg, #dc2626, #991b1b); color: #fff; }
+
+    .tg-card-title { font-size: 0.9rem; font-weight: 700; line-height: 1.2; color: var(--text-main); }
+    .tg-card-badge { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); margin-top: 2px; }
+    .tg-card-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #0284c7;
+    }
+
+    /* Daily Quiz Arena & Toppers Grid */
+    .quiz-topper-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 860px) {
+      .quiz-topper-grid { grid-template-columns: 1fr; }
+    }
+
+    .interactive-quiz-box, .toppers-corner-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .quiz-subject-pills {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      margin-bottom: 10px;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+
+    .quiz-subj-pill {
+      padding: 4px 10px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .quiz-subj-pill.active {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .quiz-question-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .quiz-question-text {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .quiz-options-list { display: flex; flex-direction: column; gap: 6px; }
+
+    .quiz-opt-btn {
+      text-align: left;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text-main);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .quiz-opt-btn:hover { border-color: var(--primary); }
+    .quiz-opt-btn.correct { background: var(--success-bg) !important; border-color: var(--success) !important; color: #065f46 !important; font-weight: 700; }
+    .quiz-opt-btn.wrong { background: #fef2f2 !important; border-color: #ef4444 !important; color: #991b1b !important; }
+
+    .quiz-feedback-box {
+      display: none;
+      margin-top: 10px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: var(--primary-light);
+      border: 1px solid rgba(14,131,125,0.3);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .toppers-list { display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
+    .topper-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .topper-left { display: flex; align-items: center; gap: 8px; }
+    .topper-rank-icon { font-size: 1.2rem; }
+    .topper-info-name { font-size: 0.85rem; font-weight: 700; color: var(--text-main); }
+    .topper-info-college { font-size: 0.72rem; color: var(--text-muted); }
+    .topper-score { font-size: 0.78rem; font-weight: 800; padding: 2px 7px; border-radius: 6px; background: var(--primary-light); color: var(--primary); }
+
     /* Course Search & Filter Bar */
     .filter-section {
       display: flex;
@@ -541,11 +619,7 @@
       margin-bottom: 16px;
     }
 
-    .search-box {
-      position: relative;
-      width: 100%;
-    }
-
+    .search-box { position: relative; width: 100%; }
     .search-input {
       width: 100%;
       padding: 12px 42px 12px 40px;
@@ -558,30 +632,10 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .search-input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(14,131,125,0.15);
-    }
+    .search-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(14,131,125,0.15); }
+    .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+    .search-clear { position: absolute; right: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); cursor: pointer; display: none; }
 
-    .search-icon {
-      position: absolute;
-      left: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-muted);
-    }
-
-    .search-clear {
-      position: absolute;
-      right: 14px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-muted);
-      cursor: pointer;
-      display: none;
-    }
-
-    /* Primary Category Chips */
     .category-chips {
       display: flex;
       gap: 8px;
@@ -605,13 +659,9 @@
       transition: all 0.2s;
     }
 
-    .chip.active {
-      background-color: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-    }
+    .chip.active { background-color: var(--primary); color: #fff; border-color: var(--primary); }
 
-    /* DYNAMIC SUB-CATEGORY PILLS BAR (Science, Arts, Commerce) */
+    /* DYNAMIC SUB-CATEGORY DEPARTMENT FILTER BAR */
     .sub-category-bar {
       display: flex;
       gap: 6px;
@@ -625,18 +675,7 @@
     }
 
     .sub-category-bar::-webkit-scrollbar { display: none; }
-
-    .sub-cat-label {
-      font-size: 0.74rem;
-      font-weight: 800;
-      color: var(--primary-dark);
-      white-space: nowrap;
-      margin-right: 4px;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
+    .sub-cat-label { font-size: 0.74rem; font-weight: 800; color: var(--primary-dark); white-space: nowrap; margin-right: 4px; }
     .sub-chip {
       white-space: nowrap;
       padding: 5px 11px;
@@ -650,18 +689,33 @@
       transition: all 0.2s;
     }
 
-    .sub-chip:hover {
-      border-color: var(--primary);
-      color: var(--primary);
+    .sub-chip:hover { border-color: var(--primary); color: var(--primary); }
+    .sub-chip.active { background-color: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* Teammate Link Status Filter Bar */
+    .link-filter-bar {
+      display: none;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
-    .sub-chip.active {
-      background-color: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
+    .link-pill {
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-muted);
     }
 
-    /* Course Grid */
+    .link-pill.active { background: var(--primary-light); border-color: var(--primary); color: var(--primary); }
+
+    /* Course Cards Grid */
     .courses-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -681,10 +735,7 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .course-card:hover {
-      box-shadow: var(--shadow-md);
-      transform: translateY(-2px);
-    }
+    .course-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
 
     .card-category {
       font-size: 0.72rem;
@@ -697,12 +748,7 @@
       align-self: flex-start;
     }
 
-    .card-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text-main);
-      line-height: 1.35;
-    }
+    .card-title { font-size: 1.05rem; font-weight: 700; color: var(--text-main); line-height: 1.35; }
 
     .card-price-row {
       display: flex;
@@ -714,20 +760,8 @@
       border: 1px solid var(--border);
     }
 
-    .original-strike {
-      text-decoration: line-through;
-      color: #94a3b8;
-      font-weight: 600;
-      font-size: 0.8rem;
-    }
-
-    .price-tag {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--primary);
-      font-family: 'Inter', sans-serif;
-    }
-
+    .original-strike { text-decoration: line-through; color: #94a3b8; font-weight: 600; font-size: 0.8rem; }
+    .price-tag { font-size: 1.35rem; font-weight: 800; color: var(--primary); font-family: 'Inter', sans-serif; }
     .savings-badge {
       background: linear-gradient(135deg, #ef4444, #f97316);
       color: #fff;
@@ -740,11 +774,22 @@
       gap: 4px;
     }
 
-    .card-actions {
-      display: flex;
-      gap: 8px;
+    .teammate-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      padding: 8px;
+      background: var(--bg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      text-align: center;
     }
 
+    .metric-label { font-size: 0.7rem; color: var(--text-muted); font-weight: 600; }
+    .metric-val { font-size: 0.85rem; font-weight: 800; color: var(--text-main); font-family: 'Inter', sans-serif; margin-top: 2px; }
+    .metric-profit { color: var(--success-dark); }
+
+    .card-actions { display: flex; gap: 8px; }
     .btn {
       padding: 10px 14px;
       border-radius: 8px;
@@ -762,10 +807,11 @@
 
     .btn-primary { background-color: var(--primary); color: #fff; flex: 1; }
     .btn-outline { background-color: transparent; border: 1px solid var(--border); color: var(--text-main); }
+    .btn-success { background-color: var(--success); color: #fff; }
     .student-enroll-btn { background: linear-gradient(135deg, var(--primary), #059669); color: #fff; flex: 1; }
     .btn-sm-icon { width: 38px; height: 38px; border-radius: 8px; border: 1px solid var(--border); background: var(--card-bg); display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
-    /* Modals */
+    /* Modals & Analytics Components */
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -794,7 +840,28 @@
     .modal-body { padding: 16px 18px; }
     .modal-footer { padding: 12px 18px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 8px; }
 
-    /* Toast */
+    /* Leaderboard Grid in Modal */
+    .analytics-tabs { display: flex; gap: 6px; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 12px; overflow-x: auto; }
+    .tab-btn { padding: 6px 14px; font-size: 0.85rem; font-weight: 600; border: none; background: transparent; color: var(--text-muted); border-radius: 6px; cursor: pointer; white-space: nowrap; }
+    .tab-btn.active { background: var(--primary-light); color: var(--primary); }
+
+    .leaderboard-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .leaderboard-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px; display: flex; flex-direction: column; gap: 6px; position: relative; }
+    .rank-badge { position: absolute; top: 10px; right: 10px; font-size: 0.75rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; }
+    .rank-1 { background: #fef08a; color: #854d0e; border: 1px solid #fde047; }
+    .rank-2 { background: #e2e8f0; color: #334155; border: 1px solid #cbd5e1; }
+    .rank-3 { background: #fed7aa; color: #9a3412; border: 1px solid #fdba74; }
+    .rank-other { background: var(--card-bg); color: var(--text-muted); border: 1px solid var(--border); }
+    .member-name { font-weight: 700; font-size: 0.95rem; color: var(--text-main); padding-right: 32px; line-height: 1.2; }
+    .member-stat-row { display: flex; justify-content: space-between; font-size: 0.78rem; color: var(--text-muted); }
+    .member-stat-val { font-weight: 700; color: var(--text-main); }
+    .confirmed-sales-box { background: var(--success-bg); border: 1px solid rgba(16,185,129,0.3); border-radius: 6px; padding: 6px 8px; margin-top: 4px; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #065f46; font-weight: 700; }
+
+    .logs-table-container { max-height: 280px; overflow-y: auto; border: 1px solid var(--border); border-radius: 8px; }
+    .logs-table { width: 100%; border-collapse: collapse; font-size: 0.78rem; }
+    .logs-table th, .logs-table td { padding: 8px 10px; text-align: left; border-bottom: 1px solid var(--border); }
+    .logs-table th { background: var(--bg); position: sticky; top: 0; color: var(--text-muted); font-weight: 600; }
+
     .toast {
       position: fixed;
       bottom: 24px;
@@ -846,7 +913,7 @@
         </div>
         <div>
           <div class="brand-title">Learnova BD</div>
-          <div class="brand-subtitle" id="portalSubtitle">১০ মিনিট স্কুল কোর্স ডিসকাউন্ট ও স্টাডি হাব</div>
+          <div class="brand-subtitle" id="portalSubtitle">১০ মিনিট স্কুল কোর্স ডিসকাউন্ট ও টিম পোর্টাল</div>
         </div>
       </div>
 
@@ -876,7 +943,7 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section (Student View Only) -->
   <section class="hero-banner" id="heroBanner">
     <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: var(--primary-light); color: var(--primary); border-radius: 20px; font-size: 0.8rem; font-weight: 700; margin-bottom: 8px;">
       <i class="fa-solid fa-bolt"></i> স্পেশাল পার্টনারশিপ পোর্টাল
@@ -887,205 +954,228 @@
 
   <!-- Main Container -->
   <main>
-
-    <!-- SECTION 1: Telegram Study Communities Hub -->
-    <div class="section-title-wrap">
-      <h2 class="section-heading">
-        <i class="fa-brands fa-telegram" style="color: #0284c7;"></i>
-        <span>আমাদের টেলিগ্রাম স্টাডি কমিউনিটি ও কুইজ গ্রুপসমূহ</span>
-      </h2>
-      <span style="font-size: 0.8rem; color: var(--text-muted);">১-ক্লিকে ফ্রিতে যোগ দিন</span>
-    </div>
-
-    <div class="tg-community-grid">
-      <!-- Science Group -->
-      <a href="https://t.me/hsc_science_learnova" target="_blank" class="tg-card">
-        <div class="tg-card-header">
-          <div class="tg-card-icon tg-sci-icon"><i class="fa-solid fa-atom"></i></div>
-          <div>
-            <div class="tg-card-title">HSC Science Study Hub</div>
-            <div class="tg-card-badge">Physics • Chem • Math • Bio</div>
-          </div>
+    <!-- Teammate Motivation & Barakah Banner -->
+    <div class="motivation-banner" id="motivationBanner">
+      <div style="flex: 1;">
+        <div class="quote-badge">
+          <i class="fa-solid fa-sparkles"></i> <span id="quoteCategoryTag">দৈনিক অনুপ্রেরণা ও বরকত</span>
         </div>
-        <div class="tg-card-cta">
-          <span>@hsc_science_learnova</span>
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </div>
-      </a>
-
-      <!-- Humanities Group -->
-      <a href="https://t.me/hsc_humanities_learnova" target="_blank" class="tg-card">
-        <div class="tg-card-header">
-          <div class="tg-card-icon tg-hum-icon"><i class="fa-solid fa-feather-pointed"></i></div>
-          <div>
-            <div class="tg-card-title">HSC Humanities Hub</div>
-            <div class="tg-card-badge">বাংলা • English • ICT • অর্থনীতি</div>
-          </div>
-        </div>
-        <div class="tg-card-cta">
-          <span>@hsc_humanities_learnova</span>
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </div>
-      </a>
-
-      <!-- Business Studies Group -->
-      <a href="https://t.me/hsc_business_learnova" target="_blank" class="tg-card">
-        <div class="tg-card-header">
-          <div class="tg-card-icon tg-bus-icon"><i class="fa-solid fa-chart-line"></i></div>
-          <div>
-            <div class="tg-card-title">HSC Business Squad</div>
-            <div class="tg-card-badge">হিসাববিজ্ঞান • ফিন্যান্স • ম্যানেজমেন্ট</div>
-          </div>
-        </div>
-        <div class="tg-card-cta">
-          <span>@hsc_business_learnova</span>
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </div>
-      </a>
-
-      <!-- Discussion Group -->
-      <a href="https://t.me/tenminuteschoolC" target="_blank" class="tg-card">
-        <div class="tg-card-header">
-          <div class="tg-card-icon tg-disc-icon"><i class="fa-solid fa-comments"></i></div>
-          <div>
-            <div class="tg-card-title">HSC 27 & 28 Discussion</div>
-            <div class="tg-card-badge">ওপেন ডাউট সলভ ও গ্রুপ স্টাডি</div>
-          </div>
-        </div>
-        <div class="tg-card-cta">
-          <span>Study & Discussion</span>
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </div>
-      </a>
-
-      <!-- Main 10MS Channel -->
-      <a href="https://t.me/tenminuteschoolC" target="_blank" class="tg-card">
-        <div class="tg-card-header">
-          <div class="tg-card-icon tg-main-icon"><i class="fa-solid fa-bullhorn"></i></div>
-          <div>
-            <div class="tg-card-title">10MS Courses (1.4K+)</div>
-            <div class="tg-card-badge">অফিশিয়াল মেগা ডিসকাউন্ট চ্যানেল</div>
-          </div>
-        </div>
-        <div class="tg-card-cta">
-          <span>@tenminuteschoolC</span>
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </div>
-      </a>
-    </div>
-
-    <!-- SECTION 2: Daily Interactive Quiz Arena & National Toppers Corner -->
-    <div class="quiz-topper-grid">
-      <!-- Interactive Web Quiz Arena -->
-      <div class="interactive-quiz-box">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-          <h3 style="font-size: 1rem; font-weight: 800; display: flex; align-items: center; gap: 6px;">
-            <i class="fa-solid fa-gamepad" style="color: var(--accent);"></i>
-            <span>ডেইলি লাইভ কুইজ এরিনা (Daily Practice)</span>
-          </h3>
-          <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: var(--success-bg); color: var(--success-dark); font-weight: 700;">● লাইভ টেস্ট</span>
-        </div>
-
-        <div class="quiz-subject-pills">
-          <button class="quiz-subj-pill active" onclick="loadWebQuiz('physics')">🔬 পদার্থবিজ্ঞান</button>
-          <button class="quiz-subj-pill" onclick="loadWebQuiz('chemistry')">🧪 রসায়ন</button>
-          <button class="quiz-subj-pill" onclick="loadWebQuiz('math')">📐 উচ্চতর গণিত</button>
-          <button class="quiz-subj-pill" onclick="loadWebQuiz('bangla')">📖 বাংলা</button>
-          <button class="quiz-subj-pill" onclick="loadWebQuiz('accounting')">💼 হিসাববিজ্ঞান</button>
-        </div>
-
-        <div class="quiz-question-card">
-          <div class="quiz-question-text" id="webQuizQuestion">বল ও সরণের মধ্যবর্তী কোণ ৯০° হলে কৃতকাজের মান কত?</div>
-          <div class="quiz-options-list" id="webQuizOptions"></div>
-          <div class="quiz-feedback-box" id="webQuizFeedback"></div>
-        </div>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 4px;">
-          <button class="btn btn-outline" style="font-size: 0.78rem; padding: 6px 12px;" onclick="loadRandomWebQuiz()">
-            <i class="fa-solid fa-rotate"></i> পরবর্তী প্রশ্ন
-          </button>
-          <a href="https://t.me/tenminuteschoolC" target="_blank" style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-decoration: none;">
-            টেলিগ্রামে ২০+ ফ্রি কুইজ খেলুন ➡️
-          </a>
-        </div>
+        <div class="quote-text" id="quoteMainText">"মানুষ তাই পায়, যার জন্য সে চেষ্টা করে।"</div>
+        <div class="quote-subtext" id="quoteSubText">And that there is not for man except that [good] for which he strives.</div>
+        <div class="quote-ref" id="quoteRefText">— সূরা আন-নাজম: ৩৯</div>
       </div>
+      <button class="quote-refresh-btn" onclick="rollNextQuote()" title="নতুন অনুপ্রেরণা">
+        <i class="fa-solid fa-rotate"></i>
+      </button>
+    </div>
 
-      <!-- National Toppers Corner -->
-      <div class="toppers-corner-box">
-        <div>
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h3 style="font-size: 1rem; font-weight: 800; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-trophy" style="color: #eab308;"></i>
-              <span>টপার্স কর্নার: দেশসেরা কুইজ চ্যাম্পিয়নস</span>
-            </h3>
-            <span style="font-size: 0.72rem; color: var(--text-muted);">সাপ্তাহিক রেজাল্ট</span>
-          </div>
-          <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">টেলিগ্রাম কুইজ প্রতিযোগিতায় সারা দেশের শীর্ষ ৩ জন মেধাবী শিক্ষার্থী:</p>
-
-          <div class="toppers-list">
-            <div class="topper-item" style="border-color: #fde047; background: rgba(254, 240, 138, 0.15);">
-              <div class="topper-left">
-                <span class="topper-rank-icon">🥇</span>
-                <div>
-                  <div class="topper-info-name">সাদমান সাকিব (HSC 28)</div>
-                  <div class="topper-info-college">ঢাকা কলেজ, ঢাকা</div>
-                </div>
-              </div>
-              <span class="topper-score" style="background: #fef08a; color: #854d0e;">১ম স্থান (১০০/১০০)</span>
-            </div>
-
-            <div class="topper-item">
-              <div class="topper-left">
-                <span class="topper-rank-icon">🥈</span>
-                <div>
-                  <div class="topper-info-name">ফারহানা তাবাসসুম (HSC 28)</div>
-                  <div class="topper-info-college">ভিকারুননিসা নূন স্কুল ও কলেজ</div>
-                </div>
-              </div>
-              <span class="topper-score">২য় স্থান (৯৮/১০০)</span>
-            </div>
-
-            <div class="topper-item">
-              <div class="topper-left">
-                <span class="topper-rank-icon">🥉</span>
-                <div>
-                  <div class="topper-info-name">আব্দুল্লাহ আল নোমান (HSC 27)</div>
-                  <div class="topper-info-college">নটর ডেম কলেজ, ঢাকা</div>
-                </div>
-              </div>
-              <span class="topper-score">৩য় স্থান (৯৫/১০০)</span>
-            </div>
-          </div>
-        </div>
-
-        <div style="background: var(--primary-light); padding: 8px 12px; border-radius: 8px; text-align: center; font-size: 0.78rem; font-weight: 700; color: var(--primary);">
-          🎯 আগামী শনিবার রাত ১০টায় মেগা কুইজে অংশ নিয়ে নিজের নাম তুলুন টপার্স কর্নারে!
-        </div>
+    <!-- Teammate Workspace Alert Banner -->
+    <div class="team-banner" id="teamBanner">
+      <div>
+        <h3 id="teamBannerTitle">টিমমেট ওয়ার্কস্পেস সক্রিয়</h3>
+        <p>সকল লিংক কপি ও নিশ্চিত বিক্রি আপনার অ্যাকাউন্টে স্বয়ংক্রিয়ভাবে ট্র্যাক হচ্ছে।</p>
+      </div>
+      <div class="team-banner-actions">
+        <button class="banner-btn" onclick="openAnalyticsModal()">
+          <i class="fa-solid fa-trophy"></i> টিম লিডারবোর্ড
+        </button>
+        <button class="banner-btn" onclick="openChangePasswordModal()">
+          <i class="fa-solid fa-key"></i> পাসওয়ার্ড পরিবর্তন
+        </button>
       </div>
     </div>
 
-    <!-- Teammate Pitch Hub Section (Visible in Workspace) -->
+    <!-- 1-Click Micro-Category Pitch Hub (Workspace View) -->
     <section class="pitch-hub-section" id="pitchHubSection">
       <div class="pitch-hub-header">
         <div class="pitch-hub-title">
           <i class="fa-solid fa-bolt" style="color: var(--accent);"></i>
-          <span>১-ক্লিক ক্যাটাগরি পিচ হাব (ইনবক্স চ্যাটের রেডিমেড মেসেজ)</span>
+          <span>১-ক্লিক ক্যাটাগরি পিচ হাব (ইনবক্স চ্যাটের রেডিমেড সেলস কপি)</span>
         </div>
         <span style="font-size: 0.75rem; color: var(--text-muted);">১-ট্যাপে সম্পূর্ণ তালিকা কপি করুন</span>
       </div>
       <div class="pitch-hub-grid" id="pitchHubGrid"></div>
     </section>
 
+    <!-- SECTION 1: Telegram Study Communities Hub (Student View) -->
+    <div id="studentCommunitySection">
+      <div class="section-title-wrap">
+        <h2 class="section-heading">
+          <i class="fa-brands fa-telegram" style="color: #0284c7;"></i>
+          <span>আমাদের টেলিগ্রাম স্টাডি কমিউনিটি ও কুইজ গ্রুপসমূহ</span>
+        </h2>
+        <span style="font-size: 0.8rem; color: var(--text-muted);">১-ক্লিকে ফ্রিতে যোগ দিন</span>
+      </div>
+
+      <div class="tg-community-grid">
+        <a href="https://t.me/hsc_science_learnova" target="_blank" class="tg-card">
+          <div class="tg-card-header">
+            <div class="tg-card-icon tg-sci-icon"><i class="fa-solid fa-atom"></i></div>
+            <div>
+              <div class="tg-card-title">HSC Science Study Hub</div>
+              <div class="tg-card-badge">Physics • Chem • Math • Bio</div>
+            </div>
+          </div>
+          <div class="tg-card-cta">
+            <span>@hsc_science_learnova</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </div>
+        </a>
+
+        <a href="https://t.me/hsc_humanities_learnova" target="_blank" class="tg-card">
+          <div class="tg-card-header">
+            <div class="tg-card-icon tg-hum-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+            <div>
+              <div class="tg-card-title">HSC Humanities Hub</div>
+              <div class="tg-card-badge">বাংলা • English • ICT • অর্থনীতি</div>
+            </div>
+          </div>
+          <div class="tg-card-cta">
+            <span>@hsc_humanities_learnova</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </div>
+        </a>
+
+        <a href="https://t.me/hsc_business_learnova" target="_blank" class="tg-card">
+          <div class="tg-card-header">
+            <div class="tg-card-icon tg-bus-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div>
+              <div class="tg-card-title">HSC Business Squad</div>
+              <div class="tg-card-badge">হিসাববিজ্ঞান • ফিন্যান্স • ম্যানেজমেন্ট</div>
+            </div>
+          </div>
+          <div class="tg-card-cta">
+            <span>@hsc_business_learnova</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </div>
+        </a>
+
+        <a href="https://t.me/tenminuteschoolC" target="_blank" class="tg-card">
+          <div class="tg-card-header">
+            <div class="tg-card-icon tg-disc-icon"><i class="fa-solid fa-comments"></i></div>
+            <div>
+              <div class="tg-card-title">HSC 27 & 28 Discussion</div>
+              <div class="tg-card-badge">ওপেন ডাউট সলভ ও গ্রুপ স্টাডি</div>
+            </div>
+          </div>
+          <div class="tg-card-cta">
+            <span>Study & Discussion</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </div>
+        </a>
+
+        <a href="https://t.me/tenminuteschoolC" target="_blank" class="tg-card">
+          <div class="tg-card-header">
+            <div class="tg-card-icon tg-main-icon"><i class="fa-solid fa-bullhorn"></i></div>
+            <div>
+              <div class="tg-card-title">10MS Courses (1.4K+)</div>
+              <div class="tg-card-badge">অফিশিয়াল মেগা ডিসকাউন্ট চ্যানেল</div>
+            </div>
+          </div>
+          <div class="tg-card-cta">
+            <span>@tenminuteschoolC</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </div>
+        </a>
+      </div>
+
+      <!-- SECTION 2: Daily Interactive Quiz Arena & National Toppers Corner -->
+      <div class="quiz-topper-grid">
+        <div class="interactive-quiz-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h3 style="font-size: 1rem; font-weight: 800; display: flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-gamepad" style="color: var(--accent);"></i>
+              <span>ডেইলি লাইভ কুইজ এরিনা (Daily Practice)</span>
+            </h3>
+            <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: var(--success-bg); color: var(--success-dark); font-weight: 700;">● লাইভ টেস্ট</span>
+          </div>
+
+          <div class="quiz-subject-pills">
+            <button class="quiz-subj-pill active" onclick="loadWebQuiz('physics')">🔬 পদার্থবিজ্ঞান</button>
+            <button class="quiz-subj-pill" onclick="loadWebQuiz('chemistry')">🧪 রসায়ন</button>
+            <button class="quiz-subj-pill" onclick="loadWebQuiz('math')">📐 উচ্চতর গণিত</button>
+            <button class="quiz-subj-pill" onclick="loadWebQuiz('bangla')">📖 বাংলা</button>
+            <button class="quiz-subj-pill" onclick="loadWebQuiz('accounting')">💼 হিসাববিজ্ঞান</button>
+          </div>
+
+          <div class="quiz-question-card">
+            <div class="quiz-question-text" id="webQuizQuestion">বল ও সরণের মধ্যবর্তী কোণ ৯০° হলে কৃতকাজের মান কত?</div>
+            <div class="quiz-options-list" id="webQuizOptions"></div>
+            <div class="quiz-feedback-box" id="webQuizFeedback"></div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 4px;">
+            <button class="btn btn-outline" style="font-size: 0.78rem; padding: 6px 12px;" onclick="loadRandomWebQuiz()">
+              <i class="fa-solid fa-rotate"></i> পরবর্তী প্রশ্ন
+            </button>
+            <a href="https://t.me/tenminuteschoolC" target="_blank" style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-decoration: none;">
+              টেলিগ্রামে ২০+ ফ্রি কুইজ খেলুন ➡️
+            </a>
+          </div>
+        </div>
+
+        <div class="toppers-corner-box">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="font-size: 1rem; font-weight: 800; display: flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-trophy" style="color: #eab308;"></i>
+                <span>টপার্স কর্নার: দেশসেরা কুইজ চ্যাম্পিয়নস</span>
+              </h3>
+              <span style="font-size: 0.72rem; color: var(--text-muted);">সাপ্তাহিক রেজাল্ট</span>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">টেলিগ্রাম কুইজ প্রতিযোগিতায় সারা দেশের শীর্ষ ৩ জন মেধাবী শিক্ষার্থী:</p>
+
+            <div class="toppers-list">
+              <div class="topper-item" style="border-color: #fde047; background: rgba(254, 240, 138, 0.15);">
+                <div class="topper-left">
+                  <span class="topper-rank-icon">🥇</span>
+                  <div>
+                    <div class="topper-info-name">সাদমান সাকিব (HSC 28)</div>
+                    <div class="topper-info-college">ঢাকা কলেজ, ঢাকা</div>
+                  </div>
+                </div>
+                <span class="topper-score" style="background: #fef08a; color: #854d0e;">১ম স্থান (১০০/১০০)</span>
+              </div>
+
+              <div class="topper-item">
+                <div class="topper-left">
+                  <span class="topper-rank-icon">🥈</span>
+                  <div>
+                    <div class="topper-info-name">ফারহানা তাবাসসুম (HSC 28)</div>
+                    <div class="topper-info-college">ভিকারুননিসা নূন স্কুল ও কলেজ</div>
+                  </div>
+                </div>
+                <span class="topper-score">২য় স্থান (৯৮/১০০)</span>
+              </div>
+
+              <div class="topper-item">
+                <div class="topper-left">
+                  <span class="topper-rank-icon">🥉</span>
+                  <div>
+                    <div class="topper-info-name">আব্দুল্লাহ আল নোমান (HSC 27)</div>
+                    <div class="topper-info-college">নটর ডেম কলেজ, ঢাকা</div>
+                  </div>
+                </div>
+                <span class="topper-score">৩য় স্থান (৯৫/১০০)</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: var(--primary-light); padding: 8px 12px; border-radius: 8px; text-align: center; font-size: 0.78rem; font-weight: 700; color: var(--primary);">
+            🎯 আগামী শনিবার রাত ১০টায় মেগা কুইজে অংশ নিয়ে নিজের নাম তুলুন টপার্স কর্নারে!
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Search & Filters Section -->
     <section class="filter-section">
-      <!-- Search Input -->
       <div class="search-box">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
         <input type="text" id="searchInput" class="search-input" placeholder="কোর্সের নাম, ক্যাটাগরি বা বিষয় লিখে খুঁজুন..." oninput="handleSearch()">
         <i class="fa-solid fa-circle-xmark search-clear" id="clearSearchBtn" onclick="clearSearch()"></i>
       </div>
 
-      <!-- Main Category Chips -->
       <div class="category-chips" id="categoryChips"></div>
 
       <!-- DYNAMIC SUB-CATEGORY DEPARTMENT FILTER BAR -->
@@ -1094,6 +1184,14 @@
         <div id="subCategoryChips" style="display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;"></div>
       </div>
     </section>
+
+    <!-- Teammate Link Status Filter Bar -->
+    <div class="link-filter-bar" id="linkFilterBar">
+      <span>অ্যাফিলিয়েট লিংক ফিল্টার:</span>
+      <button class="link-pill active" id="filterAll" onclick="filterByLink('all')">সকল কোর্স</button>
+      <button class="link-pill" id="filterReady" onclick="filterByLink('ready')">✅ লিংক প্রস্তুত (<span id="readyLinkCount">0</span>)</button>
+      <button class="link-pill" id="filterMissing" onclick="filterByLink('missing')">⚠️ লিংক নেই (<span id="missingLinkCount">0</span>)</button>
+    </div>
 
     <!-- Results Header -->
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
@@ -1107,13 +1205,13 @@
 
   <!-- Pitch Modal -->
   <div class="modal-overlay" id="pitchModal">
-    <div class="modal-card">
+    <div class="modal-card" style="max-width: 600px;">
       <div class="modal-header">
         <h3 class="modal-title" id="pitchModalTitle">ক্যাটাগরি পিচ প্রিভিউ</h3>
         <button class="modal-close" onclick="closePitchModal()">&times;</button>
       </div>
       <div class="modal-body">
-        <textarea id="pitchModalTextarea" style="width:100%; height:220px; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text-main); font-family:inherit; outline:none; resize:vertical; font-size:0.85rem; line-height:1.45;"></textarea>
+        <textarea id="pitchModalTextarea" style="width:100%; height:220px; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text-main); font-family:inherit; outline:none; resize:vertical; font-size:0.85rem; line-height:1.45;" readonly></textarea>
       </div>
       <div class="modal-footer">
         <button class="btn btn-outline" onclick="closePitchModal()">বন্ধ করুন</button>
@@ -1123,18 +1221,115 @@
     </div>
   </div>
 
+  <!-- Confirm Purchase / Record Sale Modal -->
+  <div class="modal-overlay" id="confirmSaleModal">
+    <div class="modal-card" style="max-width: 480px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-circle-check" style="color: var(--success);"></i> সফল ভর্তি ও সেলস রেকর্ড</h3>
+        <button class="modal-close" onclick="closeConfirmSaleModal()">&times;</button>
+      </div>
+      <form onsubmit="submitConfirmedSale(event)">
+        <div class="modal-body">
+          <input type="hidden" id="saleCourseId">
+          <div style="background: var(--primary-light); padding: 12px; border-radius: 8px; border: 1px solid rgba(14,131,125,0.2); margin-bottom: 12px;">
+            <div style="font-size: 0.78rem; font-weight: 700; color: var(--primary);" id="saleCourseCat">Category</div>
+            <div style="font-size: 1rem; font-weight: 700; color: var(--text-main); margin-top: 2px;" id="saleCourseName">Course Title</div>
+            <div style="display: flex; gap: 12px; margin-top: 6px; font-size: 0.85rem;">
+              <span>অফার ফি: <strong style="color: var(--primary);" id="saleCoursePrice">৳0</strong></span>
+              <span>কমিশন: <strong style="color: var(--success);" id="saleCourseComm">৳0</strong></span>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 12px;">
+            <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">শিক্ষার্থীর নাম বা ফোন / TrxID (ঐচ্ছিক):</label>
+            <input type="text" id="saleStudentInfo" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text-main);" placeholder="e.g. Rahim - 017xxxxxxxx বা TrxID">
+          </div>
+
+          <div style="margin-bottom: 12px;">
+            <label style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 4px;">সেলস প্রতিনিধি (আপনি):</label>
+            <input type="text" id="saleRepName" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); font-weight: 600;" readonly>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="closeConfirmSaleModal()">বাতিল</button>
+          <button type="submit" class="btn btn-success"><i class="fa-solid fa-check"></i> বিক্রি কনফার্ম করুন</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Team Analytics & Leaderboard Modal -->
+  <div class="modal-overlay" id="analyticsModal">
+    <div class="modal-card" style="max-width: 760px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-trophy" style="color: var(--primary);"></i> টিম পারফরম্যান্স ও লিডারবোর্ড</h3>
+        <button class="modal-close" onclick="closeAnalyticsModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="analytics-tabs">
+          <button class="tab-btn active" id="tabBtnLeaderboard" onclick="switchAnalyticsTab('leaderboard')">🏆 টিম লিডারবোর্ড</button>
+          <button class="tab-btn" id="tabBtnLogs" onclick="switchAnalyticsTab('logs')">📋 লাইভ অডিট লগ (<span id="totalLogsBadge">0</span>)</button>
+        </div>
+
+        <!-- Leaderboard Tab -->
+        <div id="analyticsTabLeaderboard">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <span style="font-size: 0.85rem; font-weight: 700; color: var(--text-muted);">রিয়েল-টাইম পারফরম্যান্স র‍্যাঙ্কিং (৬ জন সদস্য):</span>
+            <button class="btn-sm-icon" onclick="refreshAnalytics()" title="ডাটা রিফ্রেশ" style="width: 28px; height: 28px; font-size: 0.75rem;">
+              <i class="fa-solid fa-rotate"></i>
+            </button>
+          </div>
+          <div class="leaderboard-grid" id="leaderboardGrid"></div>
+        </div>
+
+        <!-- Audit Logs Feed Tab -->
+        <div id="analyticsTabLogs" style="display: none;">
+          <div class="logs-table-container">
+            <table class="logs-table">
+              <thead>
+                <tr>
+                  <th>সময়</th>
+                  <th>সদস্য</th>
+                  <th>অ্যাকশন</th>
+                  <th>কোর্স / ক্যাটাগরি</th>
+                  <th>ফি</th>
+                </tr>
+              </thead>
+              <tbody id="auditLogsBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="closeAnalyticsModal()">সম্পন্ন</button>
+      </div>
+    </div>
+  </div>
+
   <!-- Staff Secret Login Modal -->
   <div class="modal-overlay" id="secretLoginModal">
-    <div class="modal-card" style="max-width: 420px;">
+    <div class="modal-card" style="max-width: 440px;">
       <div class="modal-header">
         <h3 class="modal-title"><i class="fa-solid fa-lock" style="color: var(--primary);"></i> স্টাফ অথেনটিকেশন</h3>
         <button class="modal-close" onclick="closeSecretLogin()">&times;</button>
       </div>
       <form onsubmit="submitStaffLogin(event)">
         <div class="modal-body">
-          <div class="form-group" style="margin-bottom: 12px;">
+          <div style="margin-bottom: 12px;">
+            <label style="font-size:0.85rem; font-weight:600; display:block; margin-bottom:4px;">সদস্য নির্বাচন (ঐচ্ছিক):</label>
+            <select id="staffUserSelect" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text-main);">
+              <option value="">-- মেম্বার সিলেক্ট করুন (বা সরাসরি পাসওয়ার্ড দিন) --</option>
+              <option value="shishir">Daloyar Hassan Shishir</option>
+              <option value="tamzed">Tamzed Ahmmed</option>
+              <option value="mahathir">Mahathir Rubay</option>
+              <option value="jahid">Md. Jahid Hasan</option>
+              <option value="afrid">Afrid Ahmmed</option>
+              <option value="nasim">Nasim Reza</option>
+            </select>
+          </div>
+          <div style="margin-bottom: 12px;">
             <label style="font-size:0.85rem; font-weight:600; display:block; margin-bottom:4px;">পাসওয়ার্ড:</label>
-            <input type="password" id="staffPasswordInput" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text-main); outline:none;" placeholder="পাসওয়ার্ড দিন..." required>
+            <input type="password" id="staffPasswordInput" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text-main);" placeholder="পাসওয়ার্ড দিন..." required autofocus>
           </div>
         </div>
         <div class="modal-footer">
@@ -1154,8 +1349,8 @@
       </div>
       <form onsubmit="submitChangeMyPassword(event)">
         <div class="modal-body">
-          <input type="password" id="myNewPasswordInput" style="width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text-main);" placeholder="নতুন পাসওয়ার্ড লিখুন..." required>
-          <input type="password" id="myConfirmPasswordInput" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text-main);" placeholder="কনফার্ম পাসওয়ার্ড লিখুন..." required>
+          <input type="password" id="myNewPasswordInput" style="width:100%; padding:10px; margin-bottom:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text-main);" placeholder="নতুন পাসওয়ার্ড লিখুন..." required minlength="4">
+          <input type="password" id="myConfirmPasswordInput" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border); background:var(--bg); color:var(--text-main);" placeholder="কনফার্ম পাসওয়ার্ড লিখুন..." required minlength="4">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline" onclick="closeChangePasswordModal()">বাতিল</button>
@@ -1181,6 +1376,13 @@
       { id: "jahid", name: "Md. Jahid Hasan", pass: "jahid2026", role: "Sales Specialist", isManager: false },
       { id: "afrid", name: "Afrid Ahmmed", pass: "afrid2026", role: "Sales Specialist", isManager: false },
       { id: "nasim", name: "Nasim Reza", pass: "nasim2026", role: "Sales Specialist", isManager: false }
+    ];
+
+    const MOTIVATIONAL_QUOTES = [
+      { tag: "আল-কুরআনের বাণী", text: "“মানুষ তাই পায়, যার জন্য সে চেষ্টা করে।”", sub: "And that there is not for man except that [good] for which he strives.", ref: "— সূরা আন-নাজম: ৩৯" },
+      { tag: "সহিহ হাদিস", text: "“নিজের হাতের উপার্জনের চেয়ে উত্তম খাবার কেউ কখনো খায়নি।”", sub: "No one has ever eaten better food than what he has earned by the labor of his own hands.", ref: "— সহিহ বুখারি: ২০৭২" },
+      { tag: "আল-কুরআনের বাণী", text: "“নিশ্চয় কষ্টের সাথেই স্বস্তি রয়েছে।”", sub: "Indeed, with hardship comes ease.", ref: "— সূরা আল-ইনশিরাহ: ৫-৬" },
+      { tag: "বিজনেস ও কর্মপ্রেরণা", text: "“Disciplined effort consistent over time produces extraordinary results.”", sub: "ধারাবাহিক ও সুশৃঙ্খল পরিশ্রমই দিনশেষে অসাধারণ সাফল্য এনে দেয়।", ref: "— Jim Rohn" }
     ];
 
     const PITCH_GROUPS = [
@@ -1293,7 +1495,6 @@
       }
     };
 
-    // Primary Categories
     const CATEGORIES = [
       { id: "all", name: "সকল কোর্স", match: [] },
       { id: "hsc", name: "🎓 HSC 27 & 28", match: ["HSC"] },
@@ -1304,7 +1505,6 @@
       { id: "personal", name: "🌙 পার্সোনাল ও ইসলামিক", match: ["Personal", "Islamic", "Kids"] }
     ];
 
-    // DYNAMIC SUB-CATEGORIES FOR INSTANT GROUP FILTERING
     const SUB_CATEGORIES = {
       hsc: [
         { id: "all", name: "🌟 সকল HSC কোর্স", match: [] },
@@ -1334,6 +1534,8 @@
     let selectedCategory = "all";
     let selectedSubCategory = "all";
     let searchQuery = "";
+    let linkFilter = "all";
+    let currentQuoteIndex = 0;
     let currentUser = null;
     let isTeamLoggedIn = false;
     let isManagerLoggedIn = false;
@@ -1363,6 +1565,19 @@
       toast.innerText = msg;
       toast.classList.add("show");
       setTimeout(() => toast.classList.remove("show"), 3000);
+    }
+
+    function rollNextQuote() {
+      currentQuoteIndex = (currentQuoteIndex + 1) % MOTIVATIONAL_QUOTES.length;
+      renderCurrentQuote();
+    }
+
+    function renderCurrentQuote() {
+      const q = MOTIVATIONAL_QUOTES[currentQuoteIndex];
+      document.getElementById("quoteCategoryTag").innerText = q.tag;
+      document.getElementById("quoteMainText").innerText = q.text;
+      document.getElementById("quoteSubText").innerText = q.sub;
+      document.getElementById("quoteRefText").innerText = q.ref;
     }
 
     /* Interactive Web Quiz Engine */
@@ -1416,7 +1631,62 @@
       loadWebQuiz(randKey);
     }
 
-    /* Primary & Sub-Category Rendering */
+    /* Activity & Sales Tracking */
+    function getTeamMembers() {
+      const saved = localStorage.getItem("learnova_team_members_v3");
+      if (saved) {
+        try { return JSON.parse(saved); } catch(e) {}
+      }
+      return DEFAULT_TEAM_MEMBERS;
+    }
+
+    function saveTeamMembers(m) {
+      localStorage.setItem("learnova_team_members_v3", JSON.stringify(m));
+    }
+
+    function getActivityLogs() {
+      const saved = localStorage.getItem("learnova_team_activity_logs_v3");
+      if (saved) {
+        try { return JSON.parse(saved); } catch(e) {}
+      }
+      return [];
+    }
+
+    function recordActivity(actionType, actionLabel, courseOrGroup, extraDetails = "") {
+      if (!currentUser) return;
+      const courseName = typeof courseOrGroup === "object" ? (courseOrGroup.name || courseOrGroup.title || "Category Pitch") : String(courseOrGroup);
+      const courseCategory = typeof courseOrGroup === "object" ? (courseOrGroup.category || courseOrGroup.badge || "General") : "General";
+      const price = typeof courseOrGroup === "object" ? (courseOrGroup.price || 0) : 0;
+      const originalPrice = typeof courseOrGroup === "object" ? (courseOrGroup.original_price || price) : price;
+      const commission = typeof courseOrGroup === "object" ? (courseOrGroup.commission || (price * 0.15)) : 0;
+
+      const newLog = {
+        id: "log_" + Date.now() + "_" + Math.random().toString(36).substr(2, 4),
+        user: currentUser.name,
+        userId: currentUser.id,
+        role: currentUser.role,
+        action: actionType,
+        actionLabel: actionLabel,
+        courseName: courseName,
+        courseCategory: courseCategory,
+        price: price,
+        commission: commission,
+        originalPrice: originalPrice,
+        extraDetails: extraDetails,
+        timestamp: new Date().toISOString(),
+        timeFormatted: new Intl.DateTimeFormat("en-GB", {
+          day: "2-digit", month: "short", year: "numeric",
+          hour: "2-digit", minute: "2-digit", hour12: true
+        }).format(new Date())
+      };
+
+      const logs = getActivityLogs();
+      logs.unshift(newLog);
+      if (logs.length > 500) logs.pop();
+      localStorage.setItem("learnova_team_activity_logs_v3", JSON.stringify(logs));
+    }
+
+    /* Category & Sub-Category Rendering */
     function renderCategoryChips() {
       const container = document.getElementById("categoryChips");
       container.innerHTML = CATEGORIES.map(c => `
@@ -1430,7 +1700,7 @@
 
     function selectCategory(catId) {
       selectedCategory = catId;
-      selectedSubCategory = "all"; // Reset sub-category on parent change
+      selectedSubCategory = "all";
       renderCategoryChips();
       
       const match = CATEGORIES.find(c => c.id === catId);
@@ -1470,7 +1740,6 @@
       const currentSubDef = subList ? subList.find(sc => sc.id === selectedSubCategory) : null;
 
       const filtered = courses.filter(c => {
-        // 1. Match Primary Category
         let matchesCategory = false;
         if (!currentCatDef || currentCatDef.id === "all") {
           matchesCategory = true;
@@ -1481,7 +1750,6 @@
           );
         }
 
-        // 2. Match Sub-Category (Science, Humanities, Commerce, etc.)
         let matchesSubCategory = true;
         if (currentSubDef && currentSubDef.id !== "all") {
           const cName = (c.name || "").toLowerCase();
@@ -1491,12 +1759,16 @@
           );
         }
 
-        // 3. Match Search Query
         const matchesSearch = !searchQuery || 
           (c.name && c.name.toLowerCase().includes(searchQuery)) ||
           (c.category && c.category.toLowerCase().includes(searchQuery));
 
-        return matchesCategory && matchesSubCategory && matchesSearch;
+        const hasAffLink = isAffiliateLink(c.link);
+        const matchesLinkFilter = linkFilter === "all" || 
+          (linkFilter === "ready" && hasAffLink) || 
+          (linkFilter === "missing" && !hasAffLink);
+
+        return matchesCategory && matchesSubCategory && matchesSearch && matchesLinkFilter;
       });
 
       document.getElementById("courseCount").innerText = filtered.length;
@@ -1505,7 +1777,7 @@
         container.innerHTML = `
           <div style="text-align: center; padding: 48px 16px; color: var(--text-muted); grid-column: 1 / -1;">
             <i class="fa-solid fa-box-open" style="font-size: 3rem; opacity: 0.4; margin-bottom: 12px;"></i>
-            <h3>এই বিভাগে কোন কোর্স পাওয়া যায়নি</h3>
+            <h3>কোন কোর্স পাওয়া যায়নি</h3>
             <p style="font-size: 0.88rem; margin-top: 4px;">ফিল্টার পরিবর্তন করে দেখুন</p>
           </div>
         `;
@@ -1522,10 +1794,67 @@
       const formattedOrigPrice = origPrice > c.price ? origPrice.toLocaleString("en-IN") : null;
       const savings = (origPrice > c.price) ? (origPrice - c.price) : 0;
 
+      const formattedComm = Number(c.commission || c.price * 0.15).toFixed(0);
+      const formattedCashback = Number(c.cashback || 0).toFixed(0);
+      const formattedProfit = Number(c.profit || (c.commission - c.cashback)).toFixed(0);
+
+      if (currentView === "student" || (!isTeamLoggedIn && !isManagerLoggedIn)) {
+        return `
+          <div class="course-card">
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <div class="card-category">${c.category}</div>
+              <h4 class="card-title">${c.name}</h4>
+            </div>
+
+            <div class="card-price-row">
+              <div>
+                ${formattedOrigPrice ? `
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">
+                    নিয়মিত ফি: <span class="original-strike">৳${formattedOrigPrice}</span>
+                  </div>
+                ` : ""}
+                <div style="display: flex; align-items: baseline; gap: 4px;">
+                  <span style="font-size: 0.88rem; font-weight: 700; color: var(--primary);">অফার ফি:</span>
+                  <span class="price-tag">৳${formattedPrice}</span>
+                </div>
+              </div>
+
+              ${savings > 0 ? `
+                <div class="savings-badge">
+                  <i class="fa-solid fa-fire"></i>
+                  <span>৳${savings.toLocaleString("en-IN")} ছাড়</span>
+                </div>
+              ` : ""}
+            </div>
+
+            <div class="card-actions">
+              ${hasAffLink ? `
+                <a href="${c.link}" target="_blank" class="btn student-enroll-btn">
+                  <i class="fa-solid fa-cart-shopping"></i> ভর্তি হোন (Enroll Now)
+                </a>
+              ` : `
+                <button class="btn student-enroll-btn" onclick="showToast('ইনবক্সে যোগাযোগ করুন')">
+                  <i class="fa-brands fa-facebook-messenger"></i> ইনবক্সে লিংক নিন
+                </button>
+              `}
+              <button class="btn-sm-icon" onclick="copyCourseLink('${hasAffLink ? c.link : ""}', '${c.name}', ${c.id})" title="লিংক কপি">
+                <i class="fa-solid fa-copy"></i>
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      // Teammate Workspace View
       return `
         <div class="course-card">
           <div style="display: flex; flex-direction: column; gap: 6px;">
-            <div class="card-category">${c.category}</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div class="card-category">${c.category}</div>
+              <span style="font-size: 0.7rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; background: ${hasAffLink ? 'var(--success-bg)' : 'var(--warning-bg)'}; color: ${hasAffLink ? 'var(--success-dark)' : '#b45309'};">
+                ${hasAffLink ? '✅ Link Ready' : '⚠️ Add Link'}
+              </span>
+            </div>
             <h4 class="card-title">${c.name}</h4>
           </div>
 
@@ -1533,47 +1862,75 @@
             <div>
               ${formattedOrigPrice ? `
                 <div style="font-size: 0.78rem; color: var(--text-muted);">
-                  নিয়মিত ফি: <span class="original-strike">৳${formattedOrigPrice}</span>
+                  <span class="original-strike">৳${formattedOrigPrice}</span>
                 </div>
               ` : ""}
               <div style="display: flex; align-items: baseline; gap: 4px;">
-                <span style="font-size: 0.88rem; font-weight: 700; color: var(--primary);">অফার ফি:</span>
+                <span style="font-size: 0.85rem; color: var(--text-muted);">ফি:</span>
                 <span class="price-tag">৳${formattedPrice}</span>
               </div>
             </div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">${c.promo || 'No Code'}</span>
+          </div>
 
-            ${savings > 0 ? `
-              <div class="savings-badge">
-                <i class="fa-solid fa-fire"></i>
-                <span>৳${savings.toLocaleString("en-IN")} ছাড়</span>
-              </div>
-            ` : ""}
+          <div class="teammate-metrics">
+            <div>
+              <div class="metric-label">কমিশন (15%)</div>
+              <div class="metric-val">৳${formattedComm}</div>
+            </div>
+            <div>
+              <div class="metric-label">ক্যাশব্যাক</div>
+              <div class="metric-val">৳${formattedCashback}</div>
+            </div>
+            <div>
+              <div class="metric-label">নিট লাভ</div>
+              <div class="metric-val metric-profit">৳${formattedProfit}</div>
+            </div>
           </div>
 
           <div class="card-actions">
-            ${hasAffLink ? `
-              <a href="${c.link}" target="_blank" class="btn student-enroll-btn">
-                <i class="fa-solid fa-cart-shopping"></i> ভর্তি হোন (Enroll Now)
-              </a>
-            ` : `
-              <button class="btn student-enroll-btn" onclick="showToast('ইনবক্সে যোগাযোগ করুন')">
-                <i class="fa-brands fa-facebook-messenger"></i> ইনবক্সে লিংক নিন
-              </button>
-            `}
-            <button class="btn-sm-icon" onclick="copyLink('${c.link || ""}')" title="লিংক কপি">
-              <i class="fa-solid fa-copy"></i>
+            <button class="btn btn-primary" onclick="copyPitchMessage(${c.id})" title="মেসেজ কপি">
+              <i class="fa-solid fa-comment-dots"></i> মেসেজ
+            </button>
+            <button class="btn btn-outline" onclick="copyCourseLink('${hasAffLink ? c.link : ""}', '${c.name}', ${c.id})" title="লিংক কপি">
+              <i class="fa-solid fa-link"></i> লিংক
+            </button>
+            <button class="btn btn-success" onclick="openConfirmSaleModal(${c.id})" title="বিক্রি রেকর্ড করুন">
+              <i class="fa-solid fa-check"></i> বিক্রি কনফার্ম
             </button>
           </div>
         </div>
       `;
     }
 
-    function copyLink(link) {
+    function generateSinglePitchText(c) {
+      const hasAffLink = isAffiliateLink(c.link);
+      const origPrice = Number(c.original_price || (c.price > 0 ? c.price * 1.35 : 0));
+      const origPart = (origPrice > c.price) ? `\n💵 নিয়মিত ফি: ~~৳${origPrice.toLocaleString('en-IN')}~~` : '';
+      const savings = (origPrice > c.price) ? (origPrice - c.price) : 0;
+      const savingsPart = savings > 0 ? ` (৳${savings.toLocaleString('en-IN')} বিশেষ ছাড়!)` : '';
+      const linkPart = hasAffLink ? `\n\n🔗 ডিসকাউন্ট সহ সরাসরি ভর্তির লিংক:\n${c.link}` : `\n\n(ভর্তির জন্য ইনবক্সে যোগাযোগ করুন)`;
+      
+      return `আসসালামু আলাইকুম!\n\n🎯 কোর্স: ${c.name}${origPart}\n🔥 স্পেশাল অফার ফি: ৳${Number(c.price).toLocaleString('en-IN')}${savingsPart}${linkPart}\n\nভর্তি হতে কোনো সমস্যা হলে আমাকে জানাতে পারেন। ধন্যবাদ!`;
+    }
+
+    function copyPitchMessage(id) {
+      const c = courses.find(item => item.id === id);
+      if (!c) return;
+      const text = generateSinglePitchText(c);
+      navigator.clipboard.writeText(text).then(() => {
+        recordActivity("copy_pitch", "মেসেজ কপি 💬", c);
+        showToast("সেলস মেসেজ কপি হয়েছে! ইনবক্সে পেস্ট করুন 💬");
+      });
+    }
+
+    function copyCourseLink(link, name, courseId) {
       if (!link) {
         showToast("⚠️ লিংক প্রস্তুত করা হচ্ছে!");
         return;
       }
       navigator.clipboard.writeText(link).then(() => {
+        recordActivity("copy_link", "লিংক কপি 🔗", { name, id: courseId });
         showToast("অফিশিয়াল ডিসকাউন্ট লিংক কপি হয়েছে! 📋");
       });
     }
@@ -1588,6 +1945,26 @@
       document.getElementById("searchInput").value = "";
       searchQuery = "";
       document.getElementById("clearSearchBtn").style.display = "none";
+      renderCourses();
+    }
+
+    function updateAuditCounts() {
+      let ready = 0, missing = 0;
+      courses.forEach(c => {
+        if (isAffiliateLink(c.link)) ready++;
+        else missing++;
+      });
+      const r = document.getElementById("readyLinkCount");
+      const m = document.getElementById("missingLinkCount");
+      if (r) r.innerText = ready;
+      if (m) m.innerText = missing;
+    }
+
+    function filterByLink(type) {
+      linkFilter = type;
+      document.getElementById("filterAll").classList.toggle("active", type === "all");
+      document.getElementById("filterReady").classList.toggle("active", type === "ready");
+      document.getElementById("filterMissing").classList.toggle("active", type === "missing");
       renderCourses();
     }
 
@@ -1627,17 +2004,168 @@
 
     function copyCurrentPitchFromModal() {
       const text = document.getElementById("pitchModalTextarea").value;
+      const group = PITCH_GROUPS.find(g => g.id === currentPitchGroupId);
       navigator.clipboard.writeText(text).then(() => {
+        recordActivity("copy_category_pitch", "ক্যাটাগরি পিচ কপি 📋", group ? group.title : "Category Pitch");
         showToast("ক্যাটাগরি পিচ কপি হয়েছে! 💬");
       });
     }
 
     function shareCurrentPitchWhatsapp() {
       const text = document.getElementById("pitchModalTextarea").value;
+      const group = PITCH_GROUPS.find(g => g.id === currentPitchGroupId);
+      if (group) {
+        recordActivity("copy_category_pitch", "WhatsApp শেয়ার 📲", group.title);
+      }
       window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
     }
 
-    /* Staff Login */
+    /* Sale Confirmation */
+    function openConfirmSaleModal(courseId) {
+      if (!currentUser) return;
+      const c = courses.find(item => item.id === courseId);
+      if (!c) return;
+
+      document.getElementById("saleCourseId").value = c.id;
+      document.getElementById("saleCourseCat").innerText = c.category;
+      document.getElementById("saleCourseName").innerText = c.name;
+      document.getElementById("saleCoursePrice").innerText = `৳${Number(c.price).toLocaleString("en-IN")}`;
+      document.getElementById("saleCourseComm").innerText = `৳${Number(c.commission || c.price * 0.15).toFixed(0)}`;
+      document.getElementById("saleStudentInfo").value = "";
+      document.getElementById("saleRepName").value = `${currentUser.name} (${currentUser.role})`;
+      document.getElementById("confirmSaleModal").classList.add("active");
+    }
+
+    function closeConfirmSaleModal() {
+      document.getElementById("confirmSaleModal").classList.remove("active");
+    }
+
+    function submitConfirmedSale(e) {
+      e.preventDefault();
+      const courseId = parseInt(document.getElementById("saleCourseId").value);
+      const studentInfo = document.getElementById("saleStudentInfo").value.trim();
+      const c = courses.find(item => item.id === courseId);
+      if (!c) return;
+
+      recordActivity("confirm_sale", "✅ নিশ্চিত ভর্তি (Sale Confirmed)", c, studentInfo);
+      closeConfirmSaleModal();
+      showToast(`🎉 চমৎকার! ${c.name} এর নিশ্চিত ভর্তি রেকর্ড হয়েছে!`);
+      refreshAnalytics();
+    }
+
+    /* Analytics & Leaderboard Modal */
+    function openAnalyticsModal() {
+      renderLeaderboard();
+      renderAuditLogs();
+      document.getElementById("analyticsModal").classList.add("active");
+    }
+
+    function closeAnalyticsModal() {
+      document.getElementById("analyticsModal").classList.remove("active");
+    }
+
+    function switchAnalyticsTab(tab) {
+      document.getElementById("analyticsTabLeaderboard").style.display = tab === "leaderboard" ? "block" : "none";
+      document.getElementById("analyticsTabLogs").style.display = tab === "logs" ? "block" : "none";
+      document.getElementById("tabBtnLeaderboard").classList.toggle("active", tab === "leaderboard");
+      document.getElementById("tabBtnLogs").classList.toggle("active", tab === "logs");
+    }
+
+    function renderLeaderboard() {
+      const members = getTeamMembers();
+      const logs = getActivityLogs();
+
+      const memberStats = members.map(m => {
+        const userLogs = logs.filter(l => l.user === m.name || l.userId === m.id);
+        const totalActions = userLogs.length;
+        const confirmedSales = userLogs.filter(l => l.action === "confirm_sale");
+        const confirmedSalesCount = confirmedSales.length;
+        const totalRevenue = confirmedSales.reduce((acc, curr) => acc + (Number(curr.price) || 0), 0);
+        const totalCommission = confirmedSales.reduce((acc, curr) => acc + (Number(curr.commission) || 0), 0);
+
+        return {
+          id: m.id,
+          name: m.name,
+          role: m.role || "Sales Specialist",
+          isManager: m.isManager,
+          totalActions,
+          confirmedSalesCount,
+          totalRevenue,
+          totalCommission
+        };
+      });
+
+      memberStats.sort((a, b) => {
+        if (b.confirmedSalesCount !== a.confirmedSalesCount) {
+          return b.confirmedSalesCount - a.confirmedSalesCount;
+        }
+        return b.totalActions - a.totalActions;
+      });
+
+      const container = document.getElementById("leaderboardGrid");
+      container.innerHTML = memberStats.map((st, idx) => {
+        const rankClass = idx === 0 ? "rank-1" : (idx === 1 ? "rank-2" : (idx === 2 ? "rank-3" : "rank-other"));
+        const rankLabel = idx === 0 ? "১ম" : (idx === 1 ? "২য়" : (idx === 2 ? "৩য়" : `${idx + 1}th`));
+
+        return `
+          <div class="leaderboard-card">
+            <span class="rank-badge ${rankClass}">#${rankLabel}</span>
+            <div class="member-name">${st.name}</div>
+            <div style="font-size: 0.72rem; color: var(--text-muted);">${st.role}</div>
+
+            <div class="confirmed-sales-box">
+              <span>🎯 নিশ্চিত ভর্তি:</span>
+              <span>${st.confirmedSalesCount} টি</span>
+            </div>
+
+            <div style="margin-top: 6px; display: flex; flex-direction: column; gap: 3px;">
+              <div class="member-stat-row">
+                <span>মোট অ্যাকশন:</span>
+                <span class="member-stat-val">${st.totalActions} বার</span>
+              </div>
+              <div class="member-stat-row">
+                <span>সেলস ভলিউম:</span>
+                <span class="member-stat-val" style="color: var(--primary);">৳${st.totalRevenue.toLocaleString("en-IN")}</span>
+              </div>
+              <div class="member-stat-row">
+                <span>অর্জিত কমিশন:</span>
+                <span class="member-stat-val" style="color: var(--success-dark);">৳${st.totalCommission.toLocaleString("en-IN")}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderAuditLogs() {
+      const logs = getActivityLogs();
+      const badge = document.getElementById("totalLogsBadge");
+      if (badge) badge.innerText = logs.length;
+
+      const tbody = document.getElementById("auditLogsBody");
+      if (logs.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted); padding: 24px;">এখনও কোনো অ্যাকশন রেকর্ড হয়নি</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = logs.slice(0, 100).map(l => `
+        <tr>
+          <td>${l.timeFormatted}</td>
+          <td><b>${l.user}</b></td>
+          <td><span style="padding: 2px 6px; border-radius: 4px; background: var(--bg); font-size: 0.72rem;">${l.actionLabel || l.action}</span></td>
+          <td>${l.courseName}</td>
+          <td>${l.price ? '৳' + Number(l.price).toLocaleString('en-IN') : '-'}</td>
+        </tr>
+      `).join("");
+    }
+
+    function refreshAnalytics() {
+      renderLeaderboard();
+      renderAuditLogs();
+      showToast("লিডারবোর্ড ডাটা রিফ্রেশ হয়েছে! 🔄");
+    }
+
+    /* Staff Login & Navigation */
     function openSecretLogin() {
       if (isTeamLoggedIn) {
         switchView(currentView === "student" ? "team" : "student");
@@ -1653,13 +2181,23 @@
     function submitStaffLogin(e) {
       e.preventDefault();
       const p = document.getElementById("staffPasswordInput").value.trim();
-      const m = DEFAULT_TEAM_MEMBERS.find(member => member.pass === p);
-      if (m || p === "learnova2026") {
-        currentUser = m || { id: "team", name: "Learnova Teammate", role: "Sales Specialist" };
+      const selectedMember = document.getElementById("staffUserSelect").value;
+      const members = getTeamMembers();
+
+      let matched = members.find(m => m.pass === p || (selectedMember === m.id && m.pass === p));
+      if (!matched && p === "learnova2026") {
+        matched = { id: "team", name: "Learnova Teammate", role: "Sales Specialist", isManager: false };
+      }
+
+      if (matched) {
+        currentUser = matched;
         isTeamLoggedIn = true;
-        currentView = "team";
+        isManagerLoggedIn = !!matched.isManager;
+        localStorage.setItem("learnova_active_user", JSON.stringify(currentUser));
         closeSecretLogin();
+        currentView = "team";
         applyViewUI();
+        renderCourses();
         showToast(`স্বাগতম ${currentUser.name}! 💼`);
       } else {
         alert("ভুল পাসওয়ার্ড!");
@@ -1668,9 +2206,12 @@
 
     function logoutStaff() {
       isTeamLoggedIn = false;
+      isManagerLoggedIn = false;
       currentUser = null;
+      localStorage.removeItem("learnova_active_user");
       currentView = "student";
       applyViewUI();
+      renderCourses();
       showToast("লগআউট হয়েছে 👋");
     }
 
@@ -1678,29 +2219,67 @@
       const nav = document.getElementById("staffNavPills");
       const logout = document.getElementById("logoutBtn");
       const userPill = document.getElementById("userProfilePill");
+      const hero = document.getElementById("heroBanner");
+      const motivation = document.getElementById("motivationBanner");
+      const teamBanner = document.getElementById("teamBanner");
       const pitchHub = document.getElementById("pitchHubSection");
+      const studentCommunity = document.getElementById("studentCommunitySection");
+      const linkBar = document.getElementById("linkFilterBar");
 
       if (isTeamLoggedIn && currentUser) {
         nav.style.display = "flex";
         logout.style.display = "flex";
         userPill.style.display = "flex";
         document.getElementById("activeUserName").innerText = currentUser.name;
-        pitchHub.style.display = currentView === "team" ? "block" : "none";
+
+        if (currentView === "team") {
+          hero.style.display = "none";
+          studentCommunity.style.display = "none";
+          motivation.style.display = "flex";
+          teamBanner.style.display = "flex";
+          pitchHub.style.display = "block";
+          linkBar.style.display = "flex";
+          document.getElementById("teamBannerTitle").innerText = `${currentUser.name} - ওয়ার্কস্পেস সক্রিয়`;
+          document.getElementById("btnTeamView").classList.add("active");
+          document.getElementById("btnStudentView").classList.remove("active");
+        } else {
+          hero.style.display = "block";
+          studentCommunity.style.display = "block";
+          motivation.style.display = "none";
+          teamBanner.style.display = "none";
+          pitchHub.style.display = "none";
+          linkBar.style.display = "none";
+          document.getElementById("btnStudentView").classList.add("active");
+          document.getElementById("btnTeamView").classList.remove("active");
+        }
       } else {
         nav.style.display = "none";
         logout.style.display = "none";
         userPill.style.display = "none";
+        hero.style.display = "block";
+        studentCommunity.style.display = "block";
+        motivation.style.display = "none";
+        teamBanner.style.display = "none";
         pitchHub.style.display = "none";
+        linkBar.style.display = "none";
       }
     }
 
     function switchView(v) {
+      if (v === "team" && !isTeamLoggedIn) {
+        openSecretLogin();
+        return;
+      }
       currentView = v;
       applyViewUI();
       renderCourses();
     }
 
     function openChangePasswordModal() {
+      if (!currentUser) { openSecretLogin(); return; }
+      document.getElementById("changePassUserName").innerText = currentUser.name;
+      document.getElementById("myNewPasswordInput").value = "";
+      document.getElementById("myConfirmPasswordInput").value = "";
       document.getElementById("changePassModal").classList.add("active");
     }
 
@@ -1710,8 +2289,35 @@
 
     function submitChangeMyPassword(e) {
       e.preventDefault();
-      closeChangePasswordModal();
-      showToast("পাসওয়ার্ড আপডেট হয়েছে! ✅");
+      if (!currentUser) return;
+      const p1 = document.getElementById("myNewPasswordInput").value.trim();
+      const p2 = document.getElementById("myConfirmPasswordInput").value.trim();
+
+      if (p1 !== p2) { alert("পাসওয়ার্ড দুটি মিলছে না!"); return; }
+
+      const members = getTeamMembers();
+      const idx = members.findIndex(m => m.id === currentUser.id);
+      if (idx !== -1) {
+        members[idx].pass = p1;
+        saveTeamMembers(members);
+        closeChangePasswordModal();
+        showToast("🎉 আপনার নতুন পাসওয়ার্ড সেভ হয়েছে!");
+      }
+    }
+
+    function checkAuthSession() {
+      const savedUser = localStorage.getItem("learnova_active_user");
+      if (savedUser) {
+        try {
+          currentUser = JSON.parse(savedUser);
+          isTeamLoggedIn = true;
+          isManagerLoggedIn = !!currentUser.isManager;
+          currentView = "team";
+        } catch(e) {
+          currentUser = null;
+        }
+      }
+      applyViewUI();
     }
 
     /* Initialize */
@@ -1722,9 +2328,12 @@
         document.getElementById("themeIcon").className = "fa-solid fa-sun";
       }
       courses = DEFAULT_COURSES;
+      checkAuthSession();
+      renderCurrentQuote();
       renderPitchHub();
       renderCategoryChips();
       renderCourses();
+      updateAuditCounts();
       loadWebQuiz("physics");
     });
   </script>
