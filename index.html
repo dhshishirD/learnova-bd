@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Learnova BD | ১০ মিনিট স্কুল কোর্স ডিসকাউন্ট, লাইভ কুইজ ও স্টাডি কমিউনিটি</title>
+  <title>Learnova BD | ১০ মিনিট স্কুল কোর্স ডিসকাউন্ট, লাইভ কুইজ ও স্টাডি হাব</title>
   
   <!-- Google Fonts: Hind Siliguri & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,7 +102,7 @@
       100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
     }
 
-    /* Top Navigation Header */
+    /* Header */
     header {
       background-color: var(--card-bg);
       border-bottom: 1px solid var(--border);
@@ -122,7 +122,6 @@
       gap: 12px;
     }
 
-    /* Secret double-click logo container */
     .brand {
       display: flex;
       align-items: center;
@@ -147,9 +146,7 @@
       transition: transform 0.15s;
     }
 
-    .brand:active .brand-logo {
-      transform: scale(0.92);
-    }
+    .brand:active .brand-logo { transform: scale(0.92); }
 
     .brand-title {
       font-size: 1.2rem;
@@ -231,10 +228,7 @@
       transition: all 0.2s;
     }
 
-    .btn-icon:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-    }
+    .btn-icon:hover { border-color: var(--primary); color: var(--primary); }
 
     .logout-btn {
       display: none;
@@ -266,17 +260,8 @@
       margin-bottom: 6px;
     }
 
-    .hero-highlight {
-      color: var(--primary);
-      position: relative;
-    }
-
-    .hero-desc {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    .hero-highlight { color: var(--primary); }
+    .hero-desc { font-size: 0.92rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
 
     main {
       max-width: 1200px;
@@ -286,7 +271,7 @@
       width: 100%;
     }
 
-    /* SECTION 1: Telegram Communities & Channels Hub */
+    /* Section Heading */
     .section-title-wrap {
       display: flex;
       align-items: center;
@@ -303,6 +288,7 @@
       color: var(--text-main);
     }
 
+    /* Telegram Communities Hub */
     .tg-community-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -322,7 +308,6 @@
       transition: all 0.25s ease;
       text-decoration: none;
       color: inherit;
-      position: relative;
       box-shadow: var(--shadow-sm);
     }
 
@@ -355,20 +340,8 @@
     .tg-disc-icon { background: linear-gradient(135deg, #f59e0b, #ef4444); color: #fff; }
     .tg-main-icon { background: linear-gradient(135deg, #dc2626, #991b1b); color: #fff; }
 
-    .tg-card-title {
-      font-size: 0.92rem;
-      font-weight: 700;
-      line-height: 1.25;
-      color: var(--text-main);
-    }
-
-    .tg-card-badge {
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
+    .tg-card-title { font-size: 0.92rem; font-weight: 700; line-height: 1.25; color: var(--text-main); }
+    .tg-card-badge { font-size: 0.7rem; font-weight: 600; color: var(--text-muted); margin-top: 2px; }
     .tg-card-cta {
       display: flex;
       align-items: center;
@@ -380,7 +353,7 @@
       color: #0284c7;
     }
 
-    /* SECTION 2: Daily Interactive Quiz Arena & Toppers Corner */
+    /* Daily Quiz Arena & Toppers Grid */
     .quiz-topper-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
@@ -389,9 +362,7 @@
     }
 
     @media (max-width: 860px) {
-      .quiz-topper-grid {
-        grid-template-columns: 1fr;
-      }
+      .quiz-topper-grid { grid-template-columns: 1fr; }
     }
 
     .interactive-quiz-box {
@@ -446,11 +417,7 @@
       margin-bottom: 12px;
     }
 
-    .quiz-options-list {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
+    .quiz-options-list { display: flex; flex-direction: column; gap: 8px; }
 
     .quiz-opt-btn {
       text-align: left;
@@ -468,22 +435,9 @@
       transition: all 0.2s;
     }
 
-    .quiz-opt-btn:hover {
-      border-color: var(--primary);
-    }
-
-    .quiz-opt-btn.correct {
-      background: var(--success-bg) !important;
-      border-color: var(--success) !important;
-      color: #065f46 !important;
-      font-weight: 700;
-    }
-
-    .quiz-opt-btn.wrong {
-      background: #fef2f2 !important;
-      border-color: #ef4444 !important;
-      color: #991b1b !important;
-    }
+    .quiz-opt-btn:hover { border-color: var(--primary); }
+    .quiz-opt-btn.correct { background: var(--success-bg) !important; border-color: var(--success) !important; color: #065f46 !important; font-weight: 700; }
+    .quiz-opt-btn.wrong { background: #fef2f2 !important; border-color: #ef4444 !important; color: #991b1b !important; }
 
     .quiz-feedback-box {
       display: none;
@@ -496,7 +450,6 @@
       line-height: 1.45;
     }
 
-    /* Toppers Corner Box */
     .toppers-corner-box {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -508,13 +461,7 @@
       justify-content: space-between;
     }
 
-    .toppers-list {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin: 12px 0;
-    }
-
+    .toppers-list { display: flex; flex-direction: column; gap: 10px; margin: 12px 0; }
     .topper-item {
       display: flex;
       align-items: center;
@@ -525,35 +472,11 @@
       background: var(--bg);
     }
 
-    .topper-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .topper-rank-icon {
-      font-size: 1.3rem;
-    }
-
-    .topper-info-name {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .topper-info-college {
-      font-size: 0.74rem;
-      color: var(--text-muted);
-    }
-
-    .topper-score {
-      font-size: 0.82rem;
-      font-weight: 800;
-      padding: 3px 8px;
-      border-radius: 6px;
-      background: var(--primary-light);
-      color: var(--primary);
-    }
+    .topper-left { display: flex; align-items: center; gap: 10px; }
+    .topper-rank-icon { font-size: 1.3rem; }
+    .topper-info-name { font-size: 0.88rem; font-weight: 700; color: var(--text-main); }
+    .topper-info-college { font-size: 0.74rem; color: var(--text-muted); }
+    .topper-score { font-size: 0.82rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; background: var(--primary-light); color: var(--primary); }
 
     /* Teammate Pitch Hub Section */
     .pitch-hub-section {
@@ -614,7 +537,7 @@
     .filter-section {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       margin-bottom: 16px;
     }
 
@@ -658,17 +581,16 @@
       display: none;
     }
 
+    /* Primary Category Chips */
     .category-chips {
       display: flex;
       gap: 8px;
       overflow-x: auto;
-      padding-bottom: 6px;
+      padding-bottom: 4px;
       scrollbar-width: none;
     }
 
-    .category-chips::-webkit-scrollbar {
-      display: none;
-    }
+    .category-chips::-webkit-scrollbar { display: none; }
 
     .chip {
       white-space: nowrap;
@@ -684,6 +606,56 @@
     }
 
     .chip.active {
+      background-color: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    /* DYNAMIC SUB-CATEGORY PILLS BAR (Science, Arts, Commerce) */
+    .sub-category-bar {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 6px 10px;
+      background: var(--primary-light);
+      border: 1px solid rgba(14,131,125,0.25);
+      border-radius: 10px;
+      scrollbar-width: none;
+      align-items: center;
+    }
+
+    .sub-category-bar::-webkit-scrollbar { display: none; }
+
+    .sub-cat-label {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+      white-space: nowrap;
+      margin-right: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .sub-chip {
+      white-space: nowrap;
+      padding: 5px 11px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 20px;
+      border: 1px solid rgba(14,131,125,0.3);
+      background-color: var(--card-bg);
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .sub-chip:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .sub-chip.active {
       background-color: var(--primary);
       color: #fff;
       border-color: var(--primary);
@@ -793,8 +765,7 @@
     .student-enroll-btn { background: linear-gradient(135deg, var(--primary), #059669); color: #fff; flex: 1; }
     .btn-sm-icon { width: 38px; height: 38px; border-radius: 8px; border: 1px solid var(--border); background: var(--card-bg); display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
-    /* Teammate Banners & Modals */
-    .motivation-banner, .team-banner { display: none; }
+    /* Modals */
     .modal-overlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -1025,9 +996,7 @@
 
         <div class="quiz-question-card">
           <div class="quiz-question-text" id="webQuizQuestion">বল ও সরণের মধ্যবর্তী কোণ ৯০° হলে কৃতকাজের মান কত?</div>
-          <div class="quiz-options-list" id="webQuizOptions">
-            <!-- Rendered by JS -->
-          </div>
+          <div class="quiz-options-list" id="webQuizOptions"></div>
           <div class="quiz-feedback-box" id="webQuizFeedback"></div>
         </div>
 
@@ -1054,7 +1023,6 @@
           <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 2px;">টেলিগ্রাম কুইজ প্রতিযোগিতায় সারা দেশের শীর্ষ ৩ জন মেধাবী শিক্ষার্থী:</p>
 
           <div class="toppers-list">
-            <!-- 1st Rank -->
             <div class="topper-item" style="border-color: #fde047; background: rgba(254, 240, 138, 0.15);">
               <div class="topper-left">
                 <span class="topper-rank-icon">🥇</span>
@@ -1066,7 +1034,6 @@
               <span class="topper-score" style="background: #fef08a; color: #854d0e;">১ম স্থান (১০০/১০০)</span>
             </div>
 
-            <!-- 2nd Rank -->
             <div class="topper-item">
               <div class="topper-left">
                 <span class="topper-rank-icon">🥈</span>
@@ -1078,7 +1045,6 @@
               <span class="topper-score">২য় স্থান (৯৮/১০০)</span>
             </div>
 
-            <!-- 3rd Rank -->
             <div class="topper-item">
               <div class="topper-left">
                 <span class="topper-rank-icon">🥉</span>
@@ -1110,15 +1076,23 @@
       <div class="pitch-hub-grid" id="pitchHubGrid"></div>
     </section>
 
-    <!-- Search & Filters -->
+    <!-- Search & Filters Section -->
     <section class="filter-section">
+      <!-- Search Input -->
       <div class="search-box">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
         <input type="text" id="searchInput" class="search-input" placeholder="কোর্সের নাম, ক্যাটাগরি বা বিষয় লিখে খুঁজুন..." oninput="handleSearch()">
         <i class="fa-solid fa-circle-xmark search-clear" id="clearSearchBtn" onclick="clearSearch()"></i>
       </div>
 
+      <!-- Main Category Chips -->
       <div class="category-chips" id="categoryChips"></div>
+
+      <!-- DYNAMIC SUB-CATEGORY DEPARTMENT FILTER BAR -->
+      <div class="sub-category-bar" id="subCategoryBar" style="display: none;">
+        <span class="sub-cat-label" id="subCatLabel"><i class="fa-solid fa-filter"></i> বিভাগ/শাখা:</span>
+        <div id="subCategoryChips" style="display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;"></div>
+      </div>
     </section>
 
     <!-- Results Header -->
@@ -1319,24 +1293,51 @@
       }
     };
 
+    // Primary Categories
+    const CATEGORIES = [
+      { id: "all", name: "সকল কোর্স", match: [] },
+      { id: "hsc", name: "🎓 HSC 27 & 28", match: ["HSC"] },
+      { id: "ssc", name: "🎒 SSC 27 & 28", match: ["SSC", "Class 6-10"] },
+      { id: "admission", name: "🏛️ ভর্তি প্রস্তুতি", match: ["Admission"] },
+      { id: "english", name: "🗣️ স্পোকেন ইংলিশ ও ভাষা", match: ["English"] },
+      { id: "skills", name: "💻 স্কিলস ও ফ্রিল্যান্সিং", match: ["Skills", "Job Prep"] },
+      { id: "personal", name: "🌙 পার্সোনাল ও ইসলামিক", match: ["Personal", "Islamic", "Kids"] }
+    ];
+
+    // DYNAMIC SUB-CATEGORIES FOR INSTANT GROUP FILTERING
+    const SUB_CATEGORIES = {
+      hsc: [
+        { id: "all", name: "🌟 সকল HSC কোর্স", match: [] },
+        { id: "science", name: "🔬 বিজ্ঞান বিভাগ (Science)", match: ["বিজ্ঞান", "physics", "chem", "পদার্থ", "রসায়ন", "গণিত", "math", "biology", "pcmb", "bio", "উদ্ভিদ", "প্রাণী"] },
+        { id: "humanities", name: "📚 মানবিক বিভাগ (Humanities/Arts)", match: ["মানবিক", "arts", "বাংলা", "bangla", "ইংরেজি", "english", "ict", "bei", "অর্থনীতি", "পৌরনীতি", "যুক্তিবিদ্যা", "ইতিহাস", "ভূগোল"] },
+        { id: "commerce", name: "💼 ব্যবসায় শিক্ষা (Commerce)", match: ["ব্যবসায়", "কমার্স", "হিসাববিজ্ঞান", "accounting", "finance", "ফিন্যান্স", "ম্যানেজমেন্ট", "মার্কেটিং"] },
+        { id: "hsc28", name: "🎯 HSC 28 ব্যাচ", match: ["hsc 28", "hsc-28", "2028"] },
+        { id: "hsc27", name: "🎓 HSC 27 ব্যাচ", match: ["hsc 27", "hsc-27", "2027"] }
+      ],
+      admission: [
+        { id: "all", name: "🌟 সকল এডমিশন", match: [] },
+        { id: "medical", name: "🩺 মেডিকেল ও ডেন্টাল", match: ["মেডিকেল", "medical", "ডেন্টাল", "dental"] },
+        { id: "engineering", name: "📐 ইঞ্জিনিয়ারিং ও বুয়েট", match: ["ইঞ্জিনিয়ারিং", "engineering", "বুয়েট", "buet", "ckruet"] },
+        { id: "varsity_ka", name: "🏛️ ভার্সিটি 'ক' ও গুচ্ছ বিজ্ঞান", match: ["ক ইউনিট", "a unit", "ভার্সিটি ক", "varsity a"] },
+        { id: "varsity_kha_ga", name: "⚖️ ভার্সিটি 'খ' ও 'গ' (মানবিক/বাণিজ্য)", match: ["খ ইউনিট", "গ ইউনিট", "b unit", "c unit", "iba"] }
+      ],
+      skills: [
+        { id: "all", name: "🌟 সকল স্কিলস", match: [] },
+        { id: "freelance", name: "💻 ফ্রিল্যান্সিং ও টেক", match: ["freelance", "ফ্রিল্যান্সিং", "web", "coding", "seo", "app"] },
+        { id: "creative", name: "🎨 ভিডিও এডিটিং ও গ্রাফিক্স", match: ["video", "editing", "graphics", "design", "ভিডিও", "গ্রাফিক্স", "animation"] },
+        { id: "job", name: "💼 ক্যারিয়ার ও প্রফেশনাল", match: ["job", "career", "চাকরি", "bcs", "bank", "excel", "presentation"] }
+      ]
+    };
+
     let courses = [];
     let currentView = "student";
     let selectedCategory = "all";
+    let selectedSubCategory = "all";
     let searchQuery = "";
     let currentUser = null;
     let isTeamLoggedIn = false;
     let isManagerLoggedIn = false;
     let currentPitchGroupId = null;
-
-    const CATEGORIES = [
-      { id: "all", name: "সকল কোর্স", match: [] },
-      { id: "ssc", name: "SSC 27 & 28", match: ["SSC", "Class 6-10"] },
-      { id: "hsc", name: "HSC 27 & 28", match: ["HSC"] },
-      { id: "admission", name: "ভর্তি প্রস্তুতি", match: ["Admission"] },
-      { id: "english", name: "স্পোকেন ইংলিশ ও ভাষা", match: ["English"] },
-      { id: "skills", name: "স্কিলস ও প্রফেশনাল", match: ["Skills", "Job Prep"] },
-      { id: "personal", name: "পার্সোনাল ও ইসলামিক", match: ["Personal", "Islamic", "Kids"] }
-    ];
 
     function isAffiliateLink(link) {
       if (!link) return false;
@@ -1415,12 +1416,61 @@
       loadWebQuiz(randKey);
     }
 
-    /* Course Rendering */
+    /* Primary & Sub-Category Rendering */
+    function renderCategoryChips() {
+      const container = document.getElementById("categoryChips");
+      container.innerHTML = CATEGORIES.map(c => `
+        <button class="chip ${c.id === selectedCategory ? 'active' : ''}" onclick="selectCategory('${c.id}')">
+          ${c.name}
+        </button>
+      `).join("");
+
+      renderSubCategoryChips();
+    }
+
+    function selectCategory(catId) {
+      selectedCategory = catId;
+      selectedSubCategory = "all"; // Reset sub-category on parent change
+      renderCategoryChips();
+      
+      const match = CATEGORIES.find(c => c.id === catId);
+      document.getElementById("activeCategoryTitle").innerText = match ? match.name : "কোর্স তালিকা";
+      renderCourses();
+    }
+
+    function renderSubCategoryChips() {
+      const bar = document.getElementById("subCategoryBar");
+      const container = document.getElementById("subCategoryChips");
+      const subList = SUB_CATEGORIES[selectedCategory];
+
+      if (!subList || subList.length === 0) {
+        bar.style.display = "none";
+        return;
+      }
+
+      bar.style.display = "flex";
+      container.innerHTML = subList.map(sc => `
+        <button class="sub-chip ${sc.id === selectedSubCategory ? 'active' : ''}" onclick="selectSubCategory('${sc.id}')">
+          ${sc.name}
+        </button>
+      `).join("");
+    }
+
+    function selectSubCategory(subId) {
+      selectedSubCategory = subId;
+      renderSubCategoryChips();
+      renderCourses();
+    }
+
+    /* Course Filtering & Grid Rendering */
     function renderCourses() {
       const container = document.getElementById("coursesGrid");
       const currentCatDef = CATEGORIES.find(cat => cat.id === selectedCategory);
+      const subList = SUB_CATEGORIES[selectedCategory];
+      const currentSubDef = subList ? subList.find(sc => sc.id === selectedSubCategory) : null;
 
       const filtered = courses.filter(c => {
+        // 1. Match Primary Category
         let matchesCategory = false;
         if (!currentCatDef || currentCatDef.id === "all") {
           matchesCategory = true;
@@ -1431,11 +1481,22 @@
           );
         }
 
+        // 2. Match Sub-Category (Science, Humanities, Commerce, etc.)
+        let matchesSubCategory = true;
+        if (currentSubDef && currentSubDef.id !== "all") {
+          const cName = (c.name || "").toLowerCase();
+          const cCat = (c.category || "").toLowerCase();
+          matchesSubCategory = currentSubDef.match.some(kw => 
+            cName.includes(kw.toLowerCase()) || cCat.includes(kw.toLowerCase())
+          );
+        }
+
+        // 3. Match Search Query
         const matchesSearch = !searchQuery || 
           (c.name && c.name.toLowerCase().includes(searchQuery)) ||
           (c.category && c.category.toLowerCase().includes(searchQuery));
 
-        return matchesCategory && matchesSearch;
+        return matchesCategory && matchesSubCategory && matchesSearch;
       });
 
       document.getElementById("courseCount").innerText = filtered.length;
@@ -1444,7 +1505,8 @@
         container.innerHTML = `
           <div style="text-align: center; padding: 48px 16px; color: var(--text-muted); grid-column: 1 / -1;">
             <i class="fa-solid fa-box-open" style="font-size: 3rem; opacity: 0.4; margin-bottom: 12px;"></i>
-            <h3>কোন কোর্স পাওয়া যায়নি</h3>
+            <h3>এই বিভাগে কোন কোর্স পাওয়া যায়নি</h3>
+            <p style="font-size: 0.88rem; margin-top: 4px;">ফিল্টার পরিবর্তন করে দেখুন</p>
           </div>
         `;
         return;
@@ -1526,23 +1588,6 @@
       document.getElementById("searchInput").value = "";
       searchQuery = "";
       document.getElementById("clearSearchBtn").style.display = "none";
-      renderCourses();
-    }
-
-    function renderCategoryChips() {
-      const container = document.getElementById("categoryChips");
-      container.innerHTML = CATEGORIES.map(c => `
-        <button class="chip ${c.id === selectedCategory ? 'active' : ''}" onclick="selectCategory('${c.id}')">
-          ${c.name}
-        </button>
-      `).join("");
-    }
-
-    function selectCategory(catId) {
-      selectedCategory = catId;
-      renderCategoryChips();
-      const match = CATEGORIES.find(c => c.id === catId);
-      document.getElementById("activeCategoryTitle").innerText = match ? match.name : "কোর্স তালিকা";
       renderCourses();
     }
 
