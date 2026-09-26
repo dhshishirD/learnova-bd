@@ -1695,140 +1695,140 @@
     // 1-Click Micro-Category Pitch Definitions
     const PITCH_GROUPS = [
       {
-        id: 'hsc28_sci',
-        label: '🎓 HSC 28 বিজ্ঞান (PCMB + BEI)',
-        title: 'HSC 28 বিজ্ঞান বিভাগ সম্পূর্ণ কোর্স তালিকা',
-        badge: 'HSC 28 Science',
-        greeting: 'আসসালামু আলাইকুম! 🌸\nHSC 28 ব্যাচের প্রিয় শিক্ষার্থী, তোমার বিজ্ঞান বিভাগের সম্পূর্ণ প্রস্তুতির জন্য ১০ মিনিট স্কুলের সেরা কোর্সগুলোর স্পেশাল ডিসকাউন্ট তালিকা নিচে দেওয়া হলো:',
+        id: "hsc28_sci",
+        label: "🎓 HSC 28 বিজ্ঞান (PCMB + BEI)",
+        title: "HSC 28 বিজ্ঞান বিভাগ সম্পূর্ণ কোর্স তালিকা",
+        badge: "HSC 28 Science",
+        greeting: "আসসালামু আলাইকুম! 🌸\nHSC 28 ব্যাচের প্রিয় শিক্ষার্থী, তোমার বিজ্ঞান বিভাগের সম্পূর্ণ প্রস্তুতির জন্য ১০ মিনিট স্কুলের সেরা কোর্সগুলোর স্পেশাল ডিসকাউন্ট তালিকা নিচে দেওয়া হলো:",
         filterFn: (c) => {
-          const n = (c.name || '').toLowerCase();
-          return (n.includes('hsc 28') || n.includes('hsc-28')) && 
-                 (n.includes('pcmb') || n.includes('বিজ্ঞান') || n.includes('পদার্থ') || n.includes('রসায়ন') || n.includes('গণিত') || n.includes('bundle'));
+          const n = (c.name || "").toLowerCase();
+          return (n.includes("hsc 28") || n.includes("hsc-28")) && 
+                 (n.includes("pcmb") || n.includes("বিজ্ঞান") || n.includes("পদার্থ") || n.includes("রসায়ন") || n.includes("গণিত") || n.includes("bundle"));
         }
       },
       {
-        id: 'hsc28_hum',
-        label: '📚 HSC 28 মানবিক ও কমার্স (BEI)',
-        title: 'HSC 28 মানবিক ও ব্যবসায় শিক্ষা (BEI) কোর্স তালিকা',
-        badge: 'HSC 28 Humanities/Commerce',
-        greeting: 'আসসালামু আলাইকুম! 🌸\nHSC 28 ব্যাচের প্রিয় মানবিক ও ব্যবসায় শিক্ষা বিভাগের শিক্ষার্থী, তোমার বাংলা, ইংরেজি ও ICT প্রস্তুতির স্পেশাল ডিসকাউন্ট লিংক:',
+        id: "hsc28_hum",
+        label: "📚 HSC 28 মানবিক ও কমার্স (BEI)",
+        title: "HSC 28 মানবিক ও ব্যবসায় শিক্ষা (BEI) কোর্স তালিকা",
+        badge: "HSC 28 Humanities/Commerce",
+        greeting: "আসসালামু আলাইকুম! 🌸\nHSC 28 ব্যাচের প্রিয় মানবিক ও ব্যবসায় শিক্ষা বিভাগের শিক্ষার্থী, তোমার বাংলা, ইংরেজি ও ICT প্রস্তুতির স্পেশাল ডিসকাউন্ট লিংক:",
         filterFn: (c) => {
-          const n = (c.name || '').toLowerCase();
-          return (n.includes('hsc 28') || n.includes('hsc-28')) && 
-                 (n.includes('bei') || n.includes('বাংলা') || n.includes('ইংরেজি') || n.includes('ict'));
+          const n = (c.name || "").toLowerCase();
+          return (n.includes("hsc 28") || n.includes("hsc-28")) && 
+                 (n.includes("bei") || n.includes("বাংলা") || n.includes("ইংরেজি") || n.includes("ict"));
         }
       },
       {
-        id: 'hsc27_sci',
-        label: '🎓 HSC 27 বিজ্ঞান (PCMB Cycle)',
-        title: 'HSC 27 বিজ্ঞান বিভাগ সম্পূর্ণ কোর্স তালিকা',
-        badge: 'HSC 27 Science',
-        greeting: 'আসসালামু আলাইকুম! 🌸\nHSC 27 ব্যাচের শিক্ষার্থীদের জন্য ১০ মিনিট স্কুলের সম্পূর্ণ বিজ্ঞান বিভাগ (PCMB ও BEI) স্পেশাল অফার লিংক:',
+        id: "hsc27_sci",
+        label: "🎓 HSC 27 বিজ্ঞান (PCMB Cycle)",
+        title: "HSC 27 বিজ্ঞান বিভাগ সম্পূর্ণ কোর্স তালিকা",
+        badge: "HSC 27 Science",
+        greeting: "আসসালামু আলাইকুম! 🌸\nHSC 27 ব্যাচের শিক্ষার্থীদের জন্য ১০ মিনিট স্কুলের সম্পূর্ণ বিজ্ঞান বিভাগ (PCMB ও BEI) স্পেশাল অফার লিংক:",
         filterFn: (c) => {
-          const n = (c.name || '').toLowerCase();
-          return (n.includes('hsc 27') || n.includes('hsc-27')) && 
-                 (n.includes('pcmb') || n.includes('পদার্থ') || n.includes('রসায়ন') || n.includes('গণিত') || n.includes('bundle'));
+          const n = (c.name || "").toLowerCase();
+          return (n.includes("hsc 27") || n.includes("hsc-27")) && 
+                 (n.includes("pcmb") || n.includes("পদার্থ") || n.includes("রসায়ন") || n.includes("গণিত") || n.includes("bundle"));
         }
       },
       {
-        id: 'hsc27_hum',
-        label: '📚 HSC 27 মানবিক ও কমার্স (BEI)',
-        title: 'HSC 27 বাংলা, ইংরেজি ও ICT (BEI) কোর্স তালিকা',
-        badge: 'HSC 27 Humanities/Commerce',
-        greeting: 'আসসালামু আলাইকুম! 🌸\nHSC 27 ব্যাচের মানবিক ও ব্যবসায় শিক্ষা বিভাগের জন্য বাংলা, ইংরেজি ও ICT কমপ্লিট প্যাকেজের ডিসকাউন্ট লিংক:',
+        id: "hsc27_hum",
+        label: "📚 HSC 27 মানবিক ও কমার্স (BEI)",
+        title: "HSC 27 বাংলা, ইংরেজি ও ICT (BEI) কোর্স তালিকা",
+        badge: "HSC 27 Humanities/Commerce",
+        greeting: "আসসালামু আলাইকুম! 🌸\nHSC 27 ব্যাচের মানবিক ও ব্যবসায় শিক্ষা বিভাগের জন্য বাংলা, ইংরেজি ও ICT কমপ্লিট প্যাকেজের ডিসকাউন্ট লিংক:",
         filterFn: (c) => {
-          const n = (c.name || '').toLowerCase();
-          return (n.includes('hsc 27') || n.includes('hsc-27')) && 
-                 (n.includes('bei') || n.includes('বাংলা') || n.includes('ইংরেজি') || n.includes('ict'));
+          const n = (c.name || "").toLowerCase();
+          return (n.includes("hsc 27") || n.includes("hsc-27")) && 
+                 (n.includes("bei") || n.includes("বাংলা") || n.includes("ইংরেজি") || n.includes("ict"));
         }
       },
       {
-        id: 'ssc_prep',
-        label: '🏫 SSC 27 & 28 একাডেমিক',
-        title: 'SSC 27 & 28 সম্পূর্ণ প্রস্তুতি কোর্স তালিকা',
-        badge: 'SSC 27/28',
-        greeting: 'আসসালামু আলাইকুম! 🌸\nSSC 27 & 28 ব্যাচের শিক্ষার্থীদের জন্য ১০ মিনিট স্কুলের বিজ্ঞান বিভাগ ও অল-ইন-ওয়ান অনলাইন ব্যাচের অফার তালিকা:',
+        id: "ssc_prep",
+        label: "🏫 SSC 27 & 28 একাডেমিক",
+        title: "SSC 27 & 28 সম্পূর্ণ প্রস্তুতি কোর্স তালিকা",
+        badge: "SSC 27/28",
+        greeting: "আসসালামু আলাইকুম! 🌸\nSSC 27 & 28 ব্যাচের শিক্ষার্থীদের জন্য ১০ মিনিট স্কুলের বিজ্ঞান বিভাগ ও অল-ইন-ওয়ান অনলাইন ব্যাচের অফার তালিকা:",
         filterFn: (c) => {
-          const n = (c.name || '').toLowerCase();
-          const cat = (c.category || '').toLowerCase();
-          return cat.includes('ssc') || n.includes('ssc 27') || n.includes('ssc 28') || n.includes('class 9') || n.includes('class 10');
+          const n = (c.name || "").toLowerCase();
+          const cat = (c.category || "").toLowerCase();
+          return cat.includes("ssc") || n.includes("ssc 27") || n.includes("ssc 28") || n.includes("class 9") || n.includes("class 10");
         }
       },
       {
-        id: 'adm_med',
-        label: '🩺 মেডিকেল ও ডেন্টাল এডমিশন',
-        title: 'মেডিকেল ও ডেন্টাল এডমিশন সম্পূর্ণ কোর্স তালিকা',
-        badge: 'Medical Admission',
-        greeting: 'আসসালামু আলাইকুম! 🩺\nমেডিকেল ও ডেন্টাল ভর্তি পরীক্ষার্থীদের জন্য ১০ মিনিট স্কুলের অফিশিয়াল স্পেশাল ডিসকাউন্ট লিংকসমূহ:',
+        id: "adm_med",
+        label: "🩺 মেডিকেল ও ডেন্টাল এডমিশন",
+        title: "মেডিকেল ও ডেন্টাল এডমিশন সম্পূর্ণ কোর্স তালিকা",
+        badge: "Medical Admission",
+        greeting: "আসসালামু আলাইকুম! 🩺\nমেডিকেল ও ডেন্টাল ভর্তি পরীক্ষার্থীদের জন্য ১০ মিনিট স্কুলের অফিশিয়াল স্পেশাল ডিসকাউন্ট লিংকসমূহ:",
         filterFn: (c) => {
-          const n = (c.name || '').toLowerCase();
-          return n.includes('মেডিকেল') || n.includes('medical') || n.includes('ডেন্টাল') || n.includes('dental');
+          const n = (c.name || "").toLowerCase();
+          return n.includes("মেডিকেল") || n.includes("medical") || n.includes("ডেন্টাল") || n.includes("dental");
         }
       },
       {
-        id: 'adm_eng',
-        label: '📐 ইঞ্জিনিয়ারিং ও বুয়েট এডমিশন',
-        title: 'ইঞ্জিনিয়ারিং ও বুয়েট এডমিশন কোর্স তালিকা',
-        badge: 'Engineering Admission',
-        greeting: 'আসসালামু আলাইকুম! ⚙️\nবুয়েট ও ইঞ্জিনিয়ারিং ভর্তি প্রস্তুতি স্পেশাল ডিসকাউন্ট লিংকসমূহ:',
+        id: "adm_eng",
+        label: "📐 ইঞ্জিনিয়ারিং ও বুয়েট এডমিশন",
+        title: "ইঞ্জিনিয়ারিং ও বুয়েট এডমিশন কোর্স তালিকা",
+        badge: "Engineering Admission",
+        greeting: "আসসালামু আলাইকুম! ⚙️\nবুয়েট ও ইঞ্জিনিয়ারিং ভর্তি প্রস্তুতি স্পেশাল ডিসকাউন্ট লিংকসমূহ:",
         filterFn: (c) => {
-          const n = (c.name || '').toLowerCase();
-          return n.includes('ইঞ্জিনিয়ারিং') || n.includes('engineering') || n.includes('বুয়েট') || n.includes('buet');
+          const n = (c.name || "").toLowerCase();
+          return n.includes("ইঞ্জিনিয়ারিং") || n.includes("engineering") || n.includes("বুয়েট") || n.includes("buet");
         }
       },
       {
-        id: 'adm_varsity',
-        label: '🎯 ভার্সিটি 'ক' ও গুচ্ছ বিজ্ঞান',
-        title: 'ভার্সিটি A Unit ও গুচ্ছ বিজ্ঞান এডমিশন',
-        badge: 'Varsity A Unit',
-        greeting: 'আসসালামু আলাইকুম! 🎓\nঢাকা বিশ্ববিদ্যালয় ‘ক’ ইউনিট ও গুচ্ছ বিজ্ঞান প্রস্তুতি স্পেশাল ডিসকাউন্ট লিংক:',
+        id: "adm_varsity",
+        label: "🎯 ভার্সিটি 'ক' ও গুচ্ছ বিজ্ঞান",
+        title: "ভার্সিটি A Unit ও গুচ্ছ বিজ্ঞান এডমিশন",
+        badge: "Varsity A Unit",
+        greeting: "আসসালামু আলাইকুম! 🎓\nঢাকা বিশ্ববিদ্যালয় ‘ক’ ইউনিট ও গুচ্ছ বিজ্ঞান প্রস্তুতি স্পেশাল ডিসকাউন্ট লিংক:",
         filterFn: (c) => {
-          const n = (c.name || '').toLowerCase();
-          return (n.includes('a unit') || n.includes('ক ইউনিট') || n.includes('ভার্সিটি 'ক'') || n.includes('varsity a')) && !n.includes('ইঞ্জিনিয়ারিং');
+          const n = (c.name || "").toLowerCase();
+          return (n.includes("a unit") || n.includes("ক ইউনিট") || n.includes("ভার্সিটি 'ক'") || n.includes("varsity a")) && !n.includes("ইঞ্জিনিয়ারিং");
         }
       },
       {
-        id: 'adm_hum_com',
-        label: '📖 ভার্সিটি 'খ' ও 'গ' ইউনিট',
-        title: 'ভার্সিটি B & C Unit (মানবিক ও ব্যবসায়) এডমিশন',
-        badge: 'Varsity B/C Unit',
-        greeting: 'আসসালামু আলাইকুম! 📚\nঢাকা বিশ্ববিদ্যালয় ‘খ’ ও ‘গ’ ইউনিট (মানবিক ও ব্যবসায় শিক্ষা) এবং IBA এডমিশন স্পেশাল লিংক:',
+        id: "adm_hum_com",
+        label: "📖 ভার্সিটি 'খ' ও 'গ' ইউনিট",
+        title: "ভার্সিটি B & C Unit (মানবিক ও ব্যবসায়) এডমিশন",
+        badge: "Varsity B/C Unit",
+        greeting: "আসসালামু আলাইকুম! 📚\nঢাকা বিশ্ববিদ্যালয় ‘খ’ ও ‘গ’ ইউনিট (মানবিক ও ব্যবসায় শিক্ষা) এবং IBA এডমিশন স্পেশাল লিংক:",
         filterFn: (c) => {
-          const n = (c.name || '').toLowerCase();
-          return n.includes('b unit') || n.includes('c unit') || n.includes('iba') || n.includes('খ ইউনিট') || n.includes('গ ইউনিট');
+          const n = (c.name || "").toLowerCase();
+          return n.includes("b unit") || n.includes("c unit") || n.includes("iba") || n.includes("খ ইউনিট") || n.includes("গ ইউনিট");
         }
       },
       {
-        id: 'eng_ielts',
-        label: '🗣️ স্পোকেন ইংলিশ ও IELTS',
-        title: 'স্পোকেন ইংলিশ, IELTS ও ভাষা শিক্ষা কোর্স তালিকা',
-        badge: 'English Mastery',
-        greeting: 'আসসালামু আলাইকুম! 🇬🇧\nঘরে বসে ইংরেজি ও IELTS শেখার সেরা কোর্সগুলোর স্পেশাল ডিসকাউন্ট লিংক:',
+        id: "eng_ielts",
+        label: "🗣️ স্পোকেন ইংলিশ ও IELTS",
+        title: "স্পোকেন ইংলিশ, IELTS ও ভাষা শিক্ষা কোর্স তালিকা",
+        badge: "English Mastery",
+        greeting: "আসসালামু আলাইকুম! 🇬🇧\nঘরে বসে ইংরেজি ও IELTS শেখার সেরা কোর্সগুলোর স্পেশাল ডিসকাউন্ট লিংক:",
         filterFn: (c) => {
-          const cat = (c.category || '').toLowerCase();
-          return cat.includes('english') || (c.name || '').toLowerCase().includes('ielts') || (c.name || '').toLowerCase().includes('spoken');
+          const cat = (c.category || "").toLowerCase();
+          return cat.includes("english") || (c.name || "").toLowerCase().includes("ielts") || (c.name || "").toLowerCase().includes("spoken");
         }
       },
       {
-        id: 'skills_creative',
-        label: '💻 ফ্রিল্যান্সিং ও ক্রিয়েটিভ স্কিলস',
-        title: 'ভিডিও এডিটিং, গ্রাফিক্স ও ফ্রিল্যান্সিং কোর্স তালিকা',
-        badge: 'Skills & Freelance',
-        greeting: 'আসসালামু আলাইকুম! 💼\nফ্রিল্যান্সিং, ভিডিও এডিটিং ও ডিজিটাল স্কিলস কোর্সগুলোর স্পেশাল ডিসকাউন্ট লিংক:',
+        id: "skills_creative",
+        label: "💻 ফ্রিল্যান্সিং ও ক্রিয়েটিভ স্কিলস",
+        title: "ভিডিও এডিটিং, গ্রাফিক্স ও ফ্রিল্যান্সিং কোর্স তালিকা",
+        badge: "Skills & Freelance",
+        greeting: "আসসালামু আলাইকুম! 💼\nফ্রিল্যান্সিং, ভিডিও এডিটিং ও ডিজিটাল স্কিলস কোর্সগুলোর স্পেশাল ডিসকাউন্ট লিংক:",
         filterFn: (c) => {
-          const cat = (c.category || '').toLowerCase();
-          return cat.includes('skills') || cat.includes('job prep');
+          const cat = (c.category || "").toLowerCase();
+          return cat.includes("skills") || cat.includes("job prep");
         }
       },
       {
-        id: 'islamic_growth',
-        label: '🌙 ইসলামিক ও পার্সোনাল গ্রোথ',
-        title: 'অর্থ বুঝে কুরআন, তাজবিদ ও লিডারশিপ কোর্স',
-        badge: 'Islamic & Life Skills',
-        greeting: 'আসসালামু আলাইকুম! 🌙\nসহিহ কুরআন শিক্ষা, ইসলামিক লাইফ স্কিলস ও পার্সোনাল ডেভেলপমেন্ট কোর্সের স্পেশাল লিংক:',
+        id: "islamic_growth",
+        label: "🌙 ইসলামিক ও পার্সোনাল গ্রোথ",
+        title: "অর্থ বুঝে কুরআন, তাজবিদ ও লিডারশিপ কোর্স",
+        badge: "Islamic & Life Skills",
+        greeting: "আসসালামু আলাইকুম! 🌙\nসহিহ কুরআন শিক্ষা, ইসলামিক লাইফ স্কিলস ও পার্সোনাল ডেভেলপমেন্ট কোর্সের স্পেশাল লিংক:",
         filterFn: (c) => {
-          const cat = (c.category || '').toLowerCase();
-          return cat.includes('islamic') || cat.includes('personal');
+          const cat = (c.category || "").toLowerCase();
+          return cat.includes("islamic") || cat.includes("personal");
         }
       }
     ];
