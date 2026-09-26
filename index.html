@@ -335,6 +335,68 @@
       transform: rotate(180deg);
     }
 
+    /* 1-Click Micro-Category Pitch Hub (Teammate only) */
+    .pitch-hub-section {
+      display: none;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pitch-hub-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .pitch-hub-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pitch-hub-grid {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: none;
+    }
+
+    .pitch-hub-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .pitch-pill {
+      white-space: nowrap;
+      padding: 8px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid rgba(14,131,125,0.25);
+      background: var(--primary-light);
+      color: var(--primary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .pitch-pill:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px rgba(14,131,125,0.25);
+    }
+
     /* Teammate Notification Banner */
     .team-banner {
       display: none;
@@ -896,6 +958,22 @@
       gap: 12px;
     }
 
+    /* Pitch Preview Box */
+    .pitch-preview-textarea {
+      width: 100%;
+      height: 240px;
+      padding: 12px;
+      font-size: 0.88rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: inherit;
+      line-height: 1.45;
+      resize: vertical;
+      outline: none;
+    }
+
     /* Analytics & Leaderboard Components */
     .analytics-tabs {
       display: flex;
@@ -1145,6 +1223,20 @@
       </button>
     </div>
 
+    <!-- 1-Click Micro-Category Pitch Hub (Visible in Workspace) -->
+    <section class="pitch-hub-section" id="pitchHubSection">
+      <div class="pitch-hub-header">
+        <div class="pitch-hub-title">
+          <i class="fa-solid fa-bolt" style="color: var(--accent);"></i>
+          <span>১-ক্লিক ক্যাটাগরি পিচ হাব (ইনবক্স চ্যাটের জন্য রেডিমেড মেসেজ)</span>
+        </div>
+        <span style="font-size: 0.75rem; color: var(--text-muted);">১-ট্যাপে সম্পূর্ণ তালিকা কপি করুন</span>
+      </div>
+      <div class="pitch-hub-grid" id="pitchHubGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
     <!-- Teammate Workspace Alert Banner -->
     <div class="team-banner" id="teamBanner">
       <div>
@@ -1272,6 +1364,33 @@
     </div>
   </div>
 
+  <!-- 1-Click Category Pitch Preview & Copy Modal -->
+  <div class="modal-overlay" id="pitchModal">
+    <div class="modal-card" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="pitchModalTitle"><i class="fa-solid fa-comment-dots" style="color: var(--primary);"></i> ক্যাটাগরি সেলস পিচ কপি</h3>
+        <button class="modal-close" onclick="closePitchModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="font-size: 0.85rem; color: var(--text-muted);">
+          মেসেঞ্জার বা হোয়াটসঅ্যাপে স্টুডেন্টকে সরাসরি পাঠানোর জন্য রেডিমেড মেসেজ:
+        </div>
+        <textarea id="pitchModalTextarea" class="pitch-preview-textarea" readonly></textarea>
+      </div>
+      <div class="modal-footer" style="justify-content: space-between; flex-wrap: wrap;">
+        <button type="button" class="btn btn-outline" onclick="closePitchModal()">বন্ধ করুন</button>
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn btn-primary" onclick="copyCurrentPitchFromModal()">
+            <i class="fa-solid fa-copy"></i> কপি মেসেজ
+          </button>
+          <button type="button" class="btn btn-success" onclick="shareCurrentPitchWhatsapp()">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Confirm Purchase / Record Sale Modal -->
   <div class="modal-overlay" id="confirmSaleModal">
     <div class="modal-card" style="max-width: 480px;">
@@ -1364,6 +1483,7 @@
               <select id="logActionFilter" class="form-select" style="padding: 4px 8px; font-size: 0.8rem;" onchange="renderAuditLogs()">
                 <option value="all">সকল অ্যাকশন</option>
                 <option value="confirm_sale">✅ নিশ্চিত বিক্রি (Confirmed Sales)</option>
+                <option value="copy_category_pitch">📋 ক্যাটাগরি পিচ কপি</option>
                 <option value="copy_link">🔗 লিংক কপি</option>
                 <option value="copy_pitch">💬 মেসেজ কপি</option>
               </select>
@@ -1384,8 +1504,8 @@
                   <th>সময়</th>
                   <th>সদস্য</th>
                   <th>অ্যাকশন</th>
-                  <th>কোর্স</th>
-                  <th>অফার ফি</th>
+                  <th>কোর্স / ক্যাটাগরি</th>
+                  <th>ফি</th>
                 </tr>
               </thead>
               <tbody id="auditLogsBody">
@@ -1572,7 +1692,148 @@
       { id: 'nasim', name: 'Nasim Reza', pass: 'nasim2026', role: 'Sales Specialist', isManager: false }
     ];
 
-    // Rich Collection of Quranic Ayahs, Sahih Hadiths, and Business/Work Ethics Quotes
+    // 1-Click Micro-Category Pitch Definitions
+    const PITCH_GROUPS = [
+      {
+        id: 'hsc28_sci',
+        label: '🎓 HSC 28 বিজ্ঞান (PCMB + BEI)',
+        title: 'HSC 28 বিজ্ঞান বিভাগ সম্পূর্ণ কোর্স তালিকা',
+        badge: 'HSC 28 Science',
+        greeting: 'আসসালামু আলাইকুম! 🌸\nHSC 28 ব্যাচের প্রিয় শিক্ষার্থী, তোমার বিজ্ঞান বিভাগের সম্পূর্ণ প্রস্তুতির জন্য ১০ মিনিট স্কুলের সেরা কোর্সগুলোর স্পেশাল ডিসকাউন্ট তালিকা নিচে দেওয়া হলো:',
+        filterFn: (c) => {
+          const n = (c.name || '').toLowerCase();
+          return (n.includes('hsc 28') || n.includes('hsc-28')) && 
+                 (n.includes('pcmb') || n.includes('বিজ্ঞান') || n.includes('পদার্থ') || n.includes('রসায়ন') || n.includes('গণিত') || n.includes('bundle'));
+        }
+      },
+      {
+        id: 'hsc28_hum',
+        label: '📚 HSC 28 মানবিক ও কমার্স (BEI)',
+        title: 'HSC 28 মানবিক ও ব্যবসায় শিক্ষা (BEI) কোর্স তালিকা',
+        badge: 'HSC 28 Humanities/Commerce',
+        greeting: 'আসসালামু আলাইকুম! 🌸\nHSC 28 ব্যাচের প্রিয় মানবিক ও ব্যবসায় শিক্ষা বিভাগের শিক্ষার্থী, তোমার বাংলা, ইংরেজি ও ICT প্রস্তুতির স্পেশাল ডিসকাউন্ট লিংক:',
+        filterFn: (c) => {
+          const n = (c.name || '').toLowerCase();
+          return (n.includes('hsc 28') || n.includes('hsc-28')) && 
+                 (n.includes('bei') || n.includes('বাংলা') || n.includes('ইংরেজি') || n.includes('ict'));
+        }
+      },
+      {
+        id: 'hsc27_sci',
+        label: '🎓 HSC 27 বিজ্ঞান (PCMB Cycle)',
+        title: 'HSC 27 বিজ্ঞান বিভাগ সম্পূর্ণ কোর্স তালিকা',
+        badge: 'HSC 27 Science',
+        greeting: 'আসসালামু আলাইকুম! 🌸\nHSC 27 ব্যাচের শিক্ষার্থীদের জন্য ১০ মিনিট স্কুলের সম্পূর্ণ বিজ্ঞান বিভাগ (PCMB ও BEI) স্পেশাল অফার লিংক:',
+        filterFn: (c) => {
+          const n = (c.name || '').toLowerCase();
+          return (n.includes('hsc 27') || n.includes('hsc-27')) && 
+                 (n.includes('pcmb') || n.includes('পদার্থ') || n.includes('রসায়ন') || n.includes('গণিত') || n.includes('bundle'));
+        }
+      },
+      {
+        id: 'hsc27_hum',
+        label: '📚 HSC 27 মানবিক ও কমার্স (BEI)',
+        title: 'HSC 27 বাংলা, ইংরেজি ও ICT (BEI) কোর্স তালিকা',
+        badge: 'HSC 27 Humanities/Commerce',
+        greeting: 'আসসালামু আলাইকুম! 🌸\nHSC 27 ব্যাচের মানবিক ও ব্যবসায় শিক্ষা বিভাগের জন্য বাংলা, ইংরেজি ও ICT কমপ্লিট প্যাকেজের ডিসকাউন্ট লিংক:',
+        filterFn: (c) => {
+          const n = (c.name || '').toLowerCase();
+          return (n.includes('hsc 27') || n.includes('hsc-27')) && 
+                 (n.includes('bei') || n.includes('বাংলা') || n.includes('ইংরেজি') || n.includes('ict'));
+        }
+      },
+      {
+        id: 'ssc_prep',
+        label: '🏫 SSC 27 & 28 একাডেমিক',
+        title: 'SSC 27 & 28 সম্পূর্ণ প্রস্তুতি কোর্স তালিকা',
+        badge: 'SSC 27/28',
+        greeting: 'আসসালামু আলাইকুম! 🌸\nSSC 27 & 28 ব্যাচের শিক্ষার্থীদের জন্য ১০ মিনিট স্কুলের বিজ্ঞান বিভাগ ও অল-ইন-ওয়ান অনলাইন ব্যাচের অফার তালিকা:',
+        filterFn: (c) => {
+          const n = (c.name || '').toLowerCase();
+          const cat = (c.category || '').toLowerCase();
+          return cat.includes('ssc') || n.includes('ssc 27') || n.includes('ssc 28') || n.includes('class 9') || n.includes('class 10');
+        }
+      },
+      {
+        id: 'adm_med',
+        label: '🩺 মেডিকেল ও ডেন্টাল এডমিশন',
+        title: 'মেডিকেল ও ডেন্টাল এডমিশন সম্পূর্ণ কোর্স তালিকা',
+        badge: 'Medical Admission',
+        greeting: 'আসসালামু আলাইকুম! 🩺\nমেডিকেল ও ডেন্টাল ভর্তি পরীক্ষার্থীদের জন্য ১০ মিনিট স্কুলের অফিশিয়াল স্পেশাল ডিসকাউন্ট লিংকসমূহ:',
+        filterFn: (c) => {
+          const n = (c.name || '').toLowerCase();
+          return n.includes('মেডিকেল') || n.includes('medical') || n.includes('ডেন্টাল') || n.includes('dental');
+        }
+      },
+      {
+        id: 'adm_eng',
+        label: '📐 ইঞ্জিনিয়ারিং ও বুয়েট এডমিশন',
+        title: 'ইঞ্জিনিয়ারিং ও বুয়েট এডমিশন কোর্স তালিকা',
+        badge: 'Engineering Admission',
+        greeting: 'আসসালামু আলাইকুম! ⚙️\nবুয়েট ও ইঞ্জিনিয়ারিং ভর্তি প্রস্তুতি স্পেশাল ডিসকাউন্ট লিংকসমূহ:',
+        filterFn: (c) => {
+          const n = (c.name || '').toLowerCase();
+          return n.includes('ইঞ্জিনিয়ারিং') || n.includes('engineering') || n.includes('বুয়েট') || n.includes('buet');
+        }
+      },
+      {
+        id: 'adm_varsity',
+        label: '🎯 ভার্সিটি 'ক' ও গুচ্ছ বিজ্ঞান',
+        title: 'ভার্সিটি A Unit ও গুচ্ছ বিজ্ঞান এডমিশন',
+        badge: 'Varsity A Unit',
+        greeting: 'আসসালামু আলাইকুম! 🎓\nঢাকা বিশ্ববিদ্যালয় ‘ক’ ইউনিট ও গুচ্ছ বিজ্ঞান প্রস্তুতি স্পেশাল ডিসকাউন্ট লিংক:',
+        filterFn: (c) => {
+          const n = (c.name || '').toLowerCase();
+          return (n.includes('a unit') || n.includes('ক ইউনিট') || n.includes('ভার্সিটি 'ক'') || n.includes('varsity a')) && !n.includes('ইঞ্জিনিয়ারিং');
+        }
+      },
+      {
+        id: 'adm_hum_com',
+        label: '📖 ভার্সিটি 'খ' ও 'গ' ইউনিট',
+        title: 'ভার্সিটি B & C Unit (মানবিক ও ব্যবসায়) এডমিশন',
+        badge: 'Varsity B/C Unit',
+        greeting: 'আসসালামু আলাইকুম! 📚\nঢাকা বিশ্ববিদ্যালয় ‘খ’ ও ‘গ’ ইউনিট (মানবিক ও ব্যবসায় শিক্ষা) এবং IBA এডমিশন স্পেশাল লিংক:',
+        filterFn: (c) => {
+          const n = (c.name || '').toLowerCase();
+          return n.includes('b unit') || n.includes('c unit') || n.includes('iba') || n.includes('খ ইউনিট') || n.includes('গ ইউনিট');
+        }
+      },
+      {
+        id: 'eng_ielts',
+        label: '🗣️ স্পোকেন ইংলিশ ও IELTS',
+        title: 'স্পোকেন ইংলিশ, IELTS ও ভাষা শিক্ষা কোর্স তালিকা',
+        badge: 'English Mastery',
+        greeting: 'আসসালামু আলাইকুম! 🇬🇧\nঘরে বসে ইংরেজি ও IELTS শেখার সেরা কোর্সগুলোর স্পেশাল ডিসকাউন্ট লিংক:',
+        filterFn: (c) => {
+          const cat = (c.category || '').toLowerCase();
+          return cat.includes('english') || (c.name || '').toLowerCase().includes('ielts') || (c.name || '').toLowerCase().includes('spoken');
+        }
+      },
+      {
+        id: 'skills_creative',
+        label: '💻 ফ্রিল্যান্সিং ও ক্রিয়েটিভ স্কিলস',
+        title: 'ভিডিও এডিটিং, গ্রাফিক্স ও ফ্রিল্যান্সিং কোর্স তালিকা',
+        badge: 'Skills & Freelance',
+        greeting: 'আসসালামু আলাইকুম! 💼\nফ্রিল্যান্সিং, ভিডিও এডিটিং ও ডিজিটাল স্কিলস কোর্সগুলোর স্পেশাল ডিসকাউন্ট লিংক:',
+        filterFn: (c) => {
+          const cat = (c.category || '').toLowerCase();
+          return cat.includes('skills') || cat.includes('job prep');
+        }
+      },
+      {
+        id: 'islamic_growth',
+        label: '🌙 ইসলামিক ও পার্সোনাল গ্রোথ',
+        title: 'অর্থ বুঝে কুরআন, তাজবিদ ও লিডারশিপ কোর্স',
+        badge: 'Islamic & Life Skills',
+        greeting: 'আসসালামু আলাইকুম! 🌙\nসহিহ কুরআন শিক্ষা, ইসলামিক লাইফ স্কিলস ও পার্সোনাল ডেভেলপমেন্ট কোর্সের স্পেশাল লিংক:',
+        filterFn: (c) => {
+          const cat = (c.category || '').toLowerCase();
+          return cat.includes('islamic') || cat.includes('personal');
+        }
+      }
+    ];
+
+    // Rich Collection of Motivational Quotes
     const MOTIVATIONAL_QUOTES = [
       {
         tag: 'আল-কুরআনের বাণী',
@@ -1649,6 +1910,7 @@
     ];
 
     let currentQuoteIndex = 0;
+    let currentPitchGroupId = null;
 
     let courses = [];
     let currentView = 'student'; // 'student' or 'team'
@@ -1730,8 +1992,14 @@
       return [];
     }
 
-    function recordActivity(actionType, actionLabel, course, extraDetails = '') {
+    function recordActivity(actionType, actionLabel, courseOrGroup, extraDetails = '') {
       if (!currentUser) return;
+
+      const courseName = typeof courseOrGroup === 'object' ? (courseOrGroup.name || courseOrGroup.title || 'Category Pitch') : String(courseOrGroup);
+      const courseCategory = typeof courseOrGroup === 'object' ? (courseOrGroup.category || courseOrGroup.badge || 'General') : 'General';
+      const price = typeof courseOrGroup === 'object' ? (courseOrGroup.price || 0) : 0;
+      const originalPrice = typeof courseOrGroup === 'object' ? (courseOrGroup.original_price || price) : price;
+      const commission = typeof courseOrGroup === 'object' ? (courseOrGroup.commission || (price * 0.15)) : 0;
 
       const newLog = {
         id: 'log_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
@@ -1740,11 +2008,11 @@
         role: currentUser.role,
         action: actionType,
         actionLabel: actionLabel,
-        courseName: course.name,
-        courseCategory: course.category,
-        price: course.price,
-        commission: course.commission || (course.price * 0.15),
-        originalPrice: course.original_price || course.price,
+        courseName: courseName,
+        courseCategory: courseCategory,
+        price: price,
+        commission: commission,
+        originalPrice: originalPrice,
         extraDetails: extraDetails,
         timestamp: new Date().toISOString(),
         timeFormatted: new Intl.DateTimeFormat('en-GB', {
@@ -1772,6 +2040,82 @@
       }
     }
 
+    // Render 1-Click Micro-Category Pitch Hub
+    function renderPitchHub() {
+      const container = document.getElementById('pitchHubGrid');
+      if (!container) return;
+
+      container.innerHTML = PITCH_GROUPS.map(g => `
+        <button class="pitch-pill" onclick="openCategoryPitchModal('${g.id}')" title="${g.title} (ক্লিক করে কপি ও প্রিভিউ দেখুন)">
+          <span>${g.label}</span>
+          <i class="fa-solid fa-copy" style="opacity: 0.8; font-size: 0.75rem;"></i>
+        </button>
+      `).join('');
+    }
+
+    function generateCategoryPitchText(groupId) {
+      const group = PITCH_GROUPS.find(g => g.id === groupId);
+      if (!group) return '';
+
+      const matchedCourses = courses.filter(group.filterFn);
+      if (matchedCourses.length === 0) {
+        return `${group.greeting}\n\n(বর্তমানে এই ক্যাটাগরির কোর্সসমূহ আপডেট হচ্ছে)`;
+      }
+
+      let message = `${group.greeting}\n\n`;
+
+      matchedCourses.forEach((c, idx) => {
+        const formattedPrice = Number(c.price).toLocaleString('en-IN');
+        const origPrice = Number(c.original_price || (c.price > 0 ? c.price * 1.35 : 0));
+        const savings = origPrice > c.price ? (origPrice - c.price) : 0;
+        const origPart = (origPrice > c.price) ? `\n   💵 নিয়মিত ফি: ~~৳${origPrice.toLocaleString('en-IN')}~~` : '';
+        const savingsPart = savings > 0 ? ` (৳${savings.toLocaleString('en-IN')} ছাড়!)` : '';
+        const link = c.link ? c.link : '(ভর্তির জন্য ইনবক্সে যোগাযোগ করুন)';
+
+        message += `🔥 ${idx + 1}. ${c.name}${origPart}\n   🏷️ অফার ফি: ৳${formattedPrice}${savingsPart}\n   🔗 ভর্তির লিংক: ${link}\n\n`;
+      });
+
+      message += `✨ স্পেশাল সুবিধা:\n✅ ১০ মিনিট স্কুলের সেরা শিক্ষকদের লাইভ ও রেকর্ডেড ক্লাস\n✅ অধ্যায়ভিত্তিক লেকচার শিট ও ডাউট সলভ\n✅ মডেল টেস্ট ও কুইজ সুবিধা\n\n📌 উপরের যেকোনো লিংকে ক্লিক করে সরাসরি স্পেশাল ডিসকাউন্ট সহ ভর্তি নিশ্চিত করতে পারবে। ভর্তি হতে কোনো সমস্যা হলে আমাকে জানাতে পারো। ধন্যবাদ! 🤝`;
+
+      return message;
+    }
+
+    function openCategoryPitchModal(groupId) {
+      currentPitchGroupId = groupId;
+      const group = PITCH_GROUPS.find(g => g.id === groupId);
+      if (!group) return;
+
+      document.getElementById('pitchModalTitle').innerHTML = `<i class="fa-solid fa-bolt" style="color: var(--accent);"></i> ${group.title}`;
+      const text = generateCategoryPitchText(groupId);
+      document.getElementById('pitchModalTextarea').value = text;
+
+      document.getElementById('pitchModal').classList.add('active');
+    }
+
+    function closePitchModal() {
+      document.getElementById('pitchModal').classList.remove('active');
+    }
+
+    function copyCurrentPitchFromModal() {
+      if (!currentPitchGroupId) return;
+      const group = PITCH_GROUPS.find(g => g.id === currentPitchGroupId);
+      const text = document.getElementById('pitchModalTextarea').value;
+
+      navigator.clipboard.writeText(text).then(() => {
+        recordActivity('copy_category_pitch', 'ক্যাটাগরি পিচ কপি 📋', group ? group.title : 'Category Pitch');
+        showToast(`🎉 '${group ? group.title : 'ক্যাটাগরি পিচ'}' কপি হয়েছে! ইনবক্সে পেস্ট করুন 💬`);
+      });
+    }
+
+    function shareCurrentPitchWhatsapp() {
+      const text = document.getElementById('pitchModalTextarea').value;
+      const group = PITCH_GROUPS.find(g => g.id === currentPitchGroupId);
+      if (group) {
+        recordActivity('copy_category_pitch', 'হোয়াটসঅ্যাপ শেয়ার 📲', group.title);
+      }
+      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    }
+
     // Initialize
     function init() {
       currentQuoteIndex = Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length);
@@ -1779,6 +2123,7 @@
       
       loadSavedCourses();
       checkAuthSession();
+      renderPitchHub();
       renderCategoryChips();
       renderCourses();
       updateAuditCounts();
@@ -1869,6 +2214,7 @@
         
         rollNextQuote();
         applyViewUI();
+        renderPitchHub();
         renderCourses();
         showToast(`স্বাগতম ${matchedMember.name}! 💼`);
       } else {
@@ -1942,6 +2288,7 @@
       const heroBanner = document.getElementById('heroBanner');
       const teamBanner = document.getElementById('teamBanner');
       const motivationBanner = document.getElementById('motivationBanner');
+      const pitchHubSection = document.getElementById('pitchHubSection');
       const linkBar = document.getElementById('linkFilterBar');
       const fab = document.getElementById('fabAdd');
       const subtitle = document.getElementById('portalSubtitle');
@@ -1979,6 +2326,7 @@
         if (currentView === 'team') {
           heroBanner.style.display = 'none';
           motivationBanner.style.display = 'flex';
+          pitchHubSection.style.display = 'block';
           teamBanner.style.display = 'flex';
           linkBar.style.display = 'flex';
           fab.style.display = isManagerLoggedIn ? 'flex' : 'none';
@@ -1989,6 +2337,7 @@
         } else {
           heroBanner.style.display = 'block';
           motivationBanner.style.display = 'none';
+          pitchHubSection.style.display = 'none';
           teamBanner.style.display = 'none';
           linkBar.style.display = 'none';
           fab.style.display = 'none';
@@ -2002,6 +2351,7 @@
         logoutBtn.style.display = 'none';
         heroBanner.style.display = 'block';
         motivationBanner.style.display = 'none';
+        pitchHubSection.style.display = 'none';
         teamBanner.style.display = 'none';
         linkBar.style.display = 'none';
         fab.style.display = 'none';
@@ -2212,7 +2562,7 @@
             <button class="btn btn-success" onclick="openConfirmSaleModal(${c.id})" title="সফল ভর্তি রেকর্ড করুন">
               <i class="fa-solid fa-check-double"></i> বিক্রি কনফার্ম
             </button>
-            <a href="https://wa.me/?text=${encodeURIComponent(generatePitchText(c))}" target="_blank" onclick="trackWhatsappShare(${c.id})" class="btn-sm-icon" title="WhatsApp Share" style="color: #25D366;">
+            <a href="https://wa.me/?text=${encodeURIComponent(generateSinglePitchText(c))}" target="_blank" onclick="trackWhatsappShare(${c.id})" class="btn-sm-icon" title="WhatsApp Share" style="color: #25D366;">
               <i class="fa-brands fa-whatsapp"></i>
             </a>
           </div>
@@ -2220,8 +2570,8 @@
       `;
     }
 
-    // Text & Link Copy Helpers (Formatted for Sales Conversion)
-    function generatePitchText(c) {
+    // Single Course Pitch Generator
+    function generateSinglePitchText(c) {
       const hasAffLink = isAffiliateLink(c.link);
       const origPrice = Number(c.original_price || (c.price > 0 ? c.price * 1.35 : 0));
       const origPart = (origPrice > c.price) ? `\n💵 নিয়মিত ফি: ~~৳${origPrice.toLocaleString('en-IN')}~~` : '';
@@ -2236,7 +2586,7 @@
     function copyPitchMessage(id) {
       const c = courses.find(item => item.id === id);
       if (!c) return;
-      const text = generatePitchText(c);
+      const text = generateSinglePitchText(c);
       navigator.clipboard.writeText(text).then(() => {
         recordActivity('copy_pitch', 'মেসেজ কপি', c);
         showToast('সেলস মেসেজ কপি হয়েছে! ইনবক্সে পেস্ট করুন 💬');
@@ -2385,7 +2735,7 @@
         const confirmedCommission = confirmedSalesLogs.reduce((sum, l) => sum + (Number(l.commission) || 0), 0);
 
         const linkCopies = userLogs.filter(l => l.action === 'copy_link').length;
-        const pitchCopies = userLogs.filter(l => l.action === 'copy_pitch').length;
+        const pitchCopies = userLogs.filter(l => l.action === 'copy_pitch' || l.action === 'copy_category_pitch').length;
         const totalActions = userLogs.length;
         const pipelineValue = userLogs.reduce((sum, l) => sum + (Number(l.price) || 0), 0);
         const lastActive = userLogs.length > 0 ? userLogs[0].timeFormatted : 'কোনো অ্যাক্টিভিটি নেই';
@@ -2476,7 +2826,7 @@
         if (l.action === 'confirm_sale') {
           badgeBg = 'var(--success-bg)';
           badgeColor = 'var(--success-dark)';
-        } else if (l.action === 'copy_pitch') {
+        } else if (l.action === 'copy_pitch' || l.action === 'copy_category_pitch') {
           badgeBg = '#eff6ff';
           badgeColor = '#2563eb';
         }
@@ -2494,7 +2844,7 @@
               <div>${l.courseName}</div>
               ${l.extraDetails ? `<div style="font-size: 0.7rem; color: var(--text-muted);">${l.extraDetails}</div>` : ''}
             </td>
-            <td style="font-weight: 700; color: var(--primary);">৳${Number(l.price).toLocaleString('en-IN')}</td>
+            <td style="font-weight: 700; color: var(--primary);">${l.price > 0 ? '৳' + Number(l.price).toLocaleString('en-IN') : '-'}</td>
           </tr>
         `;
       }).join('');
