@@ -10,7 +10,10 @@
     "commission": 802.5,
     "cashback": 200,
     "profit": 602.5,
-    "link": "https://10ms.io/RKlRqu"
+    "link": "https://10ms.io/RKlRqu",
+    "has_real_link": true,
+    "excel_row": 15,
+    "matched_excel_name": "SSC 27 বিজ্ঞান বিভাগ + BEI + SMP"
   },
   {
     "id": 2,
@@ -23,7 +26,10 @@
     "commission": 2850.0,
     "cashback": 800,
     "profit": 2050.0,
-    "link": "https://10ms.io/IKlR5j"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 14,
+    "matched_excel_name": "SSC 28 পূর্ণাঙ্গ প্রস্তুতি (Class 9-10 Complete)"
   },
   {
     "id": 3,
@@ -36,7 +42,10 @@
     "commission": 337.5,
     "cashback": 100,
     "profit": 237.5,
-    "link": "https://10ms.io/3KlR9t"
+    "link": "https://10ms.io/3KlR9t",
+    "has_real_link": true,
+    "excel_row": 17,
+    "matched_excel_name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি কোর্স [বিজ্ঞান বিভাগ]"
   },
   {
     "id": 4,
@@ -49,7 +58,10 @@
     "commission": 337.5,
     "cashback": 100,
     "profit": 237.5,
-    "link": "https://10ms.io/RKlRXg"
+    "link": "https://10ms.io/RKlRXg",
+    "has_real_link": true,
+    "excel_row": 18,
+    "matched_excel_name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি কোর্স [ব্যবসায় শিক্ষা বিভাগ]"
   },
   {
     "id": 5,
@@ -62,7 +74,10 @@
     "commission": 337.5,
     "cashback": 100,
     "profit": 237.5,
-    "link": "https://10ms.io/nKlRJn"
+    "link": "https://10ms.io/nKlRJn",
+    "has_real_link": true,
+    "excel_row": 19,
+    "matched_excel_name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি কোর্স [মানবিক বিভাগ]"
   },
   {
     "id": 6,
@@ -75,7 +90,10 @@
     "commission": 270.0,
     "cashback": 70,
     "profit": 200.0,
-    "link": "https://10ms.io/BKlRnb"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 20,
+    "matched_excel_name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি BEIM কোর্স [বাংলা, ইংরেজি, ICT, সা.গণিত]"
   },
   {
     "id": 7,
@@ -88,7 +106,10 @@
     "commission": 128.25,
     "cashback": 35,
     "profit": 93.25,
-    "link": "https://10ms.io/bKlR2u"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 24,
+    "matched_excel_name": "SSC টেস্ট পেপার সলভ কোর্স (Physics, Chemistry, Biology, Higher Math)"
   },
   {
     "id": 8,
@@ -101,7 +122,10 @@
     "commission": 375.0,
     "cashback": 100,
     "profit": 275.0,
-    "link": "https://10ms.io/rKlRa6"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 2,
+    "matched_excel_name": "ষষ্ঠ - অষ্টম শ্রেণি অনলাইন ব্যাচ (১ মাস)"
   },
   {
     "id": 9,
@@ -114,7 +138,10 @@
     "commission": 900.0,
     "cashback": 250,
     "profit": 650.0,
-    "link": "https://10ms.io/MKlR1x"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 4,
+    "matched_excel_name": "ষষ্ঠ - অষ্টম শ্রেণি অনলাইন ব্যাচ (সম্পূর্ণ বছর)"
   },
   {
     "id": 10,
@@ -127,7 +154,10 @@
     "commission": 802.5,
     "cashback": 200,
     "profit": 602.5,
-    "link": "https://10ms.io/bKlRNw"
+    "link": "https://10ms.io/OKlRn6",
+    "has_real_link": true,
+    "excel_row": 3,
+    "matched_excel_name": "অষ্টম শ্রেণি - বার্ষিক ও বৃত্তি পরীক্ষা প্রস্তুতি ২০২৬"
   },
   {
     "id": 11,
@@ -140,7 +170,10 @@
     "commission": 1200.0,
     "cashback": 400,
     "profit": 800.0,
-    "link": "https://10ms.io/AKlRCJ"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 6,
+    "matched_excel_name": "নবম শ্রেণি - অনলাইন ব্যাচ ২০২৬ [বিজ্ঞান বিভাগ - সম্পূর্ণ বছর + BEI]"
   },
   {
     "id": 12,
@@ -153,7 +186,10 @@
     "commission": 900.0,
     "cashback": 250,
     "profit": 650.0,
-    "link": "https://10ms.io/FKlR4A"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 7,
+    "matched_excel_name": "নবম শ্রেণি - অনলাইন ব্যাচ ২০২৬ [বিজ্ঞান বিভাগ - সম্পূর্ণ বছর]"
   },
   {
     "id": 13,
@@ -166,7 +202,10 @@
     "commission": 675.0,
     "cashback": 200,
     "profit": 475.0,
-    "link": "https://10ms.io/6KlRj1"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 9,
+    "matched_excel_name": "নবম শ্রেণি - অনলাইন ব্যাচ ২০২৬ [ব্যবসায় শিক্ষা বিভাগ - সম্পূর্ণ বছর]"
   },
   {
     "id": 14,
@@ -179,7 +218,10 @@
     "commission": 525.0,
     "cashback": 150,
     "profit": 375.0,
-    "link": "https://10ms.io/sKlRF7"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 10,
+    "matched_excel_name": "নবম শ্রেণি - বাংলা, ইংরেজি ও আইসিটি (BEI) অনলাইন ব্যাচ"
   },
   {
     "id": 15,
@@ -192,7 +234,10 @@
     "commission": 900.0,
     "cashback": 250,
     "profit": 650.0,
-    "link": "https://10ms.io/DKlROn"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 11,
+    "matched_excel_name": "দশম শ্রেণি - অনলাইন ব্যাচ [বিজ্ঞান বিভাগ + BEI]"
   },
   {
     "id": 16,
@@ -205,7 +250,10 @@
     "commission": 675.0,
     "cashback": 200,
     "profit": 475.0,
-    "link": "https://10ms.io/yKlRHv"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 12,
+    "matched_excel_name": "দশম শ্রেণি - অনলাইন ব্যাচ [বিজ্ঞান বিভাগ]"
   },
   {
     "id": 17,
@@ -218,7 +266,10 @@
     "commission": 525.0,
     "cashback": 150,
     "profit": 375.0,
-    "link": "https://10ms.io/4KlRzs"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 13,
+    "matched_excel_name": "দশম শ্রেণি - বাংলা, ইংরেজি ও আইসিটি (BEI) অনলাইন ব্যাচ"
   },
   {
     "id": 18,
@@ -231,7 +282,10 @@
     "commission": 2100.0,
     "cashback": 600,
     "profit": 1500.0,
-    "link": "https://10ms.io/fKNwZj"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 90,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle"
   },
   {
     "id": 19,
@@ -244,7 +298,10 @@
     "commission": 1500.0,
     "cashback": 450,
     "profit": 1050.0,
-    "link": "https://10ms.io/xKNwL3"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 90,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle"
   },
   {
     "id": 20,
@@ -257,7 +314,10 @@
     "commission": 810.0,
     "cashback": 250,
     "profit": 560.0,
-    "link": "https://10ms.io/XKNwKc"
+    "link": "https://10ms.io/8KNevp",
+    "has_real_link": true,
+    "excel_row": 59,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ - কেমিস্ট্রি Cycle 1-2"
   },
   {
     "id": 21,
@@ -270,7 +330,10 @@
     "commission": 600.0,
     "cashback": 200,
     "profit": 400.0,
-    "link": "https://10ms.io/wKNwtN"
+    "link": "https://10ms.io/8KNevp",
+    "has_real_link": true,
+    "excel_row": 59,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ - কেমিস্ট্রি Cycle 1-2"
   },
   {
     "id": 22,
@@ -283,7 +346,10 @@
     "commission": 675.0,
     "cashback": 200,
     "profit": 475.0,
-    "link": "https://10ms.io/QKB6EL"
+    "link": "https://10ms.io/QKB6EL",
+    "has_real_link": true,
+    "excel_row": 27,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ (বাংলা, ইংরেজি, তথ্য ও যোগাযোগ প্রযুক্তি)"
   },
   {
     "id": 23,
@@ -296,7 +362,10 @@
     "commission": 300.0,
     "cashback": 100,
     "profit": 200.0,
-    "link": "https://10ms.io/tKB6lJ"
+    "link": "https://10ms.io/tKB6lJ",
+    "has_real_link": true,
+    "excel_row": 26,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ - ইংরেজি"
   },
   {
     "id": 24,
@@ -309,7 +378,10 @@
     "commission": 300.0,
     "cashback": 100,
     "profit": 200.0,
-    "link": "https://10ms.io/IKNeDq"
+    "link": "https://10ms.io/IKNeDq",
+    "has_real_link": true,
+    "excel_row": 39,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ - বাংলা"
   },
   {
     "id": 25,
@@ -322,7 +394,10 @@
     "commission": 300.0,
     "cashback": 100,
     "profit": 200.0,
-    "link": "https://10ms.io/bKNeEN"
+    "link": "https://10ms.io/bKNeEN",
+    "has_real_link": true,
+    "excel_row": 31,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ - ICT"
   },
   {
     "id": 26,
@@ -335,7 +410,10 @@
     "commission": 67.5,
     "cashback": 20,
     "profit": 47.5,
-    "link": "https://10ms.io/vKB6sW"
+    "link": "https://10ms.io/vKB6sW",
+    "has_real_link": true,
+    "excel_row": 28,
+    "matched_excel_name": "HSC 28 ইংরেজি প্রথম পত্র: মাস্টার বুক"
   },
   {
     "id": 27,
@@ -348,7 +426,10 @@
     "commission": 67.5,
     "cashback": 20,
     "profit": 47.5,
-    "link": "https://10ms.io/PKB6b7"
+    "link": "https://10ms.io/PKB6b7",
+    "has_real_link": true,
+    "excel_row": 29,
+    "matched_excel_name": "HSC 28 ইংরেজি দ্বিতীয় পত্র: মাস্টার বুক"
   },
   {
     "id": 28,
@@ -361,7 +442,10 @@
     "commission": 750.0,
     "cashback": 250,
     "profit": 500.0,
-    "link": "https://10ms.io/TKNerY"
+    "link": "https://10ms.io/TKNewp",
+    "has_real_link": true,
+    "excel_row": 51,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ - বায়োলজি Cycle 1-2"
   },
   {
     "id": 29,
@@ -374,7 +458,10 @@
     "commission": 412.5,
     "cashback": 120,
     "profit": 292.5,
-    "link": "https://10ms.io/TKNewp"
+    "link": "https://10ms.io/TKNewp",
+    "has_real_link": true,
+    "excel_row": 51,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ - বায়োলজি Cycle 1-2"
   },
   {
     "id": 30,
@@ -387,7 +474,10 @@
     "commission": 225.0,
     "cashback": 70,
     "profit": 155.0,
-    "link": "https://10ms.io/UKNeea"
+    "link": "https://10ms.io/TKNewp",
+    "has_real_link": true,
+    "excel_row": 51,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ - বায়োলজি Cycle 1-2"
   },
   {
     "id": 31,
@@ -400,7 +490,10 @@
     "commission": 600.0,
     "cashback": 200,
     "profit": 400.0,
-    "link": "https://10ms.io/QKNeTX"
+    "link": "https://10ms.io/QKNeTX",
+    "has_real_link": true,
+    "excel_row": 32,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ (জিওগ্রাফি, ইকোনমিক্স, পৌরনীতি)"
   },
   {
     "id": 32,
@@ -413,7 +506,10 @@
     "commission": 1125.0,
     "cashback": 350,
     "profit": 775.0,
-    "link": "https://10ms.io/aKNeUp"
+    "link": "https://10ms.io/QKNeTX",
+    "has_real_link": true,
+    "excel_row": 32,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ (জিওগ্রাফি, ইকোনমিক্স, পৌরনীতি)"
   },
   {
     "id": 33,
@@ -426,7 +522,10 @@
     "commission": 337.5,
     "cashback": 100,
     "profit": 237.5,
-    "link": "https://10ms.io/7KNeAv"
+    "link": "https://10ms.io/7KNeAv",
+    "has_real_link": true,
+    "excel_row": 35,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ - ইকোনমিক্স"
   },
   {
     "id": 34,
@@ -439,7 +538,10 @@
     "commission": 337.5,
     "cashback": 100,
     "profit": 237.5,
-    "link": "https://10ms.io/sKNeDL"
+    "link": "https://10ms.io/sKNeDL",
+    "has_real_link": true,
+    "excel_row": 37,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ - পৌরনীতি"
   },
   {
     "id": 35,
@@ -452,7 +554,10 @@
     "commission": 337.5,
     "cashback": 100,
     "profit": 237.5,
-    "link": "https://10ms.io/JKNeXb"
+    "link": "https://10ms.io/JKNeXb",
+    "has_real_link": true,
+    "excel_row": 41,
+    "matched_excel_name": "HSC 28 অনলাইন ব্যাচ - জিওগ্রাফি"
   },
   {
     "id": 36,
@@ -465,7 +570,10 @@
     "commission": 1725.0,
     "cashback": 500,
     "profit": 1225.0,
-    "link": "https://10ms.io/5KNe80"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 90,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle"
   },
   {
     "id": 37,
@@ -478,7 +586,10 @@
     "commission": 1200.0,
     "cashback": 400,
     "profit": 800.0,
-    "link": "https://10ms.io/3KNe9a"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 91,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) Online Batch"
   },
   {
     "id": 38,
@@ -491,7 +602,10 @@
     "commission": 750.0,
     "cashback": 250,
     "profit": 500.0,
-    "link": "https://10ms.io/xKNe1t"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 92,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-3) Online Batch"
   },
   {
     "id": 39,
@@ -504,7 +618,10 @@
     "commission": 450.0,
     "cashback": 150,
     "profit": 300.0,
-    "link": "https://10ms.io/IKNeBf"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 93,
+    "matched_excel_name": "HSC 27 PCMB Cycle 1-4 (১ম + ২য় পত্র)"
   },
   {
     "id": 40,
@@ -517,7 +634,10 @@
     "commission": 315.0,
     "cashback": 100,
     "profit": 215.0,
-    "link": "https://10ms.io/TKNe7k"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 94,
+    "matched_excel_name": "HSC 27 PCMB Cycle 1-2 (১ম ও ২য় পত্রের নির্দিষ্ট অধ্যায়)"
   },
   {
     "id": 41,
@@ -530,7 +650,10 @@
     "commission": 225.0,
     "cashback": 70,
     "profit": 155.0,
-    "link": "https://10ms.io/wKNe4j"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 95,
+    "matched_excel_name": "HSC 27 PCMB Cycle 1 (শুধু ১ম পত্রের নির্বাচিত অধ্যায়)"
   },
   {
     "id": 42,
@@ -543,7 +666,10 @@
     "commission": 675.0,
     "cashback": 200,
     "profit": 475.0,
-    "link": "https://10ms.io/JHPjXP"
+    "link": "https://10ms.io/JHPjXP",
+    "has_real_link": true,
+    "excel_row": 96,
+    "matched_excel_name": "HSC 27 BEI 2.0 (বাংলা, ইংরেজি, তথ্য ও যোগাযোগ প্রযুক্তি)"
   },
   {
     "id": 43,
@@ -556,7 +682,10 @@
     "commission": 337.5,
     "cashback": 100,
     "profit": 237.5,
-    "link": "https://10ms.io/eKNe7L"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 97,
+    "matched_excel_name": "HSC 27 BEI Individual Subjects 2.0 (সম্পূর্ণ সিলেবাস)"
   },
   {
     "id": 44,
@@ -569,7 +698,10 @@
     "commission": 300.0,
     "cashback": 100,
     "profit": 200.0,
-    "link": "https://10ms.io/TKNe6R"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 98,
+    "matched_excel_name": "HSC 27 বাংলা (ব্যাচ ১ - সম্পূর্ণ সিলেবাস)"
   },
   {
     "id": 45,
@@ -582,7 +714,10 @@
     "commission": 300.0,
     "cashback": 100,
     "profit": 200.0,
-    "link": "https://10ms.io/TKNe6R"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 99,
+    "matched_excel_name": "HSC 27 ইংরেজি (ব্যাচ ১ - সম্পূর্ণ সিলেবাস)"
   },
   {
     "id": 46,
@@ -595,7 +730,10 @@
     "commission": 300.0,
     "cashback": 100,
     "profit": 200.0,
-    "link": "https://10ms.io/TKNe6R"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 100,
+    "matched_excel_name": "HSC 27 ICT (ব্যাচ ১ - সম্পূর্ণ সিলেবাস)"
   },
   {
     "id": 47,
@@ -608,7 +746,10 @@
     "commission": 465.0,
     "cashback": 150,
     "profit": 315.0,
-    "link": "https://10ms.io/JKNeM4"
+    "link": "https://10ms.io/tKZ8t7",
+    "has_real_link": true,
+    "excel_row": 101,
+    "matched_excel_name": "HSC 27 ফাইন্যান্স ও অ্যাকাউন্টিং কমপ্লিট প্যাকেজ"
   },
   {
     "id": 48,
@@ -621,7 +762,10 @@
     "commission": 465.0,
     "cashback": 150,
     "profit": 315.0,
-    "link": "https://10ms.io/qKNePj"
+    "link": "https://10ms.io/7KZ8ew",
+    "has_real_link": true,
+    "excel_row": 102,
+    "matched_excel_name": "HSC 27 জিওগ্রাফি ও ইকোনমিক্স কমপ্লিট প্যাকেজ"
   },
   {
     "id": 49,
@@ -634,7 +778,10 @@
     "commission": 945.0,
     "cashback": 300,
     "profit": 645.0,
-    "link": "https://10ms.io/JKNeM4"
+    "link": "https://10ms.io/GKZ8pe",
+    "has_real_link": true,
+    "excel_row": 103,
+    "matched_excel_name": "HSC 27 ফাইন্যান্স ও অ্যাকাউন্টিং + BEI প্যাকেজ"
   },
   {
     "id": 50,
@@ -647,7 +794,10 @@
     "commission": 945.0,
     "cashback": 300,
     "profit": 645.0,
-    "link": "https://10ms.io/cHPjFx"
+    "link": "https://10ms.io/cHPjFx",
+    "has_real_link": true,
+    "excel_row": 104,
+    "matched_excel_name": "HSC 27 জিওগ্রাফি ও ইকোনমিক্স + BEI প্যাকেজ"
   },
   {
     "id": 51,
@@ -660,7 +810,10 @@
     "commission": 270.0,
     "cashback": 70,
     "profit": 200.0,
-    "link": "https://10ms.io/JKNeM4"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 90,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle"
   },
   {
     "id": 52,
@@ -673,7 +826,10 @@
     "commission": 337.5,
     "cashback": 100,
     "profit": 237.5,
-    "link": "https://10ms.io/qKNePj"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 97,
+    "matched_excel_name": "HSC 27 BEI Individual Subjects 2.0 (সম্পূর্ণ সিলেবাস)"
   },
   {
     "id": 53,
@@ -686,7 +842,10 @@
     "commission": 600.0,
     "cashback": 200,
     "profit": 400.0,
-    "link": "https://10ms.io/JKNeM4"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 90,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle"
   },
   {
     "id": 54,
@@ -699,7 +858,10 @@
     "commission": 600.0,
     "cashback": 200,
     "profit": 400.0,
-    "link": "https://10ms.io/qKNePj"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 90,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle"
   },
   {
     "id": 55,
@@ -712,7 +874,10 @@
     "commission": 1125.0,
     "cashback": 350,
     "profit": 775.0,
-    "link": "https://10ms.io/JKNeM4"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 90,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle"
   },
   {
     "id": 56,
@@ -725,7 +890,10 @@
     "commission": 1125.0,
     "cashback": 350,
     "profit": 775.0,
-    "link": "https://10ms.io/qKNePj"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 90,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle"
   },
   {
     "id": 57,
@@ -738,7 +906,10 @@
     "commission": 1200.0,
     "cashback": 400,
     "profit": 800.0,
-    "link": "https://10ms.io/fKNwZj"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 90,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle"
   },
   {
     "id": 58,
@@ -751,7 +922,10 @@
     "commission": 675.0,
     "cashback": 200,
     "profit": 475.0,
-    "link": "https://10ms.io/xKNwL3"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 91,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) Online Batch"
   },
   {
     "id": 59,
@@ -764,7 +938,10 @@
     "commission": 825.0,
     "cashback": 250,
     "profit": 575.0,
-    "link": "https://10ms.io/XKNwKc"
+    "link": "https://10ms.io/XKNwKc",
+    "has_real_link": true,
+    "excel_row": 47,
+    "matched_excel_name": "PCMB (Cycle 1-2)"
   },
   {
     "id": 60,
@@ -777,7 +954,10 @@
     "commission": 600.0,
     "cashback": 200,
     "profit": 400.0,
-    "link": "https://10ms.io/QKB6EL"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 61,
@@ -790,7 +970,10 @@
     "commission": 225.0,
     "cashback": 75,
     "profit": 150.0,
-    "link": "https://10ms.io/tKB6lJ"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 62,
@@ -803,7 +986,10 @@
     "commission": 225.0,
     "cashback": 75,
     "profit": 150.0,
-    "link": "https://10ms.io/UKNeea"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 90,
+    "matched_excel_name": "HSC 27 PCMB (Cycle 1-4) + BEI Bundle"
   },
   {
     "id": 63,
@@ -816,7 +1002,10 @@
     "commission": 360.0,
     "cashback": 100,
     "profit": 260.0,
-    "link": "https://10ms.io/cKXqKZ"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 64,
@@ -829,7 +1018,10 @@
     "commission": 330.0,
     "cashback": 100,
     "profit": 230.0,
-    "link": "https://10ms.io/pKXqSa"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 65,
@@ -842,7 +1034,10 @@
     "commission": 300.0,
     "cashback": 100,
     "profit": 200.0,
-    "link": "https://10ms.io/BKXqGX"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 66,
@@ -855,7 +1050,10 @@
     "commission": 135.0,
     "cashback": 35,
     "profit": 100.0,
-    "link": "https://10ms.io/QKB6EL"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 20,
+    "matched_excel_name": "SSC 27 শেষ মুহূর্তের প্রস্তুতি BEIM কোর্স [বাংলা, ইংরেজি, ICT, সা.গণিত]"
   },
   {
     "id": 67,
@@ -868,7 +1066,10 @@
     "commission": 525.0,
     "cashback": 150,
     "profit": 375.0,
-    "link": "https://10ms.io/UKlRs1"
+    "link": "https://10ms.io/aKNe3D",
+    "has_real_link": true,
+    "excel_row": 70,
+    "matched_excel_name": "ভার্সিটি A Unit + গুচ্ছ এডমিশন কোর্স - ২০২৬"
   },
   {
     "id": 68,
@@ -881,7 +1082,10 @@
     "commission": 525.0,
     "cashback": 150,
     "profit": 375.0,
-    "link": "https://10ms.io/VKlReR"
+    "link": "https://10ms.io/yKNe2Z",
+    "has_real_link": true,
+    "excel_row": 68,
+    "matched_excel_name": "ভার্সিটি B Unit + গুচ্ছ এডমিশন কোর্স - ২০২৬"
   },
   {
     "id": 69,
@@ -894,7 +1098,10 @@
     "commission": 525.0,
     "cashback": 150,
     "profit": 375.0,
-    "link": "https://10ms.io/zKlR4j"
+    "link": "https://10ms.io/mKNe0R",
+    "has_real_link": true,
+    "excel_row": 65,
+    "matched_excel_name": "ভার্সিটি C Unit + গুচ্ছ এডমিশন কোর্স - ২০২৬"
   },
   {
     "id": 70,
@@ -907,7 +1114,10 @@
     "commission": 375.0,
     "cashback": 100,
     "profit": 275.0,
-    "link": "https://10ms.io/UKlRs1"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 71,
@@ -920,7 +1130,10 @@
     "commission": 375.0,
     "cashback": 100,
     "profit": 275.0,
-    "link": "https://10ms.io/VKlReR"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 72,
@@ -933,7 +1146,10 @@
     "commission": 375.0,
     "cashback": 100,
     "profit": 275.0,
-    "link": "https://10ms.io/zKlR4j"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 73,
@@ -946,7 +1162,10 @@
     "commission": 825.0,
     "cashback": 250,
     "profit": 575.0,
-    "link": "https://10ms.io/AKlRy4"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 74,
@@ -959,7 +1178,10 @@
     "commission": 900.0,
     "cashback": 250,
     "profit": 650.0,
-    "link": "https://10ms.io/AKlRy4"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 75,
@@ -972,7 +1194,10 @@
     "commission": 127.5,
     "cashback": 35,
     "profit": 92.5,
-    "link": "https://10ms.io/AKlRy4"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 76,
@@ -985,7 +1210,10 @@
     "commission": 127.5,
     "cashback": 35,
     "profit": 92.5,
-    "link": "https://10ms.io/UKlRs1"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 77,
@@ -998,7 +1226,10 @@
     "commission": 270.0,
     "cashback": 80,
     "profit": 190.0,
-    "link": "https://10ms.io/UKlRs1"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 78,
@@ -1011,7 +1242,10 @@
     "commission": 270.0,
     "cashback": 80,
     "profit": 190.0,
-    "link": "https://10ms.io/VKlReR"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 79,
@@ -1024,7 +1258,10 @@
     "commission": 270.0,
     "cashback": 80,
     "profit": 190.0,
-    "link": "https://10ms.io/zKlR4j"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": null,
+    "matched_excel_name": null
   },
   {
     "id": 80,
@@ -1037,7 +1274,10 @@
     "commission": 253.5,
     "cashback": 100,
     "profit": 153.5,
-    "link": "https://10ms.io/6HUFWk"
+    "link": "https://10ms.io/6HUFWk",
+    "has_real_link": true,
+    "excel_row": 108,
+    "matched_excel_name": "ঘরে বসে Spoken English (Munzereen Shahid)"
   },
   {
     "id": 81,
@@ -1050,7 +1290,10 @@
     "commission": 450.0,
     "cashback": 150,
     "profit": 300.0,
-    "link": "https://10ms.io/xHUGfm"
+    "link": "https://10ms.io/xHUGfm",
+    "has_real_link": true,
+    "excel_row": 109,
+    "matched_excel_name": "IELTS Course by Munzereen Shahid"
   },
   {
     "id": 82,
@@ -1063,7 +1306,10 @@
     "commission": 1050.0,
     "cashback": 300,
     "profit": 750.0,
-    "link": "https://10ms.io/nHUGo1"
+    "link": "https://10ms.io/nHUGo1",
+    "has_real_link": true,
+    "excel_row": 110,
+    "matched_excel_name": "IELTS Live Batch"
   },
   {
     "id": 83,
@@ -1076,7 +1322,10 @@
     "commission": 1050.0,
     "cashback": 300,
     "profit": 750.0,
-    "link": "https://10ms.io/DKZbW2"
+    "link": "https://10ms.io/DKZbW2",
+    "has_real_link": true,
+    "excel_row": 111,
+    "matched_excel_name": "Spoken English Junior LIVE Batch"
   },
   {
     "id": 84,
@@ -1089,7 +1338,10 @@
     "commission": 292.5,
     "cashback": 100,
     "profit": 192.5,
-    "link": "https://10ms.io/7HUFOq"
+    "link": "https://10ms.io/7HUFOq",
+    "has_real_link": true,
+    "excel_row": 112,
+    "matched_excel_name": "Spoken English for Kids"
   },
   {
     "id": 85,
@@ -1102,7 +1354,10 @@
     "commission": 253.5,
     "cashback": 100,
     "profit": 153.5,
-    "link": "https://10ms.io/LHUFRL"
+    "link": "https://10ms.io/LHUFRL",
+    "has_real_link": true,
+    "excel_row": 113,
+    "matched_excel_name": "English Communication for Professionals"
   },
   {
     "id": 86,
@@ -1115,7 +1370,10 @@
     "commission": 253.5,
     "cashback": 100,
     "profit": 153.5,
-    "link": "https://10ms.io/ZHUFb4"
+    "link": "https://10ms.io/ZHUFb4",
+    "has_real_link": true,
+    "excel_row": 114,
+    "matched_excel_name": "Complete English Grammar Course"
   },
   {
     "id": 87,
@@ -1128,7 +1386,10 @@
     "commission": 157.5,
     "cashback": 50,
     "profit": 107.5,
-    "link": "https://10ms.io/QHUFMB"
+    "link": "https://10ms.io/QHUFMB",
+    "has_real_link": true,
+    "excel_row": 115,
+    "matched_excel_name": "English Grammar Crash Course"
   },
   {
     "id": 88,
@@ -1141,7 +1402,10 @@
     "commission": 168.75,
     "cashback": 50,
     "profit": 118.75,
-    "link": "https://10ms.io/THUF3O"
+    "link": "https://10ms.io/THUF3O",
+    "has_real_link": true,
+    "excel_row": 116,
+    "matched_excel_name": "English Writing for Students"
   },
   {
     "id": 89,
@@ -1154,7 +1418,10 @@
     "commission": 168.75,
     "cashback": 50,
     "profit": 118.75,
-    "link": "https://10ms.io/FHUGzD"
+    "link": "https://10ms.io/FHUGzD",
+    "has_real_link": true,
+    "excel_row": 117,
+    "matched_excel_name": "Sobar Jonno Vocabulary / সবার জন্য Vocabulary"
   },
   {
     "id": 90,
@@ -1167,7 +1434,10 @@
     "commission": 191.25,
     "cashback": 50,
     "profit": 141.25,
-    "link": "https://10ms.io/KKZbPw"
+    "link": "https://10ms.io/KKZbPw",
+    "has_real_link": true,
+    "excel_row": 118,
+    "matched_excel_name": "IELTS Reading & Listening Mock Tests"
   },
   {
     "id": 91,
@@ -1180,7 +1450,10 @@
     "commission": 450.0,
     "cashback": 150,
     "profit": 300.0,
-    "link": "https://10ms.io/OHUFcG"
+    "link": "https://10ms.io/OHUFcG",
+    "has_real_link": true,
+    "excel_row": 119,
+    "matched_excel_name": "Spoken + Grammar Bundle"
   },
   {
     "id": 92,
@@ -1193,7 +1466,10 @@
     "commission": 450.0,
     "cashback": 150,
     "profit": 300.0,
-    "link": "https://10ms.io/KHUFzt"
+    "link": "https://10ms.io/KHUFzt",
+    "has_real_link": true,
+    "excel_row": 120,
+    "matched_excel_name": "Beginner's English Bundle"
   },
   {
     "id": 93,
@@ -1206,7 +1482,10 @@
     "commission": 300.0,
     "cashback": 100,
     "profit": 200.0,
-    "link": "https://10ms.io/XHUFAK"
+    "link": "https://10ms.io/XHUFAK",
+    "has_real_link": true,
+    "excel_row": 121,
+    "matched_excel_name": "English Master Bundle"
   },
   {
     "id": 94,
@@ -1219,7 +1498,10 @@
     "commission": 253.5,
     "cashback": 100,
     "profit": 153.5,
-    "link": "https://10ms.io/VHUFLE"
+    "link": "https://10ms.io/VHUFLE",
+    "has_real_link": true,
+    "excel_row": 122,
+    "matched_excel_name": "Complete Professional Communication Bundle"
   },
   {
     "id": 95,
@@ -1232,7 +1514,10 @@
     "commission": 157.5,
     "cashback": 50,
     "profit": 107.5,
-    "link": "https://10ms.io/jKZnvf"
+    "link": "https://10ms.io/jKZnvf",
+    "has_real_link": true,
+    "excel_row": 124,
+    "matched_excel_name": "Video Editing with Premiere Pro"
   },
   {
     "id": 96,
@@ -1245,7 +1530,10 @@
     "commission": 375.0,
     "cashback": 100,
     "profit": 275.0,
-    "link": "https://10ms.io/NKZnQS"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 125,
+    "matched_excel_name": "Adobe 4 in 1 Bundle (Photoshop, Illustrator, Premiere Pro, After Effects)"
   },
   {
     "id": 97,
@@ -1258,7 +1546,10 @@
     "commission": 128.25,
     "cashback": 40,
     "profit": 88.25,
-    "link": "https://10ms.io/NKZnQS"
+    "link": "https://10ms.io/NKZnQS",
+    "has_real_link": true,
+    "excel_row": 126,
+    "matched_excel_name": "Graphic Designing with Photoshop"
   },
   {
     "id": 98,
@@ -1271,7 +1562,10 @@
     "commission": 292.5,
     "cashback": 100,
     "profit": 192.5,
-    "link": "https://10ms.io/TKZb6j"
+    "link": "https://10ms.io/TKZb6j",
+    "has_real_link": true,
+    "excel_row": 134,
+    "matched_excel_name": "Graphic Design করে Freelancing"
   },
   {
     "id": 99,
@@ -1284,7 +1578,10 @@
     "commission": 128.25,
     "cashback": 40,
     "profit": 88.25,
-    "link": "https://10ms.io/sKZndG"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 127,
+    "matched_excel_name": "Graphic Designing with PowerPoint"
   },
   {
     "id": 100,
@@ -1297,7 +1594,10 @@
     "commission": 128.25,
     "cashback": 40,
     "profit": 88.25,
-    "link": "https://10ms.io/mKZnIQ"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 128,
+    "matched_excel_name": "Cartoon Animation"
   },
   {
     "id": 101,
@@ -1310,7 +1610,10 @@
     "commission": 168.75,
     "cashback": 50,
     "profit": 118.75,
-    "link": "https://10ms.io/mKZnIQ"
+    "link": "https://10ms.io/mKZnIQ",
+    "has_real_link": true,
+    "excel_row": 129,
+    "matched_excel_name": "Video Making & Content Creation"
   },
   {
     "id": 102,
@@ -1323,7 +1626,10 @@
     "commission": 240.0,
     "cashback": 80,
     "profit": 160.0,
-    "link": "https://10ms.io/eHUGRt"
+    "link": "https://10ms.io/eHUGRt",
+    "has_real_link": true,
+    "excel_row": 130,
+    "matched_excel_name": "Content Creation Bundle"
   },
   {
     "id": 103,
@@ -1336,7 +1642,10 @@
     "commission": 337.5,
     "cashback": 100,
     "profit": 237.5,
-    "link": "https://10ms.io/fKZnG1"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 131,
+    "matched_excel_name": "SEO করে Freelancing (Complete SEO Course)"
   },
   {
     "id": 104,
@@ -1349,7 +1658,10 @@
     "commission": 292.5,
     "cashback": 100,
     "profit": 192.5,
-    "link": "https://10ms.io/fKZnG1"
+    "link": "https://10ms.io/fKZnG1",
+    "has_real_link": true,
+    "excel_row": 132,
+    "matched_excel_name": "YouTube Marketing করে Freelancing"
   },
   {
     "id": 105,
@@ -1362,7 +1674,10 @@
     "commission": 292.5,
     "cashback": 100,
     "profit": 192.5,
-    "link": "https://10ms.io/CKZnzV"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 133,
+    "matched_excel_name": "WordPress দিয়ে Freelancing"
   },
   {
     "id": 106,
@@ -1375,7 +1690,10 @@
     "commission": 253.5,
     "cashback": 100,
     "profit": 153.5,
-    "link": "https://10ms.io/fKZnG1"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 135,
+    "matched_excel_name": "Email Marketing করে Freelancing"
   },
   {
     "id": 107,
@@ -1388,7 +1706,10 @@
     "commission": 133.5,
     "cashback": 40,
     "profit": 93.5,
-    "link": "https://10ms.io/fKZnG1"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 136,
+    "matched_excel_name": "Facebook Marketing Masterclass"
   },
   {
     "id": 108,
@@ -1401,7 +1722,10 @@
     "commission": 128.25,
     "cashback": 40,
     "profit": 88.25,
-    "link": "https://10ms.io/oKZnxb"
+    "link": "https://10ms.io/oKZnxb",
+    "has_real_link": true,
+    "excel_row": 137,
+    "matched_excel_name": "Data Entry দিয়ে Freelancing"
   },
   {
     "id": 109,
@@ -1414,7 +1738,10 @@
     "commission": 128.25,
     "cashback": 40,
     "profit": 88.25,
-    "link": "https://10ms.io/CKZnzV"
+    "link": "https://10ms.io/CKZnzV",
+    "has_real_link": true,
+    "excel_row": 138,
+    "matched_excel_name": "ঘরে বসে Freelancing"
   },
   {
     "id": 110,
@@ -1427,7 +1754,10 @@
     "commission": 128.25,
     "cashback": 40,
     "profit": 88.25,
-    "link": "https://10ms.io/sKZndG"
+    "link": "https://10ms.io/sKZndG",
+    "has_real_link": true,
+    "excel_row": 139,
+    "matched_excel_name": "Microsoft Excel Masterclass"
   },
   {
     "id": 111,
@@ -1440,7 +1770,10 @@
     "commission": 128.25,
     "cashback": 40,
     "profit": 88.25,
-    "link": "https://10ms.io/sKZndG"
+    "link": "https://10ms.io/sKZndG",
+    "has_real_link": true,
+    "excel_row": 140,
+    "matched_excel_name": "Microsoft Word Masterclass"
   },
   {
     "id": 112,
@@ -1453,7 +1786,10 @@
     "commission": 128.25,
     "cashback": 40,
     "profit": 88.25,
-    "link": "https://10ms.io/sKZndG"
+    "link": "https://10ms.io/sKZndG",
+    "has_real_link": true,
+    "excel_row": 141,
+    "matched_excel_name": "Microsoft PowerPoint Masterclass"
   },
   {
     "id": 113,
@@ -1466,7 +1802,10 @@
     "commission": 253.5,
     "cashback": 100,
     "profit": 153.5,
-    "link": "https://10ms.io/bKZKBz"
+    "link": "https://10ms.io/bKZKBz",
+    "has_real_link": true,
+    "excel_row": 162,
+    "matched_excel_name": "Python দিয়ে Programming"
   },
   {
     "id": 114,
@@ -1479,7 +1818,10 @@
     "commission": 345.0,
     "cashback": 100,
     "profit": 245.0,
-    "link": "https://10ms.io/pHUGSE"
+    "link": "https://10ms.io/pHUGSE",
+    "has_real_link": true,
+    "excel_row": 142,
+    "matched_excel_name": "BCS প্রিলি রেকর্ডেড কোর্স"
   },
   {
     "id": 115,
@@ -1492,7 +1834,10 @@
     "commission": 202.5,
     "cashback": 50,
     "profit": 152.5,
-    "link": "https://10ms.io/gHUFFl"
+    "link": "https://10ms.io/gHUFFl",
+    "has_real_link": true,
+    "excel_row": 143,
+    "matched_excel_name": "English for Govt. Jobs"
   },
   {
     "id": 116,
@@ -1505,7 +1850,10 @@
     "commission": 202.5,
     "cashback": 50,
     "profit": 152.5,
-    "link": "https://10ms.io/gKZnCl"
+    "link": "https://10ms.io/gKZnCl",
+    "has_real_link": true,
+    "excel_row": 144,
+    "matched_excel_name": "ব্যাংক জবস কোর্স (Bank Jobs Preparation)"
   },
   {
     "id": 117,
@@ -1518,7 +1866,10 @@
     "commission": 202.5,
     "cashback": 50,
     "profit": 152.5,
-    "link": "https://10ms.io/PHUGPB"
+    "link": "https://10ms.io/PHUGPB",
+    "has_real_link": true,
+    "excel_row": 145,
+    "matched_excel_name": "সরকারি চাকরি প্রস্তুতি বেসিক কোর্স"
   },
   {
     "id": 118,
@@ -1531,7 +1882,10 @@
     "commission": 187.5,
     "cashback": 50,
     "profit": 137.5,
-    "link": "https://10ms.io/uKZnBQ"
+    "link": "https://10ms.io/uKZnBQ",
+    "has_real_link": true,
+    "excel_row": 146,
+    "matched_excel_name": "Primary Assistant Teacher Recruitment Prep"
   },
   {
     "id": 119,
@@ -1544,7 +1898,10 @@
     "commission": 157.5,
     "cashback": 50,
     "profit": 107.5,
-    "link": "https://10ms.io/aKZnM5"
+    "link": "https://10ms.io/aKZnM5",
+    "has_real_link": true,
+    "excel_row": 147,
+    "matched_excel_name": "২৪ ঘণ্টায় কুরআন শিখি"
   },
   {
     "id": 120,
@@ -1557,7 +1914,10 @@
     "commission": 168.75,
     "cashback": 50,
     "profit": 118.75,
-    "link": "https://10ms.io/LHUGba"
+    "link": "https://10ms.io/LHUGba",
+    "has_real_link": true,
+    "excel_row": 148,
+    "matched_excel_name": "অর্থ বুঝে কুরআন শিখি"
   },
   {
     "id": 121,
@@ -1570,7 +1930,10 @@
     "commission": 112.5,
     "cashback": 30,
     "profit": 82.5,
-    "link": "https://10ms.io/CKZn9H"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 149,
+    "matched_excel_name": "অর্থসহ নামাজ শিক্ষা"
   },
   {
     "id": 122,
@@ -1583,7 +1946,10 @@
     "commission": 133.5,
     "cashback": 40,
     "profit": 93.5,
-    "link": "https://10ms.io/CKZn9H"
+    "link": "https://10ms.io/CKZn9H",
+    "has_real_link": true,
+    "excel_row": 150,
+    "matched_excel_name": "সহীহ কুরআন শিক্ষা ও তাজবীদ"
   },
   {
     "id": 123,
@@ -1596,7 +1962,10 @@
     "commission": 133.5,
     "cashback": 40,
     "profit": 93.5,
-    "link": "https://10ms.io/CKZn9H"
+    "link": "",
+    "has_real_link": false,
+    "excel_row": 151,
+    "matched_excel_name": "Spoken Arabic Course"
   },
   {
     "id": 124,
@@ -1609,7 +1978,10 @@
     "commission": 253.5,
     "cashback": 100,
     "profit": 153.5,
-    "link": "https://10ms.io/bKZn52"
+    "link": "https://10ms.io/bKZn52",
+    "has_real_link": true,
+    "excel_row": 152,
+    "matched_excel_name": "ইসলামিক কোর্স বান্ডেল"
   },
   {
     "id": 125,
@@ -1622,7 +1994,10 @@
     "commission": 157.5,
     "cashback": 50,
     "profit": 107.5,
-    "link": "https://10minuteschool.com/product/communication-masterclass-by-tahsan-khan/?aff=V2AYT000030c3"
+    "link": "https://10minuteschool.com/product/communication-masterclass-by-tahsan-khan/?aff=V2AYT000030c3&utm_medium=affiliation&utm_source=12483&utm_campaign=undefined_undefined&utm_content=undefined&type=affiliate",
+    "has_real_link": true,
+    "excel_row": 153,
+    "matched_excel_name": "Communication Masterclass by Tahsan Khan"
   },
   {
     "id": 126,
@@ -1635,7 +2010,10 @@
     "commission": 240.0,
     "cashback": 80,
     "profit": 160.0,
-    "link": "https://10ms.io/aKZO7A"
+    "link": "https://10ms.io/aKZO7A",
+    "has_real_link": true,
+    "excel_row": 154,
+    "matched_excel_name": "Smart Leadership Bundle"
   },
   {
     "id": 127,
@@ -1648,7 +2026,10 @@
     "commission": 168.75,
     "cashback": 50,
     "profit": 118.75,
-    "link": "https://10ms.io/SKZIZk"
+    "link": "https://10ms.io/SKZIZk",
+    "has_real_link": true,
+    "excel_row": 155,
+    "matched_excel_name": "Leadership Excellence & Negotiation Skills"
   },
   {
     "id": 128,
@@ -1661,7 +2042,10 @@
     "commission": 157.5,
     "cashback": 50,
     "profit": 107.5,
-    "link": "https://10ms.io/dKZYEa"
+    "link": "https://10ms.io/dKZYEa",
+    "has_real_link": true,
+    "excel_row": 156,
+    "matched_excel_name": "Public Speaking Masterclass"
   },
   {
     "id": 129,
@@ -1674,7 +2058,10 @@
     "commission": 168.75,
     "cashback": 50,
     "profit": 118.75,
-    "link": "https://10ms.io/EKZPqs"
+    "link": "https://10ms.io/EKZPqs",
+    "has_real_link": true,
+    "excel_row": 157,
+    "matched_excel_name": "Mental Health for Students"
   },
   {
     "id": 130,
@@ -1687,6 +2074,9 @@
     "commission": 187.5,
     "cashback": 50,
     "profit": 137.5,
-    "link": "https://10ms.io/pKZPwv"
+    "link": "https://10ms.io/pKZPwv",
+    "has_real_link": true,
+    "excel_row": 159,
+    "matched_excel_name": "AI Course for Super Students"
   }
 ]
