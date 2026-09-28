@@ -927,6 +927,210 @@
       font-size: 0.82rem;
       color: var(--text-muted);
     }
+
+    /* Gamification & Viral Features Styling */
+    .gamification-stats-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: linear-gradient(135deg, rgba(14,131,125,0.08), rgba(245,158,11,0.08));
+      border: 1px solid rgba(14,131,125,0.2);
+      border-radius: 12px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .streak-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, #ef4444, #f97316);
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .streak-pill:hover { transform: scale(1.05); }
+    .streak-pill .streak-flame { animation: flamePulse 1.2s infinite alternate; }
+    @keyframes flamePulse {
+      0% { transform: scale(1); filter: drop-shadow(0 0 2px #fff); }
+      100% { transform: scale(1.25); filter: drop-shadow(0 0 6px #fef08a); }
+    }
+    .rank-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .xp-progress-wrap {
+      flex: 1;
+      min-width: 140px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .xp-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .xp-bar-bg {
+      width: 100%;
+      height: 8px;
+      background: var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    .xp-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981, #06b6d4, #6366f1);
+      border-radius: 10px;
+      transition: width 0.4s ease;
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+    }
+
+    /* Viral Action Row Buttons */
+    .quiz-viral-actions-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border);
+    }
+    @media (max-width: 600px) {
+      .quiz-viral-actions-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    .viral-action-btn {
+      padding: 7px 6px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text-main);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .viral-action-btn:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .viral-action-btn.btn-gold {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(217, 119, 6, 0.08));
+      border-color: #f59e0b;
+      color: #b45309;
+    }
+    [data-theme="dark"] .viral-action-btn.btn-gold { color: #fbbf24; }
+
+    /* Matchmaker Wizard Styling */
+    .wizard-step-wrap { display: none; }
+    .wizard-step-wrap.active { display: block; animation: fadeIn 0.3s ease; }
+    .wizard-btn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .wizard-choice-card {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 10px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-main);
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .wizard-choice-card:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+    .wizard-choice-card.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+      box-shadow: 0 0 0 2px var(--primary);
+    }
+
+    /* Certificate Canvas Preview Frame */
+    .cert-canvas-container {
+      background: #0f172a;
+      border-radius: 12px;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .cert-canvas-container canvas {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* Radar Analytics Bars */
+    .analytics-radar-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .radar-bar-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .radar-bar-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .radar-bar-track {
+      width: 100%;
+      height: 10px;
+      background: var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .radar-bar-progress {
+      height: 100%;
+      border-radius: 6px;
+      transition: width 0.6s ease;
+    }
+
   </style>
 </head>
 <body>
@@ -1120,6 +1324,27 @@
       <!-- SECTION 2: Daily Interactive Quiz Arena & National Toppers Corner -->
       <div class="quiz-topper-grid">
         <div class="interactive-quiz-box">
+          <!-- Gamification Stats & Streak Bar -->
+          <div class="gamification-stats-bar">
+            <div class="streak-pill" id="userStreakPill" onclick="showStreakDetails()" title="ডেইলি কুইজ স্ট্রিক">
+              <span class="streak-flame">🔥</span>
+              <span id="streakCountText">১ দিন স্ট্রিক</span>
+            </div>
+            <div class="rank-badge-pill" id="userRankPill">
+              <span id="rankIcon">🥉</span>
+              <span id="rankTitleText">কুইজ বিগিনার</span>
+            </div>
+            <div class="xp-progress-wrap">
+              <div class="xp-labels">
+                <span>XP: <b id="userXpText">০</b></span>
+                <span id="nextLevelText">পরবর্তী: ১০০ XP</span>
+              </div>
+              <div class="xp-bar-bg">
+                <div class="xp-bar-fill" id="xpBarFill" style="width: 0%;"></div>
+              </div>
+            </div>
+          </div>
+
           <!-- Quiz Header -->
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
             <h3 style="font-size: 0.98rem; font-weight: 800; display: flex; align-items: center; gap: 6px;">
@@ -1176,6 +1401,22 @@
             <a href="https://t.me/tenminuteschoolC" target="_blank" style="font-size: 0.8rem; font-weight: 700; color: var(--primary); text-decoration: none;">
               টেলিগ্রামে লাইভ পোল 📱
             </a>
+          </div>
+
+          <!-- Viral Growth & Reward Action Buttons -->
+          <div class="quiz-viral-actions-row">
+            <button class="viral-action-btn" onclick="openShareScoreModal()" title="ফেসবুকে শেয়ার করতে রেজাল্ট কার্ড তৈরি করুন">
+              <i class="fa-solid fa-share-nodes" style="color: #3b82f6;"></i> রেজাল্ট কার্ড
+            </button>
+            <button class="viral-action-btn btn-gold" onclick="openCertificateModal()" title="অফিশিয়াল এক্সিলেন্স সার্টিফিকেট ডাউনলোড">
+              <i class="fa-solid fa-award" style="color: #f59e0b;"></i> সার্টিফিকেট
+            </button>
+            <button class="viral-action-btn" onclick="openCourseMatchmakerModal()" title="৩টি প্রশ্নে দুর্বলতা অনুযায়ী কোর্স খুঁজুন">
+              <i class="fa-solid fa-compass" style="color: #10b981;"></i> কোর্স ফাইন্ডার
+            </button>
+            <button class="viral-action-btn" onclick="openAnalyticsDashboardModal()" title="বিষয়ভিত্তিক দুর্বলতা রাডার">
+              <i class="fa-solid fa-chart-pie" style="color: #8b5cf6;"></i> এনালিটিক্স
+            </button>
           </div>
         </div>
 
@@ -2554,6 +2795,590 @@
       applyViewUI();
     }
 
+    
+    /* =======================================================
+       LEARNOVA GAMIFICATION & VIRAL REWARD SYSTEM ENGINE
+       ======================================================= */
+    const GAMIFY_STORAGE_KEY = "learnova_student_gamify_v2";
+
+    function getGamifyState() {
+      const defaultState = {
+        streak: 1,
+        lastActiveDate: new Date().toISOString().split("T")[0],
+        xp: 30,
+        totalCorrect: 0,
+        totalAttempted: 0,
+        subjectStats: {
+          "পদার্থবিজ্ঞান ১ম পত্র": { correct: 0, total: 0 },
+          "রসায়ন ১ম পত্র": { correct: 0, total: 0 },
+          "উচ্চতর গণিত ১ম পত্র": { correct: 0, total: 0 },
+          "জীববিজ্ঞান ১ম পত্র": { correct: 0, total: 0 },
+          "তথ্য ও যোগাযোগ প্রযুক্তি": { correct: 0, total: 0 },
+          "হিসাববিজ্ঞান ১ম পত্র": { correct: 0, total: 0 },
+          "অর্থনীতি ১ম পত্র": { correct: 0, total: 0 },
+          "পৌরনীতি ও সুশাসন": { correct: 0, total: 0 }
+        }
+      };
+      try {
+        const raw = localStorage.getItem(GAMIFY_STORAGE_KEY);
+        if (raw) return Object.assign(defaultState, JSON.parse(raw));
+      } catch(e) {}
+      return defaultState;
+    }
+
+    function saveGamifyState(state) {
+      try {
+        localStorage.setItem(GAMIFY_STORAGE_KEY, JSON.stringify(state));
+      } catch(e) {}
+    }
+
+    function getRankInfo(xp) {
+      if (xp >= 600) return { rank: "এডমিশন লিজেন্ড", icon: "💎", level: 4, nextXp: 1000, color: "#6366f1" };
+      if (xp >= 300) return { rank: "টপার্স ক্লাব", icon: "🥇", level: 3, nextXp: 600, color: "#eab308" };
+      if (xp >= 100) return { rank: "চ্যাপ্টার মাস্টার", icon: "🥈", level: 2, nextXp: 300, color: "#06b6d4" };
+      return { rank: "কুইজ বিগিনার", icon: "🥉", level: 1, nextXp: 100, color: "#10b981" };
+    }
+
+    function updateGamificationUI() {
+      const state = getGamifyState();
+      const rank = getRankInfo(state.xp);
+
+      const streakElem = document.getElementById("streakCountText");
+      if (streakElem) streakElem.innerText = `${state.streak} দিন স্ট্রিক`;
+
+      const rankTitle = document.getElementById("rankTitleText");
+      if (rankTitle) rankTitle.innerText = rank.rank;
+
+      const rankIcon = document.getElementById("rankIcon");
+      if (rankIcon) rankIcon.innerText = rank.icon;
+
+      const xpElem = document.getElementById("userXpText");
+      if (xpElem) xpElem.innerText = state.xp;
+
+      const nextElem = document.getElementById("nextLevelText");
+      if (nextElem) nextElem.innerText = `পরবর্তী: ${rank.nextXp} XP`;
+
+      const fill = document.getElementById("xpBarFill");
+      if (fill) {
+        const prevCap = rank.level === 1 ? 0 : (rank.level === 2 ? 100 : (rank.level === 3 ? 300 : 600));
+        const pct = Math.min(100, Math.max(0, ((state.xp - prevCap) / (rank.nextXp - prevCap)) * 100));
+        fill.style.width = `${pct}%`;
+      }
+    }
+
+    function recordQuizAnswerGamify(isCorrect, subjectName) {
+      const state = getGamifyState();
+      const todayStr = new Date().toISOString().split("T")[0];
+
+      // Update Streak
+      if (state.lastActiveDate !== todayStr) {
+        const last = new Date(state.lastActiveDate);
+        const today = new Date(todayStr);
+        const diffDays = Math.round((today - last) / (1000 * 60 * 60 * 24));
+        if (diffDays === 1) {
+          state.streak += 1;
+        } else if (diffDays > 1) {
+          state.streak = 1;
+        }
+        state.lastActiveDate = todayStr;
+      }
+
+      state.totalAttempted += 1;
+      if (isCorrect) {
+        state.totalCorrect += 1;
+        state.xp += 15; // 15 XP for correct
+      } else {
+        state.xp += 3; // 3 XP participation
+      }
+
+      if (subjectName) {
+        if (!state.subjectStats[subjectName]) state.subjectStats[subjectName] = { correct: 0, total: 0 };
+        state.subjectStats[subjectName].total += 1;
+        if (isCorrect) state.subjectStats[subjectName].correct += 1;
+      }
+
+      saveGamifyState(state);
+      updateGamificationUI();
+    }
+
+    function showStreakDetails() {
+      const state = getGamifyState();
+      alert(`🔥 আপনার ডেইলি কুইজ স্ট্রিক: ${state.streak} দিন!\n\nপ্রতিদিন ওয়েবসাইটে কুইজ দিলে আপনার স্ট্রিক কাউন্টার বাড়তে থাকবে এবং নতুন এক্সক্লুসিভ ব্যাজ আনলক হবে।`);
+    }
+
+    /* =======================================================
+       1. SHAREABLE RESULT CARD CANVAS GENERATOR (1080x1080)
+       ======================================================= */
+    function openShareScoreModal() {
+      document.getElementById("shareScoreModal").classList.add("active");
+      updateShareCardCanvas();
+    }
+
+    function closeShareScoreModal() {
+      document.getElementById("shareScoreModal").classList.remove("active");
+    }
+
+    function updateShareCardCanvas() {
+      const canvas = document.getElementById("shareCardCanvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      const name = document.getElementById("shareStudentNameInput").value.trim() || "মেধাবী শিক্ষার্থী";
+      const state = getGamifyState();
+      const rank = getRankInfo(state.xp);
+
+      // Background Luxury Dark Gradient
+      const grad = ctx.createRadialGradient(540, 540, 80, 540, 540, 750);
+      grad.addColorStop(0, "#0c182b");
+      grad.addColorStop(0.6, "#060913");
+      grad.addColorStop(1, "#030408");
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, 1080, 1080);
+
+      // Outer Neon Glow Border
+      ctx.strokeStyle = "rgba(14, 131, 125, 0.4)";
+      ctx.lineWidth = 14;
+      ctx.strokeRect(30, 30, 1020, 1020);
+
+      ctx.strokeStyle = "rgba(245, 158, 11, 0.5)";
+      ctx.lineWidth = 2;
+      ctx.strokeRect(45, 45, 990, 990);
+
+      // Top Header Pill
+      ctx.fillStyle = "rgba(14, 131, 125, 0.2)";
+      ctx.beginPath();
+      ctx.roundRect(80, 80, 920, 100, 20);
+      ctx.fill();
+      ctx.strokeStyle = "rgba(14, 131, 125, 0.5)";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "bold 38px 'Hind Siliguri', sans-serif";
+      ctx.textAlign = "left";
+      ctx.fillText("Learnova BD • ডেইলি লাইভ কুইজ রেজাল্ট", 120, 144);
+
+      ctx.fillStyle = "#f59e0b";
+      ctx.font = "bold 32px 'Hind Siliguri', sans-serif";
+      ctx.textAlign = "right";
+      ctx.fillText(`🔥 দিন ${currentQuizDay}/৩০`, 960, 144);
+
+      // Student Card Center
+      ctx.fillStyle = "rgba(255, 255, 255, 0.04)";
+      ctx.beginPath();
+      ctx.roundRect(80, 220, 920, 660, 24);
+      ctx.fill();
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.1)";
+      ctx.stroke();
+
+      // Avatar / Badge
+      ctx.textAlign = "center";
+      ctx.font = "90px sans-serif";
+      ctx.fillText(rank.icon, 540, 340);
+
+      ctx.fillStyle = "#38bdf8";
+      ctx.font = "bold 46px 'Hind Siliguri', sans-serif";
+      ctx.fillText(name, 540, 420);
+
+      ctx.fillStyle = "#94a3b8";
+      ctx.font = "500 28px 'Hind Siliguri', sans-serif";
+      ctx.fillText(`বর্তমান পদবী: ${rank.rank} (Level ${rank.level}) • মোট XP: ${state.xp}`, 540, 470);
+
+      // Divider Line
+      ctx.strokeStyle = "rgba(255, 255, 255, 0.15)";
+      ctx.beginPath();
+      ctx.moveTo(140, 520);
+      ctx.lineTo(940, 520);
+      ctx.stroke();
+
+      // 3 Stat Boxes
+      const boxW = 240, boxH = 150, boxY = 560;
+      const boxes = [
+        { label: "কুইজ স্কোর", val: `${quizScoreCorrect}/${Math.max(1, quizTotalAnswered)}`, color: "#10b981", x: 130 },
+        { label: "ডেইলি স্ট্রিক", val: `${state.streak} দিন`, color: "#f97316", x: 420 },
+        { label: "এক্যুরেসি", val: `${quizTotalAnswered > 0 ? Math.round((quizScoreCorrect/quizTotalAnswered)*100) : 100}%`, color: "#a855f7", x: 710 }
+      ];
+
+      boxes.forEach(b => {
+        ctx.fillStyle = "rgba(15, 23, 42, 0.8)";
+        ctx.beginPath();
+        ctx.roundRect(b.x, boxY, boxW, boxH, 16);
+        ctx.fill();
+        ctx.strokeStyle = "rgba(255, 255, 255, 0.1)";
+        ctx.stroke();
+
+        ctx.fillStyle = "#94a3b8";
+        ctx.font = "bold 24px 'Hind Siliguri', sans-serif";
+        ctx.fillText(b.label, b.x + boxW/2, boxY + 45);
+
+        ctx.fillStyle = b.color;
+        ctx.font = "bold 48px 'Inter', sans-serif";
+        ctx.fillText(b.val, b.x + boxW/2, boxY + 115);
+      });
+
+      // Bottom Challenge Pitch
+      ctx.fillStyle = "#fef08a";
+      ctx.font = "bold 30px 'Hind Siliguri', sans-serif";
+      ctx.fillText("⚡ তুমি কি পারবে আমার স্কোরকে হারাতে? এখনই কুইজ দাও!", 540, 780);
+
+      ctx.fillStyle = "#cbd5e1";
+      ctx.font = "26px 'Hind Siliguri', sans-serif";
+      ctx.fillText("এইচএসসি ও এডমিশনের ৭২০টি কুইজ ও ১০MS কোর্স স্পেশাল ছাড়", 540, 830);
+
+      // Bottom Branding Bar
+      ctx.fillStyle = "#10b981";
+      ctx.beginPath();
+      ctx.roundRect(80, 920, 920, 80, 16);
+      ctx.fill();
+
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "bold 32px 'Inter', sans-serif";
+      ctx.fillText("🌐 learnova-bd.vercel.app   •   📞 01981-505759", 540, 972);
+    }
+
+    function downloadShareCardPng() {
+      const canvas = document.getElementById("shareCardCanvas");
+      if (!canvas) return;
+      const link = document.createElement("a");
+      link.download = `Learnova_Quiz_Score_Card_Day_${currentQuizDay}.png`;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+      showToast("🎉 আপনার রেজাল্ট কার্ড ডাউনলোড হয়েছে!");
+    }
+
+    function shareCardWhatsapp() {
+      const text = `🔥 আমি Learnova BD-তে আজকের HSC কুইজে স্কোর করেছি ${quizScoreCorrect}/${Math.max(1, quizTotalAnswered)}! তুমি কি পারবে আমাকে হারাতে?\n\n👉 এখনই কুইজ দাও: https://learnova-bd.vercel.app`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
+    }
+
+    /* =======================================================
+       2. OFFICIAL ACADEMIC EXCELLENCE CERTIFICATE GENERATOR
+       ======================================================= */
+    function openCertificateModal() {
+      document.getElementById("certificateModal").classList.add("active");
+      drawOfficialCertificate();
+    }
+
+    function closeCertificateModal() {
+      document.getElementById("certificateModal").classList.remove("active");
+    }
+
+    function drawOfficialCertificate() {
+      const canvas = document.getElementById("certCanvas");
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+
+      const studentName = document.getElementById("certStudentName").value.trim() || "তানভীর আহমেদ";
+      const collegeName = document.getElementById("certCollegeName").value.trim() || "নটর ডেম কলেজ, ঢাকা";
+      const groupLabel = currentQuizGroup === "science" ? "বিজ্ঞান বিভাগ (Science)" : (currentQuizGroup === "business" ? "ব্যবসায় শিক্ষা (Business Studies)" : "মানবিক বিভাগ (Humanities)");
+
+      // 1. Parchment Luxury Background
+      ctx.fillStyle = "#0c1322";
+      ctx.fillRect(0, 0, 1600, 1131);
+
+      // Radial Gold Glow
+      const bgGlow = ctx.createRadialGradient(800, 565, 100, 800, 565, 800);
+      bgGlow.addColorStop(0, "rgba(245, 158, 11, 0.08)");
+      bgGlow.addColorStop(1, "rgba(0, 0, 0, 0)");
+      ctx.fillStyle = bgGlow;
+      ctx.fillRect(0, 0, 1600, 1131);
+
+      // 2. Ornate Dual Gold Border
+      ctx.strokeStyle = "#d97706";
+      ctx.lineWidth = 14;
+      ctx.strokeRect(40, 40, 1520, 1051);
+
+      ctx.strokeStyle = "#fde68a";
+      ctx.lineWidth = 3;
+      ctx.strokeRect(60, 60, 1480, 1011);
+
+      ctx.strokeStyle = "rgba(245, 158, 11, 0.4)";
+      ctx.lineWidth = 1;
+      ctx.strokeRect(75, 75, 1450, 981);
+
+      // Corner Corner Accents
+      const corners = [[80,80], [1520,80], [80,1051], [1520,1051]];
+      corners.forEach(([cx, cy]) => {
+        ctx.fillStyle = "#f59e0b";
+        ctx.beginPath();
+        ctx.arc(cx, cy, 10, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // 3. Organization Crest & Header
+      ctx.textAlign = "center";
+      ctx.fillStyle = "#f59e0b";
+      ctx.font = "bold 32px 'Inter', sans-serif";
+      ctx.fillText("LEARNOVA ACADEMIC COUNCIL & EXCELLENCE FORUM", 800, 170);
+
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "bold 64px 'Inter', sans-serif";
+      ctx.fillText("CERTIFICATE OF MERIT", 800, 255);
+
+      ctx.fillStyle = "#94a3b8";
+      ctx.font = "600 24px 'Inter', sans-serif";
+      ctx.fillText("FOR OUTSTANDING DEDICATION IN HSC 30-DAY MASTER CHALLENGE", 800, 305);
+
+      // Ribbon Decorative Line
+      ctx.strokeStyle = "#d97706";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(350, 335);
+      ctx.lineTo(1250, 335);
+      ctx.stroke();
+
+      // 4. Awarded To Section
+      ctx.fillStyle = "#cbd5e1";
+      ctx.font = "26px 'Hind Siliguri', sans-serif";
+      ctx.fillText("এই প্রশংসাপত্রটি অত্যন্ত গর্বের সাথে প্রদান করা হচ্ছে:", 800, 410);
+
+      // Student Name in Calligraphic Gold
+      ctx.fillStyle = "#fde047";
+      ctx.font = "bold 62px 'Hind Siliguri', sans-serif";
+      ctx.fillText(studentName, 800, 500);
+
+      // College Info
+      ctx.fillStyle = "#e2e8f0";
+      ctx.font = "600 32px 'Hind Siliguri', sans-serif";
+      ctx.fillText(collegeName, 800, 560);
+
+      // Description Body
+      ctx.fillStyle = "#94a3b8";
+      ctx.font = "24px 'Hind Siliguri', sans-serif";
+      ctx.fillText(`যিনি Learnova BD কর্তৃক আয়োজিত দেশব্যাপী HSC ও এডমিশন ৩০-দিনের বিশেষ কুইজ কার্নিভালে`, 800, 640);
+      ctx.fillText(`${groupLabel}-এ সক্রিয় অংশগ্রহণ ও বিষয়ভিত্তিক দক্ষতা প্রমাণ করেছেন।`, 800, 680);
+
+      // 5. Official Verification Seals & Signatures
+      const sigY = 880;
+
+      // Left: Verification Code
+      ctx.textAlign = "left";
+      ctx.fillStyle = "#64748b";
+      ctx.font = "18px 'Inter', monospace";
+      ctx.fillText("CREDENTIAL ID: LNV-2026-EXC-0984", 160, sigY + 40);
+      ctx.fillText(`ISSUE DATE: ${new Date().toLocaleDateString('en-GB')}`, 160, sigY + 70);
+      ctx.fillText("VERIFY: learnova-bd.vercel.app", 160, sigY + 100);
+
+      // Center: Golden Seal Badge
+      ctx.textAlign = "center";
+      ctx.fillStyle = "#d97706";
+      ctx.beginPath();
+      ctx.arc(800, sigY + 40, 55, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = "#fef08a";
+      ctx.lineWidth = 4;
+      ctx.stroke();
+
+      ctx.fillStyle = "#0c1322";
+      ctx.font = "bold 20px 'Inter', sans-serif";
+      ctx.fillText("OFFICIAL", 800, sigY + 35);
+      ctx.fillText("SEAL", 800, sigY + 60);
+
+      // Right: Signatures
+      ctx.textAlign = "right";
+      ctx.strokeStyle = "#94a3b8";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(1150, sigY + 40);
+      ctx.lineTo(1440, sigY + 40);
+      ctx.stroke();
+
+      ctx.fillStyle = "#f8fafc";
+      ctx.font = "bold 22px 'Hind Siliguri', sans-serif";
+      ctx.fillText("একাডেমিক ডিরেক্টর ও কনভেনার", 1440, sigY + 75);
+      ctx.fillStyle = "#64748b";
+      ctx.font = "18px 'Inter', sans-serif";
+      ctx.fillText("Learnova BD Educational Council", 1440, sigY + 105);
+    }
+
+    function downloadCertificatePng() {
+      const canvas = document.getElementById("certCanvas");
+      if (!canvas) return;
+      const sName = document.getElementById("certStudentName").value.trim() || "Student";
+      const link = document.createElement("a");
+      link.download = `Learnova_Excellence_Certificate_${sName.replace(/\s+/g, '_')}.png`;
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+      showToast("🎓 আপনার এক্সিলেন্স সার্টিফিকেট ডাউনলোড সম্পন্ন হয়েছে!");
+    }
+
+    /* =======================================================
+       3. 3-STEP SMART COURSE MATCHMAKER ENGINE
+       ======================================================= */
+    let matchmakerData = { batch: "", group: "", weakness: "" };
+
+    const WEAKNESS_MAP = {
+      science: [
+        { id: "pcmb", label: "পদার্থ, রসায়ন, গণিত ও বায়োলজি ফুল সাইকেল", desc: "বোর্ড ও এডমিশন ফুল প্রিপারেশন" },
+        { id: "phy_math", label: "পদার্থবিজ্ঞান ও উচ্চতর গণিত ভীতি", desc: "ইঞ্জিনিয়ারিং ও থিওরি ডাউট সলভ" },
+        { id: "chem_bio", label: "জৈব রসায়ন ও মেডিকেল বায়োলজি", desc: "মেডিকেল ও ভার্সিটি ফোকাস" },
+        { id: "ict_gen", label: "আইসিটি ও বাংলা-ইংরেজি প্রস্তুতি", desc: "জিপিএ ৫ নিশ্চিতকরণ" }
+      ],
+      humanities: [
+        { id: "eco_civ", label: "অর্থনীতি ও পৌরনীতি সম্পূর্ণ সিলেবাস", desc: "কনসেপ্ট ক্লিয়ারিং ও সিকিউ মাস্টারক্লাস" },
+        { id: "du_b", label: "ঢাবি 'খ' ইউনিট মানবিক এডমিশন", desc: "জিকে, বাংলা ও ইংরেজি কমপ্লিট" },
+        { id: "ict_hum", label: "আইসিটি কোডিং ও ডিজিটাল লজিক", desc: "নম্বর তোলার শর্টকাট" }
+      ],
+      business: [
+        { id: "acc_fin", label: "হিসাববিজ্ঞান ও ফিন্যান্স গাণিতিক সমস্যা", desc: "জার্নাল, লেজার ও ব্যালেন্সশিট" },
+        { id: "du_c", label: "ঢাবি 'গ' ইউনিট (FBS) এডমিশন", desc: "কমার্স টপার্স কোর্স" },
+        { id: "mgmt_mkt", label: "ব্যবসায় সংগঠন ও মার্কেটিং", desc: "এ প্লাস সিকিউ হ্যাকস" }
+      ]
+    };
+
+    function openCourseMatchmakerModal() {
+      matchmakerData = { batch: "", group: "", weakness: "" };
+      goWizardStep(1);
+      document.getElementById("courseMatchmakerModal").classList.add("active");
+    }
+
+    function closeCourseMatchmakerModal() {
+      document.getElementById("courseMatchmakerModal").classList.remove("active");
+    }
+
+    function goWizardStep(stepNum) {
+      document.querySelectorAll(".wizard-step-wrap").forEach(w => w.classList.remove("active"));
+      const stepElem = document.getElementById("wizardStep" + (stepNum === 4 ? "Result" : stepNum));
+      if (stepElem) stepElem.classList.add("active");
+    }
+
+    function selectWizardBatch(batch) {
+      matchmakerData.batch = batch;
+      goWizardStep(2);
+    }
+
+    function selectWizardGroup(group) {
+      matchmakerData.group = group;
+      renderWizardWeaknessOptions(group);
+      goWizardStep(3);
+    }
+
+    function renderWizardWeaknessOptions(group) {
+      const container = document.getElementById("wizardWeaknessOptions");
+      const list = WEAKNESS_MAP[group] || WEAKNESS_MAP.science;
+      container.innerHTML = list.map(item => `
+        <div class="wizard-choice-card" onclick="selectWizardWeakness('${item.id}', '${item.label}')" style="text-align: left; align-items: flex-start;">
+          <div style="font-size: 0.9rem; font-weight: 800; color: var(--text-main);">${item.label}</div>
+          <div style="font-size: 0.75rem; color: var(--text-muted);">${item.desc}</div>
+        </div>
+      `).join("");
+    }
+
+    function selectWizardWeakness(id, label) {
+      matchmakerData.weakness = id;
+      generateMatchmakerResult();
+      goWizardStep(4);
+    }
+
+    function generateMatchmakerResult() {
+      const { batch, group, weakness } = matchmakerData;
+      // Find best matched course from DEFAULT_COURSES
+      let matched = courses.find(c => {
+        if (group === "science" && c.category.includes("Science") && c.name.includes(batch.replace("HSC ", ""))) return true;
+        if (group === "business" && c.category.includes("Business")) return true;
+        if (group === "humanities" && c.category.includes("Humanities")) return true;
+        return false;
+      }) || courses[0];
+
+      const resBox = document.getElementById("matchmakerResultCard");
+      resBox.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.75rem; font-weight: 800; color: var(--primary); background: var(--primary-light); padding: 3px 8px; border-radius: 6px;">
+            ${matched.category} • ${batch}
+          </span>
+          <span style="font-size: 0.8rem; font-weight: 700; color: #ef4444; background: #fee2e2; padding: 2px 8px; border-radius: 6px;">
+            বিশেষ ছাড় সক্রিয়
+          </span>
+        </div>
+
+        <h3 style="font-size: 1.05rem; font-weight: 800; margin-bottom: 6px; color: var(--text-main);">${matched.name}</h3>
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 10px;">
+          ${matched.desc || '১০ মিনিট স্কুলের অভিজ্ঞ মেন্টরদের সাথে সম্পূর্ণ সিলেবাস প্রস্তুতি, রেগুলার লাইভ ক্লাস ও সলভ শিট।'}
+        </p>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; background: var(--card-bg); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 12px;">
+          <div>
+            <div style="font-size: 0.72rem; color: var(--text-muted);">অফার ফি:</div>
+            <div style="font-size: 1.25rem; font-weight: 800; color: var(--primary);">৳${Number(matched.price).toLocaleString("en-IN")}</div>
+          </div>
+          <span class="savings-badge">স্পেশাল প্রোমো কোড প্রযোজ্য</span>
+        </div>
+
+        <div style="display: flex; gap: 8px;">
+          <a href="${matched.link || 'https://learnova-bd.vercel.app'}" target="_blank" class="btn student-enroll-btn" style="flex: 2; text-decoration: none;">
+            <i class="fa-solid fa-cart-shopping"></i> সরাসরি ডিসকাউন্টে ভর্তি 🚀
+          </a>
+          <a href="https://wa.me/8801981505759?text=${encodeURIComponent('আসসালামু আলাইকুম! আমি ' + matched.name + ' কোর্সের বিস্তারিত জানতে চাই।')}" target="_blank" class="btn btn-outline" style="flex: 1; text-decoration: none; border-color: #25D366; color: #16a34a;">
+            <i class="fa-brands fa-whatsapp"></i> কাউন্সেলিং
+          </a>
+        </div>
+      `;
+    }
+
+    /* =======================================================
+       4. REAL-TIME WEAKNESS RADAR & ANALYTICS MODAL
+       ======================================================= */
+    function openAnalyticsDashboardModal() {
+      const state = getGamifyState();
+      document.getElementById("radarTotalAnswered").innerText = state.totalAttempted;
+      document.getElementById("radarCorrectCount").innerText = state.totalCorrect;
+      const acc = state.totalAttempted > 0 ? Math.round((state.totalCorrect / state.totalAttempted) * 100) : 0;
+      document.getElementById("radarAccuracyPct").innerText = `${acc}%`;
+
+      const listContainer = document.getElementById("radarSubjectsList");
+      const subEntries = Object.entries(state.subjectStats);
+
+      listContainer.innerHTML = subEntries.map(([subName, stats]) => {
+        const total = stats.total || 0;
+        const correct = stats.correct || 0;
+        const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+        const color = pct >= 80 ? "#10b981" : (pct >= 50 ? "#f59e0b" : "#ef4444");
+
+        return `
+          <div class="radar-bar-item">
+            <div class="radar-bar-header">
+              <span>${subName}</span>
+              <span style="color: ${color};">${total > 0 ? `${pct}% (${correct}/${total})` : 'কোনো প্র্যাকটিস হয়নি'}</span>
+            </div>
+            <div class="radar-bar-track">
+              <div class="radar-bar-progress" style="width: ${total > 0 ? pct : 0}%; background: ${color};"></div>
+            </div>
+          </div>
+        `;
+      }).join("");
+
+      // Personalized Advice
+      let lowestSub = null;
+      let minPct = 101;
+      subEntries.forEach(([name, s]) => {
+        if (s.total > 0) {
+          const p = (s.correct / s.total) * 100;
+          if (p < minPct) {
+            minPct = p;
+            lowestSub = name;
+          }
+        }
+      });
+
+      const adviceBox = document.getElementById("radarAdviceBox");
+      if (lowestSub && minPct < 75) {
+        adviceBox.innerHTML = `
+          ⚠️ <b>দুর্বলতা চিহ্নিত:</b> <b>${lowestSub}</b>-এ আপনার এক্যুরেসি <b>${Math.round(minPct)}%</b>।<br>
+          এই বিষয়ে বোর্ড ও এডমিশনে নিশ্চিত এ-প্লাস তুলতে ১০ মিনিট স্কুলের সংশ্লিষ্ট কোর্সে নিয়মিত রিভিশন ও এক্সাম প্র্যাকটিস শুরু করার পরামর্শ দেওয়া হচ্ছে।
+          <div style="margin-top: 6px;"><a href="#categoryChips" onclick="closeAnalyticsDashboardModal()" style="color: var(--primary); font-weight:700;">কোর্সসমূহ ব্রাউজ করুন ➡️</a></div>
+        `;
+      } else {
+        adviceBox.innerHTML = `
+          🌟 <b>দারুণ পারফরম্যান্স!</b> আপনার প্রস্তুতি সঠিক ট্র্যাকে রয়েছে। নিয়মিত ডেইলি কুইজ প্র্যাকটিস বজায় রাখুন এবং নতুন নতুন বিষয়ে স্কোর বাড়িয়ে আপনার টপার্স র‍্যাঙ্ক নিশ্চিত করুন!
+        `;
+      }
+
+      document.getElementById("analyticsDashboardModal").classList.add("active");
+    }
+
+    function closeAnalyticsDashboardModal() {
+      document.getElementById("analyticsDashboardModal").classList.remove("active");
+    }
+
     /* Initialize */
     window.addEventListener("DOMContentLoaded", () => {
       const savedTheme = localStorage.getItem("10ms_theme");
@@ -2569,7 +3394,183 @@
       renderCourses();
       updateAuditCounts();
       initDailyQuizArena();
+      updateGamificationUI();
     });
   </script>
+
+  <!-- 1. SHAREABLE RESULT CARD MODAL -->
+  <div class="modal-overlay" id="shareScoreModal">
+    <div class="modal-card" style="max-width: 520px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-share-nodes" style="color: #3b82f6;"></i> শেয়ারেবল রেজাল্ট কার্ড জেনারেটর</h3>
+        <button class="modal-close" onclick="closeShareScoreModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 10px;">
+          ফেসবুক গ্রুপ, স্টোরি বা হোয়াটসঅ্যাপে আপনার আজকের কুইজ স্কোর শেয়ার করে বন্ধুদের চ্যালেঞ্জ জানান!
+        </p>
+
+        <div style="margin-bottom: 10px;">
+          <label style="font-size: 0.8rem; font-weight: 700;">আপনার নাম:</label>
+          <input type="text" id="shareStudentNameInput" class="search-input" value="মেধাবী শিক্ষার্থী" style="margin-top: 4px; padding: 8px 12px; font-size: 0.85rem;" oninput="updateShareCardCanvas()">
+        </div>
+
+        <div class="cert-canvas-container">
+          <canvas id="shareCardCanvas" width="1080" height="1080" style="width: 100%; max-width: 380px; aspect-ratio: 1/1;"></canvas>
+        </div>
+      </div>
+      <div class="modal-footer" style="flex-wrap: wrap;">
+        <button class="btn btn-outline" onclick="closeShareScoreModal()">বন্ধ করুন</button>
+        <button class="btn btn-primary" onclick="downloadShareCardPng()"><i class="fa-solid fa-download"></i> কার্ড ডাউনলোড (PNG)</button>
+        <button class="btn" style="background: #25D366; color: #fff;" onclick="shareCardWhatsapp()"><i class="fa-brands fa-whatsapp"></i> WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. OFFICIAL EXCELLENCE CERTIFICATE MODAL -->
+  <div class="modal-overlay" id="certificateModal">
+    <div class="modal-card" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-award" style="color: #f59e0b;"></i> Learnova HSC Excellence Certificate</h3>
+        <button class="modal-close" onclick="closeCertificateModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px;">
+          HSC ৩০-দিনের মাস্টার চ্যালেঞ্জে নিয়মিত অংশগ্রহণের স্বীকৃতিস্বরূপ আপনার অফিসিয়াল প্রশংসাপত্র:
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+          <div>
+            <label style="font-size: 0.78rem; font-weight: 700;">শিক্ষার্থীর পুরো নাম:</label>
+            <input type="text" id="certStudentName" class="search-input" value="তানভীর আহমেদ" style="margin-top: 4px; padding: 7px 10px; font-size: 0.85rem;" oninput="drawOfficialCertificate()">
+          </div>
+          <div>
+            <label style="font-size: 0.78rem; font-weight: 700;">কলেজ / শিক্ষা প্রতিষ্ঠান:</label>
+            <input type="text" id="certCollegeName" class="search-input" value="নটর ডেম কলেজ, ঢাকা" style="margin-top: 4px; padding: 7px 10px; font-size: 0.85rem;" oninput="drawOfficialCertificate()">
+          </div>
+        </div>
+
+        <div class="cert-canvas-container">
+          <canvas id="certCanvas" width="1600" height="1131" style="width: 100%; aspect-ratio: 1600/1131;"></canvas>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="closeCertificateModal()">বন্ধ করুন</button>
+        <button class="btn btn-primary" onclick="downloadCertificatePng()"><i class="fa-solid fa-file-arrow-down"></i> সার্টিফিকেট ডাউনলোড (High-Res)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SMART COURSE MATCHMAKER MODAL -->
+  <div class="modal-overlay" id="courseMatchmakerModal">
+    <div class="modal-card" style="max-width: 540px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-compass" style="color: #10b981;"></i> ১-মিনিট স্মার্ট কোর্স ম্যাচমেকার</h3>
+        <button class="modal-close" onclick="closeCourseMatchmakerModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <!-- Step 1: Batch -->
+        <div class="wizard-step-wrap active" id="wizardStep1">
+          <div style="font-size: 0.95rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">ধাপ ১: আপনার HSC/SSC শিক্ষাবর্ষ কোনটি?</div>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">আপনার সঠিক একাডেমিক সাইকেল সিলেক্ট করুন:</p>
+          <div class="wizard-btn-grid">
+            <div class="wizard-choice-card" onclick="selectWizardBatch('HSC 2026')">
+              <i class="fa-solid fa-graduation-cap" style="font-size: 1.4rem; color: #3b82f6;"></i>
+              <span>HSC 2026 ব্যাচ</span>
+            </div>
+            <div class="wizard-choice-card" onclick="selectWizardBatch('HSC 2027')">
+              <i class="fa-solid fa-book-open-reader" style="font-size: 1.4rem; color: #10b981;"></i>
+              <span>HSC 2027 ব্যাচ</span>
+            </div>
+            <div class="wizard-choice-card" onclick="selectWizardBatch('HSC 2028')">
+              <i class="fa-solid fa-seedling" style="font-size: 1.4rem; color: #f59e0b;"></i>
+              <span>HSC 2028 (নতুন)</span>
+            </div>
+            <div class="wizard-choice-card" onclick="selectWizardBatch('SSC 2026')">
+              <i class="fa-solid fa-school" style="font-size: 1.4rem; color: #8b5cf6;"></i>
+              <span>SSC 2026 ব্যাচ</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Group -->
+        <div class="wizard-step-wrap" id="wizardStep2">
+          <div style="font-size: 0.95rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">ধাপ ২: আপনার অধ্যয়ন বিভাগ (Group) কোনটি?</div>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">সঠিক গ্রুপ নির্বাচন করুন:</p>
+          <div class="wizard-btn-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <div class="wizard-choice-card" onclick="selectWizardGroup('science')">
+              <i class="fa-solid fa-atom" style="font-size: 1.5rem; color: #0284c7;"></i>
+              <span>বিজ্ঞান (Science)</span>
+            </div>
+            <div class="wizard-choice-card" onclick="selectWizardGroup('humanities')">
+              <i class="fa-solid fa-feather-pointed" style="font-size: 1.5rem; color: #ca8a04;"></i>
+              <span>মানবিক (Humanities)</span>
+            </div>
+            <div class="wizard-choice-card" onclick="selectWizardGroup('business')">
+              <i class="fa-solid fa-chart-line" style="font-size: 1.5rem; color: #16a34a;"></i>
+              <span>ব্যবসায় শিক্ষা (Commerce)</span>
+            </div>
+          </div>
+          <button class="btn btn-outline" style="margin-top: 14px; font-size: 0.8rem;" onclick="goWizardStep(1)">⬅️ আগের ধাপে যান</button>
+        </div>
+
+        <!-- Step 3: Weakness Focus -->
+        <div class="wizard-step-wrap" id="wizardStep3">
+          <div style="font-size: 0.95rem; font-weight: 800; color: var(--text-main); margin-bottom: 4px;">ধাপ ৩: কোন বিষয়ে প্রস্তুতি সবচেয়ে দুর্বল বা ভীতি বেশি?</div>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">আপনার কাঙ্ক্ষিত ফোকাস সিলেক্ট করুন:</p>
+          <div class="wizard-btn-grid" id="wizardWeaknessOptions"></div>
+          <button class="btn btn-outline" style="margin-top: 14px; font-size: 0.8rem;" onclick="goWizardStep(2)">⬅️ আগের ধাপে যান</button>
+        </div>
+
+        <!-- Step 4: Matched Result -->
+        <div class="wizard-step-wrap" id="wizardStepResult">
+          <div style="text-align: center; margin-bottom: 12px;">
+            <div style="font-size: 2rem; margin-bottom: 4px;">🎯</div>
+            <div style="font-size: 1.05rem; font-weight: 800; color: var(--primary);">আপনার জন্য পারফেক্ট কোর্স সুপারিশ!</div>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">আপনার নির্বাচিত তথ্য অনুযায়ী ১০ মিনিট স্কুলের সেরা কোর্সটি নির্বাচন করা হয়েছে:</p>
+          </div>
+
+          <div id="matchmakerResultCard" style="background: var(--bg); border: 1.5px solid var(--primary); border-radius: 12px; padding: 14px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. REAL-TIME WEAKNESS RADAR & ANALYTICS MODAL -->
+  <div class="modal-overlay" id="analyticsDashboardModal">
+    <div class="modal-card" style="max-width: 540px;">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-chart-pie" style="color: #8b5cf6;"></i> কুইজ পারফরম্যান্স ও দুর্বলতা রাডার</h3>
+        <button class="modal-close" onclick="closeAnalyticsDashboardModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; margin-bottom: 14px;">
+          <div style="background: var(--bg); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
+            <div style="font-size: 0.72rem; color: var(--text-muted);">মোট উত্তর</div>
+            <div style="font-size: 1.15rem; font-weight: 800;" id="radarTotalAnswered">০</div>
+          </div>
+          <div style="background: var(--bg); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
+            <div style="font-size: 0.72rem; color: var(--text-muted);">সঠিক উত্তর</div>
+            <div style="font-size: 1.15rem; font-weight: 800; color: var(--success-dark);" id="radarCorrectCount">০</div>
+          </div>
+          <div style="background: var(--bg); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
+            <div style="font-size: 0.72rem; color: var(--text-muted);">ওভারঅল এক্যুরেসি</div>
+            <div style="font-size: 1.15rem; font-weight: 800; color: var(--primary);" id="radarAccuracyPct">০%</div>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.88rem; font-weight: 800; margin-bottom: 6px;">বিষয়ভিত্তিক নির্ভুলতার হার (Accuracy):</h4>
+        <div class="analytics-radar-grid" id="radarSubjectsList"></div>
+
+        <div id="radarAdviceBox" style="background: var(--primary-light); border: 1px solid rgba(14,131,125,0.25); border-radius: 10px; padding: 12px; margin-top: 12px; font-size: 0.82rem; line-height: 1.45;">
+          💡 <b>পরামর্শ:</b> আরও বেশি কুইজ প্র্যাকটিস করলে আপনার দুর্বল বিষয়গুলোর নির্ভুল এনালাইসিস পাওয়া যাবে।
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="closeAnalyticsDashboardModal()">বুঝেছি</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
