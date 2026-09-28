@@ -1,0 +1,56 @@
+name: 24/7 Learnova Master Quiz Scheduler
+
+on:
+  schedule:
+    # 07:30 UTC = 1:30 PM BST (Session 1: Core Subjects)
+    - cron: '30 7 * * *'
+    # 13:00 UTC = 7:00 PM BST (Session 2: Life Science, General & ICT)
+    - cron: '00 13 * * *'
+    # 16:00 UTC = 10:00 PM BST (Session 3: Language & Elite Admission)
+    - cron: '00 16 * * *'
+  workflow_dispatch:
+    inputs:
+      session:
+        description: 'Session number (1, 2, 3, or auto)'
+        required: true
+        default: 'auto'
+      day:
+        description: 'Day number (1 to 30, leave empty for auto date)'
+        required: false
+        default: ''
+      force:
+        description: 'Force post even if marked posted today'
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  run-quiz-scheduler:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Execute Telegram Quiz Dispatcher
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || '8815514289:AAFqvAP8vwX_em6AYruKGRxCupggjI_Nf5I' }}
+        run: |
+          SESSION="${{ github.event.inputs.session || 'auto' }}"
+          DAY="${{ github.event.inputs.day || '' }}"
+          FORCE="${{ github.event.inputs.force }}"
+
+          CMD="python telegram_quiz_bot.py --session $SESSION"
+          if [ -n "$DAY" ]; then
+            CMD="$CMD --day $DAY"
+          fi
+          if [ "$FORCE" = "true" ]; then
+            CMD="$CMD --force"
+          fi
+
+          echo "Running: $CMD"
+          $CMD
